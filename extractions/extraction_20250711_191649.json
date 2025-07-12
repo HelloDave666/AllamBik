@@ -1,0 +1,519 @@
+{
+  "metadata": {
+    "task_id": "308688a1-71be-4493-9b1c-4dfe2b6b7d70",
+    "extraction_date": "2025-07-11T19:16:49.936388",
+    "session_id": "20250711_191633",
+    "pages_scanned": 10,
+    "pages_with_content": 6,
+    "total_highlights": 11,
+    "extraction_method": "individual_highlights",
+    "version": "3.0"
+  },
+  "statistics": {
+    "confidence": {
+      "average": 89.9,
+      "min": 69.0,
+      "max": 96.0,
+      "distribution": {
+        "high": 9,
+        "medium": 1,
+        "low": 1
+      }
+    },
+    "text": {
+      "total_words": 315,
+      "average_words_per_highlight": 28.6,
+      "min_words": 1,
+      "max_words": 103
+    },
+    "pages": {
+      "total_pages": 5,
+      "highlights_per_page": 2.2
+    }
+  },
+  "highlights": [
+    {
+      "id": "601283b5-9a93-4084-8e91-d2f1c89fd1fa",
+      "unique_id": "20250711_191633_page003_highlight04",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 3,
+      "highlight_number": 4,
+      "text": "| Stiegler",
+      "confidence": 79.5,
+      "confidence_level": "MEDIUM",
+      "extracted_at": "2025-07-11T19:16:33.209228",
+      "session_id": "20250711_191633",
+      "position": {
+        "x": 1371,
+        "y": 440,
+        "width": 91,
+        "height": 30
+      },
+      "metrics": {
+        "word_count": 2,
+        "character_count": 10,
+        "preview": "| Stiegler"
+      },
+      "position_info": {
+        "x": 1371,
+        "y": 440,
+        "width": 91,
+        "height": 30,
+        "area": 2730,
+        "aspect_ratio": 3.033333333333333,
+        "center_x": 1416,
+        "center_y": 455
+      }
+    },
+    {
+      "id": "431c3f76-96fd-4e37-9390-b13b6d586ae3",
+      "unique_id": "20250711_191633_page003_highlight10",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 3,
+      "highlight_number": 10,
+      "text": "Entretien.",
+      "confidence": 69.0,
+      "confidence_level": "LOW",
+      "extracted_at": "2025-07-11T19:16:33.209559",
+      "session_id": "20250711_191633",
+      "position": {
+        "x": 1286,
+        "y": 518,
+        "width": 108,
+        "height": 23
+      },
+      "metrics": {
+        "word_count": 1,
+        "character_count": 10,
+        "preview": "Entretien."
+      },
+      "position_info": {
+        "x": 1286,
+        "y": 518,
+        "width": 108,
+        "height": 23,
+        "area": 2484,
+        "aspect_ratio": 4.695652173913044,
+        "center_x": 1340,
+        "center_y": 529
+      }
+    },
+    {
+      "id": "fdac85ae-6f93-4b83-8893-a2388723a40d",
+      "unique_id": "20250711_191637_page006_highlight01",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 6,
+      "highlight_number": 1,
+      "text": "le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.",
+      "confidence": 93.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:37.840280",
+      "session_id": "20250711_191637",
+      "position": {
+        "x": 1284,
+        "y": 176,
+        "width": 528,
+        "height": 160
+      },
+      "metrics": {
+        "word_count": 22,
+        "character_count": 133,
+        "preview": "le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètr..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 176,
+        "width": 528,
+        "height": 160,
+        "area": 84480,
+        "aspect_ratio": 3.3,
+        "center_x": 1548,
+        "center_y": 256
+      }
+    },
+    {
+      "id": "4c04caa5-0add-46fa-ab55-52fbdebbab33",
+      "unique_id": "20250711_191637_page006_highlight02",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 6,
+      "highlight_number": 2,
+      "text": "du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.",
+      "confidence": 92.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:37.840578",
+      "session_id": "20250711_191637",
+      "position": {
+        "x": 1284,
+        "y": 556,
+        "width": 534,
+        "height": 198
+      },
+      "metrics": {
+        "word_count": 32,
+        "character_count": 190,
+        "preview": "du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 4..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 556,
+        "width": 534,
+        "height": 198,
+        "area": 105732,
+        "aspect_ratio": 2.696969696969697,
+        "center_x": 1551,
+        "center_y": 655
+      }
+    },
+    {
+      "id": "8e28e6cb-c2ef-4a5c-b7d5-d4091b54c632",
+      "unique_id": "20250711_191637_page006_highlight03",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 6,
+      "highlight_number": 3,
+      "text": "interrogé sur TF1",
+      "confidence": 96.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:37.840865",
+      "session_id": "20250711_191637",
+      "position": {
+        "x": 1590,
+        "y": 907,
+        "width": 198,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 3,
+        "character_count": 17,
+        "preview": "interrogé sur TF1"
+      },
+      "position_info": {
+        "x": 1590,
+        "y": 907,
+        "width": 198,
+        "height": 46,
+        "area": 9108,
+        "aspect_ratio": 4.304347826086956,
+        "center_x": 1689,
+        "center_y": 930
+      }
+    },
+    {
+      "id": "373b1a40-3cab-4c4c-b39c-b33ce6d72638",
+      "unique_id": "20250711_191640_page007_highlight01",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 7,
+      "highlight_number": 1,
+      "text": "par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.",
+      "confidence": 94.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:40.991691",
+      "session_id": "20250711_191640",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 502
+      },
+      "metrics": {
+        "word_count": 103,
+        "character_count": 623,
+        "preview": "par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, ..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 502,
+        "area": 271080,
+        "aspect_ratio": 1.0756972111553784,
+        "center_x": 1554,
+        "center_y": 389
+      }
+    },
+    {
+      "id": "23493868-efd6-4b2f-bbef-974d22714599",
+      "unique_id": "20250711_191644_page009_highlight01",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 9,
+      "highlight_number": 1,
+      "text": "l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,",
+      "confidence": 91.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:44.781824",
+      "session_id": "20250711_191644",
+      "position": {
+        "x": 1284,
+        "y": 331,
+        "width": 527,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 31,
+        "character_count": 218,
+        "preview": "l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’e..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 331,
+        "width": 527,
+        "height": 236,
+        "area": 124372,
+        "aspect_ratio": 2.233050847457627,
+        "center_x": 1547,
+        "center_y": 449
+      }
+    },
+    {
+      "id": "f56be693-1222-45f8-80c2-4882dc4e88e4",
+      "unique_id": "20250711_191644_page009_highlight02",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 9,
+      "highlight_number": 2,
+      "text": "° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.",
+      "confidence": 92.4,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:44.782136",
+      "session_id": "20250711_191644",
+      "position": {
+        "x": 1284,
+        "y": 711,
+        "width": 540,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 39,
+        "character_count": 230,
+        "preview": "° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transform..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 711,
+        "width": 540,
+        "height": 236,
+        "area": 127440,
+        "aspect_ratio": 2.288135593220339,
+        "center_x": 1554,
+        "center_y": 829
+      }
+    },
+    {
+      "id": "cae79341-c8c9-4d34-83e1-a1578f601e5b",
+      "unique_id": "20250711_191649_page010_highlight01",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 10,
+      "highlight_number": 1,
+      "text": "La Société auto-",
+      "confidence": 93.3,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:49.934877",
+      "session_id": "20250711_191649",
+      "position": {
+        "x": 1598,
+        "y": 176,
+        "width": 176,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 3,
+        "character_count": 16,
+        "preview": "La Société auto-"
+      },
+      "position_info": {
+        "x": 1598,
+        "y": 176,
+        "width": 176,
+        "height": 46,
+        "area": 8096,
+        "aspect_ratio": 3.8260869565217392,
+        "center_x": 1686,
+        "center_y": 199
+      }
+    },
+    {
+      "id": "b1edfa85-a83e-4966-88f5-f0e9c5190c75",
+      "unique_id": "20250711_191649_page010_highlight03",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 10,
+      "highlight_number": 3,
+      "text": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?",
+      "confidence": 91.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:49.935195",
+      "session_id": "20250711_191649",
+      "position": {
+        "x": 1284,
+        "y": 451,
+        "width": 539,
+        "height": 350
+      },
+      "metrics": {
+        "word_count": 72,
+        "character_count": 439,
+        "preview": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va dé..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 451,
+        "width": 539,
+        "height": 350,
+        "area": 188650,
+        "aspect_ratio": 1.54,
+        "center_x": 1553,
+        "center_y": 626
+      }
+    },
+    {
+      "id": "237c849a-bce8-4ea6-8d09-8315e25d91ba",
+      "unique_id": "20250711_191649_page010_highlight04",
+      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
+      "page_number": 10,
+      "highlight_number": 4,
+      "text": "Elle part d’un constat : les nou-",
+      "confidence": 93.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-11T19:16:49.935440",
+      "session_id": "20250711_191649",
+      "position": {
+        "x": 1483,
+        "y": 916,
+        "width": 338,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 7,
+        "character_count": 33,
+        "preview": "Elle part d’un constat : les nou-"
+      },
+      "position_info": {
+        "x": 1483,
+        "y": 916,
+        "width": 338,
+        "height": 46,
+        "area": 15548,
+        "aspect_ratio": 7.3478260869565215,
+        "center_x": 1652,
+        "center_y": 939
+      }
+    }
+  ],
+  "pages": {
+    "3": {
+      "page_number": 3,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 4,
+          "text": "| Stiegler",
+          "confidence": 79.5,
+          "word_count": 2,
+          "character_count": 10,
+          "preview": "| Stiegler"
+        },
+        {
+          "highlight_number": 10,
+          "text": "Entretien.",
+          "confidence": 69.0,
+          "word_count": 1,
+          "character_count": 10,
+          "preview": "Entretien."
+        }
+      ]
+    },
+    "6": {
+      "page_number": 6,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.",
+          "confidence": 93.81818181818181,
+          "word_count": 22,
+          "character_count": 133,
+          "preview": "le Président dialogue devant les caméras avec un r..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.",
+          "confidence": 92.875,
+          "word_count": 32,
+          "character_count": 190,
+          "preview": "du Redressement productif Arnaud Montebourg précis..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "interrogé sur TF1",
+          "confidence": 96.0,
+          "word_count": 3,
+          "character_count": 17,
+          "preview": "interrogé sur TF1"
+        }
+      ]
+    },
+    "7": {
+      "page_number": 7,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.",
+          "confidence": 94.0,
+          "word_count": 103,
+          "character_count": 623,
+          "preview": "par une assistante maternelle des Ardennes acca- b..."
+        }
+      ]
+    },
+    "9": {
+      "page_number": 9,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,",
+          "confidence": 91.80645161290323,
+          "word_count": 31,
+          "character_count": 218,
+          "preview": "l'Institut de recherche et d'innovation (IRI) du C..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.",
+          "confidence": 92.38461538461539,
+          "word_count": 39,
+          "character_count": 230,
+          "preview": "° Loin d’être des technophobes, nous sommes chacun..."
+        }
+      ]
+    },
+    "10": {
+      "page_number": 10,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "La Société auto-",
+          "confidence": 93.33333333333333,
+          "word_count": 3,
+          "character_count": 16,
+          "preview": "La Société auto-"
+        },
+        {
+          "highlight_number": 3,
+          "text": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?",
+          "confidence": 91.80555555555556,
+          "word_count": 72,
+          "character_count": 439,
+          "preview": "Pour Bernard Stiegler, au cours des vingt pro- cha..."
+        },
+        {
+          "highlight_number": 4,
+          "text": "Elle part d’un constat : les nou-",
+          "confidence": 93.85714285714286,
+          "word_count": 7,
+          "character_count": 33,
+          "preview": "Elle part d’un constat : les nou-"
+        }
+      ]
+    }
+  }
+}

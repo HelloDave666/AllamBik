@@ -1,0 +1,92 @@
+EXTRACTION KINDLE - 11/07/2025 19:32:35
+================================================================================
+
+Pages scannées: 10
+Pages avec contenu: 4
+Highlights extraits: 8
+================================================================================
+
+--- PAGE 4 ---
+
+=== SURLIGNEMENT #4 ===
+| Stiegler
+(Confiance: 80%)
+(Mots: 2)
+(Position: x=1371, y=440, taille=91x30)
+(ID: 20250711_193223_page004_highlight04)
+
+----------------------------------------
+
+=== SURLIGNEMENT #10 ===
+Entretien.
+(Confiance: 69%)
+(Mots: 1)
+(Position: x=1286, y=518, taille=108x23)
+(ID: 20250711_193223_page004_highlight10)
+
+----------------------------------------
+
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.
+(Confiance: 94%)
+(Mots: 22)
+(Position: x=1284, y=176, taille=528x160)
+(ID: 20250711_193228_page007_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.
+(Confiance: 93%)
+(Mots: 32)
+(Position: x=1284, y=556, taille=534x198)
+(ID: 20250711_193228_page007_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+interrogé sur TF1
+(Confiance: 96%)
+(Mots: 3)
+(Position: x=1590, y=907, taille=198x46)
+(ID: 20250711_193228_page007_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 8 ---
+
+=== SURLIGNEMENT #1 ===
+par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.
+(Confiance: 94%)
+(Mots: 103)
+(Position: x=1284, y=138, taille=540x502)
+(ID: 20250711_193231_page008_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 10 ---
+
+=== SURLIGNEMENT #1 ===
+l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,
+(Confiance: 92%)
+(Mots: 31)
+(Position: x=1284, y=331, taille=527x236)
+(ID: 20250711_193235_page010_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.
+(Confiance: 92%)
+(Mots: 39)
+(Position: x=1284, y=711, taille=540x236)
+(ID: 20250711_193235_page010_highlight02)
+
+----------------------------------------
+
+

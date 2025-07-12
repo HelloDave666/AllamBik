@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "alambik"
+version = "3.0.0"
+description = "Kindle highlight extraction tool with modern architecture"
+authors = ["davidarnaud001@gmail.com"]
+license = "MIT"
+readme = "README.md"
+package-mode = false  # Ajoutez cette ligne
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.11.7"
+pillow = "^11.3.0"
+pytesseract = "^0.3.13"
+pyautogui = "^0.9.54"
+customtkinter = "^5.2.2"
+aiosqlite = "^0.21.0"
+structlog = "^25.4.0"
+rich = "^14.0.0"
+opencv-python = "^4.12.0.88"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+pytest-asyncio = "^1.0.0"
+black = "^25.1.0"
+ruff = "^0.12.2"
+mypy = "^1.16.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
