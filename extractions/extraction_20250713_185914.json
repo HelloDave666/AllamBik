@@ -1,48 +1,48 @@
 {
   "metadata": {
-    "task_id": "308688a1-71be-4493-9b1c-4dfe2b6b7d70",
-    "extraction_date": "2025-07-11T19:16:49.936388",
-    "session_id": "20250711_191633",
+    "task_id": "cf1bc5ef-ceec-4c10-abe3-0101fd19e0ec",
+    "extraction_date": "2025-07-13T18:59:14.833436",
+    "session_id": "20250713_185850",
     "pages_scanned": 10,
-    "pages_with_content": 6,
-    "total_highlights": 11,
+    "pages_with_content": 7,
+    "total_highlights": 15,
     "extraction_method": "individual_highlights",
     "version": "3.0"
   },
   "statistics": {
     "confidence": {
-      "average": 89.9,
+      "average": 90.9,
       "min": 69.0,
       "max": 96.0,
       "distribution": {
-        "high": 9,
+        "high": 13,
         "medium": 1,
         "low": 1
       }
     },
     "text": {
-      "total_words": 315,
-      "average_words_per_highlight": 28.6,
+      "total_words": 550,
+      "average_words_per_highlight": 36.7,
       "min_words": 1,
       "max_words": 103
     },
     "pages": {
-      "total_pages": 5,
-      "highlights_per_page": 2.2
+      "total_pages": 7,
+      "highlights_per_page": 2.1
     }
   },
   "highlights": [
     {
-      "id": "601283b5-9a93-4084-8e91-d2f1c89fd1fa",
-      "unique_id": "20250711_191633_page003_highlight04",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 3,
+      "id": "a20328c7-1f90-4dc7-bb97-c9403fc5310c",
+      "unique_id": "20250713_185850_page001_highlight04",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 1,
       "highlight_number": 4,
       "text": "| Stiegler",
       "confidence": 79.5,
       "confidence_level": "MEDIUM",
-      "extracted_at": "2025-07-11T19:16:33.209228",
-      "session_id": "20250711_191633",
+      "extracted_at": "2025-07-13T18:58:50.414989",
+      "session_id": "20250713_185850",
       "position": {
         "x": 1371,
         "y": 440,
@@ -66,16 +66,16 @@
       }
     },
     {
-      "id": "431c3f76-96fd-4e37-9390-b13b6d586ae3",
-      "unique_id": "20250711_191633_page003_highlight10",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 3,
+      "id": "98c8e344-6ad8-4850-a422-c2b29cbc6bf9",
+      "unique_id": "20250713_185850_page001_highlight10",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 1,
       "highlight_number": 10,
       "text": "Entretien.",
       "confidence": 69.0,
       "confidence_level": "LOW",
-      "extracted_at": "2025-07-11T19:16:33.209559",
-      "session_id": "20250711_191633",
+      "extracted_at": "2025-07-13T18:58:50.415340",
+      "session_id": "20250713_185850",
       "position": {
         "x": 1286,
         "y": 518,
@@ -99,16 +99,16 @@
       }
     },
     {
-      "id": "fdac85ae-6f93-4b83-8893-a2388723a40d",
-      "unique_id": "20250711_191637_page006_highlight01",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 6,
+      "id": "e14fc383-7988-4927-8200-83b4ed04057c",
+      "unique_id": "20250713_185855_page004_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 4,
       "highlight_number": 1,
       "text": "le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:37.840280",
-      "session_id": "20250711_191637",
+      "extracted_at": "2025-07-13T18:58:55.083491",
+      "session_id": "20250713_185855",
       "position": {
         "x": 1284,
         "y": 176,
@@ -132,16 +132,16 @@
       }
     },
     {
-      "id": "4c04caa5-0add-46fa-ab55-52fbdebbab33",
-      "unique_id": "20250711_191637_page006_highlight02",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 6,
+      "id": "28fc4b9b-74e4-4317-95d8-f68d1c8b2ab5",
+      "unique_id": "20250713_185855_page004_highlight02",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 4,
       "highlight_number": 2,
       "text": "du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.",
       "confidence": 92.9,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:37.840578",
-      "session_id": "20250711_191637",
+      "extracted_at": "2025-07-13T18:58:55.083805",
+      "session_id": "20250713_185855",
       "position": {
         "x": 1284,
         "y": 556,
@@ -165,16 +165,16 @@
       }
     },
     {
-      "id": "8e28e6cb-c2ef-4a5c-b7d5-d4091b54c632",
-      "unique_id": "20250711_191637_page006_highlight03",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 6,
+      "id": "531549e3-6cbf-44de-9b53-bb354a3a66b5",
+      "unique_id": "20250713_185855_page004_highlight03",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 4,
       "highlight_number": 3,
       "text": "interrogé sur TF1",
       "confidence": 96.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:37.840865",
-      "session_id": "20250711_191637",
+      "extracted_at": "2025-07-13T18:58:55.084104",
+      "session_id": "20250713_185855",
       "position": {
         "x": 1590,
         "y": 907,
@@ -198,16 +198,16 @@
       }
     },
     {
-      "id": "373b1a40-3cab-4c4c-b39c-b33ce6d72638",
-      "unique_id": "20250711_191640_page007_highlight01",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 7,
+      "id": "6d65a9f4-c4fa-44c4-90dc-44177aa7d43d",
+      "unique_id": "20250713_185858_page005_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 5,
       "highlight_number": 1,
       "text": "par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.",
       "confidence": 94.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:40.991691",
-      "session_id": "20250711_191640",
+      "extracted_at": "2025-07-13T18:58:58.222172",
+      "session_id": "20250713_185858",
       "position": {
         "x": 1284,
         "y": 138,
@@ -231,16 +231,16 @@
       }
     },
     {
-      "id": "23493868-efd6-4b2f-bbef-974d22714599",
-      "unique_id": "20250711_191644_page009_highlight01",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 9,
+      "id": "a0b7b160-f9c7-472b-8397-fe376ba3623d",
+      "unique_id": "20250713_185902_page007_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 7,
       "highlight_number": 1,
       "text": "l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,",
       "confidence": 91.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:44.781824",
-      "session_id": "20250711_191644",
+      "extracted_at": "2025-07-13T18:59:02.036693",
+      "session_id": "20250713_185902",
       "position": {
         "x": 1284,
         "y": 331,
@@ -264,16 +264,16 @@
       }
     },
     {
-      "id": "f56be693-1222-45f8-80c2-4882dc4e88e4",
-      "unique_id": "20250711_191644_page009_highlight02",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 9,
+      "id": "83092d66-87d2-4b5b-86ef-d817aafa4ce8",
+      "unique_id": "20250713_185902_page007_highlight02",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 7,
       "highlight_number": 2,
       "text": "° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.",
       "confidence": 92.4,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:44.782136",
-      "session_id": "20250711_191644",
+      "extracted_at": "2025-07-13T18:59:02.037012",
+      "session_id": "20250713_185902",
       "position": {
         "x": 1284,
         "y": 711,
@@ -297,16 +297,16 @@
       }
     },
     {
-      "id": "cae79341-c8c9-4d34-83e1-a1578f601e5b",
-      "unique_id": "20250711_191649_page010_highlight01",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 10,
+      "id": "79e9ef10-9f4b-4c45-b4e7-68f3a7cb155d",
+      "unique_id": "20250713_185907_page008_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 8,
       "highlight_number": 1,
       "text": "La Société auto-",
       "confidence": 93.3,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:49.934877",
-      "session_id": "20250711_191649",
+      "extracted_at": "2025-07-13T18:59:07.226526",
+      "session_id": "20250713_185907",
       "position": {
         "x": 1598,
         "y": 176,
@@ -330,16 +330,16 @@
       }
     },
     {
-      "id": "b1edfa85-a83e-4966-88f5-f0e9c5190c75",
-      "unique_id": "20250711_191649_page010_highlight03",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 10,
+      "id": "d80f8032-cedb-4778-8d8b-af08bf41a5e3",
+      "unique_id": "20250713_185907_page008_highlight03",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 8,
       "highlight_number": 3,
       "text": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?",
       "confidence": 91.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:49.935195",
-      "session_id": "20250711_191649",
+      "extracted_at": "2025-07-13T18:59:07.226836",
+      "session_id": "20250713_185907",
       "position": {
         "x": 1284,
         "y": 451,
@@ -363,16 +363,16 @@
       }
     },
     {
-      "id": "237c849a-bce8-4ea6-8d09-8315e25d91ba",
-      "unique_id": "20250711_191649_page010_highlight04",
-      "book_id": "b0c736ba-96f1-435b-b9ec-a845554419ad",
-      "page_number": 10,
+      "id": "9fbb356a-1fae-40ec-8888-c6ce52a17b6b",
+      "unique_id": "20250713_185907_page008_highlight04",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 8,
       "highlight_number": 4,
       "text": "Elle part d’un constat : les nou-",
       "confidence": 93.9,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:16:49.935440",
-      "session_id": "20250711_191649",
+      "extracted_at": "2025-07-13T18:59:07.227128",
+      "session_id": "20250713_185907",
       "position": {
         "x": 1483,
         "y": 916,
@@ -394,11 +394,143 @@
         "center_x": 1652,
         "center_y": 939
       }
+    },
+    {
+      "id": "9b7c856a-c07b-4370-9ffc-d6d46377f6d1",
+      "unique_id": "20250713_185910_page009_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 9,
+      "highlight_number": 1,
+      "text": "velles technologies augmentent nos possibles en tous sens, et elles peuvent donc aussi réduire nos possibles ; selon les dispositions de notre esprit et la façon dont nous décidons de les façonner et de les utiliser, elles catalysent le meilleur comme le pire de nous-mémes et de notre société.",
+      "confidence": 94.7,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:59:10.850670",
+      "session_id": "20250713_185910",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 533,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 49,
+        "character_count": 294,
+        "preview": "velles technologies augmentent nos possibles en tous sens, et elles peuvent donc aussi réduire no..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 533,
+        "height": 236,
+        "area": 125788,
+        "aspect_ratio": 2.2584745762711864,
+        "center_x": 1550,
+        "center_y": 256
+      }
+    },
+    {
+      "id": "f2d54be6-4899-4569-b010-4a116f0ed789",
+      "unique_id": "20250713_185910_page009_highlight02",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 9,
+      "highlight_number": 2,
+      "text": "À l'inverse, quand ces technologies numériques portent de vraies pratiques et se concrétisent en échanges entre amateurs impliqués collectivement plutôt qu'entre consommateurs béats et égoistes, elles contribuent à la construction de la singularité de chacun. Et à celle de notre intelligence commune.",
+      "confidence": 93.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:59:10.850974",
+      "session_id": "20250713_185910",
+      "position": {
+        "x": 1284,
+        "y": 632,
+        "width": 533,
+        "height": 274
+      },
+      "metrics": {
+        "word_count": 42,
+        "character_count": 301,
+        "preview": "À l'inverse, quand ces technologies numériques portent de vraies pratiques et se concrétisent en ..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 632,
+        "width": 533,
+        "height": 274,
+        "area": 146042,
+        "aspect_ratio": 1.9452554744525548,
+        "center_x": 1550,
+        "center_y": 769
+      }
+    },
+    {
+      "id": "004cd03b-f6bb-420c-9288-04d6405fb41b",
+      "unique_id": "20250713_185914_page010_highlight01",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 10,
+      "highlight_number": 1,
+      "text": "Le travail possède lui aussi depuis longtemps cette double capacité à nous mécaniser, à nous transmuter en simples rouages, en vis et en bou- lons sans âme, ou, au contraire, à nous enrichir et à entretenir les dimensions les plus créatives et empathiques de notre être.",
+      "confidence": 94.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:59:14.832191",
+      "session_id": "20250713_185914",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 522,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 46,
+        "character_count": 270,
+        "preview": "Le travail possède lui aussi depuis longtemps cette double capacité à nous mécaniser, à nous tran..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 522,
+        "height": 236,
+        "area": 123192,
+        "aspect_ratio": 2.211864406779661,
+        "center_x": 1545,
+        "center_y": 256
+      }
+    },
+    {
+      "id": "381b3948-5550-42d6-9a69-38ebf360d5e3",
+      "unique_id": "20250713_185914_page010_highlight02",
+      "book_id": "28735a6a-2536-44f5-ab4c-f851001e487a",
+      "page_number": 10,
+      "highlight_number": 2,
+      "text": "Or, l'emploi - qui n’est pas le travail, mais plutôt sa désintégration - repré- sente très précisément, selon Bernard Stiegler, la facette aveugle et mécanique de nos activités rémunérées, qui se conjugue si aisément avec des esprits ». Pourquoi, dès lors, s’accrocher à la survie de l'emploi Pourquoine pas accepter sa disparition progressive, pour que renaisse le travail, le travail véritable, qui serait tout l'inverse de l'exploitation du travailleur, qui revient à le dominer et le déposséder de ses facul- tés et de son intelligence, un travail à faire aussi bien avec les êtres humains qu'avec les machines",
+      "confidence": 92.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:59:14.832496",
+      "session_id": "20250713_185914",
+      "position": {
+        "x": 1284,
+        "y": 404,
+        "width": 540,
+        "height": 502
+      },
+      "metrics": {
+        "word_count": 98,
+        "character_count": 614,
+        "preview": "Or, l'emploi - qui n’est pas le travail, mais plutôt sa désintégration - repré- sente très précis..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 404,
+        "width": 540,
+        "height": 502,
+        "area": 271080,
+        "aspect_ratio": 1.0756972111553784,
+        "center_x": 1554,
+        "center_y": 655
+      }
     }
   ],
   "pages": {
-    "3": {
-      "page_number": 3,
+    "1": {
+      "page_number": 1,
       "highlight_count": 2,
       "highlights": [
         {
@@ -419,8 +551,8 @@
         }
       ]
     },
-    "6": {
-      "page_number": 6,
+    "4": {
+      "page_number": 4,
       "highlight_count": 3,
       "highlights": [
         {
@@ -449,8 +581,8 @@
         }
       ]
     },
-    "7": {
-      "page_number": 7,
+    "5": {
+      "page_number": 5,
       "highlight_count": 1,
       "highlights": [
         {
@@ -463,8 +595,8 @@
         }
       ]
     },
-    "9": {
-      "page_number": 9,
+    "7": {
+      "page_number": 7,
       "highlight_count": 2,
       "highlights": [
         {
@@ -485,8 +617,8 @@
         }
       ]
     },
-    "10": {
-      "page_number": 10,
+    "8": {
+      "page_number": 8,
       "highlight_count": 3,
       "highlights": [
         {
@@ -512,6 +644,50 @@
           "word_count": 7,
           "character_count": 33,
           "preview": "Elle part d’un constat : les nou-"
+        }
+      ]
+    },
+    "9": {
+      "page_number": 9,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "velles technologies augmentent nos possibles en tous sens, et elles peuvent donc aussi réduire nos possibles ; selon les dispositions de notre esprit et la façon dont nous décidons de les façonner et de les utiliser, elles catalysent le meilleur comme le pire de nous-mémes et de notre société.",
+          "confidence": 94.73469387755102,
+          "word_count": 49,
+          "character_count": 294,
+          "preview": "velles technologies augmentent nos possibles en to..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "À l'inverse, quand ces technologies numériques portent de vraies pratiques et se concrétisent en échanges entre amateurs impliqués collectivement plutôt qu'entre consommateurs béats et égoistes, elles contribuent à la construction de la singularité de chacun. Et à celle de notre intelligence commune.",
+          "confidence": 93.78571428571429,
+          "word_count": 42,
+          "character_count": 301,
+          "preview": "À l'inverse, quand ces technologies numériques por..."
+        }
+      ]
+    },
+    "10": {
+      "page_number": 10,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "Le travail possède lui aussi depuis longtemps cette double capacité à nous mécaniser, à nous transmuter en simples rouages, en vis et en bou- lons sans âme, ou, au contraire, à nous enrichir et à entretenir les dimensions les plus créatives et empathiques de notre être.",
+          "confidence": 93.95652173913044,
+          "word_count": 46,
+          "character_count": 270,
+          "preview": "Le travail possède lui aussi depuis longtemps cett..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Or, l'emploi - qui n’est pas le travail, mais plutôt sa désintégration - repré- sente très précisément, selon Bernard Stiegler, la facette aveugle et mécanique de nos activités rémunérées, qui se conjugue si aisément avec des esprits ». Pourquoi, dès lors, s’accrocher à la survie de l'emploi Pourquoine pas accepter sa disparition progressive, pour que renaisse le travail, le travail véritable, qui serait tout l'inverse de l'exploitation du travailleur, qui revient à le dominer et le déposséder de ses facul- tés et de son intelligence, un travail à faire aussi bien avec les êtres humains qu'avec les machines",
+          "confidence": 92.76530612244898,
+          "word_count": 98,
+          "character_count": 614,
+          "preview": "Or, l'emploi - qui n’est pas le travail, mais plut..."
         }
       ]
     }

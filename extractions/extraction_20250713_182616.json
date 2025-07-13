@@ -1,48 +1,48 @@
 {
   "metadata": {
-    "task_id": "7ccbabb8-d591-4702-bec0-260bd166f260",
-    "extraction_date": "2025-07-11T19:32:35.175598",
-    "session_id": "20250711_193223",
+    "task_id": "5c6d27fc-0037-4b5d-aec5-cdaf990790c9",
+    "extraction_date": "2025-07-13T18:26:16.969468",
+    "session_id": "20250713_182600",
     "pages_scanned": 10,
-    "pages_with_content": 4,
-    "total_highlights": 8,
+    "pages_with_content": 5,
+    "total_highlights": 11,
     "extraction_method": "individual_highlights",
     "version": "3.0"
   },
   "statistics": {
     "confidence": {
-      "average": 88.7,
+      "average": 89.9,
       "min": 69.0,
       "max": 96.0,
       "distribution": {
-        "high": 6,
+        "high": 9,
         "medium": 1,
         "low": 1
       }
     },
     "text": {
-      "total_words": 233,
-      "average_words_per_highlight": 29.1,
+      "total_words": 315,
+      "average_words_per_highlight": 28.6,
       "min_words": 1,
       "max_words": 103
     },
     "pages": {
-      "total_pages": 4,
-      "highlights_per_page": 2.0
+      "total_pages": 5,
+      "highlights_per_page": 2.2
     }
   },
   "highlights": [
     {
-      "id": "e95f5f86-059f-4335-b88b-cf54f3e8bada",
-      "unique_id": "20250711_193223_page004_highlight04",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 4,
+      "id": "daf99d94-4e5a-4d6f-81c5-61044a1d9a0d",
+      "unique_id": "20250713_182600_page003_highlight04",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 3,
       "highlight_number": 4,
       "text": "| Stiegler",
       "confidence": 79.5,
       "confidence_level": "MEDIUM",
-      "extracted_at": "2025-07-11T19:32:23.522678",
-      "session_id": "20250711_193223",
+      "extracted_at": "2025-07-13T18:26:00.023257",
+      "session_id": "20250713_182600",
       "position": {
         "x": 1371,
         "y": 440,
@@ -66,16 +66,16 @@
       }
     },
     {
-      "id": "35b8957f-0c11-4429-88bf-b4661d859854",
-      "unique_id": "20250711_193223_page004_highlight10",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 4,
+      "id": "7b59583e-a56f-459c-8bc6-5d158c76b828",
+      "unique_id": "20250713_182600_page003_highlight10",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 3,
       "highlight_number": 10,
       "text": "Entretien.",
       "confidence": 69.0,
       "confidence_level": "LOW",
-      "extracted_at": "2025-07-11T19:32:23.522963",
-      "session_id": "20250711_193223",
+      "extracted_at": "2025-07-13T18:26:00.023585",
+      "session_id": "20250713_182600",
       "position": {
         "x": 1286,
         "y": 518,
@@ -99,16 +99,16 @@
       }
     },
     {
-      "id": "27d693d8-b5e4-4318-a890-1f04ad96f38b",
-      "unique_id": "20250711_193228_page007_highlight01",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 7,
+      "id": "595659ad-ec60-45d7-bb7c-3651ea0fb7b7",
+      "unique_id": "20250713_182604_page006_highlight01",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 6,
       "highlight_number": 1,
       "text": "le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:28.224013",
-      "session_id": "20250711_193228",
+      "extracted_at": "2025-07-13T18:26:04.724800",
+      "session_id": "20250713_182604",
       "position": {
         "x": 1284,
         "y": 176,
@@ -132,16 +132,16 @@
       }
     },
     {
-      "id": "468c731b-eb7e-4d7b-a09e-73d8aac79707",
-      "unique_id": "20250711_193228_page007_highlight02",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 7,
+      "id": "96315da8-6af7-44da-b163-a5e182f8bd0e",
+      "unique_id": "20250713_182604_page006_highlight02",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 6,
       "highlight_number": 2,
       "text": "du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.",
       "confidence": 92.9,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:28.224315",
-      "session_id": "20250711_193228",
+      "extracted_at": "2025-07-13T18:26:04.725290",
+      "session_id": "20250713_182604",
       "position": {
         "x": 1284,
         "y": 556,
@@ -165,16 +165,16 @@
       }
     },
     {
-      "id": "a8c59afc-26f9-4033-8caf-4760e0ff3181",
-      "unique_id": "20250711_193228_page007_highlight03",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 7,
+      "id": "a5bf4a5b-7980-4b47-9f1d-171245f9e4e9",
+      "unique_id": "20250713_182604_page006_highlight03",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 6,
       "highlight_number": 3,
       "text": "interrogé sur TF1",
       "confidence": 96.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:28.224595",
-      "session_id": "20250711_193228",
+      "extracted_at": "2025-07-13T18:26:04.725738",
+      "session_id": "20250713_182604",
       "position": {
         "x": 1590,
         "y": 907,
@@ -198,16 +198,16 @@
       }
     },
     {
-      "id": "8dfd58fe-f2e4-46f7-8e11-65830cb3f6b9",
-      "unique_id": "20250711_193231_page008_highlight01",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 8,
+      "id": "0c2f9762-32c8-4e08-8a5f-89fc785521ea",
+      "unique_id": "20250713_182607_page007_highlight01",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 7,
       "highlight_number": 1,
       "text": "par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.",
       "confidence": 94.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:31.357398",
-      "session_id": "20250711_193231",
+      "extracted_at": "2025-07-13T18:26:07.916903",
+      "session_id": "20250713_182607",
       "position": {
         "x": 1284,
         "y": 138,
@@ -231,16 +231,16 @@
       }
     },
     {
-      "id": "9fc2b084-602d-4dba-b327-996312a24a83",
-      "unique_id": "20250711_193235_page010_highlight01",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 10,
+      "id": "41efe54c-2fa6-456f-b831-fa04e8718aef",
+      "unique_id": "20250713_182611_page009_highlight01",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 9,
       "highlight_number": 1,
       "text": "l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,",
       "confidence": 91.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:35.174531",
-      "session_id": "20250711_193235",
+      "extracted_at": "2025-07-13T18:26:11.754717",
+      "session_id": "20250713_182611",
       "position": {
         "x": 1284,
         "y": 331,
@@ -264,16 +264,16 @@
       }
     },
     {
-      "id": "08a02be3-5dcb-40ac-b5dd-a6c2e4dd196d",
-      "unique_id": "20250711_193235_page010_highlight02",
-      "book_id": "ca26eb26-78fe-41ac-b55a-bad2de4076f0",
-      "page_number": 10,
+      "id": "5f7516b1-c868-45e3-b568-6feb6ef44576",
+      "unique_id": "20250713_182611_page009_highlight02",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 9,
       "highlight_number": 2,
       "text": "° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.",
       "confidence": 92.4,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-07-11T19:32:35.174844",
-      "session_id": "20250711_193235",
+      "extracted_at": "2025-07-13T18:26:11.755019",
+      "session_id": "20250713_182611",
       "position": {
         "x": 1284,
         "y": 711,
@@ -295,11 +295,110 @@
         "center_x": 1554,
         "center_y": 829
       }
+    },
+    {
+      "id": "ceb49bc1-fc83-4731-8bf1-5b69793abe61",
+      "unique_id": "20250713_182616_page010_highlight01",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 10,
+      "highlight_number": 1,
+      "text": "La Société auto-",
+      "confidence": 93.3,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:26:16.967514",
+      "session_id": "20250713_182616",
+      "position": {
+        "x": 1598,
+        "y": 176,
+        "width": 176,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 3,
+        "character_count": 16,
+        "preview": "La Société auto-"
+      },
+      "position_info": {
+        "x": 1598,
+        "y": 176,
+        "width": 176,
+        "height": 46,
+        "area": 8096,
+        "aspect_ratio": 3.8260869565217392,
+        "center_x": 1686,
+        "center_y": 199
+      }
+    },
+    {
+      "id": "d8f75767-44ca-4c5b-ae73-e5acea7f0282",
+      "unique_id": "20250713_182616_page010_highlight03",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 10,
+      "highlight_number": 3,
+      "text": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?",
+      "confidence": 91.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:26:16.967809",
+      "session_id": "20250713_182616",
+      "position": {
+        "x": 1284,
+        "y": 451,
+        "width": 539,
+        "height": 350
+      },
+      "metrics": {
+        "word_count": 72,
+        "character_count": 439,
+        "preview": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va dé..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 451,
+        "width": 539,
+        "height": 350,
+        "area": 188650,
+        "aspect_ratio": 1.54,
+        "center_x": 1553,
+        "center_y": 626
+      }
+    },
+    {
+      "id": "4f6cfc8b-1fe3-4449-ac88-11265f0040b0",
+      "unique_id": "20250713_182616_page010_highlight04",
+      "book_id": "5601c9cc-2520-49bb-b390-a14175a0833a",
+      "page_number": 10,
+      "highlight_number": 4,
+      "text": "Elle part d’un constat : les nou-",
+      "confidence": 93.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-07-13T18:26:16.968102",
+      "session_id": "20250713_182616",
+      "position": {
+        "x": 1483,
+        "y": 916,
+        "width": 338,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 7,
+        "character_count": 33,
+        "preview": "Elle part d’un constat : les nou-"
+      },
+      "position_info": {
+        "x": 1483,
+        "y": 916,
+        "width": 338,
+        "height": 46,
+        "area": 15548,
+        "aspect_ratio": 7.3478260869565215,
+        "center_x": 1652,
+        "center_y": 939
+      }
     }
   ],
   "pages": {
-    "4": {
-      "page_number": 4,
+    "3": {
+      "page_number": 3,
       "highlight_count": 2,
       "highlights": [
         {
@@ -320,8 +419,8 @@
         }
       ]
     },
-    "7": {
-      "page_number": 7,
+    "6": {
+      "page_number": 6,
       "highlight_count": 3,
       "highlights": [
         {
@@ -350,8 +449,8 @@
         }
       ]
     },
-    "8": {
-      "page_number": 8,
+    "7": {
+      "page_number": 7,
       "highlight_count": 1,
       "highlights": [
         {
@@ -364,8 +463,8 @@
         }
       ]
     },
-    "10": {
-      "page_number": 10,
+    "9": {
+      "page_number": 9,
       "highlight_count": 2,
       "highlights": [
         {
@@ -383,6 +482,36 @@
           "word_count": 39,
           "character_count": 230,
           "preview": "° Loin d’être des technophobes, nous sommes chacun..."
+        }
+      ]
+    },
+    "10": {
+      "page_number": 10,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "La Société auto-",
+          "confidence": 93.33333333333333,
+          "word_count": 3,
+          "character_count": 16,
+          "preview": "La Société auto-"
+        },
+        {
+          "highlight_number": 3,
+          "text": "Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?",
+          "confidence": 91.80555555555556,
+          "word_count": 72,
+          "character_count": 439,
+          "preview": "Pour Bernard Stiegler, au cours des vingt pro- cha..."
+        },
+        {
+          "highlight_number": 4,
+          "text": "Elle part d’un constat : les nou-",
+          "confidence": 93.85714285714286,
+          "word_count": 7,
+          "character_count": 33,
+          "preview": "Elle part d’un constat : les nou-"
         }
       ]
     }
