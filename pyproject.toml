@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "alambik"
+name = "allambik"
 version = "3.0.0"
 description = "Kindle highlight extraction tool with modern architecture"
 authors = ["davidarnaud001@gmail.com"]

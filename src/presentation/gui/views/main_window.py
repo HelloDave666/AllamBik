@@ -482,7 +482,7 @@ class IntegratedEditPanel(ctk.CTkFrame):
 
 class MainWindow(ctk.CTk):
     """
-    Fenêtre principale de l'application Alambik v3 - Version corrigée.
+    Fenêtre principale de l'application AllamBik v3 - Version corrigée.
     """
     
     def __init__(self, viewmodel: MainViewModel):
@@ -507,7 +507,7 @@ class MainWindow(ctk.CTk):
     
     def _setup_window(self):
         """Configure la fenêtre principale."""
-        self.title("Alambik v3.0 - Extracteur de Highlights Kindle")
+        self.title("AllamBik v3.0 - Extracteur de Highlights Kindle")
         self.geometry("1400x900")
         self.minsize(1200, 700)
         
@@ -563,7 +563,7 @@ class MainWindow(ctk.CTk):
         
         title_label = ctk.CTkLabel(
             header_frame,
-            text="ALAMBIK v3.0",
+            text="ALLAMBIK v3.0",
             font=ctk.CTkFont(size=20, weight="bold"),
             text_color=self.colors['text_primary']
         )
@@ -1086,7 +1086,7 @@ class MainWindow(ctk.CTk):
             try:
                 doc = Document()
                 
-                title = doc.add_heading('Highlights Kindle - Extraits Alambik', 0)
+                title = doc.add_heading('Highlights Kindle - Extraits AllamBik', 0)
                 title.alignment = 1
                 
                 info_para = doc.add_paragraph()
@@ -1095,7 +1095,7 @@ class MainWindow(ctk.CTk):
                 info_para.add_run("Nombre total d'extraits: ").bold = True
                 info_para.add_run(f"{len(highlights_data)} highlights\n")
                 info_para.add_run("Source: ").bold = True
-                info_para.add_run("Application Alambik v3.0\n")
+                info_para.add_run("Application AllamBik v3.0\n")
                 info_para.add_run("Compatible: ").bold = True
                 info_para.add_run("Zotero, Obsidian, Notion")
                 
@@ -1144,7 +1144,7 @@ class MainWindow(ctk.CTk):
                 
                 doc.add_page_break()
                 footer = doc.add_paragraph()
-                footer.add_run("Document généré par Alambik v3.0\n").bold = True
+                footer.add_run("Document généré par AllamBik v3.0\n").bold = True
                 footer.add_run("Compatible avec Zotero, Obsidian, Notion\n")
                 footer.add_run(f"Export effectué le {datetime.now().strftime('%d/%m/%Y à %H:%M')}")
                 

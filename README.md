@@ -1,4 +1,4 @@
-# Alambik v3.0
+# AllamBik v3.0
 
 **Extracteur de surlignements avec interface moderne**
 
@@ -57,8 +57,8 @@ src/
 ### Setup
 ```bash
 # Cloner le repository
-git clone https://github.com/HelloDave666/Alambik.git
-cd Alambik
+git clone https://github.com/HelloDave666/AllamBik.git
+cd AllamBik
 
 # Installer les dépendances
 poetry install
@@ -128,4 +128,4 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ---
 
-**Alambik v3.0** - Extraction de highlights professionnelle
+**AllamBik v3.0** - Extraction de highlights professionnelle

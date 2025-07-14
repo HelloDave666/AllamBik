@@ -1,5 +1,5 @@
 """
-Point d'entrée principal de l'application Alambik v3
+Point d'entrée principal de l'application AllamBik v3
 """
 import sys
 from pathlib import Path

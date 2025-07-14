@@ -16,9 +16,9 @@ from src.infrastructure.events.in_memory_event_bus import InMemoryEventBus
 from src.infrastructure.persistence.json_repository import JsonHighlightRepository
 
 
-class AlambikApp:
+class AllamBikApp:
     """
-    Application Alambik v3 avec détection de surlignements Kindle.
+    Application AllamBik v3 avec détection de surlignements Kindle.
     Coordonne l'initialisation et le lancement de l'interface.
     """
     
@@ -39,7 +39,7 @@ class AlambikApp:
     
     def _setup_infrastructure(self):
         """Configure l'infrastructure (adaptateurs)."""
-        self.logger.info("=== CONFIGURATION DE L'INFRASTRUCTURE ALAMBIK v3 ===")
+        self.logger.info("=== CONFIGURATION DE L'INFRASTRUCTURE ALLAMBIK v3 ===")
         
         # OCR Engine avec DÉTECTION DE SURLIGNEMENTS ACTIVÉE
         tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -114,7 +114,7 @@ class AlambikApp:
     def run(self):
         """Lance l'application."""
         try:
-            self.logger.info("=== DÉMARRAGE D'ALAMBIK v3.0 AVEC DÉTECTION DE SURLIGNEMENTS ===")
+            self.logger.info("=== DÉMARRAGE D'ALLAMBIK v3.0 AVEC DÉTECTION DE SURLIGNEMENTS ===")
             self.logger.info("")
             self.logger.info("NOUVEAU : L'application extrait maintenant UNIQUEMENT les surlignements jaunes")
             self.logger.info("- Fini l'extraction de tout le texte de la page")
@@ -168,7 +168,7 @@ class AlambikApp:
 
 def main():
     """Point d'entrée principal."""
-    app = AlambikApp()
+    app = AllamBikApp()
     app.run()
 
 
