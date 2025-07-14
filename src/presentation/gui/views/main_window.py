@@ -17,7 +17,7 @@ try:
     WORD_AVAILABLE = True
 except ImportError:
     WORD_AVAILABLE = False
-    print("⚠️ python-docx non disponible. Export Word désactivé.")
+    print("ATTENTION: python-docx non disponible. Export Word désactivé.")
 
 from src.presentation.gui.viewmodels.main_viewmodel import MainViewModel, ViewState, HighlightViewModel
 from src.presentation.gui.components.progress_circle import ProgressCircle
@@ -28,15 +28,66 @@ from src.presentation.gui.components.zone_picker import ZonePickerButton
 class IntegratedEditPanel(ctk.CTkFrame):
     """Panneau d'édition intégré en bas de l'interface."""
     
-    def __init__(self, parent, on_save=None, on_cancel=None):
+    def __init__(self, parent, on_save=None, on_cancel=None, on_delete=None):
         super().__init__(parent)
         self.configure(fg_color="#2a2a2a", corner_radius=10)
         self.on_save = on_save
         self.on_cancel = on_cancel
+        self.on_delete = on_delete
         self.current_highlight = None
         
         self._create_content()
-        self.pack_forget()  # Caché par défaut
+        # Le placement est géré par le parent avec grid()
+        
+        # Variables pour l'historique d'annulation
+        self._text_history = []
+        self._name_history = []
+        self._max_history = 50
+    
+    def _on_enter_pressed(self, event):
+        """Sauvegarde automatique quand on appuie sur Entrée."""
+        self._save_changes()
+        return "break"  # Empêche le comportement par défaut
+    
+    def _on_undo_pressed(self, event):
+        """Gère l'annulation (Ctrl+Z)."""
+        widget = event.widget
+        try:
+            if hasattr(widget, 'edit_undo'):
+                widget.edit_undo()
+            elif hasattr(widget, 'tk') and hasattr(widget.tk, 'call'):
+                # Pour les textbox CTk
+                widget.tk.call(widget._w, 'edit', 'undo')
+        except:
+            # Si l'undo natif ne fonctionne pas, utiliser notre historique
+            self._manual_undo(widget)
+        return "break"
+    
+    def _manual_undo(self, widget):
+        """Annulation manuelle avec notre historique."""
+        if isinstance(widget, ctk.CTkEntry) and self._name_history:
+            previous_value = self._name_history.pop()
+            widget.delete(0, 'end')
+            widget.insert(0, previous_value)
+        elif hasattr(widget, 'get') and hasattr(widget, 'delete') and self._text_history:
+            previous_value = self._text_history.pop()
+            widget.delete("1.0", "end")
+            widget.insert("1.0", previous_value)
+    
+    def _save_text_to_history(self):
+        """Sauvegarde l'état actuel dans l'historique."""
+        if self.current_highlight:
+            # Sauvegarder l'état du nom
+            current_name = self.name_entry.get()
+            if len(self._name_history) >= self._max_history:
+                self._name_history.pop(0)
+            self._name_history.append(current_name)
+            
+            # Sauvegarder l'état du texte
+            current_text = self.text_editor.get("1.0", "end-1c")
+            if len(self._text_history) >= self._max_history:
+                self._text_history.pop(0)
+            self._text_history.append(current_text)
     
     def _create_content(self):
         """Crée le contenu du panneau d'édition."""
@@ -51,17 +102,6 @@ class IntegratedEditPanel(ctk.CTkFrame):
             text_color="#ffffff"
         )
         title_label.pack(side="left")
-        
-        close_btn = ctk.CTkButton(
-            header_frame,
-            text="✕",
-            width=30,
-            height=30,
-            fg_color="transparent",
-            hover_color="#ff4444",
-            command=self._cancel_edit
-        )
-        close_btn.pack(side="right")
         
         # Corps principal avec 2 colonnes
         main_frame = ctk.CTkFrame(self, fg_color="transparent")
@@ -107,13 +147,17 @@ class IntegratedEditPanel(ctk.CTkFrame):
         )
         self.name_entry.pack(fill="x", padx=15, pady=(0, 15))
         
+        # Bindings pour sauvegarde automatique et undo
+        self.name_entry.bind("<Return>", self._on_enter_pressed)
+        self.name_entry.bind("<Control-z>", self._on_undo_pressed)
+        
         # Boutons d'action
         buttons_frame = ctk.CTkFrame(left_column, fg_color="transparent")
         buttons_frame.pack(fill="x", padx=15, pady=(0, 15))
         
         copy_btn = ctk.CTkButton(
             buttons_frame,
-            text="📋 Copier",
+            text="COPIER",
             command=self._copy_text,
             fg_color="#0078d4",
             hover_color="#106ebe",
@@ -121,25 +165,15 @@ class IntegratedEditPanel(ctk.CTkFrame):
         )
         copy_btn.pack(fill="x", pady=(0, 5))
         
-        save_btn = ctk.CTkButton(
+        clear_btn = ctk.CTkButton(
             buttons_frame,
-            text="💾 Sauvegarder",
-            command=self._save_changes,
-            fg_color="#00aa44",
-            hover_color="#008833",
+            text="SUPPRIMER FICHE",
+            command=self._delete_highlight,
+            fg_color="#cc4444",
+            hover_color="#dd5555",
             height=35
         )
-        save_btn.pack(fill="x", pady=(0, 5))
-        
-        cancel_btn = ctk.CTkButton(
-            buttons_frame,
-            text="❌ Annuler",
-            command=self._cancel_edit,
-            fg_color="#666666",
-            hover_color="#777777",
-            height=35
-        )
-        cancel_btn.pack(fill="x")
+        clear_btn.pack(fill="x")
         
         # Colonne droite - Texte
         right_column = ctk.CTkFrame(main_frame, fg_color="#3a3a3a")
@@ -159,9 +193,28 @@ class IntegratedEditPanel(ctk.CTkFrame):
             wrap="word"
         )
         self.text_editor.pack(fill="both", expand=True, padx=15, pady=(0, 15))
+        
+        # Bindings pour sauvegarde automatique et undo
+        self.text_editor.bind("<Return>", self._on_enter_pressed)
+        self.text_editor.bind("<Control-z>", self._on_undo_pressed)
+        
+        # Afficher un message par défaut
+        self._show_default_message()
+    
+    def _show_default_message(self):
+        """Affiche un message par défaut quand aucun highlight n'est sélectionné."""
+        self.page_label.configure(text="Page: -")
+        self.confidence_label.configure(text="Confiance: -")
+        self.name_entry.delete(0, 'end')
+        self.text_editor.delete("1.0", "end")
+        self.text_editor.insert("1.0", "Sélectionnez un highlight ci-dessus pour l'afficher ici...")
+        self.current_highlight = None
     
     def show_highlight(self, highlight_data):
         """Affiche un highlight pour édition."""
+        # Sauvegarder l'état actuel avant de changer
+        self._save_text_to_history()
+        
         self.current_highlight = highlight_data.copy()
         
         # Remplir les champs
@@ -182,13 +235,9 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.text_editor.delete("1.0", "end")
         self.text_editor.insert("1.0", text)
         
-        # Afficher le panneau
-        self.pack(fill="x", pady=(10, 0))
-    
-    def hide_panel(self):
-        """Cache le panneau d'édition."""
-        self.pack_forget()
-        self.current_highlight = None
+        # Réinitialiser l'historique pour le nouveau highlight
+        self._text_history.clear()
+        self._name_history.clear()
     
     def _copy_text(self):
         """Copie le texte vers le clipboard."""
@@ -199,7 +248,7 @@ class IntegratedEditPanel(ctk.CTkFrame):
         # Feedback
         original_text = self.text_editor.get("1.0", "end-1c")
         self.text_editor.delete("1.0", "end")
-        self.text_editor.insert("1.0", "✅ Copié dans le presse-papiers!")
+        self.text_editor.insert("1.0", "COPIE DANS LE PRESSE-PAPIERS REUSSIE!")
         self.after(1000, lambda: (
             self.text_editor.delete("1.0", "end"),
             self.text_editor.insert("1.0", original_text)
@@ -228,14 +277,28 @@ class IntegratedEditPanel(ctk.CTkFrame):
         # Callback de sauvegarde
         if self.on_save:
             self.on_save(self.current_highlight)
-        
-        self.hide_panel()
     
-    def _cancel_edit(self):
-        """Annule l'édition."""
-        if self.on_cancel:
-            self.on_cancel()
-        self.hide_panel()
+    def _delete_highlight(self):
+        """Supprime la fiche highlight actuellement sélectionnée."""
+        if not self.current_highlight:
+            messagebox.showwarning("Aucune sélection", "Aucun highlight sélectionné à supprimer.")
+            return
+        
+        # Obtenir le nom de la fiche pour la confirmation
+        page = self.current_highlight.get('page', '?')
+        name = self.current_highlight.get('custom_name', f"Page {page}")
+        
+        # Demander confirmation
+        if messagebox.askyesno(
+            "Supprimer le highlight",
+            f"Êtes-vous sûr de vouloir supprimer définitivement :\n\n'{name}'\n\nCette action est irréversible."
+        ):
+            # Notifier le parent pour supprimer la fiche
+            if self.on_delete:
+                self.on_delete(self.current_highlight)
+            
+            # Revenir à l'état par défaut
+            self._show_default_message()
 
 
 class MainWindow(ctk.CTk):
@@ -253,6 +316,7 @@ class MainWindow(ctk.CTk):
         self.view_mode = "grid"  # "grid" (2 col) ou "list" (1 col)
         self.current_search = ""
         self.extraction_file_path = None  # Chemin vers le fichier d'extraction
+        self.selected_card = None  # Fiche actuellement sélectionnée
         
         # Pour gérer les mises à jour
         self._update_queue = []
@@ -364,7 +428,7 @@ class MainWindow(ctk.CTk):
         )
         self.start_button.pack(fill="x", padx=20, pady=(5, 5))
         
-        # Bouton Arrêter (pleine largeur, plus de Valider)
+        # Bouton Arrêter
         self.stop_button = ctk.CTkButton(
             controls_section,
             text="ARRÊTER EXTRACTION",
@@ -375,7 +439,19 @@ class MainWindow(ctk.CTk):
             state="disabled",
             command=self._on_stop_clicked
         )
-        self.stop_button.pack(fill="x", padx=20, pady=(5, 15))
+        self.stop_button.pack(fill="x", padx=20, pady=(5, 5))
+        
+        # BOUTON EXPORT WORD - DIRECTEMENT SOUS ARRÊTER
+        self.export_word_button = ctk.CTkButton(
+            controls_section,
+            text="EXPORTER WORD",
+            font=ctk.CTkFont(size=12, weight="bold"),
+            height=35,
+            fg_color="#2d5a2d",  # Vert foncé pour le distinguer
+            hover_color="#3d6a3d",
+            command=self._on_export_word_clicked
+        )
+        self.export_word_button.pack(fill="x", padx=20, pady=(5, 15))
         
         # Section Statistiques
         stats_section = self._create_section(left_panel, "STATISTIQUES")
@@ -414,58 +490,20 @@ class MainWindow(ctk.CTk):
             value_widget.pack(side="right")
             
             self.stats_labels[key] = value_widget
-        
-        # Section Actions Rapides
-        actions_section = self._create_section(left_panel, "ACTIONS RAPIDES")
-        
-        # Bouton Exporter Word (TOUJOURS visible)
-        self.export_word_button = ctk.CTkButton(
-            actions_section,
-            text="📄 EXPORTER WORD",
-            font=ctk.CTkFont(size=12, weight="bold"),
-            height=35,
-            fg_color="#4a4a4a",
-            hover_color="#5a5a5a",
-            command=self._on_export_word_clicked
-        )
-        self.export_word_button.pack(fill="x", padx=20, pady=(10, 5))
-        
-        # Bouton Exporter TXT
-        self.export_txt_button = ctk.CTkButton(
-            actions_section,
-            text="📝 EXPORTER TXT",
-            font=ctk.CTkFont(size=12, weight="bold"),
-            height=35,
-            fg_color="#4a4a4a",
-            hover_color="#5a5a5a",
-            command=self._on_export_txt_clicked
-        )
-        self.export_txt_button.pack(fill="x", padx=20, pady=(5, 5))
-        
-        # Bouton Effacer Tout
-        self.clear_button = ctk.CTkButton(
-            actions_section,
-            text="🗑️ EFFACER TOUT",
-            font=ctk.CTkFont(size=12, weight="bold"),
-            height=35,
-            fg_color="#663333",
-            hover_color="#774444",
-            command=self._on_clear_all_clicked
-        )
-        self.clear_button.pack(fill="x", padx=20, pady=(5, 15))
     
     def _create_right_panel(self, parent):
         """Crée le panneau droit avec highlights et panneau d'édition."""
         right_panel = ctk.CTkFrame(parent, fg_color="transparent")
         right_panel.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
         
-        # Configuration - highlights en haut, édition en bas si nécessaire
-        right_panel.grid_rowconfigure(0, weight=1)
+        # Configuration - highlights en haut, édition en bas
+        right_panel.grid_rowconfigure(0, weight=2)  # Highlights prennent plus d'espace
+        right_panel.grid_rowconfigure(1, weight=1)  # Panneau d'édition en bas
         right_panel.grid_columnconfigure(0, weight=1)
         
-        # Container pour highlights et édition
+        # Container pour highlights
         highlights_container = ctk.CTkFrame(right_panel, fg_color="transparent")
-        highlights_container.grid(row=0, column=0, sticky="nsew")
+        highlights_container.grid(row=0, column=0, sticky="nsew", pady=(0, 5))
         
         # Section Highlights
         highlights_section = self._create_section_frame(highlights_container, "HIGHLIGHTS EXTRAITS")
@@ -491,10 +529,10 @@ class MainWindow(ctk.CTk):
         # Bouton mode liste (1 colonne large)
         self.list_view_button = ctk.CTkButton(
             controls_frame,
-            text="☰",  # Icône sandwich/hamburger
-            width=35,
+            text="LISTE",
+            width=60,
             height=35,
-            font=ctk.CTkFont(size=16),
+            font=ctk.CTkFont(size=12),
             fg_color="#4a4a4a" if self.view_mode != "list" else self.colors['accent'],
             hover_color="#5a5a5a",
             command=self._set_list_view
@@ -504,10 +542,10 @@ class MainWindow(ctk.CTk):
         # Bouton mode grille (2 colonnes)
         self.grid_view_button = ctk.CTkButton(
             controls_frame,
-            text="⊞",  # Icône grille
-            width=35,
+            text="GRILLE",
+            width=60,
             height=35,
-            font=ctk.CTkFont(size=16),
+            font=ctk.CTkFont(size=12),
             fg_color="#4a4a4a" if self.view_mode != "grid" else self.colors['accent'],
             hover_color="#5a5a5a",
             command=self._set_grid_view
@@ -520,7 +558,7 @@ class MainWindow(ctk.CTk):
         
         self.search_entry = ctk.CTkEntry(
             search_frame,
-            placeholder_text="🔍 Rechercher dans les highlights...",
+            placeholder_text="Rechercher dans les highlights...",
             font=ctk.CTkFont(size=11),
             height=30
         )
@@ -530,7 +568,7 @@ class MainWindow(ctk.CTk):
         # Bouton effacer recherche
         clear_search_btn = ctk.CTkButton(
             search_frame,
-            text="✕",
+            text="X",
             width=30,
             height=30,
             fg_color="transparent",
@@ -544,16 +582,19 @@ class MainWindow(ctk.CTk):
             highlights_section,
             columns=2,  # Démarre en mode grille
             fg_color="transparent",
-            on_edit_requested=self._on_edit_requested
+            on_edit_requested=self._on_edit_requested,
+            on_highlight_selected=self._on_highlight_selected  # NOUVEAU: sélection simple
         )
         self.highlights_grid.pack(fill="both", expand=True, padx=15, pady=(0, 15))
         
-        # Panneau d'édition intégré (caché par défaut)
+        # Panneau d'édition intégré (TOUJOURS VISIBLE)
         self.edit_panel = IntegratedEditPanel(
-            highlights_container,
+            right_panel,
             on_save=self._on_edit_saved,
-            on_cancel=self._on_edit_cancelled
+            on_cancel=self._on_edit_cancelled,
+            on_delete=self._on_highlight_deleted
         )
+        self.edit_panel.grid(row=1, column=0, sticky="ew", pady=(5, 0))
     
     def _create_section(self, parent, title: str) -> ctk.CTkFrame:
         """Crée une section avec titre."""
@@ -633,9 +674,7 @@ class MainWindow(ctk.CTk):
         self.list_view_button.configure(fg_color=list_color)
     
     def _recreate_grid(self, columns):
-        """Recrée la grille avec le nombre de colonnes spécifié - CORRECTION DEFINITIVE BUG ASCENSEUR."""
-        
-        # NOUVELLE APPROCHE: Modifier la grille existante au lieu de la détruire
+        """Recrée la grille avec le nombre de colonnes spécifié - CORRECTION BUG ASCENSEUR."""
         
         # Sauvegarder les données
         highlights_data = self.highlights_grid.get_highlights_data()
@@ -656,7 +695,7 @@ class MainWindow(ctk.CTk):
             self.highlights_grid.grid_columnconfigure(i, weight=1, uniform="column")
         
         # Supprimer la configuration des colonnes supplémentaires si on réduit
-        if columns < 4:  # Maximum de 4 colonnes possible
+        if columns < 4:
             for i in range(columns, 4):
                 self.highlights_grid.grid_columnconfigure(i, weight=0, uniform="")
         
@@ -680,61 +719,83 @@ class MainWindow(ctk.CTk):
     
     # Gestion de l'édition intégrée
     
+    def _on_highlight_selected(self, highlight_data):
+        """NOUVEAU: Callback quand un highlight est sélectionné (simple clic)."""
+        # Désélectionner la fiche précédente
+        if self.selected_card:
+            self.selected_card.set_selected(False)
+        
+        # Trouver et sélectionner la nouvelle fiche
+        for card in self.highlights_grid.cards:
+            if (card.highlight_data.get('page') == highlight_data.get('page') and
+                card.highlight_data.get('text', '')[:30] == highlight_data.get('text', '')[:30]):
+                card.set_selected(True)
+                self.selected_card = card
+                break
+        
+        # Afficher dans le panneau d'édition
+        self.edit_panel.show_highlight(highlight_data)
+    
     def _on_edit_requested(self, highlight_data):
-        """Callback quand l'édition d'un highlight est demandée."""
+        """Callback quand l'édition d'un highlight est demandée (double-clic)."""
         self.edit_panel.show_highlight(highlight_data)
     
     def _on_edit_saved(self, updated_data):
-        """Callback quand un highlight est sauvegardé après édition - CORRECTION."""
-        # CORRECTION: Debug pour voir quel highlight est sauvegardé
-        print(f"🔧 Sauvegarde highlight: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
+        """Callback quand un highlight est sauvegardé après édition."""
+        print(f"DEBUG: Sauvegarde highlight: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
         
-        # Mettre à jour dans la grille avec gestion d'erreur
         try:
             self.highlights_grid.update_highlight(updated_data)
-            
-            # Sauvegarder dans le fichier d'extraction
             self._save_to_extraction_file()
-            
-            print(f"✅ Highlight sauvegardé: {updated_data.get('custom_name', 'Sans nom')}")
+            print(f"SUCCESS: Highlight sauvegardé: {updated_data.get('custom_name', 'Sans nom')}")
             
         except Exception as e:
-            print(f"❌ Erreur sauvegarde highlight: {e}")
-            # Essayer de forcer la mise à jour
+            print(f"ERREUR: Erreur sauvegarde highlight: {e}")
             self._force_refresh_all_cards()
     
     def _on_edit_cancelled(self):
         """Callback quand l'édition est annulée."""
-        print("Édition annulée")
+        print("INFO: Édition annulée")
+    
+    def _on_highlight_deleted(self, highlight_data):
+        """Callback quand un highlight est supprimé depuis le panneau d'édition."""
+        print(f"DEBUG: Suppression highlight: Page {highlight_data.get('page')}, Nom: {highlight_data.get('custom_name', 'Sans nom')}")
+        
+        try:
+            # Supprimer de la grille
+            self.highlights_grid._on_highlight_deleted(highlight_data)
+            self._update_highlights_count()
+            self._save_to_extraction_file()
+            print(f"SUCCESS: Highlight supprimé: {highlight_data.get('custom_name', 'Sans nom')}")
+            
+        except Exception as e:
+            print(f"ERREUR: Erreur suppression highlight: {e}")
     
     def _force_refresh_all_cards(self):
         """Force le rafraîchissement de toutes les cartes."""
         try:
             for i, (card, data) in enumerate(zip(self.highlights_grid.cards, self.highlights_grid.highlights_data)):
                 card.update_data(data)
-            print("🔄 Toutes les cartes ont été rafraîchies")
+            print("INFO: Toutes les cartes ont été rafraîchies")
         except Exception as e:
-            print(f"❌ Erreur rafraîchissement: {e}")
+            print(f"ERREUR: Erreur rafraîchissement: {e}")
     
     # Gestion des fichiers
     
     def _save_to_extraction_file(self):
         """Sauvegarde les modifications dans le fichier d'extraction."""
         if not self.extraction_file_path or not os.path.exists(self.extraction_file_path):
-            # Trouver ou créer le fichier d'extraction
             self._find_or_create_extraction_file()
         
         if self.extraction_file_path:
             try:
                 highlights_data = self.highlights_grid.get_highlights_data()
                 
-                # Créer le contenu mis à jour
                 content = "=== HIGHLIGHTS KINDLE EXTRAITS ===\n"
                 content += f"Généré le: {datetime.now().strftime('%d/%m/%Y à %H:%M')}\n"
                 content += f"Nombre total: {len(highlights_data)}\n\n"
                 
                 for i, highlight in enumerate(highlights_data, 1):
-                    # Utiliser le nom personnalisé ou le numéro de page
                     title = highlight.get('custom_name', f"Page {highlight.get('page', '?')}")
                     content += f"--- {i}. {title} ---\n"
                     content += f"Page: {highlight.get('page', '?')}\n"
@@ -746,28 +807,24 @@ class MainWindow(ctk.CTk):
                     content += f"\nTexte:\n{highlight.get('text', '')}\n\n"
                     content += "-" * 50 + "\n\n"
                 
-                # Écrire le fichier
                 with open(self.extraction_file_path, 'w', encoding='utf-8') as f:
                     f.write(content)
                 
-                print(f"Fichier d'extraction mis à jour: {self.extraction_file_path}")
+                print(f"INFO: Fichier d'extraction mis à jour: {self.extraction_file_path}")
                 
             except Exception as e:
-                print(f"Erreur lors de la sauvegarde: {e}")
+                print(f"ERREUR: Erreur lors de la sauvegarde: {e}")
     
     def _find_or_create_extraction_file(self):
         """Trouve ou crée le fichier d'extraction."""
-        # Chercher dans le dossier extractions
         extractions_dir = "extractions"
         if os.path.exists(extractions_dir):
-            # Trouver le fichier le plus récent
             txt_files = [f for f in os.listdir(extractions_dir) if f.endswith('.txt')]
             if txt_files:
                 latest_file = max(txt_files, key=lambda f: os.path.getctime(os.path.join(extractions_dir, f)))
                 self.extraction_file_path = os.path.join(extractions_dir, latest_file)
                 return
         
-        # Créer un nouveau fichier
         if not os.path.exists(extractions_dir):
             os.makedirs(extractions_dir)
         
@@ -775,12 +832,14 @@ class MainWindow(ctk.CTk):
         filename = f"highlights_extraits_{timestamp}.txt"
         self.extraction_file_path = os.path.join(extractions_dir, filename)
     
-    # Export Word
+    # Export Word - VERSION CORRIGÉE SANS EMOJIS
     
     def _on_export_word_clicked(self):
-        """Exporte tous les highlights vers un document Word."""
-        # Vérifier la disponibilité de python-docx
+        """Exporte tous les highlights vers un document Word - VERSION PROFESSIONNELLE."""
+        print("DEBUG: Bouton Export Word cliqué - Début de la fonction")
+        
         if not WORD_AVAILABLE:
+            print("ERREUR: python-docx non disponible")
             messagebox.showerror(
                 "Export Word indisponible", 
                 "La bibliothèque python-docx n'est pas installée.\n\n" +
@@ -790,112 +849,110 @@ class MainWindow(ctk.CTk):
             return
         
         highlights_data = self.highlights_grid.get_highlights_data()
+        print(f"DEBUG: Nombre de highlights trouvés: {len(highlights_data)}")
         
         if not highlights_data:
             messagebox.showwarning("Aucun highlight", "Aucun highlight à exporter.")
             return
         
-        # Choisir le fichier de destination
         file_path = filedialog.asksaveasfilename(
-            title="Exporter vers Word",
+            title="Exporter vers Word pour Zotero",
             defaultextension=".docx",
             filetypes=[("Documents Word", "*.docx"), ("Tous les fichiers", "*.*")],
-            initialname=f"highlights_kindle_{datetime.now().strftime('%Y%m%d_%H%M%S')}.docx"
+            initialfile=f"highlights_kindle_{datetime.now().strftime('%Y%m%d_%H%M%S')}.docx"
         )
+        
+        print(f"DEBUG: Fichier sélectionné: {file_path}")
         
         if file_path:
             try:
-                # Créer le document Word
                 doc = Document()
                 
-                # Titre principal
-                title = doc.add_heading('Highlights Kindle Extraits', 0)
-                title.alignment = 1  # Centré
+                title = doc.add_heading('Highlights Kindle - Extraits Alambik', 0)
+                title.alignment = 1
                 
-                # Informations générales
                 info_para = doc.add_paragraph()
-                info_para.add_run(f"Généré le: ").bold = True
+                info_para.add_run("Document généré le: ").bold = True
                 info_para.add_run(f"{datetime.now().strftime('%d/%m/%Y à %H:%M')}\n")
-                info_para.add_run(f"Nombre total: ").bold = True
-                info_para.add_run(f"{len(highlights_data)} highlights")
+                info_para.add_run("Nombre total d'extraits: ").bold = True
+                info_para.add_run(f"{len(highlights_data)} highlights\n")
+                info_para.add_run("Source: ").bold = True
+                info_para.add_run("Application Alambik v3.0\n")
+                info_para.add_run("Compatible: ").bold = True
+                info_para.add_run("Zotero, Obsidian, Notion")
                 
-                # Ligne de séparation
                 doc.add_paragraph("=" * 60)
                 
-                # Ajouter chaque highlight
+                print(f"DEBUG: Traitement de {len(highlights_data)} highlights...")
+                
                 for i, highlight in enumerate(highlights_data, 1):
-                    # Titre du highlight
-                    title = highlight.get('custom_name', f"Page {highlight.get('page', '?')}")
-                    heading = doc.add_heading(f"{i}. {title}", level=2)
+                    print(f"   Processing highlight {i}/{len(highlights_data)}")
                     
-                    # Métadonnées
+                    title_text = highlight.get('custom_name', f"Extrait Page {highlight.get('page', '?')}")
+                    heading = doc.add_heading(f"{i}. {title_text}", level=2)
+                    
                     meta_para = doc.add_paragraph()
                     meta_para.add_run("Page: ").bold = True
-                    meta_para.add_run(f"{highlight.get('page', '?')}    ")
-                    meta_para.add_run("Confiance: ").bold = True
+                    meta_para.add_run(f"{highlight.get('page', '?')}")
+                    
+                    meta_para.add_run("  |  Confiance: ").bold = True
                     meta_para.add_run(f"{highlight.get('confidence', 0):.1f}%")
                     
                     if highlight.get('modified'):
-                        meta_para.add_run("\nModifié le: ").bold = True
-                        meta_para.add_run(highlight.get('modified_date', 'N/A'))
+                        meta_para.add_run("  |  Modifié le: ").bold = True
+                        try:
+                            mod_date = datetime.fromisoformat(highlight.get('modified_date', ''))
+                            meta_para.add_run(mod_date.strftime('%d/%m/%Y à %H:%M'))
+                        except:
+                            meta_para.add_run(highlight.get('modified_date', 'N/A'))
                     
-                    # Texte du highlight
                     text_para = doc.add_paragraph()
-                    text_para.add_run("Texte: ").bold = True
-                    doc.add_paragraph(highlight.get('text', ''))
+                    text_para.add_run("Contenu: ").bold = True
                     
-                    # Séparateur entre highlights
+                    content = highlight.get('text', '').strip()
+                    if content:
+                        text_content = doc.add_paragraph(content)
+                        text_content.style = 'Quote'
+                    else:
+                        doc.add_paragraph("[Aucun texte]")
+                    
+                    if highlight.get('custom_name'):
+                        tag_para = doc.add_paragraph()
+                        tag_para.add_run("Tags: ").bold = True
+                        tag_para.add_run(f"kindle, highlights, {highlight.get('custom_name', '').lower()}")
+                    
                     if i < len(highlights_data):
                         doc.add_paragraph("-" * 40)
                 
-                # Sauvegarder
+                doc.add_page_break()
+                footer = doc.add_paragraph()
+                footer.add_run("Document généré par Alambik v3.0\n").bold = True
+                footer.add_run("Compatible avec Zotero, Obsidian, Notion\n")
+                footer.add_run(f"Export effectué le {datetime.now().strftime('%d/%m/%Y à %H:%M')}")
+                
+                print("DEBUG: Sauvegarde du document...")
                 doc.save(file_path)
-                messagebox.showinfo("Export réussi", f"Document Word créé:\n{file_path}")
+                
+                print("SUCCESS: Export Word réussi!")
+                messagebox.showinfo(
+                    "Export Word réussi", 
+                    f"Document Word créé avec succès!\n\n" +
+                    f"Fichier: {os.path.basename(file_path)}\n" +
+                    f"Emplacement: {os.path.dirname(file_path)}\n\n" +
+                    f"{len(highlights_data)} highlights exportés\n" +
+                    f"Prêt pour import dans Zotero!"
+                )
                 
             except Exception as e:
-                messagebox.showerror("Erreur d'export", f"Erreur lors de l'export Word:\n{str(e)}")
-    
-    def _on_export_txt_clicked(self):
-        """Exporte tous les highlights vers un fichier TXT."""
-        highlights_data = self.highlights_grid.get_highlights_data()
-        
-        if not highlights_data:
-            messagebox.showwarning("Aucun highlight", "Aucun highlight à exporter.")
-            return
-        
-        # Choisir le fichier de destination
-        file_path = filedialog.asksaveasfilename(
-            title="Exporter vers TXT",
-            defaultextension=".txt",
-            filetypes=[("Fichiers texte", "*.txt"), ("Tous les fichiers", "*.*")],
-            initialname=f"highlights_kindle_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-        )
-        
-        if file_path:
-            try:
-                content = "=== HIGHLIGHTS KINDLE EXTRAITS ===\n"
-                content += f"Généré le: {datetime.now().strftime('%d/%m/%Y à %H:%M')}\n"
-                content += f"Nombre total: {len(highlights_data)}\n\n"
-                
-                for i, highlight in enumerate(highlights_data, 1):
-                    title = highlight.get('custom_name', f"Page {highlight.get('page', '?')}")
-                    content += f"--- {i}. {title} ---\n"
-                    content += f"Page: {highlight.get('page', '?')}\n"
-                    content += f"Confiance: {highlight.get('confidence', 0):.1f}%\n"
-                    
-                    if highlight.get('modified'):
-                        content += f"Modifié le: {highlight.get('modified_date', 'N/A')}\n"
-                    
-                    content += f"\nTexte:\n{highlight.get('text', '')}\n\n"
-                    content += "-" * 50 + "\n\n"
-                
-                with open(file_path, 'w', encoding='utf-8') as f:
-                    f.write(content)
-                
-                messagebox.showinfo("Export réussi", f"Fichier TXT créé:\n{file_path}")
-                
-            except Exception as e:
-                messagebox.showerror("Erreur d'export", f"Erreur lors de l'export:\n{str(e)}")
+                print(f"ERREUR: Erreur lors de l'export Word: {e}")
+                messagebox.showerror(
+                    "Erreur d'export Word", 
+                    f"Erreur lors de la création du document Word:\n\n{str(e)}\n\n" +
+                    "Vérifiez que:\n" +
+                    "- python-docx est installé (poetry add python-docx)\n" +
+                    "- Le fichier de destination est accessible\n" +
+                    "- Vous avez les droits d'écriture"
+                )
     
     # Autres handlers
     
@@ -903,26 +960,13 @@ class MainWindow(ctk.CTk):
         """Gère les changements de recherche."""
         search_text = self.search_entry.get().lower()
         self.current_search = search_text
-        # TODO: Implémenter le filtrage réel
         self._update_highlights_count()
     
     def _clear_search(self):
         """Efface la recherche."""
         self.search_entry.delete(0, "end")
         self.current_search = ""
-        # TODO: Mettre à jour le filtrage
         self._update_highlights_count()
-    
-    def _on_clear_all_clicked(self):
-        """Efface tous les highlights après confirmation."""
-        if len(self.highlights_grid.get_highlights_data()) > 0:
-            if messagebox.askyesno("Confirmation", 
-                                   "Êtes-vous sûr de vouloir effacer TOUS les highlights?\n\n" +
-                                   "Cette action est irréversible."):
-                self.highlights_grid.clear()
-                self._update_highlights_count()
-                # Mettre à jour le fichier d'extraction
-                self._save_to_extraction_file()
     
     def _update_highlights_count(self):
         """Met à jour le compteur de highlights."""
@@ -939,7 +983,7 @@ class MainWindow(ctk.CTk):
             self.viewmodel.custom_scan_zone = zone
         
         x, y, w, h = zone
-        print(f"Zone de scan définie: {w}x{h} pixels à la position ({x},{y})")
+        print(f"INFO: Zone de scan définie: {w}x{h} pixels à la position ({x},{y})")
     
     def _on_start_clicked(self):
         """Gère le clic sur Démarrer."""
@@ -980,18 +1024,9 @@ class MainWindow(ctk.CTk):
             self.stop_button.configure(
                 state="normal" if self.viewmodel.can_stop else "disabled"
             )
-            # Plus de bouton validate
             
-            # Mettre à jour les boutons d'actions
             has_highlights = self.highlights_grid.get_count() > 0
-            
             self.export_word_button.configure(
-                state="normal" if has_highlights else "disabled"
-            )
-            self.export_txt_button.configure(
-                state="normal" if has_highlights else "disabled"
-            )
-            self.clear_button.configure(
                 state="normal" if has_highlights else "disabled"
             )
             
@@ -1010,7 +1045,6 @@ class MainWindow(ctk.CTk):
             )
             self.progress_label.configure(text=self.viewmodel.progress_message)
             
-            # Mettre à jour les stats
             self.stats_labels["pages_scanned"].configure(
                 text=str(self.viewmodel.pages_scanned)
             )
@@ -1039,8 +1073,6 @@ class MainWindow(ctk.CTk):
             
             self.highlights_grid.add_highlight(highlight_data)
             self._update_highlights_count()
-            
-            # Sauvegarder automatiquement
             self._save_to_extraction_file()
         
         self._schedule_update(update)

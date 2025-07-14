@@ -7,29 +7,6 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-class ContextMenu(tk.Menu):
-    """Menu contextuel pour les actions sur les highlights."""
-    
-    def __init__(self, parent, on_rename=None, on_edit=None, on_delete=None):
-        super().__init__(parent, tearoff=0)
-        
-        # Configuration du style
-        self.configure(
-            bg="#2b2b2b",
-            fg="#ffffff",
-            activebackground="#0078d4",
-            activeforeground="#ffffff",
-            bd=0,
-            font=("Segoe UI", 9)
-        )
-        
-        # Actions du menu
-        self.add_command(label="✏️ Renommer", command=on_rename)
-        self.add_command(label="🔧 Éditer", command=on_edit)
-        self.add_separator()
-        self.add_command(label="🗑️ Supprimer", command=on_delete)
-
-
 class HighlightCard(ctk.CTkFrame):
     """
     Carte pour afficher un highlight extrait - Version corrigée définitive.
@@ -64,7 +41,7 @@ class HighlightCard(ctk.CTkFrame):
         
         # Variables d'état
         self.is_hovered = False
-        self.context_menu = None
+        self.is_selected = False
         
         # Créer le contenu
         self._create_content()
@@ -120,21 +97,12 @@ class HighlightCard(ctk.CTkFrame):
         self.confidence_frame.pack(side="right", padx=(5, 0))
         self.confidence_frame.pack_propagate(False)
         
-        # Menu trois points (cliquable)
-        self.dots_label = ctk.CTkLabel(
-            self.header_frame,
-            text="⋯",
-            font=ctk.CTkFont(size=14, weight="bold"),
-            text_color="#606060"
-        )
-        self.dots_label.pack(side="right", padx=(0, 10))
-        
         # Indicateur de modification (si le highlight a été modifié)
         if self.highlight_data.get('modified'):
             modified_indicator = ctk.CTkLabel(
                 self.header_frame,
-                text="📝",
-                font=ctk.CTkFont(size=10),
+                text="MODIF",
+                font=ctk.CTkFont(size=8, weight="bold"),
                 text_color="#00aaff"
             )
             modified_indicator.pack(side="right", padx=(0, 5))
@@ -170,15 +138,12 @@ class HighlightCard(ctk.CTkFrame):
         # Double-clic pour édition intégrée
         self.bind("<Double-Button-1>", self._on_double_click)
         
-        # Clic simple
+        # Clic simple pour sélection
         self.bind("<Button-1>", self._on_single_click)
         
         # Hover effects
         self.bind("<Enter>", self._on_enter)
         self.bind("<Leave>", self._on_leave)
-        
-        # Menu contextuel sur les 3 points
-        self.dots_label.bind("<Button-1>", self._show_context_menu)
         
         # Bind events pour tous les enfants
         for child in self.winfo_children():
@@ -195,20 +160,20 @@ class HighlightCard(ctk.CTkFrame):
                 subchild.bind("<Leave>", self._on_leave)
     
     def _on_single_click(self, event):
-        """Gère le clic simple."""
-        if self.on_click and event.widget != self.dots_label:
+        """Gère le clic simple pour sélection."""
+        if self.on_click:
             self.on_click(self.highlight_data)
     
     def _on_double_click(self, event):
         """Gère le double-clic pour ouvrir l'édition intégrée."""
-        if event.widget != self.dots_label and self.on_edit_requested:
+        if self.on_edit_requested:
             self.on_edit_requested(self.highlight_data)
     
     def _on_enter(self, event):
         """Gère l'entrée de la souris."""
         if not self.is_hovered:
             self.is_hovered = True
-            self.update_hover(True)
+            self.update_visual_state()
     
     def _on_leave(self, event):
         """Gère la sortie de la souris."""
@@ -222,79 +187,29 @@ class HighlightCard(ctk.CTkFrame):
         if not (widget_x <= x <= widget_x + widget_width and 
                 widget_y <= y <= widget_y + widget_height):
             self.is_hovered = False
-            self.update_hover(False)
+            self.update_visual_state()
     
-    def _show_context_menu(self, event):
-        """Affiche le menu contextuel."""
-        try:
-            if self.context_menu:
-                self.context_menu.destroy()
-            
-            self.context_menu = ContextMenu(
-                self,
-                on_rename=self._rename_highlight,
-                on_edit=self._edit_highlight,
-                on_delete=self._delete_highlight
-            )
-            
-            # Afficher le menu à la position du clic
-            self.context_menu.post(event.x_root, event.y_root)
-            
-        except Exception as e:
-            print(f"Erreur menu contextuel: {e}")
+    def set_selected(self, selected: bool):
+        """Définit l'état de sélection de la carte."""
+        self.is_selected = selected
+        self.update_visual_state()
     
-    def _rename_highlight(self):
-        """Ouvre une boîte de dialogue pour renommer - VERSION CORRIGÉE."""
-        current_name = self.highlight_data.get('custom_name', '')
-        default_name = current_name if current_name else f"Page {self.highlight_data.get('page', '?')}"
-        
-        dialog = ctk.CTkInputDialog(
-            text="Nouveau nom pour ce highlight:",
-            title="Renommer"
-        )
-        
-        # CORRECTION: Utiliser l'API correcte pour pré-remplir
-        try:
-            # Méthode robuste pour différentes versions de CustomTkinter
-            if hasattr(dialog, '_entry'):
-                dialog._entry.insert(0, default_name)
-                dialog._entry.select_range(0, 'end')
-            elif hasattr(dialog, 'entry'):
-                dialog.entry.insert(0, default_name)
-                dialog.entry.select_range(0, 'end')
-            # Si pas d'accès direct, on laisse vide et l'utilisateur tape
-        except Exception as e:
-            # En cas d'erreur, on continue sans pré-remplissage
-            print(f"Info: Pré-remplissage non disponible pour cette version de CustomTkinter")
-        
-        new_name = dialog.get_input()
-        
-        if new_name and new_name.strip():
-            # Vérifier si le nom a changé
-            if new_name.strip() != current_name:
-                self.highlight_data['custom_name'] = new_name.strip()
-                self.highlight_data['modified'] = True
-                self._refresh_display()
-                
-                if self.on_update:
-                    self.on_update(self.highlight_data)
+    def update_hover(self, hovering: bool):
+        """Met à jour l'apparence au survol."""
+        self.is_hovered = hovering
+        self.update_visual_state()
     
-    def _edit_highlight(self):
-        """Ouvre l'édition intégrée."""
-        if self.on_edit_requested:
-            self.on_edit_requested(self.highlight_data)
-    
-    def _delete_highlight(self):
-        """Supprime le highlight après confirmation."""
-        page = self.highlight_data.get('page', '?')
-        name = self.highlight_data.get('custom_name', f"Page {page}")
-        
-        if messagebox.askyesno(
-            "Supprimer",
-            f"Êtes-vous sûr de vouloir supprimer '{name}' ?"
-        ):
-            if self.on_delete:
-                self.on_delete(self.highlight_data)
+    def update_visual_state(self):
+        """Met à jour l'apparence selon l'état (sélectionné, survolé, normal)."""
+        if self.is_selected:
+            # Fiche sélectionnée - surbrillance persistante
+            self.configure(fg_color="#4a5a4a", border_color="#00ff88", border_width=2)
+        elif self.is_hovered:
+            # Survol temporaire
+            self.configure(fg_color="#454545", border_color="#00aaff", border_width=1)
+        else:
+            # État normal
+            self.configure(fg_color="#3a3a3a", border_color="#505050", border_width=1)
     
     def _refresh_display(self):
         """Actualise l'affichage de la carte."""
@@ -333,18 +248,18 @@ class HighlightCard(ctk.CTkFrame):
             # Vérifier si l'indicateur existe déjà
             modified_exists = False
             for child in self.header_frame.winfo_children():
-                if isinstance(child, ctk.CTkLabel) and child.cget("text") == "📝":
+                if isinstance(child, ctk.CTkLabel) and child.cget("text") == "MODIF":
                     modified_exists = True
                     break
             
             if not modified_exists:
                 modified_indicator = ctk.CTkLabel(
                     self.header_frame,
-                    text="📝",
-                    font=ctk.CTkFont(size=10),
+                    text="MODIF",
+                    font=ctk.CTkFont(size=8, weight="bold"),
                     text_color="#00aaff"
                 )
-                modified_indicator.pack(side="right", padx=(0, 5), before=self.dots_label)
+                modified_indicator.pack(side="right", padx=(0, 5))
     
     def _get_confidence_color(self) -> str:
         """Retourne la couleur selon le niveau de confiance."""
@@ -362,15 +277,6 @@ class HighlightCard(ctk.CTkFrame):
             return text
         return text[:max_length-3] + "..."
     
-    def update_hover(self, hovering: bool):
-        """Met à jour l'apparence au survol."""
-        if hovering:
-            self.configure(fg_color="#454545", border_color="#00aaff")
-            self.dots_label.configure(text_color="#ffffff")
-        else:
-            self.configure(fg_color="#3a3a3a", border_color="#505050")
-            self.dots_label.configure(text_color="#606060")
-    
     def update_data(self, new_data: Dict[str, Any]):
         """Met à jour les données du highlight."""
         self.highlight_data = new_data.copy()
@@ -382,13 +288,15 @@ class HighlightGrid(ctk.CTkScrollableFrame):
     Grille scrollable pour afficher les highlights - Version corrigée définitive.
     """
     
-    def __init__(self, parent, columns: int = 2, on_edit_requested: Optional[Callable] = None, **kwargs):
+    def __init__(self, parent, columns: int = 2, on_edit_requested: Optional[Callable] = None, 
+                 on_highlight_selected: Optional[Callable] = None, **kwargs):
         super().__init__(parent, **kwargs)
         
         self.columns = columns
         self.cards = []
         self.highlights_data = []
         self.on_edit_requested = on_edit_requested
+        self.on_highlight_selected = on_highlight_selected  # NOUVEAU
         self.configure(fg_color="transparent")
         
         # Configuration de la grille
@@ -404,6 +312,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         card = HighlightCard(
             self,
             highlight_data=highlight_data,
+            on_click=self.on_highlight_selected,  # NOUVEAU: Callback de sélection
             on_update=self._on_highlight_updated,
             on_delete=self._on_highlight_deleted,
             on_edit_requested=self.on_edit_requested
@@ -425,7 +334,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         # CORRECTION: Utiliser un identifiant plus robuste pour trouver le highlight
         target_index = None
         
-        print(f"🔍 Recherche highlight à mettre à jour: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
+        print(f"DEBUG: Recherche highlight à mettre à jour: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
         
         # Essayer de correspondre par plusieurs critères
         for i, data in enumerate(self.highlights_data):
@@ -433,13 +342,13 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             if (data.get('page') == updated_data.get('page') and 
                 data.get('text', '')[:30] == updated_data.get('text', '')[:30]):
                 target_index = i
-                print(f"✅ Trouvé par critère 1 (page + texte) à l'index {i}")
+                print(f"SUCCESS: Trouvé par critère 1 (page + texte) à l'index {i}")
                 break
             
             # Critère 2: Si pas de match exact, chercher par texte complet identique
             if target_index is None and data.get('text', '') == updated_data.get('text', ''):
                 target_index = i
-                print(f"✅ Trouvé par critère 2 (texte complet) à l'index {i}")
+                print(f"SUCCESS: Trouvé par critère 2 (texte complet) à l'index {i}")
                 break
         
         # Critère 3: Correspondance par timestamp si disponible
@@ -448,7 +357,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
                 if (data.get('timestamp') and updated_data.get('timestamp') and
                     data.get('timestamp') == updated_data.get('timestamp')):
                     target_index = i
-                    print(f"✅ Trouvé par critère 3 (timestamp) à l'index {i}")
+                    print(f"SUCCESS: Trouvé par critère 3 (timestamp) à l'index {i}")
                     break
         
         # Si toujours pas trouvé, utiliser un fallback avec la page uniquement
@@ -456,7 +365,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             for i, data in enumerate(self.highlights_data):
                 if data.get('page') == updated_data.get('page'):
                     target_index = i
-                    print(f"⚠️ Fallback par page uniquement à l'index {i}")
+                    print(f"WARNING: Fallback par page uniquement à l'index {i}")
                     break
         
         if target_index is not None:
@@ -467,12 +376,12 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             # Mettre à jour la carte correspondante
             if target_index < len(self.cards):
                 self.cards[target_index].update_data(updated_data)
-                print(f"✅ Highlight {target_index} mis à jour: '{old_data.get('custom_name', 'Sans nom')}' → '{updated_data.get('custom_name', 'Sans nom')}'")
+                print(f"SUCCESS: Highlight {target_index} mis à jour: '{old_data.get('custom_name', 'Sans nom')}' → '{updated_data.get('custom_name', 'Sans nom')}'")
             else:
-                print(f"❌ Index {target_index} hors limite pour les cartes ({len(self.cards)} cartes)")
+                print(f"ERREUR: Index {target_index} hors limite pour les cartes ({len(self.cards)} cartes)")
         else:
-            print(f"❌ Highlight non trouvé pour mise à jour: Page {updated_data.get('page')}")
-            print(f"📊 Highlights disponibles:")
+            print(f"ERREUR: Highlight non trouvé pour mise à jour: Page {updated_data.get('page')}")
+            print(f"INFO: Highlights disponibles:")
             for i, data in enumerate(self.highlights_data):
                 print(f"  {i}: Page {data.get('page')}, Texte: '{data.get('text', '')[:30]}...'")
     

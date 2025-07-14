@@ -1,0 +1,50 @@
+EXTRACTION KINDLE - 14/07/2025 09:34:28
+================================================================================
+
+Pages scannées: 10
+Pages avec contenu: 6
+Highlights extraits: 4
+================================================================================
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.
+(Confiance: 94%)
+(Mots: 103)
+(Position: x=1284, y=138, taille=540x502)
+(ID: 20250714_093420_page007_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 10 ---
+
+=== SURLIGNEMENT #1 ===
+La Société auto-
+(Confiance: 93%)
+(Mots: 3)
+(Position: x=1598, y=176, taille=176x46)
+(ID: 20250714_093428_page010_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?
+(Confiance: 92%)
+(Mots: 72)
+(Position: x=1284, y=451, taille=539x350)
+(ID: 20250714_093428_page010_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #4 ===
+Elle part d’un constat : les nou-
+(Confiance: 94%)
+(Mots: 7)
+(Position: x=1483, y=916, taille=338x46)
+(ID: 20250714_093428_page010_highlight04)
+
+----------------------------------------
+
+
