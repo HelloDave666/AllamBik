@@ -42,6 +42,7 @@ class HighlightCard(ctk.CTkFrame):
         # Variables d'état
         self.is_hovered = False
         self.is_selected = False
+        self.search_highlighted = False
         
         # Créer le contenu
         self._create_content()
@@ -204,12 +205,25 @@ class HighlightCard(ctk.CTkFrame):
         if self.is_selected:
             # Fiche sélectionnée - surbrillance persistante
             self.configure(fg_color="#4a5a4a", border_color="#00ff88", border_width=2)
+        elif self.search_highlighted:
+            # Résultat de recherche - surbrillance jaune
+            self.configure(fg_color="#5a5a3a", border_color="#ffaa00", border_width=2)
         elif self.is_hovered:
             # Survol temporaire
             self.configure(fg_color="#454545", border_color="#00aaff", border_width=1)
         else:
             # État normal
             self.configure(fg_color="#3a3a3a", border_color="#505050", border_width=1)
+    
+    def _add_search_highlight(self, search_text):
+        """Ajoute le surlignage de recherche."""
+        self.search_highlighted = True
+        self.update_visual_state()
+    
+    def _remove_search_highlight(self):
+        """Supprime le surlignage de recherche."""
+        self.search_highlighted = False
+        self.update_visual_state()
     
     def _refresh_display(self):
         """Actualise l'affichage de la carte."""

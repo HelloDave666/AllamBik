@@ -44,6 +44,28 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self._name_history = []
         self._max_history = 50
     
+    def _on_key_press_name(self, event):
+        """Sauvegarde dans l'historique avant modification du nom."""
+        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R']:
+            current_value = self.name_entry.get()
+            if not self._name_history or (self._name_history and self._name_history[-1] != current_value):
+                if len(self._name_history) >= self._max_history:
+                    self._name_history.pop(0)
+                self._name_history.append(current_value)
+    
+    def _on_key_press_text(self, event):
+        """Sauvegarde dans l'historique avant modification du texte."""
+        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R']:
+            current_value = self.text_editor.get("1.0", "end-1c")
+            if not self._text_history or (self._text_history and self._text_history[-1] != current_value):
+                if len(self._text_history) >= self._max_history:
+                    self._text_history.pop(0)
+                self._text_history.append(current_value)
+    
+    def _on_focus_out(self, event):
+        """Sauvegarde automatique quand on perd le focus (clic ailleurs)."""
+        self._save_changes()
+    
     def _on_enter_pressed(self, event):
         """Sauvegarde automatique quand on appuie sur Entrée."""
         self._save_changes()
@@ -52,42 +74,72 @@ class IntegratedEditPanel(ctk.CTkFrame):
     def _on_undo_pressed(self, event):
         """Gère l'annulation (Ctrl+Z)."""
         widget = event.widget
+        
+        # Essayer d'abord l'undo natif Tkinter
         try:
             if hasattr(widget, 'edit_undo'):
                 widget.edit_undo()
-            elif hasattr(widget, 'tk') and hasattr(widget.tk, 'call'):
-                # Pour les textbox CTk
-                widget.tk.call(widget._w, 'edit', 'undo')
+                return "break"
         except:
-            # Si l'undo natif ne fonctionne pas, utiliser notre historique
-            self._manual_undo(widget)
+            pass
+        
+        # Si undo natif échoue, utiliser notre historique manuel
+        try:
+            if isinstance(widget, ctk.CTkEntry) and self._name_history:
+                # Sauvegarder l'état actuel avant l'undo
+                current_value = widget.get()
+                if self._name_history and self._name_history[-1] != current_value:
+                    self._name_history.append(current_value)
+                
+                # Récupérer l'état précédent
+                if len(self._name_history) >= 2:
+                    previous_value = self._name_history[-2]
+                    self._name_history.pop()  # Supprimer l'état actuel
+                    widget.delete(0, 'end')
+                    widget.insert(0, previous_value)
+                    print(f"DEBUG: Undo nom - '{current_value}' → '{previous_value}'")
+            
+            elif hasattr(widget, 'get') and hasattr(widget, 'delete') and self._text_history:
+                # Pour CTkTextbox
+                current_value = widget.get("1.0", "end-1c")
+                if self._text_history and self._text_history[-1] != current_value:
+                    self._text_history.append(current_value)
+                
+                # Récupérer l'état précédent
+                if len(self._text_history) >= 2:
+                    previous_value = self._text_history[-2]
+                    self._text_history.pop()  # Supprimer l'état actuel
+                    widget.delete("1.0", "end")
+                    widget.insert("1.0", previous_value)
+                    print(f"DEBUG: Undo texte - '{current_value[:30]}...' → '{previous_value[:30]}...'")
+        
+        except Exception as e:
+            print(f"ERREUR: Undo échoué: {e}")
+        
         return "break"
-    
-    def _manual_undo(self, widget):
-        """Annulation manuelle avec notre historique."""
-        if isinstance(widget, ctk.CTkEntry) and self._name_history:
-            previous_value = self._name_history.pop()
-            widget.delete(0, 'end')
-            widget.insert(0, previous_value)
-        elif hasattr(widget, 'get') and hasattr(widget, 'delete') and self._text_history:
-            previous_value = self._text_history.pop()
-            widget.delete("1.0", "end")
-            widget.insert("1.0", previous_value)
     
     def _save_text_to_history(self):
         """Sauvegarde l'état actuel dans l'historique."""
         if self.current_highlight:
-            # Sauvegarder l'état du nom
-            current_name = self.name_entry.get()
-            if len(self._name_history) >= self._max_history:
-                self._name_history.pop(0)
-            self._name_history.append(current_name)
+            try:
+                # Sauvegarder l'état du nom
+                current_name = self.name_entry.get()
+                if not self._name_history or (self._name_history and self._name_history[-1] != current_name):
+                    if len(self._name_history) >= self._max_history:
+                        self._name_history.pop(0)
+                    self._name_history.append(current_name)
+                    print(f"DEBUG: Nom sauvegardé dans historique: '{current_name}'")
+                
+                # Sauvegarder l'état du texte
+                current_text = self.text_editor.get("1.0", "end-1c")
+                if not self._text_history or (self._text_history and self._text_history[-1] != current_text):
+                    if len(self._text_history) >= self._max_history:
+                        self._text_history.pop(0)
+                    self._text_history.append(current_text)
+                    print(f"DEBUG: Texte sauvegardé dans historique: '{current_text[:30]}...'")
             
-            # Sauvegarder l'état du texte
-            current_text = self.text_editor.get("1.0", "end-1c")
-            if len(self._text_history) >= self._max_history:
-                self._text_history.pop(0)
-            self._text_history.append(current_text)
+            except Exception as e:
+                print(f"ERREUR: Sauvegarde historique échouée: {e}")
     
     def _create_content(self):
         """Crée le contenu du panneau d'édition."""
@@ -150,20 +202,12 @@ class IntegratedEditPanel(ctk.CTkFrame):
         # Bindings pour sauvegarde automatique et undo
         self.name_entry.bind("<Return>", self._on_enter_pressed)
         self.name_entry.bind("<Control-z>", self._on_undo_pressed)
+        self.name_entry.bind("<FocusOut>", self._on_focus_out)
+        self.name_entry.bind("<KeyPress>", self._on_key_press_name)
         
         # Boutons d'action
         buttons_frame = ctk.CTkFrame(left_column, fg_color="transparent")
         buttons_frame.pack(fill="x", padx=15, pady=(0, 15))
-        
-        copy_btn = ctk.CTkButton(
-            buttons_frame,
-            text="COPIER",
-            command=self._copy_text,
-            fg_color="#0078d4",
-            hover_color="#106ebe",
-            height=35
-        )
-        copy_btn.pack(fill="x", pady=(0, 5))
         
         clear_btn = ctk.CTkButton(
             buttons_frame,
@@ -197,6 +241,8 @@ class IntegratedEditPanel(ctk.CTkFrame):
         # Bindings pour sauvegarde automatique et undo
         self.text_editor.bind("<Return>", self._on_enter_pressed)
         self.text_editor.bind("<Control-z>", self._on_undo_pressed)
+        self.text_editor.bind("<FocusOut>", self._on_focus_out)
+        self.text_editor.bind("<KeyPress>", self._on_key_press_text)
         
         # Afficher un message par défaut
         self._show_default_message()
@@ -238,21 +284,6 @@ class IntegratedEditPanel(ctk.CTkFrame):
         # Réinitialiser l'historique pour le nouveau highlight
         self._text_history.clear()
         self._name_history.clear()
-    
-    def _copy_text(self):
-        """Copie le texte vers le clipboard."""
-        text = self.text_editor.get("1.0", "end-1c")
-        self.clipboard_clear()
-        self.clipboard_append(text)
-        
-        # Feedback
-        original_text = self.text_editor.get("1.0", "end-1c")
-        self.text_editor.delete("1.0", "end")
-        self.text_editor.insert("1.0", "COPIE DANS LE PRESSE-PAPIERS REUSSIE!")
-        self.after(1000, lambda: (
-            self.text_editor.delete("1.0", "end"),
-            self.text_editor.insert("1.0", original_text)
-        ))
     
     def _save_changes(self):
         """Sauvegarde les modifications."""
@@ -707,9 +738,18 @@ class MainWindow(ctk.CTk):
     
     def _restore_highlights_data(self, highlights_data):
         """Restaure les données des highlights dans la grille modifiée."""
+        # Sauvegarder la fiche actuellement sélectionnée
+        selected_highlight = None
+        if self.selected_card and self.selected_card.highlight_data:
+            selected_highlight = self.selected_card.highlight_data.copy()
+        
         # Restaurer toutes les données
         for highlight_data in highlights_data:
             self.highlights_grid.add_highlight(highlight_data)
+        
+        # Restaurer la sélection si possible
+        if selected_highlight:
+            self.after_idle(lambda: self._restore_selection(selected_highlight))
         
         self._update_highlights_count()
         
@@ -717,21 +757,44 @@ class MainWindow(ctk.CTk):
         self.highlights_grid.update_idletasks()
         self.update_idletasks()
     
+    def _restore_selection(self, selected_highlight):
+        """Restaure la sélection après changement de mode."""
+        for card in self.highlights_grid.cards:
+            if (card.highlight_data.get('page') == selected_highlight.get('page') and
+                card.highlight_data.get('text', '')[:50] == selected_highlight.get('text', '')[:50]):
+                card.set_selected(True)
+                self.selected_card = card
+                print(f"DEBUG: Sélection restaurée - Page {selected_highlight.get('page')}")
+                break
+    
     # Gestion de l'édition intégrée
     
     def _on_highlight_selected(self, highlight_data):
         """NOUVEAU: Callback quand un highlight est sélectionné (simple clic)."""
-        # Désélectionner la fiche précédente
-        if self.selected_card:
-            self.selected_card.set_selected(False)
+        # CORRECTION 1: Sauvegarder avant de changer de fiche
+        if hasattr(self, 'edit_panel') and self.edit_panel.current_highlight:
+            self.edit_panel._save_changes()
         
-        # Trouver et sélectionner la nouvelle fiche
+        # CORRECTION 2: Désélectionner la fiche précédente de manière robuste
+        if self.selected_card:
+            try:
+                self.selected_card.set_selected(False)
+            except:
+                pass  # La carte peut avoir été détruite
+        
+        # CORRECTION 3: Trouver et sélectionner la nouvelle fiche de manière robuste
+        self.selected_card = None
         for card in self.highlights_grid.cards:
+            # Critères multiples pour identifier la bonne carte
             if (card.highlight_data.get('page') == highlight_data.get('page') and
-                card.highlight_data.get('text', '')[:30] == highlight_data.get('text', '')[:30]):
-                card.set_selected(True)
-                self.selected_card = card
-                break
+                card.highlight_data.get('text', '')[:50] == highlight_data.get('text', '')[:50]):
+                try:
+                    card.set_selected(True)
+                    self.selected_card = card
+                    print(f"DEBUG: Fiche sélectionnée - Page {highlight_data.get('page')}")
+                    break
+                except:
+                    print(f"ERREUR: Impossible de sélectionner la carte Page {highlight_data.get('page')}")
         
         # Afficher dans le panneau d'édition
         self.edit_panel.show_highlight(highlight_data)
@@ -760,6 +823,13 @@ class MainWindow(ctk.CTk):
     def _on_highlight_deleted(self, highlight_data):
         """Callback quand un highlight est supprimé depuis le panneau d'édition."""
         print(f"DEBUG: Suppression highlight: Page {highlight_data.get('page')}, Nom: {highlight_data.get('custom_name', 'Sans nom')}")
+        
+        # CORRECTION: Nettoyer la sélection si c'est la fiche sélectionnée qui est supprimée
+        if (self.selected_card and 
+            self.selected_card.highlight_data.get('page') == highlight_data.get('page') and
+            self.selected_card.highlight_data.get('text', '')[:50] == highlight_data.get('text', '')[:50]):
+            self.selected_card = None
+            self.edit_panel._show_default_message()
         
         try:
             # Supprimer de la grille
@@ -957,15 +1027,75 @@ class MainWindow(ctk.CTk):
     # Autres handlers
     
     def _on_search_changed(self, event):
-        """Gère les changements de recherche."""
-        search_text = self.search_entry.get().lower()
+        """Gère les changements de recherche avec filtrage et surbrillance."""
+        search_text = self.search_entry.get().lower().strip()
         self.current_search = search_text
+        
+        if not search_text:
+            # Afficher toutes les fiches si recherche vide
+            self._show_all_cards()
+        else:
+            # Filtrer et surligner les fiches correspondantes
+            self._filter_and_highlight_cards(search_text)
+        
         self._update_highlights_count()
     
+    def _show_all_cards(self):
+        """Affiche toutes les fiches sans filtrage."""
+        for card in self.highlights_grid.cards:
+            try:
+                card.pack_info()  # Vérifier si la carte est affichée
+                card.pack(fill="x", padx=5, pady=5)
+            except:
+                # Si pas en mode pack, utiliser grid
+                try:
+                    row = self.highlights_grid.cards.index(card) // self.highlights_grid.columns
+                    col = self.highlights_grid.cards.index(card) % self.highlights_grid.columns
+                    card.grid(row=row, column=col, padx=5, pady=5, sticky="ew")
+                except:
+                    pass
+            
+            # Retirer le surlignage de recherche
+            card._remove_search_highlight()
+    
+    def _filter_and_highlight_cards(self, search_text):
+        """Filtre et surligne les fiches selon la recherche."""
+        visible_count = 0
+        
+        for i, card in enumerate(self.highlights_grid.cards):
+            highlight_data = card.highlight_data
+            
+            # Vérifier si la recherche correspond
+            text_match = search_text in highlight_data.get('text', '').lower()
+            name_match = search_text in highlight_data.get('custom_name', '').lower()
+            page_match = search_text in str(highlight_data.get('page', ''))
+            
+            if text_match or name_match or page_match:
+                # Afficher la carte
+                try:
+                    row = visible_count // self.highlights_grid.columns
+                    col = visible_count % self.highlights_grid.columns
+                    card.grid(row=row, column=col, padx=5, pady=5, sticky="ew")
+                    visible_count += 1
+                    
+                    # Ajouter surlignage
+                    card._add_search_highlight(search_text)
+                    
+                except Exception as e:
+                    print(f"ERREUR: Affichage carte {i}: {e}")
+            else:
+                # Cacher la carte
+                try:
+                    card.grid_remove()
+                    card._remove_search_highlight()
+                except:
+                    pass
+    
     def _clear_search(self):
-        """Efface la recherche."""
+        """Efface la recherche et affiche toutes les fiches."""
         self.search_entry.delete(0, "end")
         self.current_search = ""
+        self._show_all_cards()
         self._update_highlights_count()
     
     def _update_highlights_count(self):

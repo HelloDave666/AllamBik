@@ -1,36 +1,48 @@
 === HIGHLIGHTS KINDLE EXTRAITS ===
-Généré le: 14/07/2025 à 11:43
-Nombre total: 12
+Généré le: 14/07/2025 à 12:20
+Nombre total: 13
 
 --- 1. Page 4 ---
 Page: 4
 Confiance: 93.8%
-Modifié le: 2025-07-14T11:42:06.512449
+Modifié le: 2025-07-14T12:17:51.413469
 
 Texte:
-le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras. dans les bras
+le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.
 
 --------------------------------------------------
 
---- 2. Page 4 ---
+--- 2. test titresqsqss ---
+Page: 4
+Confiance: 92.9%
+Modifié le: 2025-07-14T12:18:45.025043
+
+Texte:
+du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.sdqdsqsdsd
+
+--------------------------------------------------
+
+--- 3. Page 4 ---
 Page: 4
 Confiance: 96.0%
+Modifié le: 2025-07-14T12:17:52.141024
 
 Texte:
 interrogé sur TF1
 
 --------------------------------------------------
 
---- 3. Page 5 ---
+--- 4. Page 5 ---
 Page: 5
 Confiance: 94.0%
+Modifié le: 2025-07-14T12:20:09.972137
 
 Texte:
 par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.
 
 --------------------------------------------------
 
---- 4. Page 7 ---
+--- 5. Page 7 ---
 Page: 7
 Confiance: 91.8%
 
@@ -39,16 +51,17 @@ l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est 
 
 --------------------------------------------------
 
---- 5. Page 7 ---
+--- 6. Page 7 ---
 Page: 7
 Confiance: 92.4%
+Modifié le: 2025-07-14T12:19:05.904698
 
 Texte:
 ° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.
 
 --------------------------------------------------
 
---- 6. Page 8 ---
+--- 7. Page 8 ---
 Page: 8
 Confiance: 93.3%
 
@@ -57,16 +70,17 @@ La Société auto-
 
 --------------------------------------------------
 
---- 7. Page 8 ---
+--- 8. Page 8 ---
 Page: 8
 Confiance: 91.8%
+Modifié le: 2025-07-14T12:19:38.336849
 
 Texte:
-Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?
+Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de 
 
 --------------------------------------------------
 
---- 8. Page 8 ---
+--- 9. Page 8 ---
 Page: 8
 Confiance: 93.9%
 
@@ -75,7 +89,7 @@ Elle part d’un constat : les nou-
 
 --------------------------------------------------
 
---- 9. Page 9 ---
+--- 10. Page 9 ---
 Page: 9
 Confiance: 94.7%
 
@@ -84,7 +98,7 @@ velles technologies augmentent nos possibles en tous sens, et elles peuvent donc
 
 --------------------------------------------------
 
---- 10. Page 9 ---
+--- 11. Page 9 ---
 Page: 9
 Confiance: 93.8%
 
@@ -93,7 +107,7 @@ Texte:
 
 --------------------------------------------------
 
---- 11. Page 10 ---
+--- 12. Page 10 ---
 Page: 10
 Confiance: 94.0%
 
@@ -102,7 +116,7 @@ Le travail possède lui aussi depuis longtemps cette double capacité à nous m�
 
 --------------------------------------------------
 
---- 12. Page 10 ---
+--- 13. Page 10 ---
 Page: 10
 Confiance: 92.8%
 
