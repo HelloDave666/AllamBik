@@ -1,0 +1,164 @@
+EXTRACTION KINDLE - 14/07/2025 18:04:53
+================================================================================
+
+Pages scannées: 10
+Pages avec contenu: 7
+Highlights extraits: 15
+================================================================================
+
+--- PAGE 1 ---
+
+=== SURLIGNEMENT #4 ===
+| Stiegler
+(Confiance: 80%)
+(Mots: 2)
+(Position: x=1371, y=440, taille=91x30)
+(ID: 20250714_180428_page001_highlight04)
+
+----------------------------------------
+
+=== SURLIGNEMENT #10 ===
+Entretien.
+(Confiance: 69%)
+(Mots: 1)
+(Position: x=1286, y=518, taille=108x23)
+(ID: 20250714_180428_page001_highlight10)
+
+----------------------------------------
+
+
+--- PAGE 4 ---
+
+=== SURLIGNEMENT #1 ===
+le Président dialogue devant les caméras avec un robot hu- manoïde d’une soixantaine de centimètres : Nao, qu’il prend dans ses bras.
+(Confiance: 94%)
+(Mots: 22)
+(Position: x=1284, y=176, taille=528x160)
+(ID: 20250714_180433_page004_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+du Redressement productif Arnaud Montebourg précise? : « Nous attendons de tout cela en dix ans 475000 emplois recréés, avec 45 milliards de valeur ajoutée créée en plus sur le sol français.
+(Confiance: 93%)
+(Mots: 32)
+(Position: x=1284, y=556, taille=534x198)
+(ID: 20250714_180433_page004_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+interrogé sur TF1
+(Confiance: 96%)
+(Mots: 3)
+(Position: x=1590, y=907, taille=198x46)
+(ID: 20250714_180433_page004_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 5 ---
+
+=== SURLIGNEMENT #1 ===
+par une assistante maternelle des Ardennes acca- blée par la fermeture du collège de sa commune, un François Hollande plein de compassion botte en touche, puis chante les louanges de son « grand plan numérique » pour l’école, avec « cours de codage » et équipement des établissements en PC et tablettes. Soit le projet correspondant au volet «e-éducation » de sa brochette de « 34 plans de la nouvelle France industrielle? Comme s’il allait de soi que le numérique représente aujourd’hui LA solution à la désertification des campagnes, à la cure d’austérité des communes ou à l’inadapta- tion de nos institutions scolaires.
+(Confiance: 94%)
+(Mots: 103)
+(Position: x=1284, y=138, taille=540x502)
+(ID: 20250714_180436_page005_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+l'Institut de recherche et d'innovation (IRI) du Centre-Pompi- dou, dont il est le directeur, c’est naturellement que nous discutons de ce manque de recul des décideurs politiques vis-à-vis des technologies numériques,
+(Confiance: 92%)
+(Mots: 31)
+(Position: x=1284, y=331, taille=527x236)
+(ID: 20250714_180440_page007_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+° Loin d’être des technophobes, nous sommes chacun à notre facon des acteurs de cette « transformation numérique » depuis une vingtaine d’années. ni lui ni moi ne croyons en la panacée que serait le numérique pour sauver l'emploi.
+(Confiance: 92%)
+(Mots: 39)
+(Position: x=1284, y=711, taille=540x236)
+(ID: 20250714_180440_page007_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 8 ---
+
+=== SURLIGNEMENT #1 ===
+La Société auto-
+(Confiance: 93%)
+(Mots: 3)
+(Position: x=1598, y=176, taille=176x46)
+(ID: 20250714_180445_page008_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Pour Bernard Stiegler, au cours des vingt pro- chaines années, la vague de l'automatisation va déferler et peu à peu détruire l'emploi. Comment réagir à ce changement radical ? Selon lui, plutôt que de s'opposer frontalement à la lente et inexo- rable destruction du salariat par nos multiples au- tomates de l’ére numérique, l'enjeu réside d’abord dans la nécessité de combattre l’« automatisation des esprits ». Que veut-il dire par là ?
+(Confiance: 92%)
+(Mots: 72)
+(Position: x=1284, y=451, taille=539x350)
+(ID: 20250714_180445_page008_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #4 ===
+Elle part d’un constat : les nou-
+(Confiance: 94%)
+(Mots: 7)
+(Position: x=1483, y=916, taille=338x46)
+(ID: 20250714_180445_page008_highlight04)
+
+----------------------------------------
+
+
+--- PAGE 9 ---
+
+=== SURLIGNEMENT #1 ===
+velles technologies augmentent nos possibles en tous sens, et elles peuvent donc aussi réduire nos possibles ; selon les dispositions de notre esprit et la façon dont nous décidons de les façonner et de les utiliser, elles catalysent le meilleur comme le pire de nous-mémes et de notre société.
+(Confiance: 95%)
+(Mots: 49)
+(Position: x=1284, y=138, taille=533x236)
+(ID: 20250714_180449_page009_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+À l'inverse, quand ces technologies numériques portent de vraies pratiques et se concrétisent en échanges entre amateurs impliqués collectivement plutôt qu'entre consommateurs béats et égoistes, elles contribuent à la construction de la singularité de chacun. Et à celle de notre intelligence commune.
+(Confiance: 94%)
+(Mots: 42)
+(Position: x=1284, y=632, taille=533x274)
+(ID: 20250714_180449_page009_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 10 ---
+
+=== SURLIGNEMENT #1 ===
+Le travail possède lui aussi depuis longtemps cette double capacité à nous mécaniser, à nous transmuter en simples rouages, en vis et en bou- lons sans âme, ou, au contraire, à nous enrichir et à entretenir les dimensions les plus créatives et empathiques de notre être.
+(Confiance: 94%)
+(Mots: 46)
+(Position: x=1284, y=138, taille=522x236)
+(ID: 20250714_180453_page010_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Or, l'emploi - qui n’est pas le travail, mais plutôt sa désintégration - repré- sente très précisément, selon Bernard Stiegler, la facette aveugle et mécanique de nos activités rémunérées, qui se conjugue si aisément avec des esprits ». Pourquoi, dès lors, s’accrocher à la survie de l'emploi Pourquoine pas accepter sa disparition progressive, pour que renaisse le travail, le travail véritable, qui serait tout l'inverse de l'exploitation du travailleur, qui revient à le dominer et le déposséder de ses facul- tés et de son intelligence, un travail à faire aussi bien avec les êtres humains qu'avec les machines
+(Confiance: 93%)
+(Mots: 98)
+(Position: x=1284, y=404, taille=540x502)
+(ID: 20250714_180453_page010_highlight02)
+
+----------------------------------------
+
+

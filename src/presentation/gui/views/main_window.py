@@ -9,6 +9,7 @@ import json
 import os
 from datetime import datetime
 from tkinter import filedialog, messagebox
+import tkinter as tk
 
 # Import conditionnel pour Word
 try:
@@ -36,6 +37,10 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.on_delete = on_delete
         self.current_highlight = None
         
+        # CORRECTION BUG MODIF: Variables pour l'état initial
+        self.initial_text = ""
+        self.initial_name = ""
+        
         self._create_content()
         # Le placement est géré par le parent avec grid()
         
@@ -46,21 +51,27 @@ class IntegratedEditPanel(ctk.CTkFrame):
     
     def _on_key_press_name(self, event):
         """Sauvegarde dans l'historique avant modification du nom."""
-        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R']:
+        # CORRECTION CTRL+Z: Sauvegarder seulement pour les vraies modifications
+        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R', 
+                               'Left', 'Right', 'Up', 'Down', 'Home', 'End', 'Tab']:
             current_value = self.name_entry.get()
             if not self._name_history or (self._name_history and self._name_history[-1] != current_value):
                 if len(self._name_history) >= self._max_history:
                     self._name_history.pop(0)
                 self._name_history.append(current_value)
+                print(f"DEBUG: Historique nom sauvegardé: '{current_value}' (touche: {event.keysym})")
     
     def _on_key_press_text(self, event):
         """Sauvegarde dans l'historique avant modification du texte."""
-        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R']:
+        # CORRECTION CTRL+Z: Sauvegarder seulement pour les vraies modifications
+        if event.keysym not in ['Control_L', 'Control_R', 'Shift_L', 'Shift_R', 'Alt_L', 'Alt_R',
+                               'Left', 'Right', 'Up', 'Down', 'Home', 'End', 'Tab', 'Prior', 'Next']:
             current_value = self.text_editor.get("1.0", "end-1c")
             if not self._text_history or (self._text_history and self._text_history[-1] != current_value):
                 if len(self._text_history) >= self._max_history:
                     self._text_history.pop(0)
                 self._text_history.append(current_value)
+                print(f"DEBUG: Historique texte sauvegardé: '{current_value[:30]}...' (touche: {event.keysym})")
     
     def _on_focus_out(self, event):
         """Sauvegarde automatique quand on perd le focus (clic ailleurs)."""
@@ -72,50 +83,145 @@ class IntegratedEditPanel(ctk.CTkFrame):
         return "break"  # Empêche le comportement par défaut
     
     def _on_undo_pressed(self, event):
-        """Gère l'annulation (Ctrl+Z)."""
+        """Gère l'annulation (Ctrl+Z) - VERSION CORRIGÉE RENFORCÉE."""
         widget = event.widget
+        print(f"DEBUG: Ctrl+Z pressé sur widget: {type(widget)}")
         
-        # Essayer d'abord l'undo natif Tkinter
+        # CORRECTION RENFORCÉE: Multiples tentatives d'accès aux widgets natifs
         try:
-            if hasattr(widget, 'edit_undo'):
-                widget.edit_undo()
-                return "break"
-        except:
-            pass
-        
-        # Si undo natif échoue, utiliser notre historique manuel
-        try:
-            if isinstance(widget, ctk.CTkEntry) and self._name_history:
-                # Sauvegarder l'état actuel avant l'undo
-                current_value = widget.get()
-                if self._name_history and self._name_history[-1] != current_value:
-                    self._name_history.append(current_value)
-                
-                # Récupérer l'état précédent
-                if len(self._name_history) >= 2:
-                    previous_value = self._name_history[-2]
-                    self._name_history.pop()  # Supprimer l'état actuel
-                    widget.delete(0, 'end')
-                    widget.insert(0, previous_value)
-                    print(f"DEBUG: Undo nom - '{current_value}' → '{previous_value}'")
+            # Méthode 1: Accès direct aux widgets sous-jacents CustomTkinter
+            if hasattr(widget, '_entry'):
+                tk_widget = widget._entry
+                print(f"DEBUG: Widget Entry trouvé: {type(tk_widget)}")
+                if hasattr(tk_widget, 'edit_undo'):
+                    try:
+                        tk_widget.edit_undo()
+                        print("SUCCESS: Undo natif CTkEntry exécuté")
+                        return "break"
+                    except tk.TclError as e:
+                        print(f"DEBUG: Undo natif Entry échoué: {e}")
             
-            elif hasattr(widget, 'get') and hasattr(widget, 'delete') and self._text_history:
-                # Pour CTkTextbox
-                current_value = widget.get("1.0", "end-1c")
-                if self._text_history and self._text_history[-1] != current_value:
-                    self._text_history.append(current_value)
-                
-                # Récupérer l'état précédent
-                if len(self._text_history) >= 2:
-                    previous_value = self._text_history[-2]
-                    self._text_history.pop()  # Supprimer l'état actuel
-                    widget.delete("1.0", "end")
-                    widget.insert("1.0", previous_value)
-                    print(f"DEBUG: Undo texte - '{current_value[:30]}...' → '{previous_value[:30]}...'")
+            elif hasattr(widget, '_textbox'):
+                tk_widget = widget._textbox
+                print(f"DEBUG: Widget Textbox trouvé: {type(tk_widget)}")
+                if hasattr(tk_widget, 'edit_undo'):
+                    try:
+                        tk_widget.edit_undo()
+                        print("SUCCESS: Undo natif CTkTextbox exécuté")
+                        return "break"
+                    except tk.TclError as e:
+                        print(f"DEBUG: Undo natif Textbox échoué: {e}")
+            
+            # Méthode 2: Si c'est directement un widget Tkinter
+            elif hasattr(widget, 'edit_undo'):
+                try:
+                    widget.edit_undo()
+                    print("SUCCESS: Undo natif direct exécuté")
+                    return "break"
+                except tk.TclError as e:
+                    print(f"DEBUG: Undo natif direct échoué: {e}")
         
         except Exception as e:
-            print(f"ERREUR: Undo échoué: {e}")
+            print(f"DEBUG: Erreur accès widgets natifs: {e}")
         
+        # MÉTHODE 3: Forcer l'activation de l'undo sur les widgets natifs
+        try:
+            if hasattr(widget, '_entry'):
+                tk_widget = widget._entry
+                # Forcer l'activation de l'undo si pas déjà fait
+                try:
+                    tk_widget.configure(undo=True, maxundo=20)
+                    tk_widget.edit_undo()
+                    print("SUCCESS: Undo forcé CTkEntry exécuté")
+                    return "break"
+                except:
+                    pass
+            
+            elif hasattr(widget, '_textbox'):
+                tk_widget = widget._textbox
+                # Forcer l'activation de l'undo si pas déjà fait
+                try:
+                    tk_widget.configure(undo=True, maxundo=20)
+                    tk_widget.edit_undo()
+                    print("SUCCESS: Undo forcé CTkTextbox exécuté")
+                    return "break"
+                except:
+                    pass
+        
+        except Exception as e:
+            print(f"DEBUG: Undo forcé échoué: {e}")
+        
+        # FALLBACK: Système d'undo manuel amélioré
+        print("DEBUG: Utilisation du système d'undo manuel")
+        try:
+            # Identifier le widget parent CustomTkinter
+            if hasattr(widget, 'master') and hasattr(widget.master, 'master'):
+                parent_widget = widget.master.master
+                if parent_widget == self.name_entry:
+                    print("DEBUG: Undo manuel pour champ nom")
+                    if self._name_history and len(self._name_history) >= 1:
+                        if len(self._name_history) >= 2:
+                            previous_value = self._name_history[-2]
+                            self._name_history.pop()
+                        else:
+                            previous_value = ""
+                        
+                        self.name_entry.delete(0, 'end')
+                        if previous_value:
+                            self.name_entry.insert(0, previous_value)
+                        print(f"SUCCESS: Undo manuel nom: → '{previous_value}'")
+                        return "break"
+                
+                elif parent_widget == self.text_editor:
+                    print("DEBUG: Undo manuel pour champ texte")
+                    if self._text_history and len(self._text_history) >= 1:
+                        if len(self._text_history) >= 2:
+                            previous_value = self._text_history[-2]
+                            self._text_history.pop()
+                        else:
+                            previous_value = ""
+                        
+                        self.text_editor.delete("1.0", "end")
+                        if previous_value:
+                            self.text_editor.insert("1.0", previous_value)
+                        print(f"SUCCESS: Undo manuel texte: → '{previous_value[:30]}...'")
+                        return "break"
+            
+            # Si l'identification par parent ne marche pas, essayer par comparaison directe
+            if widget == self.name_entry or str(widget).find('entry') != -1:
+                print("DEBUG: Undo manuel pour nom (identification directe)")
+                if self._name_history:
+                    if len(self._name_history) >= 2:
+                        previous_value = self._name_history[-2]
+                        self._name_history.pop()
+                    else:
+                        previous_value = ""
+                    
+                    self.name_entry.delete(0, 'end')
+                    if previous_value:
+                        self.name_entry.insert(0, previous_value)
+                    print(f"SUCCESS: Undo manuel nom direct: → '{previous_value}'")
+                    return "break"
+            
+            elif widget == self.text_editor or str(widget).find('text') != -1:
+                print("DEBUG: Undo manuel pour texte (identification directe)")
+                if self._text_history:
+                    if len(self._text_history) >= 2:
+                        previous_value = self._text_history[-2]
+                        self._text_history.pop()
+                    else:
+                        previous_value = ""
+                    
+                    self.text_editor.delete("1.0", "end")
+                    if previous_value:
+                        self.text_editor.insert("1.0", previous_value)
+                    print(f"SUCCESS: Undo manuel texte direct: → '{previous_value[:30]}...'")
+                    return "break"
+        
+        except Exception as e:
+            print(f"ERREUR: Undo manuel échoué: {e}")
+        
+        print("WARNING: Aucune méthode d'undo n'a fonctionné")
         return "break"
     
     def _save_text_to_history(self):
@@ -205,6 +311,14 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.name_entry.bind("<FocusOut>", self._on_focus_out)
         self.name_entry.bind("<KeyPress>", self._on_key_press_name)
         
+        # CORRECTION CTRL+Z: Forcer l'activation de l'undo sur le widget natif
+        try:
+            if hasattr(self.name_entry, '_entry'):
+                self.name_entry._entry.configure(undo=True, maxundo=20)
+                print("DEBUG: Undo activé sur name_entry")
+        except Exception as e:
+            print(f"DEBUG: Erreur activation undo name_entry: {e}")
+        
         # Boutons d'action
         buttons_frame = ctk.CTkFrame(left_column, fg_color="transparent")
         buttons_frame.pack(fill="x", padx=15, pady=(0, 15))
@@ -244,6 +358,14 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.text_editor.bind("<FocusOut>", self._on_focus_out)
         self.text_editor.bind("<KeyPress>", self._on_key_press_text)
         
+        # CORRECTION CTRL+Z: Forcer l'activation de l'undo sur le widget natif
+        try:
+            if hasattr(self.text_editor, '_textbox'):
+                self.text_editor._textbox.configure(undo=True, maxundo=20)
+                print("DEBUG: Undo activé sur text_editor")
+        except Exception as e:
+            print(f"DEBUG: Erreur activation undo text_editor: {e}")
+        
         # Afficher un message par défaut
         self._show_default_message()
     
@@ -255,6 +377,10 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.text_editor.delete("1.0", "end")
         self.text_editor.insert("1.0", "Sélectionnez un highlight ci-dessus pour l'afficher ici...")
         self.current_highlight = None
+        
+        # CORRECTION BUG MODIF: Réinitialiser l'état initial
+        self.initial_text = ""
+        self.initial_name = ""
     
     def show_highlight(self, highlight_data):
         """Affiche un highlight pour édition."""
@@ -281,6 +407,11 @@ class IntegratedEditPanel(ctk.CTkFrame):
         self.text_editor.delete("1.0", "end")
         self.text_editor.insert("1.0", text)
         
+        # CORRECTION BUG MODIF: Stocker l'état initial pour comparaison future
+        self.initial_name = custom_name
+        self.initial_text = text
+        print(f"DEBUG: État initial sauvegardé - Nom: '{self.initial_name}', Texte: '{self.initial_text[:30]}...'")
+        
         # Réinitialiser l'historique pour le nouveau highlight
         self._text_history.clear()
         self._name_history.clear()
@@ -294,6 +425,19 @@ class IntegratedEditPanel(ctk.CTkFrame):
         new_text = self.text_editor.get("1.0", "end-1c")
         new_name = self.name_entry.get().strip()
         
+        # CORRECTION BUG MODIF: Vérifier s'il y a vraiment eu des modifications
+        has_changes = False
+        
+        # Comparer le texte
+        if new_text != self.initial_text:
+            has_changes = True
+            print(f"DEBUG: Changement texte détecté: '{self.initial_text[:30]}...' → '{new_text[:30]}...'")
+        
+        # Comparer le nom
+        if new_name != self.initial_name:
+            has_changes = True
+            print(f"DEBUG: Changement nom détecté: '{self.initial_name}' → '{new_name}'")
+        
         # Mettre à jour les données
         self.current_highlight['text'] = new_text
         if new_name:
@@ -301,9 +445,13 @@ class IntegratedEditPanel(ctk.CTkFrame):
         elif 'custom_name' in self.current_highlight:
             del self.current_highlight['custom_name']
         
-        # Marquer comme modifié
-        self.current_highlight['modified'] = True
-        self.current_highlight['modified_date'] = datetime.now().isoformat()
+        # CORRECTION BUG MODIF: Marquer comme modifié SEULEMENT s'il y a vraiment eu des changements
+        if has_changes:
+            self.current_highlight['modified'] = True
+            self.current_highlight['modified_date'] = datetime.now().isoformat()
+            print("DEBUG: Highlight marqué comme modifié")
+        else:
+            print("DEBUG: Aucun changement détecté, pas de modification marquée")
         
         # Callback de sauvegarde
         if self.on_save:

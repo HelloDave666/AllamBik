@@ -44,9 +44,34 @@ class HighlightCard(ctk.CTkFrame):
         self.is_selected = False
         self.search_highlighted = False
         
+        # CORRECTION BUG MODIF: Variable pour gérer l'indicateur
+        self.modified_indicator = None
+        
         # Créer le contenu
         self._create_content()
         self._bind_events()
+    
+    def _update_modification_indicator(self):
+        """CORRECTION BUG MODIF: Gère l'indicateur de modification de manière sûre."""
+        # Vérifier si ce highlight spécifique a été modifié
+        is_modified = self.highlight_data.get('modified', False)
+        
+        if is_modified and self.modified_indicator is None:
+            # Créer l'indicateur seulement s'il n'existe pas et qu'on en a besoin
+            self.modified_indicator = ctk.CTkLabel(
+                self.header_frame,
+                text="MODIF",
+                font=ctk.CTkFont(size=8, weight="bold"),
+                text_color="#00aaff"
+            )
+            self.modified_indicator.pack(side="right", padx=(0, 5))
+            print(f"DEBUG: Indicateur MODIF créé pour Page {self.highlight_data.get('page')}")
+            
+        elif not is_modified and self.modified_indicator is not None:
+            # Supprimer l'indicateur s'il existe mais qu'on n'en a plus besoin
+            self.modified_indicator.destroy()
+            self.modified_indicator = None
+            print(f"DEBUG: Indicateur MODIF supprimé pour Page {self.highlight_data.get('page')}")
     
     def _create_content(self):
         """Crée le contenu de la carte."""
@@ -98,15 +123,8 @@ class HighlightCard(ctk.CTkFrame):
         self.confidence_frame.pack(side="right", padx=(5, 0))
         self.confidence_frame.pack_propagate(False)
         
-        # Indicateur de modification (si le highlight a été modifié)
-        if self.highlight_data.get('modified'):
-            modified_indicator = ctk.CTkLabel(
-                self.header_frame,
-                text="MODIF",
-                font=ctk.CTkFont(size=8, weight="bold"),
-                text_color="#00aaff"
-            )
-            modified_indicator.pack(side="right", padx=(0, 5))
+        # CORRECTION BUG MODIF: Créer l'indicateur de manière contrôlée
+        self._update_modification_indicator()
         
         # Texte du highlight
         text_content = self._truncate_text(self.highlight_data.get('text', ''), 150)
@@ -257,23 +275,8 @@ class HighlightCard(ctk.CTkFrame):
         text_content = self._truncate_text(self.highlight_data.get('text', ''), 150)
         self.text_label.configure(text=text_content)
         
-        # Ajouter indicateur de modification si nécessaire
-        if self.highlight_data.get('modified'):
-            # Vérifier si l'indicateur existe déjà
-            modified_exists = False
-            for child in self.header_frame.winfo_children():
-                if isinstance(child, ctk.CTkLabel) and child.cget("text") == "MODIF":
-                    modified_exists = True
-                    break
-            
-            if not modified_exists:
-                modified_indicator = ctk.CTkLabel(
-                    self.header_frame,
-                    text="MODIF",
-                    font=ctk.CTkFont(size=8, weight="bold"),
-                    text_color="#00aaff"
-                )
-                modified_indicator.pack(side="right", padx=(0, 5))
+        # CORRECTION BUG MODIF: Utiliser la méthode contrôlée
+        self._update_modification_indicator()
     
     def _get_confidence_color(self) -> str:
         """Retourne la couleur selon le niveau de confiance."""
