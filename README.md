@@ -70,6 +70,57 @@ poetry add python-docx
 poetry run python main.py
 ```
 
+## Résolution de problèmes
+
+### ❌ Erreur ModuleNotFoundError customtkinter
+
+**Symptôme :**
+```bash
+PS D:\alambik-v3> poetry run python main.py
+ModuleNotFoundError: No module named 'customtkinter'
+```
+
+**Cause :** Environnement Poetry non initialisé (après redémarrage système, pause longue, etc.)
+
+**✅ Solution :**
+```bash
+# Aller dans le répertoire du projet
+cd D:\alambik-v3
+
+# Réinstaller les dépendances
+poetry install
+
+# Lancer l'application
+poetry run python main.py
+```
+
+**Solutions alternatives si `poetry install` échoue :**
+```bash
+# Recréer l'environnement Poetry
+poetry env remove python
+poetry install
+
+# Vérifier l'installation
+poetry show customtkinter
+
+# Mode développement (optionnel)
+poetry install --with dev
+```
+
+### 🔧 Vérifications environnement
+```bash
+# Vérifier Poetry installé
+poetry --version
+
+# Voir l'environnement actuel
+poetry env info
+
+# Lister les dépendances installées
+poetry show
+```
+
+**Note :** Ce problème est courant lors de la reprise du projet après une pause. Le `pyproject.toml` et `poetry.lock` contiennent bien toutes les dépendances, il suffit de les réinstaller.
+
 ## Utilisation
 
 ### Configuration initiale
