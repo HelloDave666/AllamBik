@@ -1,5 +1,5 @@
-"""
-Application principale - Point d'entrée GUI avec détection de surlignements
+﻿"""
+Application principale - Point d'entrÃ©e GUI avec dÃ©tection de surlignements
 """
 import asyncio
 import threading
@@ -15,11 +15,12 @@ from src.infrastructure.ocr.tesseract_adapter import TesseractOCREngine
 from src.infrastructure.kindle.pyautogui_adapter import PyAutoGuiKindleController
 from src.infrastructure.events.in_memory_event_bus import InMemoryEventBus
 from src.infrastructure.persistence.json_repository import JsonHighlightRepository
+import time
 
 
 class AllamBikApp:
     """
-    Application AllamBik v3 avec détection de surlignements Kindle.
+    Application AllamBik v3 avec dÃ©tection de surlignements Kindle.
     Coordonne l'initialisation et le lancement de l'interface.
     """
     
@@ -31,9 +32,9 @@ class AllamBikApp:
         self.executor = ThreadPoolExecutor(max_workers=2)
         
     def _setup_logging(self):
-        """Configure le système de logs."""
+        """Configure le systÃ¨me de logs."""
         logging.basicConfig(
-            level=logging.INFO,  # Réduire à INFO pour moins de verbosité
+            level=logging.INFO,  # RÃ©duire Ã  INFO pour moins de verbositÃ©
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
         )
         return logging.getLogger(__name__)
@@ -42,37 +43,37 @@ class AllamBikApp:
         """Configure l'infrastructure (adaptateurs)."""
         self.logger.info("=== CONFIGURATION DE L'INFRASTRUCTURE ALLAMBIK v3 ===")
         
-        # OCR Engine avec DÉTECTION DE SURLIGNEMENTS ACTIVÉE
+        # OCR Engine avec DÃ‰TECTION DE SURLIGNEMENTS ACTIVÃ‰E
         tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
         if Path(tesseract_path).exists():
-            self.logger.info(f"✓ Tesseract trouvé: {tesseract_path}")
+            self.logger.info(f"âœ“ Tesseract trouvÃ©: {tesseract_path}")
         else:
-            self.logger.warning("⚠ Tesseract non trouvé - l'OCR ne fonctionnera pas")
+            self.logger.warning("âš  Tesseract non trouvÃ© - l'OCR ne fonctionnera pas")
         
-        # NOUVEAU : OCR avec détection de surlignements
+        # NOUVEAU : OCR avec dÃ©tection de surlignements
         ocr_engine = TesseractOCREngine(
             tesseract_cmd=tesseract_path,
-            debug_mode=False  # Désactiver le debug en production pour de meilleures performances
+            debug_mode=False  # DÃ©sactiver le debug en production pour de meilleures performances
         )
         
-        self.logger.info("✓ Moteur OCR configuré avec détection de surlignements Kindle")
+        self.logger.info("âœ“ Moteur OCR configurÃ© avec dÃ©tection de surlignements Kindle")
         
         # Kindle Controller
         kindle_controller = PyAutoGuiKindleController(
-            debug_mode=False  # Désactiver le debug en production
+            debug_mode=False  # DÃ©sactiver le debug en production
         )
         
-        self.logger.info("✓ Contrôleur Kindle configuré")
+        self.logger.info("âœ“ ContrÃ´leur Kindle configurÃ©")
         
         # Event Bus
         event_bus = InMemoryEventBus()
         
-        # Repository pour sauvegarder les résultats
+        # Repository pour sauvegarder les rÃ©sultats
         highlight_repository = JsonHighlightRepository(
             output_dir="extractions"
         )
         
-        self.logger.info("✓ Système de sauvegarde configuré (dossier: extractions/)")
+        self.logger.info("âœ“ SystÃ¨me de sauvegarde configurÃ© (dossier: extractions/)")
         
         return ocr_engine, kindle_controller, event_bus, highlight_repository
     
@@ -86,47 +87,39 @@ class AllamBikApp:
             highlight_repository=highlight_repository
         )
         
-        self.logger.info("✓ Use case d'extraction configuré avec détection de surlignements")
+        self.logger.info("âœ“ Use case d'extraction configurÃ© avec dÃ©tection de surlignements")
         
         return extraction_usecase
     
     def _setup_presentation(self, extraction_usecase, event_bus):
-        """Configure la couche présentation."""
-        # ViewModel
+        """Configure la couche présentation avec détecteur de pages."""
+        # ViewModel principal
         viewmodel = MainViewModel(
             extraction_usecase=extraction_usecase,
             event_bus=event_bus
         )
         
-        # Configurer le détecteur de pages
+        # Créer et assigner le détecteur de pages
         try:
-            # Import local dans la méthode
-            from src.application.use_cases.auto_page_detector import AutoPageDetector
-            
-            if hasattr(self, 'kindle_controller'):
+            if hasattr(self, 'kindle_controller') and self.kindle_controller:
+                from src.application.use_cases.auto_page_detector import AutoPageDetector
                 page_detector = AutoPageDetector(self.kindle_controller)
                 viewmodel.page_detector = page_detector
-                self.logger.info("✓ Détecteur de pages configuré et assigné")
-                print("DEBUG: Détecteur créé et assigné avec succès")
+                self.logger.info("✓ Détecteur de pages configuré et assigné au ViewModel")
             else:
-                self.logger.warning("kindle_controller non disponible")
-                print("DEBUG: Pas de kindle_controller")
-        except ImportError as e:
-            self.logger.error(f"Erreur import AutoPageDetector: {e}")
-            print(f"DEBUG: Erreur import: {e}")
+                self.logger.warning("kindle_controller non disponible pour le détecteur")
         except Exception as e:
             self.logger.error(f"Erreur création détecteur: {e}")
-            print(f"DEBUG: Erreur autre: {e}")
             import traceback
             traceback.print_exc()
         
-        # Vue avec référence à la loop asyncio
-        self.window = MainWindow(viewmodel)
-        self.window.async_loop = self.event_loop
+        # Binding des événements
+        viewmodel.on_state_changed = lambda state: self.logger.debug(f"État: {state}")
         
         return viewmodel
+    
     def _run_async_loop(self):
-        """Lance la boucle asyncio dans un thread séparé."""
+        """Lance la boucle asyncio dans un thread sÃ©parÃ©."""
         self.event_loop = asyncio.new_event_loop()
         asyncio.set_event_loop(self.event_loop)
         
@@ -134,7 +127,7 @@ class AllamBikApp:
         self.event_loop.run_forever()
     
     def run(self):
-        """Lance l'application."""
+        """Lance l'application avec configuration complète."""
         try:
             self.logger.info("=== DÉMARRAGE D'ALLAMBIK v3.0 AVEC DÉTECTION DE SURLIGNEMENTS ===")
             self.logger.info("")
@@ -144,27 +137,36 @@ class AllamBikApp:
             self.logger.info("- Réduction drastique du bruit et amélioration de la précision")
             self.logger.info("")
             
-            # Démarrer la boucle asyncio dans un thread séparé
-            async_thread = threading.Thread(target=self._run_async_loop, daemon=True)
-            async_thread.start()
-            
-            # Attendre que la boucle soit prête
-            import time
-            time.sleep(0.1)
-            
-            # Configuration des couches
+            # 1. Configuration de l'infrastructure
             self.logger.info("Configuration de l'infrastructure...")
             ocr_engine, kindle_controller, event_bus, highlight_repository = self._setup_infrastructure()
             
+            # IMPORTANT: Stocker kindle_controller comme attribut de classe
+            self.kindle_controller = kindle_controller
+            
+            # 2. Configuration de la couche application
             self.logger.info("Configuration de l'application...")
             extraction_usecase = self._setup_application(
                 ocr_engine, kindle_controller, event_bus, highlight_repository
             )
             
+            # 3. Configuration de la présentation (peut maintenant utiliser self.kindle_controller)
             self.logger.info("Configuration de la présentation...")
             viewmodel = self._setup_presentation(extraction_usecase, event_bus)
             
-            # Message final avant lancement
+            # 4. Configuration de l'interface
+            self.window = MainWindow(viewmodel)
+            
+            # 5. Démarrage de la boucle async
+            async_thread = threading.Thread(target=self._run_async_loop, daemon=True)
+            async_thread.start()
+            
+            # Attendre que la boucle soit prête
+            while not hasattr(self, 'async_loop') or not self.async_loop:
+                time.sleep(0.1)
+            
+            self.window.async_loop = self.async_loop
+            
             self.logger.info("")
             self.logger.info("=== APPLICATION PRÊTE ===")
             self.logger.info("UTILISATION :")
@@ -174,22 +176,21 @@ class AllamBikApp:
             self.logger.info("4. Les résultats seront sauvegardés dans le dossier 'extractions/'")
             self.logger.info("")
             
-            # Lancer l'interface
+            # 6. Lancer l'interface
             self.logger.info("Lancement de l'interface utilisateur...")
             self.window.mainloop()
             
         except Exception as e:
-            self.logger.error(f"Erreur lors du démarrage: {e}", exc_info=True)
+            self.logger.error(f"Erreur fatale: {e}")
+            import traceback
+            traceback.print_exc()
             raise
-        finally:
-            # Nettoyer
-            if self.event_loop and self.event_loop.is_running():
-                self.event_loop.call_soon_threadsafe(self.event_loop.stop)
-            self.executor.shutdown(wait=True)
+if __name__ == "__main__":
+    main()
 
 
 def main():
-    """Point d'entrée principal."""
+    """Point d'entrée principal de l'application."""
     app = AllamBikApp()
     app.run()
 

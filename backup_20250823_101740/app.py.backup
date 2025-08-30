@@ -10,7 +10,6 @@ from concurrent.futures import ThreadPoolExecutor
 from src.presentation.gui.views.main_window import MainWindow
 from src.presentation.gui.viewmodels.main_viewmodel import MainViewModel
 from src.application.use_cases.extract_highlights_use_case import ExtractHighlightsUseCase
-from src.application.use_cases.auto_page_detector import AutoPageDetector
 from src.infrastructure.ocr.tesseract_adapter import TesseractOCREngine
 from src.infrastructure.kindle.pyautogui_adapter import PyAutoGuiKindleController
 from src.infrastructure.events.in_memory_event_bus import InMemoryEventBus
@@ -98,33 +97,12 @@ class AllamBikApp:
             event_bus=event_bus
         )
         
-        # Configurer le détecteur de pages
-        try:
-            # Import local dans la méthode
-            from src.application.use_cases.auto_page_detector import AutoPageDetector
-            
-            if hasattr(self, 'kindle_controller'):
-                page_detector = AutoPageDetector(self.kindle_controller)
-                viewmodel.page_detector = page_detector
-                self.logger.info("✓ Détecteur de pages configuré et assigné")
-                print("DEBUG: Détecteur créé et assigné avec succès")
-            else:
-                self.logger.warning("kindle_controller non disponible")
-                print("DEBUG: Pas de kindle_controller")
-        except ImportError as e:
-            self.logger.error(f"Erreur import AutoPageDetector: {e}")
-            print(f"DEBUG: Erreur import: {e}")
-        except Exception as e:
-            self.logger.error(f"Erreur création détecteur: {e}")
-            print(f"DEBUG: Erreur autre: {e}")
-            import traceback
-            traceback.print_exc()
-        
         # Vue avec référence à la loop asyncio
         self.window = MainWindow(viewmodel)
         self.window.async_loop = self.event_loop
         
         return viewmodel
+    
     def _run_async_loop(self):
         """Lance la boucle asyncio dans un thread séparé."""
         self.event_loop = asyncio.new_event_loop()

@@ -1,5 +1,5 @@
-﻿"""
-ViewModel principal - Logique de prÃ©sentation
+"""
+ViewModel principal - Logique de présentation
 """
 from dataclasses import dataclass, field
 from typing import List, Optional, Callable, Tuple
@@ -23,7 +23,7 @@ from src.domain.entities.highlight import Highlight
 
 
 class ViewState(Enum):
-    """Ã‰tats possibles de la vue."""
+    """États possibles de la vue."""
     IDLE = "idle"
     SCANNING = "scanning"
     EXTRACTING = "extracting"
@@ -33,7 +33,7 @@ class ViewState(Enum):
 
 @dataclass
 class HighlightViewModel:
-    """ModÃ¨le de vue pour un highlight."""
+    """Modèle de vue pour un highlight."""
     id: str
     page: int
     text: str
@@ -41,7 +41,7 @@ class HighlightViewModel:
     
     @classmethod
     def from_domain(cls, highlight: Highlight) -> "HighlightViewModel":
-        """CrÃ©e un ViewModel depuis l'entitÃ© domaine."""
+        """Crée un ViewModel depuis l'entité domaine."""
         return cls(
             id=str(highlight.id),
             page=highlight.page_number,
@@ -54,10 +54,10 @@ class HighlightViewModel:
 class MainViewModel:
     """
     ViewModel principal pour l'interface.
-    GÃ¨re l'Ã©tat de prÃ©sentation et la communication avec le use case.
+    Gère l'état de présentation et la communication avec le use case.
     """
     
-    # Ã‰tat de l'interface
+    # État de l'interface
     state: ViewState = ViewState.IDLE
     can_start: bool = True
     can_stop: bool = False
@@ -69,7 +69,7 @@ class MainViewModel:
     phase2_progress: float = 0.0
     progress_message: str = ""
     
-    # DonnÃ©es
+    # Données
     highlights: List[HighlightViewModel] = field(default_factory=list)
     pages_scanned: int = 0
     pages_with_content: int = 0
@@ -79,7 +79,7 @@ class MainViewModel:
     logs: List[str] = field(default_factory=list)
     error_message: Optional[str] = None
     
-    # Zone personnalisÃ©e
+    # Zone personnalisée
     custom_scan_zone: Optional[Tuple[int, int, int, int]] = None
     
     # Callbacks pour la vue
@@ -94,14 +94,14 @@ class MainViewModel:
         
         Args:
             extraction_usecase: Use case d'extraction
-            event_bus: Bus d'Ã©vÃ©nements pour la communication
+            event_bus: Bus d'événements pour la communication
         """
         self.usecase = extraction_usecase
         self.event_bus = event_bus
         self._current_task: Optional[asyncio.Task] = None
         self._current_extraction: Optional[ExtractionTask] = None
         
-        # S'abonner aux Ã©vÃ©nements
+        # S'abonner aux événements
         self._subscribe_to_events()
         
         # Initialiser les champs dataclass
@@ -124,14 +124,11 @@ class MainViewModel:
         self.on_progress_changed = None
         self.on_highlight_added = None
         self.on_log_added = None
-        self.page_detector = None  # Sera assigné par app.py
-        self.detected_pages = None  # Nombre de pages détectées
-        self.is_detecting = False  # État de la détection
         
-        self.add_log("Alambik v3.0 - PrÃªt pour l'extraction")
+        self.add_log("Alambik v3.0 - Prêt pour l'extraction")
     
     def _subscribe_to_events(self):
-        """S'abonne aux Ã©vÃ©nements du domaine."""
+        """S'abonne aux événements du domaine."""
         self.event_bus.subscribe(TaskStartedEvent, self._on_task_started)
         self.event_bus.subscribe(TaskProgressEvent, self._on_task_progress)
         self.event_bus.subscribe(HighlightFoundEvent, self._on_highlight_found)
@@ -139,11 +136,11 @@ class MainViewModel:
         self.event_bus.subscribe(TaskCancelledEvent, self._on_task_cancelled)
         self.event_bus.subscribe(TaskFailedEvent, self._on_task_failed)
     
-    # Commandes (actions dÃ©clenchÃ©es par la vue)
+    # Commandes (actions déclenchées par la vue)
     
     async def start_extraction_command(self, total_pages: int = 200):
         """
-        Commande: DÃ©marrer l'extraction.
+        Commande: Démarrer l'extraction.
         
         Args:
             total_pages: Nombre total de pages du livre
@@ -151,72 +148,72 @@ class MainViewModel:
         if not self.can_start:
             return
         
-        self.add_log("DÃ©marrage de l'extraction...")
+        self.add_log("Démarrage de l'extraction...")
         self._reset_state()
         self._update_state(ViewState.SCANNING)
         
-        # Zones de scan par dÃ©faut
-        scan_regions = [(50, 100, 1600, 980)]  # Zone par dÃ©faut
+        # Zones de scan par défaut
+        scan_regions = [(50, 100, 1600, 980)]  # Zone par défaut
         
-        # Utiliser la zone personnalisÃ©e si dÃ©finie
+        # Utiliser la zone personnalisée si définie
         if self.custom_scan_zone:
             scan_regions = [self.custom_scan_zone]
             x, y, w, h = self.custom_scan_zone
-            self.add_log(f"Utilisation de la zone personnalisÃ©e: {w}x{h} Ã  ({x},{y})")
+            self.add_log(f"Utilisation de la zone personnalisée: {w}x{h} à ({x},{y})")
         else:
-            self.add_log("Utilisation de la zone de scan par dÃ©faut")
+            self.add_log("Utilisation de la zone de scan par défaut")
         
-        # ParamÃ¨tres d'extraction
+        # Paramètres d'extraction
         params = ExtractionParams(
             total_pages=total_pages,
             start_page=1,
             end_page=total_pages,
             scan_regions=scan_regions,
             min_text_length=10,
-            min_confidence=60.0,  # RÃ©duit pour dÃ©tecter plus de texte
+            min_confidence=60.0,  # Réduit pour détecter plus de texte
             navigation_delay=0.3,
-            ocr_delay=1.5  # AugmentÃ© pour laisser le temps Ã  l'OCR
+            ocr_delay=1.5  # Augmenté pour laisser le temps à l'OCR
         )
         
-        # Lancer l'extraction de maniÃ¨re asynchrone
+        # Lancer l'extraction de manière asynchrone
         self._current_task = asyncio.create_task(
             self.usecase.execute(params)
         )
     
     async def stop_extraction_command(self):
-        """Commande: ArrÃªter l'extraction."""
+        """Commande: Arrêter l'extraction."""
         if not self.can_stop:
             return
         
-        self.add_log("ArrÃªt demandÃ©...")
+        self.add_log("Arrêt demandé...")
         await self.usecase.cancel()
         
         self.can_stop = False
-        self.progress_message = "ArrÃªt en cours..."
+        self.progress_message = "Arrêt en cours..."
     
     async def validate_phase1_command(self):
-        """Commande: Valider la phase 1 et passer Ã  l'extraction."""
+        """Commande: Valider la phase 1 et passer à l'extraction."""
         if not self.can_validate:
             return
         
-        self.add_log("Phase 1 validÃ©e - Passage Ã  l'extraction OCR")
+        self.add_log("Phase 1 validée - Passage à l'extraction OCR")
         self.can_validate = False
         # La phase 2 se lance automatiquement dans notre architecture
     
-    # Handlers d'Ã©vÃ©nements
+    # Handlers d'événements
     
     async def _on_task_started(self, event: TaskStartedEvent):
-        """GÃ¨re l'Ã©vÃ©nement de dÃ©marrage."""
+        """Gère l'événement de démarrage."""
         self._current_extraction = event.task
-        self.add_log("Scan des pages dÃ©marrÃ©")
+        self.add_log("Scan des pages démarré")
         self.can_start = False
         self.can_stop = True
     
     async def _on_task_progress(self, event: TaskProgressEvent):
-        """GÃ¨re les mises Ã  jour de progression."""
+        """Gère les mises à jour de progression."""
         self.progress_message = event.message
         
-        # DÃ©terminer la phase en cours
+        # Déterminer la phase en cours
         if self._current_extraction:
             if self._current_extraction.status == TaskStatus.SCANNING:
                 self.phase1_progress = event.progress * 2  # Phase 1 = 0-50%
@@ -231,46 +228,46 @@ class MainViewModel:
             self.on_progress_changed()
     
     async def _on_highlight_found(self, event: HighlightFoundEvent):
-        """GÃ¨re la dÃ©couverte d'un highlight."""
+        """Gère la découverte d'un highlight."""
         highlight_vm = HighlightViewModel.from_domain(event.highlight)
         self.highlights.append(highlight_vm)
         self.highlights_count = len(self.highlights)
         
-        self.add_log(f"Highlight trouvÃ© page {highlight_vm.page} ({highlight_vm.confidence:.0f}%)")
+        self.add_log(f"Highlight trouvé page {highlight_vm.page} ({highlight_vm.confidence:.0f}%)")
         
         if self.on_highlight_added:
             self.on_highlight_added(highlight_vm)
     
     async def _on_task_completed(self, event: TaskCompletedEvent):
-        """GÃ¨re la fin de l'extraction."""
+        """Gère la fin de l'extraction."""
         self._update_state(ViewState.COMPLETED)
         self.can_stop = False
         self.can_start = True
         
-        # Mettre Ã  jour les statistiques finales
+        # Mettre à jour les statistiques finales
         task = event.task
         self.pages_scanned = task.pages_scanned
         self.pages_with_content = task.pages_with_content
         self.highlights_count = len(task.highlights_extracted)
         
-        self.add_log(f"Extraction terminÃ©e - {self.highlights_count} highlights extraits")
-        self.progress_message = "Extraction terminÃ©e avec succÃ¨s"
+        self.add_log(f"Extraction terminée - {self.highlights_count} highlights extraits")
+        self.progress_message = "Extraction terminée avec succès"
         
         # Fin de phase 1 -> activer validation
         if task.status == TaskStatus.SCANNING and task.pages_with_content > 0:
             self.can_validate = True
-            self.add_log("Phase 1 terminÃ©e - Validation disponible")
+            self.add_log("Phase 1 terminée - Validation disponible")
     
     async def _on_task_cancelled(self, event: TaskCancelledEvent):
-        """GÃ¨re l'annulation."""
+        """Gère l'annulation."""
         self._update_state(ViewState.IDLE)
         self.can_stop = False
         self.can_start = True
-        self.add_log("Extraction annulÃ©e")
-        self.progress_message = "Extraction annulÃ©e"
+        self.add_log("Extraction annulée")
+        self.progress_message = "Extraction annulée"
     
     async def _on_task_failed(self, event: TaskFailedEvent):
-        """GÃ¨re les erreurs."""
+        """Gère les erreurs."""
         self._update_state(ViewState.ERROR)
         self.can_stop = False
         self.can_start = True
@@ -278,7 +275,7 @@ class MainViewModel:
         self.add_log(f"ERREUR: {event.error}")
         self.progress_message = "Erreur pendant l'extraction"
     
-    # MÃ©thodes utilitaires
+    # Méthodes utilitaires
     
     def add_log(self, message: str):
         """Ajoute un message de log."""
@@ -291,10 +288,10 @@ class MainViewModel:
             self.on_log_added(log_entry)
     
     def _update_state(self, new_state: ViewState):
-        """Met Ã  jour l'Ã©tat de la vue."""
+        """Met à jour l'état de la vue."""
         self.state = new_state
         
-        # Mettre Ã  jour les permissions selon l'Ã©tat
+        # Mettre à jour les permissions selon l'état
         if new_state == ViewState.IDLE:
             self.can_start = True
             self.can_stop = False
@@ -311,40 +308,8 @@ class MainViewModel:
         if self.on_state_changed:
             self.on_state_changed(new_state)
     
-    
-    async def detect_pages_command(self):
-        """Commande pour détecter automatiquement le nombre de pages."""
-        if not self.page_detector or self.is_detecting:
-            return
-        
-        self.is_detecting = True
-        self.add_log("Détection automatique du nombre de pages en cours...")
-        self.progress_message = "Détection des pages..."
-        
-        try:
-            # Callback pour la progression
-            async def progress_callback(page, message):
-                self.progress_message = message
-                if self.on_progress_changed:
-                    self.on_progress_changed()
-            
-            # Lancer la détection
-            total_pages = await self.page_detector.detect_total_pages(progress_callback)
-            self.detected_pages = total_pages
-            
-            self.add_log(f"Détection terminée: {total_pages} pages trouvées")
-            self.progress_message = f"{total_pages} pages détectées - Prêt pour l'extraction"
-            
-        except Exception as e:
-            self.add_log(f"Erreur lors de la détection: {e}")
-            self.progress_message = "Erreur de détection"
-        finally:
-            self.is_detecting = False
-            if self.on_state_changed:
-                self.on_state_changed(self.state)
-
     def _reset_state(self):
-        """RÃ©initialise l'Ã©tat."""
+        """Réinitialise l'état."""
         self.highlights.clear()
         self.pages_scanned = 0
         self.pages_with_content = 0

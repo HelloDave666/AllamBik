@@ -619,14 +619,13 @@ class MainWindow(ctk.CTk):
             command=self._on_stop_clicked
         )
         self.stop_button.pack(fill="x", padx=20, pady=(5, 5))
-        
-        # Bouton Détection automatique du nombre de pages
+        # Bouton Detection automatique du nombre de pages
         self.detect_button = ctk.CTkButton(
             controls_section,
             text="DETECTER NOMBRE DE PAGES",
             font=ctk.CTkFont(size=12, weight="bold"),
             height=40,
-            fg_color="#ff6600",  # Orange
+            fg_color="#ff6600",  # Orange vif pour être visible
             hover_color="#ff8800",
             command=self._on_detect_pages_clicked
         )
@@ -1281,33 +1280,32 @@ class MainWindow(ctk.CTk):
         # Utiliser les pages détectées si disponibles
         if hasattr(self.viewmodel, 'detected_pages') and self.viewmodel.detected_pages:
             total_pages = self.viewmodel.detected_pages
-            print(f"INFO: Utilisation automatique de {total_pages} pages détectées")
+            print(f"INFO: Utilisation du nombre de pages detecte: {total_pages}")
             
             if self.async_loop:
                 asyncio.run_coroutine_threadsafe(
                     self.viewmodel.start_extraction_command(total_pages),
                     self.async_loop
                 )
-            return
-        
-        # Sinon demander manuellement
-        dialog = ctk.CTkInputDialog(
-            text="Nombre total de pages du livre:",
-            title="Configuration"
-        )
-        pages_str = dialog.get_input()
-        
-        if pages_str:
-            try:
-                total_pages = int(pages_str)
-                if total_pages > 0:
-                    if self.async_loop:
-                        asyncio.run_coroutine_threadsafe(
-                            self.viewmodel.start_extraction_command(total_pages),
-                            self.async_loop
-                        )
-            except ValueError:
-                pass
+        else:
+            # Demander manuellement
+            dialog = ctk.CTkInputDialog(
+                text="Nombre total de pages du livre:",
+                title="Configuration"
+            )
+            pages_str = dialog.get_input()
+            
+            if pages_str:
+                try:
+                    total_pages = int(pages_str)
+                    if total_pages > 0:
+                        if self.async_loop:
+                            asyncio.run_coroutine_threadsafe(
+                                self.viewmodel.start_extraction_command(total_pages),
+                                self.async_loop
+                            )
+                except ValueError:
+                    pass
     
     def _on_stop_clicked(self):
         """Gère le clic sur Arrêter."""
@@ -1316,60 +1314,107 @@ class MainWindow(ctk.CTk):
                 self.viewmodel.stop_extraction_command(),
                 self.async_loop
             )
-    
-    # Callbacks du ViewModel
+
     
 
-    def _on_detect_pages_clicked(self):
+        def _on_detect_pages_clicked(self):
         """Lance la détection automatique du nombre de pages."""
-        print("INFO: Detection automatique demandee")
+        print("\n" + "="*60)
+" + "="*60)
+        print("DIAGNOSTIC COMPLET DU CLIC")
+        print("="*60)
+        
+        # 1. Vérifier viewmodel
+        print(f"1. viewmodel existe: {self.viewmodel is not None}")
+        print(f"   Type: {type(self.viewmodel)}")
+        
+        # 2. Vérifier page_detector
+        has_detector = hasattr(self.viewmodel, 'page_detector')
+        print(f"2. viewmodel.page_detector existe: {has_detector}")
+        if has_detector:
+            print(f"   Valeur: {self.viewmodel.page_detector}")
+        
+        # 3. Vérifier detect_pages_command
+        has_command = hasattr(self.viewmodel, 'detect_pages_command')
+        print(f"3. viewmodel.detect_pages_command existe: {has_command}")
+        
+        # 4. Vérifier async_loop
+        print(f"4. async_loop existe: {self.async_loop is not None}")
+        
+        print("="*60)
         
         from tkinter import messagebox
         
-        # Vérifier si le détecteur existe
-        if not hasattr(self.viewmodel, 'page_detector') or self.viewmodel.page_detector is None:
-            print("INFO: Detecteur non configure")
-            messagebox.showinfo(
-                "Détection non disponible",
-                "La détection automatique n'est pas encore configurée.\n\n" +
-                "Vous pouvez entrer le nombre de pages manuellement."
-            )
+        # Si quelque chose manque
+        if not has_detector or self.viewmodel.page_detector is None:
+            messagebox.showerror("Erreur", "Le détecteur de pages n'est pas configuré")
+            return
+            
+        if not has_command:
+            messagebox.showerror("Erreur", "La méthode detect_pages_command n'existe pas")
+            return
+            
+        if not self.async_loop:
+            messagebox.showerror("Erreur", "Le système asynchrone n'est pas prêt")
             return
         
         # Demander confirmation
-        if messagebox.askyesno("Détection des pages", "Lancer la détection automatique du nombre de pages?"):
-            print("INFO: Detection acceptee par l'utilisateur")
-            self.detect_button.configure(state="disabled", text="DETECTION EN COURS...")
+        result = messagebox.askyesno(
+            "Détection des pages",
+            "Lancer la détection?
+
+Assurez-vous que Kindle est ouvert."
+        )
+        
+        if result:
+            print("
+LANCEMENT DE LA DÉTECTION...")
+            print("Appel de detect_pages_command()...")
             
-            # Si detect_pages_command existe
-            if hasattr(self.viewmodel, 'detect_pages_command') and self.async_loop:
+            self.detect_button.configure(state="disabled", text="DETECTION...")
+            
+            try:
                 import asyncio
                 
-                def on_complete(future):
-                    self.detect_button.configure(state="normal")
-                    try:
-                        result = future.result()
-                        if self.viewmodel.detected_pages:
-                            self.detect_button.configure(
-                                text=f"✓ {self.viewmodel.detected_pages} PAGES",
-                                fg_color="#00aa00"
-                            )
-                            print(f"SUCCESS: {self.viewmodel.detected_pages} pages detectees")
-                    except Exception as e:
-                        print(f"ERREUR: {e}")
-                        self.detect_button.configure(text="DETECTER NOMBRE DE PAGES")
-                
+                # Créer la tâche
+                print("Création de la tâche async...")
                 future = asyncio.run_coroutine_threadsafe(
                     self.viewmodel.detect_pages_command(),
                     self.async_loop
                 )
-                future.add_done_callback(lambda f: self.after(0, lambda: on_complete(f)))
-            else:
-                # Fallback: simulation simple
-                print("INFO: Mode test - simulation de detection")
-                messagebox.showinfo("Test", "Le détecteur sera bientôt fonctionnel!")
-                self.detect_button.configure(state="normal", text="DETECTER NOMBRE DE PAGES")
-
+                print("Tâche créée, attente du résultat...")
+                
+                def on_done(f):
+                    print("
+Détection terminée (callback)")
+                    try:
+                        result = f.result()
+                        print(f"Résultat: {result}")
+                    except Exception as e:
+                        print(f"Erreur dans la tâche: {e}")
+                    
+                    self.detect_button.configure(
+                        state="normal",
+                        text="DETECTER NOMBRE DE PAGES"
+                    )
+                    
+                    if hasattr(self.viewmodel, 'detected_pages'):
+                        pages = self.viewmodel.detected_pages
+                        if pages:
+                            self.detect_button.configure(
+                                text=f"{pages} PAGES",
+                                fg_color="#00aa00"
+                            )
+                
+                future.add_done_callback(lambda f: self.after(0, lambda: on_done(f)))
+                print("Callback ajouté")
+                
+            except Exception as e:
+                print(f"
+ERREUR lors du lancement: {e}")
+                import traceback
+                traceback.print_exc()
+                self.detect_button.configure(state="normal", text="ERREUR")
 
     def _on_state_changed(self, state: ViewState):
         """Met à jour l'UI selon l'état."""
