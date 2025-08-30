@@ -156,6 +156,9 @@ class AllamBikApp:
             self.logger.info("Configuration de l'infrastructure...")
             ocr_engine, kindle_controller, event_bus, highlight_repository = self._setup_infrastructure()
             
+            # IMPORTANT: Stocker kindle_controller comme attribut pour le détecteur
+            self.kindle_controller = kindle_controller
+            
             self.logger.info("Configuration de l'application...")
             extraction_usecase = self._setup_application(
                 ocr_engine, kindle_controller, event_bus, highlight_repository
