@@ -114,8 +114,6 @@ class MainViewModel:
         self.phase2_progress = 0.0
         self.progress_message = ""
         self.highlights = []
-        self.chunk_size = 50  # Traiter par chunks de 50
-        self.processing_chunk = False
         self.pages_scanned = 0
         self.pages_with_content = 0
         self.highlights_count = 0

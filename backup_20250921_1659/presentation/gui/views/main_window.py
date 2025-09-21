@@ -2,7 +2,6 @@
 Fenêtre principale - Version corrigée sans bugs d'ascenseur
 """
 import customtkinter as ctk
-from src.presentation.gui.components.highlight_card import HighlightCard
 import asyncio
 from typing import Optional, Tuple, Dict, Any
 import threading
@@ -1067,43 +1066,126 @@ class MainWindow(ctk.CTk):
     # Export Word - VERSION CORRIGÉE SANS EMOJIS
     
     def _on_export_word_clicked(self):
-        """Export des highlights vers Word."""
-        from tkinter import filedialog, messagebox
-        from datetime import datetime
-        import os
+        """Exporte tous les highlights vers un document Word - VERSION PROFESSIONNELLE."""
+        print("DEBUG: Bouton Export Word cliqué - Début de la fonction")
         
-        # Récupérer les highlights
-        highlights = getattr(self, 'all_highlights', self.viewmodel.highlights)
-        
-        if not highlights:
-            messagebox.showwarning("Export", "Aucun highlight à exporter")
+        if not WORD_AVAILABLE:
+            print("ERREUR: python-docx non disponible")
+            messagebox.showerror(
+                "Export Word indisponible", 
+                "La bibliothèque python-docx n'est pas installée.\n\n" +
+                "Installez-la avec: poetry add python-docx\n" +
+                "Puis redémarrez l'application."
+            )
             return
         
-        try:
-            # Dialogue de sauvegarde
-            filename = f"highlights_{datetime.now().strftime('%Y%m%d_%H%M')}.docx"
-            file_path = filedialog.asksaveasfilename(
-                defaultextension=".docx",
-                filetypes=[("Word", "*.docx")],
-                initialfile=filename
-            )
-            
-            if file_path:
-                # Export
-                from src.infrastructure.export.word_exporter import WordExporter
-                exporter = WordExporter()
-                exporter.export_to_word(highlights, file_path)
-                
-                # Confirmation
-                messagebox.showinfo(
-                    "Export réussi",
-                    f"{len(highlights)} highlights exportés"
-                )
-                print(f"Export: {len(highlights)} highlights vers {file_path}")
+        highlights_data = self.highlights_grid.get_highlights_data()
+        print(f"DEBUG: Nombre de highlights trouvés: {len(highlights_data)}")
         
-        except Exception as e:
-            print(f"Erreur export: {e}")
-            messagebox.showerror("Erreur", str(e))
+        if not highlights_data:
+            messagebox.showwarning("Aucun highlight", "Aucun highlight à exporter.")
+            return
+        
+        file_path = filedialog.asksaveasfilename(
+            title="Exporter vers Word pour Zotero",
+            defaultextension=".docx",
+            filetypes=[("Documents Word", "*.docx"), ("Tous les fichiers", "*.*")],
+            initialfile=f"highlights_kindle_{datetime.now().strftime('%Y%m%d_%H%M%S')}.docx"
+        )
+        
+        print(f"DEBUG: Fichier sélectionné: {file_path}")
+        
+        if file_path:
+            try:
+                doc = Document()
+                
+                title = doc.add_heading('Highlights Kindle - Extraits AllamBik', 0)
+                title.alignment = 1
+                
+                info_para = doc.add_paragraph()
+                info_para.add_run("Document généré le: ").bold = True
+                info_para.add_run(f"{datetime.now().strftime('%d/%m/%Y à %H:%M')}\n")
+                info_para.add_run("Nombre total d'extraits: ").bold = True
+                info_para.add_run(f"{len(highlights_data)} highlights\n")
+                info_para.add_run("Source: ").bold = True
+                info_para.add_run("Application AllamBik v3.0\n")
+                info_para.add_run("Compatible: ").bold = True
+                info_para.add_run("Zotero, Obsidian, Notion")
+                
+                doc.add_paragraph("=" * 60)
+                
+                print(f"DEBUG: Traitement de {len(highlights_data)} highlights...")
+                
+                for i, highlight in enumerate(highlights_data, 1):
+                    print(f"   Processing highlight {i}/{len(highlights_data)}")
+                    
+                    title_text = highlight.get('custom_name', f"Extrait Page {highlight.get('page', '?')}")
+                    heading = doc.add_heading(f"{i}. {title_text}", level=2)
+                    
+                    meta_para = doc.add_paragraph()
+                    meta_para.add_run("Page: ").bold = True
+                    meta_para.add_run(f"{highlight.get('page', '?')}")
+                    
+                    meta_para.add_run("  |  Confiance: ").bold = True
+                    meta_para.add_run(f"{highlight.get('confidence', 0):.1f}%")
+                    
+                    if highlight.get('modified'):
+                        meta_para.add_run("  |  Modifié le: ").bold = True
+                        try:
+                            mod_date = datetime.fromisoformat(highlight.get('modified_date', ''))
+                            meta_para.add_run(mod_date.strftime('%d/%m/%Y à %H:%M'))
+                        except:
+                            meta_para.add_run(highlight.get('modified_date', 'N/A'))
+                    
+                    text_para = doc.add_paragraph()
+                    text_para.add_run("Contenu: ").bold = True
+                    
+                    content = highlight.get('text', '').strip()
+                    if content:
+                        text_content = doc.add_paragraph(content)
+                        text_content.style = 'Quote'
+                    else:
+                        doc.add_paragraph("[Aucun texte]")
+                    
+                    if highlight.get('custom_name'):
+                        tag_para = doc.add_paragraph()
+                        tag_para.add_run("Tags: ").bold = True
+                        tag_para.add_run(f"kindle, highlights, {highlight.get('custom_name', '').lower()}")
+                    
+                    if i < len(highlights_data):
+                        doc.add_paragraph("-" * 40)
+                
+                doc.add_page_break()
+                footer = doc.add_paragraph()
+                footer.add_run("Document généré par AllamBik v3.0\n").bold = True
+                footer.add_run("Compatible avec Zotero, Obsidian, Notion\n")
+                footer.add_run(f"Export effectué le {datetime.now().strftime('%d/%m/%Y à %H:%M')}")
+                
+                print("DEBUG: Sauvegarde du document...")
+                doc.save(file_path)
+                
+                print("SUCCESS: Export Word réussi!")
+                messagebox.showinfo(
+                    "Export Word réussi", 
+                    f"Document Word créé avec succès!\n\n" +
+                    f"Fichier: {os.path.basename(file_path)}\n" +
+                    f"Emplacement: {os.path.dirname(file_path)}\n\n" +
+                    f"{len(highlights_data)} highlights exportés\n" +
+                    f"Prêt pour import dans Zotero!"
+                )
+                
+            except Exception as e:
+                print(f"ERREUR: Erreur lors de l'export Word: {e}")
+                messagebox.showerror(
+                    "Erreur d'export Word", 
+                    f"Erreur lors de la création du document Word:\n\n{str(e)}\n\n" +
+                    "Vérifiez que:\n" +
+                    "- python-docx est installé (poetry add python-docx)\n" +
+                    "- Le fichier de destination est accessible\n" +
+                    "- Vous avez les droits d'écriture"
+                )
+    
+    # Autres handlers
     
     def _on_search_changed(self, event):
         """Gère les changements de recherche avec filtrage et surbrillance."""
@@ -1237,70 +1319,6 @@ class MainWindow(ctk.CTk):
     
     # Callbacks du ViewModel
     
-    def _on_highlights_changed(self, highlights):
-        """Affiche les highlights avec limite pour performance."""
-        # Stocker TOUS les highlights pour export
-        self.all_highlights = list(highlights) if highlights else []
-        
-        # Trouver le conteneur scrollable
-        scroll_container = getattr(self, 'highlight_list_scroll', None)
-        if not scroll_container:
-            print("ERREUR: Conteneur scrollable non trouvé")
-            return
-        
-        # Nettoyer
-        for widget in scroll_container.winfo_children():
-            widget.destroy()
-        
-        # Limites
-        DISPLAY_LIMIT = 200
-        total = len(self.all_highlights)
-        
-        print(f"Affichage: {min(total, DISPLAY_LIMIT)}/{total} highlights")
-        
-        # Import
-        from src.presentation.gui.components.highlight_card import HighlightCard
-        import customtkinter as ctk
-        
-        # Créer les cartes (limitées)
-        display_items = self.all_highlights[:DISPLAY_LIMIT]
-        
-        for i, highlight in enumerate(display_items):
-            try:
-                card = HighlightCard(
-                    scroll_container,
-                    highlight,
-                    on_click=lambda h=highlight: self._on_highlight_selected(h)
-                )
-                card.pack(fill="x", padx=10, pady=5)
-                
-                # Update périodique
-                if i % 25 == 0:
-                    self.window.update_idletasks()
-                    
-            except Exception as e:
-                print(f"Erreur création carte {i}: {e}")
-                break
-        
-        # Titre
-        if hasattr(self, 'highlight_list_title'):
-            self.highlight_list_title.configure(
-                text=f"HIGHLIGHTS EXTRAITS ({total})"
-            )
-        
-        # Info si limité
-        if total > DISPLAY_LIMIT:
-            info = ctk.CTkLabel(
-                scroll_container,
-                text=f"⚠️ Performance: {DISPLAY_LIMIT}/{total} affichés"
-Utilisez Export Word pour tout obtenir",
-                text_color="orange",
-                font=("Arial", 12, "bold")
-            )
-            info.pack(pady=20)
-        
-        print(f"✓ {len(display_items)} cartes créées")
-    
 
     def _on_detect_pages_clicked(self):
         """Lance la détection automatique du nombre de pages."""
@@ -1395,32 +1413,6 @@ Utilisez Export Word pour tout obtenir",
         
         self._schedule_update(update)
     
-    def _update_highlight_display_batch(self, highlights):
-        """Met à jour l'affichage par batch pour performances."""
-        self.all_highlights = highlights
-        total = len(highlights)
-        
-        # Si trop d'éléments, afficher par batch
-        if total > self.max_display_items:
-            # Afficher seulement les premiers éléments
-            display_items = highlights[:self.max_display_items]
-            
-            # Ajouter un indicateur
-            print(f"INFO: Affichage de {self.max_display_items}/{total} highlights")
-            self._display_highlights_subset(display_items, total)
-        else:
-            # Afficher tout normalement
-            self._display_highlights_subset(highlights, total)
-    
-    def _display_highlights_subset(self, items, total):
-        """Affiche un sous-ensemble des highlights."""
-        # Code d'affichage ici
-        # Mettre à jour le titre avec le compte total
-        if hasattr(self, 'highlight_list_title'):
-            self.highlight_list_title.configure(
-                text=f"HIGHLIGHTS EXTRAITS ({total})"
-            )
-
     def _on_highlight_added(self, highlight: HighlightViewModel):
         """Ajoute un highlight à la grille."""
         def update():

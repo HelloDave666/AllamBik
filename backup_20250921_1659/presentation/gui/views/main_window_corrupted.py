@@ -2,7 +2,6 @@
 Fenêtre principale - Version corrigée sans bugs d'ascenseur
 """
 import customtkinter as ctk
-from src.presentation.gui.components.highlight_card import HighlightCard
 import asyncio
 from typing import Optional, Tuple, Dict, Any
 import threading
@@ -620,14 +619,13 @@ class MainWindow(ctk.CTk):
             command=self._on_stop_clicked
         )
         self.stop_button.pack(fill="x", padx=20, pady=(5, 5))
-        
-        # Bouton Détection automatique du nombre de pages
+        # Bouton Detection automatique du nombre de pages
         self.detect_button = ctk.CTkButton(
             controls_section,
             text="DETECTER NOMBRE DE PAGES",
             font=ctk.CTkFont(size=12, weight="bold"),
             height=40,
-            fg_color="#ff6600",  # Orange
+            fg_color="#ff6600",  # Orange vif pour être visible
             hover_color="#ff8800",
             command=self._on_detect_pages_clicked
         )
@@ -1066,51 +1064,127 @@ class MainWindow(ctk.CTk):
     
     # Export Word - VERSION CORRIGÉE SANS EMOJIS
     
-        def _on_export_word_clicked(self):
-        """Export Word avec tous les highlights."""
-        from tkinter import filedialog, messagebox
-        from datetime import datetime
-        import os
+    def _on_export_word_clicked(self):
+        """Exporte tous les highlights vers un document Word - VERSION PROFESSIONNELLE."""
+        print("DEBUG: Bouton Export Word cliqué - Début de la fonction")
         
-        # Utiliser ALL highlights stockés
-        highlights_to_export = getattr(self, 'all_highlights', self.viewmodel.highlights)
-        
-        if not highlights_to_export:
-            messagebox.showwarning("Export", "Aucun highlight à exporter")
+        if not WORD_AVAILABLE:
+            print("ERREUR: python-docx non disponible")
+            messagebox.showerror(
+                "Export Word indisponible", 
+                "La bibliothèque python-docx n'est pas installée.\n\n" +
+                "Installez-la avec: poetry add python-docx\n" +
+                "Puis redémarrez l'application."
+            )
             return
         
-        print(f"Export de {len(highlights_to_export)} highlights...")
+        highlights_data = self.highlights_grid.get_highlights_data()
+        print(f"DEBUG: Nombre de highlights trouvés: {len(highlights_data)}")
         
-        try:
-            # Nom par défaut
-            default_name = f"highlights_{datetime.now().strftime('%Y%m%d_%H%M')}.docx"
-            
-            # Dialogue sauvegarde
-            file_path = filedialog.asksaveasfilename(
-                defaultextension=".docx",
-                filetypes=[("Word", "*.docx"), ("All", "*.*")],
-                initialfile=default_name,
-                title="Exporter les highlights"
-            )
-            
-            if file_path:
-                # Export
-                from src.infrastructure.export.word_exporter import WordExporter
-                exporter = WordExporter()
-                exporter.export_to_word(highlights_to_export, file_path)
+        if not highlights_data:
+            messagebox.showwarning("Aucun highlight", "Aucun highlight à exporter.")
+            return
+        
+        file_path = filedialog.asksaveasfilename(
+            title="Exporter vers Word pour Zotero",
+            defaultextension=".docx",
+            filetypes=[("Documents Word", "*.docx"), ("Tous les fichiers", "*.*")],
+            initialfile=f"highlights_kindle_{datetime.now().strftime('%Y%m%d_%H%M%S')}.docx"
+        )
+        
+        print(f"DEBUG: Fichier sélectionné: {file_path}")
+        
+        if file_path:
+            try:
+                doc = Document()
                 
-                # Confirmation
+                title = doc.add_heading('Highlights Kindle - Extraits AllamBik', 0)
+                title.alignment = 1
+                
+                info_para = doc.add_paragraph()
+                info_para.add_run("Document généré le: ").bold = True
+                info_para.add_run(f"{datetime.now().strftime('%d/%m/%Y à %H:%M')}\n")
+                info_para.add_run("Nombre total d'extraits: ").bold = True
+                info_para.add_run(f"{len(highlights_data)} highlights\n")
+                info_para.add_run("Source: ").bold = True
+                info_para.add_run("Application AllamBik v3.0\n")
+                info_para.add_run("Compatible: ").bold = True
+                info_para.add_run("Zotero, Obsidian, Notion")
+                
+                doc.add_paragraph("=" * 60)
+                
+                print(f"DEBUG: Traitement de {len(highlights_data)} highlights...")
+                
+                for i, highlight in enumerate(highlights_data, 1):
+                    print(f"   Processing highlight {i}/{len(highlights_data)}")
+                    
+                    title_text = highlight.get('custom_name', f"Extrait Page {highlight.get('page', '?')}")
+                    heading = doc.add_heading(f"{i}. {title_text}", level=2)
+                    
+                    meta_para = doc.add_paragraph()
+                    meta_para.add_run("Page: ").bold = True
+                    meta_para.add_run(f"{highlight.get('page', '?')}")
+                    
+                    meta_para.add_run("  |  Confiance: ").bold = True
+                    meta_para.add_run(f"{highlight.get('confidence', 0):.1f}%")
+                    
+                    if highlight.get('modified'):
+                        meta_para.add_run("  |  Modifié le: ").bold = True
+                        try:
+                            mod_date = datetime.fromisoformat(highlight.get('modified_date', ''))
+                            meta_para.add_run(mod_date.strftime('%d/%m/%Y à %H:%M'))
+                        except:
+                            meta_para.add_run(highlight.get('modified_date', 'N/A'))
+                    
+                    text_para = doc.add_paragraph()
+                    text_para.add_run("Contenu: ").bold = True
+                    
+                    content = highlight.get('text', '').strip()
+                    if content:
+                        text_content = doc.add_paragraph(content)
+                        text_content.style = 'Quote'
+                    else:
+                        doc.add_paragraph("[Aucun texte]")
+                    
+                    if highlight.get('custom_name'):
+                        tag_para = doc.add_paragraph()
+                        tag_para.add_run("Tags: ").bold = True
+                        tag_para.add_run(f"kindle, highlights, {highlight.get('custom_name', '').lower()}")
+                    
+                    if i < len(highlights_data):
+                        doc.add_paragraph("-" * 40)
+                
+                doc.add_page_break()
+                footer = doc.add_paragraph()
+                footer.add_run("Document généré par AllamBik v3.0\n").bold = True
+                footer.add_run("Compatible avec Zotero, Obsidian, Notion\n")
+                footer.add_run(f"Export effectué le {datetime.now().strftime('%d/%m/%Y à %H:%M')}")
+                
+                print("DEBUG: Sauvegarde du document...")
+                doc.save(file_path)
+                
+                print("SUCCESS: Export Word réussi!")
                 messagebox.showinfo(
-                    "Export réussi",
-                    f"{len(highlights_to_export)} highlights exportés vers:
-{os.path.basename(file_path)}"
+                    "Export Word réussi", 
+                    f"Document Word créé avec succès!\n\n" +
+                    f"Fichier: {os.path.basename(file_path)}\n" +
+                    f"Emplacement: {os.path.dirname(file_path)}\n\n" +
+                    f"{len(highlights_data)} highlights exportés\n" +
+                    f"Prêt pour import dans Zotero!"
                 )
-                print(f"✓ Export terminé: {file_path}")
                 
-        except Exception as e:
-            print(f"Erreur export: {e}")
-            messagebox.showerror("Erreur", f"Export impossible:
-{str(e)}")
+            except Exception as e:
+                print(f"ERREUR: Erreur lors de l'export Word: {e}")
+                messagebox.showerror(
+                    "Erreur d'export Word", 
+                    f"Erreur lors de la création du document Word:\n\n{str(e)}\n\n" +
+                    "Vérifiez que:\n" +
+                    "- python-docx est installé (poetry add python-docx)\n" +
+                    "- Le fichier de destination est accessible\n" +
+                    "- Vous avez les droits d'écriture"
+                )
+    
+    # Autres handlers
     
     def _on_search_changed(self, event):
         """Gère les changements de recherche avec filtrage et surbrillance."""
@@ -1206,33 +1280,32 @@ class MainWindow(ctk.CTk):
         # Utiliser les pages détectées si disponibles
         if hasattr(self.viewmodel, 'detected_pages') and self.viewmodel.detected_pages:
             total_pages = self.viewmodel.detected_pages
-            print(f"INFO: Utilisation automatique de {total_pages} pages détectées")
+            print(f"INFO: Utilisation du nombre de pages detecte: {total_pages}")
             
             if self.async_loop:
                 asyncio.run_coroutine_threadsafe(
                     self.viewmodel.start_extraction_command(total_pages),
                     self.async_loop
                 )
-            return
-        
-        # Sinon demander manuellement
-        dialog = ctk.CTkInputDialog(
-            text="Nombre total de pages du livre:",
-            title="Configuration"
-        )
-        pages_str = dialog.get_input()
-        
-        if pages_str:
-            try:
-                total_pages = int(pages_str)
-                if total_pages > 0:
-                    if self.async_loop:
-                        asyncio.run_coroutine_threadsafe(
-                            self.viewmodel.start_extraction_command(total_pages),
-                            self.async_loop
-                        )
-            except ValueError:
-                pass
+        else:
+            # Demander manuellement
+            dialog = ctk.CTkInputDialog(
+                text="Nombre total de pages du livre:",
+                title="Configuration"
+            )
+            pages_str = dialog.get_input()
+            
+            if pages_str:
+                try:
+                    total_pages = int(pages_str)
+                    if total_pages > 0:
+                        if self.async_loop:
+                            asyncio.run_coroutine_threadsafe(
+                                self.viewmodel.start_extraction_command(total_pages),
+                                self.async_loop
+                            )
+                except ValueError:
+                    pass
     
     def _on_stop_clicked(self):
         """Gère le clic sur Arrêter."""
@@ -1241,124 +1314,107 @@ class MainWindow(ctk.CTk):
                 self.viewmodel.stop_extraction_command(),
                 self.async_loop
             )
-    
-    # Callbacks du ViewModel
-    
-    def _on_highlights_changed(self, highlights):
-        """Affiche les highlights avec limite pour performance."""
-        # Stocker TOUS les highlights pour export
-        self.all_highlights = list(highlights) if highlights else []
-        
-        # Trouver le conteneur scrollable
-        scroll_container = getattr(self, 'highlight_list_scroll', None)
-        if not scroll_container:
-            print("ERREUR: Conteneur scrollable non trouvé")
-            return
-        
-        # Nettoyer
-        for widget in scroll_container.winfo_children():
-            widget.destroy()
-        
-        # Limites
-        DISPLAY_LIMIT = 200
-        total = len(self.all_highlights)
-        
-        print(f"Affichage: {min(total, DISPLAY_LIMIT)}/{total} highlights")
-        
-        # Import
-        from src.presentation.gui.components.highlight_card import HighlightCard
-        import customtkinter as ctk
-        
-        # Créer les cartes (limitées)
-        display_items = self.all_highlights[:DISPLAY_LIMIT]
-        
-        for i, highlight in enumerate(display_items):
-            try:
-                card = HighlightCard(
-                    scroll_container,
-                    highlight,
-                    on_click=lambda h=highlight: self._on_highlight_selected(h)
-                )
-                card.pack(fill="x", padx=10, pady=5)
-                
-                # Update périodique
-                if i % 25 == 0:
-                    self.window.update_idletasks()
-                    
-            except Exception as e:
-                print(f"Erreur création carte {i}: {e}")
-                break
-        
-        # Titre
-        if hasattr(self, 'highlight_list_title'):
-            self.highlight_list_title.configure(
-                text=f"HIGHLIGHTS EXTRAITS ({total})"
-            )
-        
-        # Info si limité
-        if total > DISPLAY_LIMIT:
-            info = ctk.CTkLabel(
-                scroll_container,
-                text=f"⚠️ Performance: {DISPLAY_LIMIT}/{total} affichés
-Utilisez Export Word pour tout obtenir",
-                text_color="orange",
-                font=("Arial", 12, "bold")
-            )
-            info.pack(pady=20)
-        
-        print(f"✓ {len(display_items)} cartes créées")
+
     
 
-    def _on_detect_pages_clicked(self):
+        def _on_detect_pages_clicked(self):
         """Lance la détection automatique du nombre de pages."""
-        print("INFO: Detection automatique demandee")
+        print("\n" + "="*60)
+" + "="*60)
+        print("DIAGNOSTIC COMPLET DU CLIC")
+        print("="*60)
+        
+        # 1. Vérifier viewmodel
+        print(f"1. viewmodel existe: {self.viewmodel is not None}")
+        print(f"   Type: {type(self.viewmodel)}")
+        
+        # 2. Vérifier page_detector
+        has_detector = hasattr(self.viewmodel, 'page_detector')
+        print(f"2. viewmodel.page_detector existe: {has_detector}")
+        if has_detector:
+            print(f"   Valeur: {self.viewmodel.page_detector}")
+        
+        # 3. Vérifier detect_pages_command
+        has_command = hasattr(self.viewmodel, 'detect_pages_command')
+        print(f"3. viewmodel.detect_pages_command existe: {has_command}")
+        
+        # 4. Vérifier async_loop
+        print(f"4. async_loop existe: {self.async_loop is not None}")
+        
+        print("="*60)
         
         from tkinter import messagebox
         
-        # Vérifier si le détecteur existe
-        if not hasattr(self.viewmodel, 'page_detector') or self.viewmodel.page_detector is None:
-            print("INFO: Detecteur non configure")
-            messagebox.showinfo(
-                "Détection non disponible",
-                "La détection automatique n'est pas encore configurée.\n\n" +
-                "Vous pouvez entrer le nombre de pages manuellement."
-            )
+        # Si quelque chose manque
+        if not has_detector or self.viewmodel.page_detector is None:
+            messagebox.showerror("Erreur", "Le détecteur de pages n'est pas configuré")
+            return
+            
+        if not has_command:
+            messagebox.showerror("Erreur", "La méthode detect_pages_command n'existe pas")
+            return
+            
+        if not self.async_loop:
+            messagebox.showerror("Erreur", "Le système asynchrone n'est pas prêt")
             return
         
         # Demander confirmation
-        if messagebox.askyesno("Détection des pages", "Lancer la détection automatique du nombre de pages?"):
-            print("INFO: Detection acceptee par l'utilisateur")
-            self.detect_button.configure(state="disabled", text="DETECTION EN COURS...")
+        result = messagebox.askyesno(
+            "Détection des pages",
+            "Lancer la détection?
+
+Assurez-vous que Kindle est ouvert."
+        )
+        
+        if result:
+            print("
+LANCEMENT DE LA DÉTECTION...")
+            print("Appel de detect_pages_command()...")
             
-            # Si detect_pages_command existe
-            if hasattr(self.viewmodel, 'detect_pages_command') and self.async_loop:
+            self.detect_button.configure(state="disabled", text="DETECTION...")
+            
+            try:
                 import asyncio
                 
-                def on_complete(future):
-                    self.detect_button.configure(state="normal")
-                    try:
-                        result = future.result()
-                        if self.viewmodel.detected_pages:
-                            self.detect_button.configure(
-                                text=f"✓ {self.viewmodel.detected_pages} PAGES",
-                                fg_color="#00aa00"
-                            )
-                            print(f"SUCCESS: {self.viewmodel.detected_pages} pages detectees")
-                    except Exception as e:
-                        print(f"ERREUR: {e}")
-                        self.detect_button.configure(text="DETECTER NOMBRE DE PAGES")
-                
+                # Créer la tâche
+                print("Création de la tâche async...")
                 future = asyncio.run_coroutine_threadsafe(
                     self.viewmodel.detect_pages_command(),
                     self.async_loop
                 )
-                future.add_done_callback(lambda f: self.after(0, lambda: on_complete(f)))
-            else:
-                # Fallback: simulation simple
-                print("INFO: Mode test - simulation de detection")
-                messagebox.showinfo("Test", "Le détecteur sera bientôt fonctionnel!")
-                self.detect_button.configure(state="normal", text="DETECTER NOMBRE DE PAGES")
-
+                print("Tâche créée, attente du résultat...")
+                
+                def on_done(f):
+                    print("
+Détection terminée (callback)")
+                    try:
+                        result = f.result()
+                        print(f"Résultat: {result}")
+                    except Exception as e:
+                        print(f"Erreur dans la tâche: {e}")
+                    
+                    self.detect_button.configure(
+                        state="normal",
+                        text="DETECTER NOMBRE DE PAGES"
+                    )
+                    
+                    if hasattr(self.viewmodel, 'detected_pages'):
+                        pages = self.viewmodel.detected_pages
+                        if pages:
+                            self.detect_button.configure(
+                                text=f"{pages} PAGES",
+                                fg_color="#00aa00"
+                            )
+                
+                future.add_done_callback(lambda f: self.after(0, lambda: on_done(f)))
+                print("Callback ajouté")
+                
+            except Exception as e:
+                print(f"
+ERREUR lors du lancement: {e}")
+                import traceback
+                traceback.print_exc()
+                self.detect_button.configure(state="normal", text="ERREUR")
 
     def _on_state_changed(self, state: ViewState):
         """Met à jour l'UI selon l'état."""
@@ -1402,32 +1458,6 @@ Utilisez Export Word pour tout obtenir",
         
         self._schedule_update(update)
     
-    def _update_highlight_display_batch(self, highlights):
-        """Met à jour l'affichage par batch pour performances."""
-        self.all_highlights = highlights
-        total = len(highlights)
-        
-        # Si trop d'éléments, afficher par batch
-        if total > self.max_display_items:
-            # Afficher seulement les premiers éléments
-            display_items = highlights[:self.max_display_items]
-            
-            # Ajouter un indicateur
-            print(f"INFO: Affichage de {self.max_display_items}/{total} highlights")
-            self._display_highlights_subset(display_items, total)
-        else:
-            # Afficher tout normalement
-            self._display_highlights_subset(highlights, total)
-    
-    def _display_highlights_subset(self, items, total):
-        """Affiche un sous-ensemble des highlights."""
-        # Code d'affichage ici
-        # Mettre à jour le titre avec le compte total
-        if hasattr(self, 'highlight_list_title'):
-            self.highlight_list_title.configure(
-                text=f"HIGHLIGHTS EXTRAITS ({total})"
-            )
-
     def _on_highlight_added(self, highlight: HighlightViewModel):
         """Ajoute un highlight à la grille."""
         def update():
