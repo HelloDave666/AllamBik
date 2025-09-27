@@ -630,7 +630,19 @@ class MainWindow(ctk.CTk):
             hover_color="#ff8800",
             command=self._on_detect_pages_clicked
         )
-        self.detect_button.pack(fill="x", padx=20, pady=(5, 5))
+        self.detect_button.pack(fill="x", padx=20, pady=(5, 5)
+
+        # Bouton Import JSON pour tests rapides
+        self.import_json_button = ctk.CTkButton(
+            controls_section,
+            text="📁 CHARGER JSON",
+            font=ctk.CTkFont(size=12, weight="bold"),
+            height=40,
+            fg_color="#8B4513",  # Marron
+            hover_color="#A0522D",
+            command=self._on_import_json_clicked
+        )
+        self.import_json_button.pack(fill="x", padx=20, pady=(5, 5)))
 
         
         # BOUTON EXPORT WORD - DIRECTEMENT SOUS ARRÊTER
@@ -1371,6 +1383,77 @@ class MainWindow(ctk.CTk):
                 self.detect_button.configure(state="normal", text="DETECTER NOMBRE DE PAGES")
 
 
+    
+    def _on_import_json_clicked(self):
+        """Charge un fichier JSON d'extraction précédente."""
+        from tkinter import filedialog, messagebox
+        import json
+        import os
+        
+        print("INFO: Import JSON demandé")
+        
+        # Ouvrir le dialogue dans le dossier extractions
+        initial_dir = "extractions" if os.path.exists("extractions") else "."
+        
+        file_path = filedialog.askopenfilename(
+            title="Charger un fichier JSON d'extraction",
+            initialdir=initial_dir,
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        
+        if not file_path:
+            return
+        
+        try:
+            print(f"Chargement de: {file_path}")
+            
+            # Charger le JSON
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Extraire les highlights
+            highlights = []
+            
+            # Le format peut varier, essayer plusieurs structures
+            if isinstance(data, list):
+                highlights = data
+            elif isinstance(data, dict):
+                highlights = data.get('highlights', data.get('results', []))
+            
+            # Convertir en format attendu
+            formatted_highlights = []
+            for i, h in enumerate(highlights):
+                if isinstance(h, dict):
+                    # Créer un objet HighlightViewModel
+                    from src.presentation.gui.viewmodels.main_viewmodel import HighlightViewModel
+                    
+                    highlight = HighlightViewModel(
+                        page=h.get('page', h.get('page_number', i // 3 + 1)),
+                        text=h.get('text', h.get('extracted_text', '')),
+                        confidence=h.get('confidence', h.get('confidence_score', 85))
+                    )
+                    formatted_highlights.append(highlight)
+            
+            print(f"✓ {len(formatted_highlights)} highlights chargés du JSON")
+            
+            # Réinitialiser la grille
+            self.highlights_grid.clear()
+            
+            # Ajouter les highlights
+            for highlight in formatted_highlights:
+                self._on_highlight_added(highlight)
+            
+            # Message de succès
+            messagebox.showinfo(
+                "Import réussi",
+                f"{len(formatted_highlights)} highlights chargés depuis le fichier JSON"
+            )
+            
+        except Exception as e:
+            print(f"Erreur import JSON: {e}")
+            messagebox.showerror("Erreur", f"Impossible de charger le fichier:
+{str(e)}")
+    
     def _on_state_changed(self, state: ViewState):
         """Met à jour l'UI selon l'état."""
         def update():
@@ -1413,6 +1496,88 @@ class MainWindow(ctk.CTk):
         
         self._schedule_update(update)
     
+    def _import_json_file(self):
+        """Charge un fichier JSON d'extraction précédente."""
+        from tkinter import filedialog
+        import json
+        import os
+        
+        # Ouvrir le dialogue dans le dossier extractions
+        initial_dir = "extractions" if os.path.exists("extractions") else "."
+        
+        file_path = filedialog.askopenfilename(
+            title="Charger un fichier JSON d'extraction",
+            initialdir=initial_dir,
+            filetypes=[("JSON files", "*.json"), ("All files", "*.*")]
+        )
+        
+        if not file_path:
+            return
+        
+        try:
+            print(f"Chargement de: {file_path}")
+            
+            # Charger le JSON
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # Extraire les highlights
+            highlights = []
+            
+            # Le format peut varier, essayer plusieurs structures
+            if isinstance(data, list):
+                # Format: liste directe de highlights
+                highlights = data
+            elif isinstance(data, dict):
+                # Format: dict avec clé 'highlights' ou 'results'
+                highlights = data.get('highlights', data.get('results', []))
+            
+            # Convertir en format attendu si nécessaire
+            formatted_highlights = []
+            for i, h in enumerate(highlights):
+                # S'assurer que c'est un dict avec les bonnes clés
+                if isinstance(h, dict):
+                    formatted = {
+                        'page': h.get('page', h.get('page_number', i // 3 + 1)),
+                        'extracted_text': h.get('extracted_text', h.get('text', '')),
+                        'confidence': h.get('confidence', h.get('confidence_score', 85)),
+                        'custom_name': h.get('custom_name', f'Highlight {i+1}')
+                    }
+                    formatted_highlights.append(formatted)
+            
+            print(f"✓ {len(formatted_highlights)} highlights chargés du JSON")
+            
+            # Afficher avec la limite
+            MAX_DISPLAY = 100
+            if len(formatted_highlights) > MAX_DISPLAY:
+                print(f"⚠️ Limite d'affichage: {MAX_DISPLAY} sur {len(formatted_highlights)}")
+                
+                # Stocker tous pour l'export
+                self.all_highlights_full = formatted_highlights
+                
+                # Afficher seulement les premiers 100
+                display_list = formatted_highlights[:MAX_DISPLAY]
+            else:
+                display_list = formatted_highlights
+            
+            # Déclencher l'affichage
+            if hasattr(self, '_on_highlights_changed'):
+                self._on_highlights_changed(display_list)
+            
+            # Message de succès
+            import tkinter.messagebox as messagebox
+            messagebox.showinfo(
+                "Import réussi",
+                f"{len(formatted_highlights)} highlights chargés\n"
+                f"Affichage limité à {min(MAX_DISPLAY, len(formatted_highlights))} éléments"
+            )
+            
+        except Exception as e:
+            print(f"Erreur import JSON: {e}")
+            import tkinter.messagebox as messagebox
+            messagebox.showerror("Erreur", f"Impossible de charger le fichier:\n{str(e)}")
+
+
     def _on_highlight_added(self, highlight: HighlightViewModel):
         """Ajoute un highlight à la grille."""
         def update():
