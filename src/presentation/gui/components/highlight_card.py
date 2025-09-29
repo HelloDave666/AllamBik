@@ -1,8 +1,8 @@
 """
-Composant Highlight Card - Version corrigée définitive
+Composant Highlight Card - Version avec support pagination
 """
 import customtkinter as ctk
-from typing import Optional, Callable, Dict, Any
+from typing import Optional, Callable, Dict, Any, List
 import tkinter as tk
 from tkinter import messagebox
 
@@ -302,7 +302,7 @@ class HighlightCard(ctk.CTkFrame):
 
 class HighlightGrid(ctk.CTkScrollableFrame):
     """
-    Grille scrollable pour afficher les highlights - Version corrigée définitive.
+    Grille scrollable pour afficher les highlights - Version avec pagination.
     """
     
     def __init__(self, parent, columns: int = 2, on_edit_requested: Optional[Callable] = None, 
@@ -313,8 +313,11 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         self.cards = []
         self.highlights_data = []
         self.on_edit_requested = on_edit_requested
-        self.on_highlight_selected = on_highlight_selected  # NOUVEAU
+        self.on_highlight_selected = on_highlight_selected
         self.configure(fg_color="transparent")
+        
+        # NOUVEAU : Limiter la hauteur pour eviter le scroll avec pagination
+        self.configure(height=600)  # Hauteur fixe pour ~50 elements
         
         # Configuration de la grille
         for i in range(columns):
@@ -329,7 +332,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         card = HighlightCard(
             self,
             highlight_data=highlight_data,
-            on_click=self.on_highlight_selected,  # NOUVEAU: Callback de sélection
+            on_click=self.on_highlight_selected,
             on_update=self._on_highlight_updated,
             on_delete=self._on_highlight_deleted,
             on_edit_requested=self.on_edit_requested
@@ -345,6 +348,30 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         # Effet d'apparition
         card.configure(fg_color="#2a2a2a")
         self.after(50, lambda: card.configure(fg_color="#3a3a3a"))
+    
+    def set_paginated_data(self, highlights_data: List[Dict[str, Any]]):
+        """
+        Remplace toutes les donnees affichees par une nouvelle page.
+        Utilise pour la pagination.
+        
+        Args:
+            highlights_data: Liste des highlights a afficher pour cette page
+        """
+        # Supprimer toutes les cartes existantes
+        for card in self.cards:
+            card.destroy()
+        
+        self.cards.clear()
+        self.highlights_data.clear()
+        
+        # Ajouter les nouvelles donnees
+        for highlight_data in highlights_data:
+            self.add_highlight(highlight_data)
+        
+        # Forcer la mise a jour de l'affichage
+        self.update_idletasks()
+        
+        print(f"INFO: Affichage de {len(highlights_data)} highlights (page paginee)")
     
     def update_highlight(self, updated_data: Dict[str, Any]):
         """Met à jour un highlight existant - CORRECTION BUG ÉDITION."""
@@ -404,8 +431,6 @@ class HighlightGrid(ctk.CTkScrollableFrame):
     
     def _on_highlight_updated(self, updated_data):
         """Callback quand un highlight est mis à jour."""
-        # Cette méthode est appelée par les cartes individuelles
-        # Elle déclenche la méthode update_highlight ci-dessus
         self.update_highlight(updated_data)
     
     def _on_highlight_deleted(self, deleted_data):
@@ -448,6 +473,6 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         """Retourne le nombre de highlights."""
         return len(self.cards)
     
-    def get_highlights_data(self) -> list:
+    def get_highlights_data(self) -> List[Dict[str, Any]]:
         """Retourne toutes les données des highlights."""
         return self.highlights_data.copy()
