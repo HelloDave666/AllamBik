@@ -1,5 +1,5 @@
 ﻿"""
-Fenetre principale - Version corrigee avec pagination et selection multiple fonctionnelle
+Fenetre principale - Version avec support format propriétaire .allambik
 """
 import customtkinter as ctk
 import asyncio
@@ -26,6 +26,9 @@ from src.presentation.gui.components.highlight_card import HighlightGrid
 from src.presentation.gui.components.zone_picker import ZonePickerButton
 from src.presentation.gui.components.pagination_controller import PaginationController, PaginationBar
 
+# NOUVEAU: Import du gestionnaire de projets
+from src.core.allambik_project_manager import AllambikProject
+
 
 class IntegratedEditPanel(ctk.CTkFrame):
     """Panneau d'edition integre en bas de l'interface."""
@@ -33,7 +36,7 @@ class IntegratedEditPanel(ctk.CTkFrame):
     def __init__(self, parent, main_window=None, on_save=None, on_cancel=None, on_delete=None):
         super().__init__(parent)
         self.configure(fg_color="#2a2a2a", corner_radius=10)
-        self.main_window = main_window  # Reference directe a MainWindow
+        self.main_window = main_window
         self.on_save = on_save
         self.on_cancel = on_cancel
         self.on_delete = on_delete
@@ -287,18 +290,23 @@ class IntegratedEditPanel(ctk.CTkFrame):
         if new_name != self.initial_name:
             has_changes = True
         
-        self.current_highlight['text'] = new_text
-        if new_name:
-            self.current_highlight['custom_name'] = new_name
-        elif 'custom_name' in self.current_highlight:
-            del self.current_highlight['custom_name']
-        
         if has_changes:
-            self.current_highlight['modified'] = True
-            self.current_highlight['modified_date'] = datetime.now().isoformat()
-        
-        if self.on_save:
-            self.on_save(self.current_highlight)
+            # Préparer les modifications
+            updates = {
+                'text': new_text,
+                'modified': True,
+                'modified_date': datetime.now().isoformat()
+            }
+            
+            if new_name:
+                updates['custom_name'] = new_name
+            elif 'custom_name' in self.current_highlight and new_name != self.initial_name:
+                updates['custom_name'] = ''
+            
+            self.current_highlight.update(updates)
+            
+            if self.on_save:
+                self.on_save(self.current_highlight)
     
     def _delete_highlight(self):
         """Supprime la fiche highlight ou les fiches selectionnees (multi-selection)."""
@@ -316,62 +324,43 @@ class IntegratedEditPanel(ctk.CTkFrame):
                     "Supprimer les highlights",
                     f"Etes-vous sur de vouloir supprimer {len(selected_cards)} highlights ?\n\nCette action est irreversible."
                 ):
-                    # Recuperer toutes les donnees a supprimer AVANT la suppression
-                    data_to_delete = []
+                    # Récupérer les IDs des highlights à supprimer
+                    highlight_ids = []
                     for card in selected_cards:
-                        data_to_delete.append({
-                            'page': card.highlight_data.get('page'),
-                            'text': card.highlight_data.get('text', ''),
-                            'timestamp': card.highlight_data.get('timestamp')
-                        })
-                        print(f"  Preparant suppression: Page {card.highlight_data.get('page')}")
+                        highlight_id = card.highlight_data.get('id')
+                        if highlight_id:
+                            highlight_ids.append(highlight_id)
+                        print(f"  Preparant suppression ID: {highlight_id}, Page: {card.highlight_data.get('page')}")
                     
-                    # Supprimer de all_highlights_data (source complete)
-                    if hasattr(self.main_window, 'all_highlights_data'):
-                        initial_count = len(self.main_window.all_highlights_data)
-                        print(f"Taille initiale all_highlights_data: {initial_count}")
+                    # NOUVEAU: Supprimer via AllambikProject
+                    deleted_count = 0
+                    if self.main_window.current_project and highlight_ids:
+                        deleted_count = self.main_window.current_project.delete_highlights(highlight_ids)
+                        print(f"Projet .allambik: {deleted_count} highlights supprimés")
+                    
+                    if deleted_count > 0:
+                        # Recharger les données depuis le projet
+                        self.main_window.all_highlights_data = self.main_window.current_project.highlights.copy()
                         
-                        # Creer une nouvelle liste sans les elements a supprimer
-                        new_data = []
-                        deleted_count = 0
-                        
-                        for stored_data in self.main_window.all_highlights_data:
-                            should_delete = False
-                            for delete_data in data_to_delete:
-                                if (stored_data.get('page') == delete_data['page'] and
-                                    stored_data.get('text', '') == delete_data['text'] and
-                                    stored_data.get('timestamp') == delete_data['timestamp']):
-                                    should_delete = True
-                                    deleted_count += 1
-                                    print(f"    -> Suppression confirmee Page {delete_data['page']}")
-                                    break
-                            
-                            if not should_delete:
-                                new_data.append(stored_data)
-                        
-                        print(f"Resultat: {deleted_count} supprime(s), {len(new_data)} restant(s)")
-                        
-                        # Remplacer les donnees
-                        self.main_window.all_highlights_data = new_data
-                        
-                        # Mettre a jour la pagination avec les nouvelles donnees
+                        # Mettre à jour la pagination
                         self.main_window.pagination_controller.set_data(self.main_window.all_highlights_data)
                         
-                        # Afficher la page courante mise a jour
+                        # Réafficher la page courante
                         self.main_window._display_current_page()
-                    
-                    # Mettre a jour l'interface
-                    self.main_window._update_highlights_count()
-                    self.main_window._save_to_extraction_file()
-                    self.main_window._update_delete_button_text()
-                    self._show_default_message()
-                    
-                    messagebox.showinfo("Suppression reussie", f"{deleted_count} highlights supprimes.")
+                        
+                        # Mettre à jour l'interface
+                        self.main_window._update_highlights_count()
+                        self.main_window._update_delete_button_text()
+                        self._show_default_message()
+                        
+                        messagebox.showinfo("Suppression reussie", f"{deleted_count} highlights supprimes dans le projet .allambik.")
+                    else:
+                        messagebox.showwarning("Erreur", "Impossible de supprimer les highlights du projet.")
                 return
         
         print("MODE SUPPRESSION SIMPLE")
         
-        # Suppression simple (code existant)
+        # Suppression simple
         if not self.current_highlight:
             messagebox.showwarning("Aucune selection", "Aucun highlight selectionne a supprimer.")
             return
@@ -383,6 +372,20 @@ class IntegratedEditPanel(ctk.CTkFrame):
             "Supprimer le highlight",
             f"Etes-vous sur de vouloir supprimer definitivement :\n\n'{name}'\n\nCette action est irreversible."
         ):
+            # NOUVEAU: Suppression simple via AllambikProject
+            highlight_id = self.current_highlight.get('id')
+            if self.main_window.current_project and highlight_id:
+                deleted_count = self.main_window.current_project.delete_highlights([highlight_id])
+                if deleted_count > 0:
+                    # Recharger les données
+                    self.main_window.all_highlights_data = self.main_window.current_project.highlights.copy()
+                    self.main_window.pagination_controller.set_data(self.main_window.all_highlights_data)
+                    self.main_window._display_current_page()
+                    self.main_window._update_highlights_count()
+                    self._show_default_message()
+                    return
+            
+            # Fallback vers l'ancienne méthode
             if self.on_delete:
                 self.on_delete(self.current_highlight)
             
@@ -390,7 +393,7 @@ class IntegratedEditPanel(ctk.CTkFrame):
 
 
 class MainWindow(ctk.CTk):
-    """Fenetre principale de l'application AllamBik v3 avec pagination."""
+    """Fenetre principale de l'application AllamBik v3 avec support .allambik."""
     
     def __init__(self, viewmodel: MainViewModel):
         super().__init__()
@@ -404,9 +407,12 @@ class MainWindow(ctk.CTk):
         self.extraction_file_path = None
         self.selected_card = None
         
+        # NOUVEAU: Gestionnaire de projet .allambik
+        self.current_project = None
+        
         # Pagination pour grandes listes
         self.pagination_controller = PaginationController(items_per_page=50)
-        self.all_highlights_data = []  # Donnees completes du JSON
+        self.all_highlights_data = []
         
         self._update_queue = []
         
@@ -530,16 +536,17 @@ class MainWindow(ctk.CTk):
         )
         self.detect_button.pack(fill="x", padx=20, pady=(5, 5))
         
-        self.import_json_button = ctk.CTkButton(
+        # MODIFIE: Bouton pour charger .allambik ET .json
+        self.import_button = ctk.CTkButton(
             controls_section,
-            text="CHARGER JSON",
+            text="CHARGER PROJET",
             font=ctk.CTkFont(size=12, weight="bold"),
             height=40,
             fg_color="#8B4513",
             hover_color="#A0522D",
-            command=self._on_import_json_clicked
+            command=self._on_import_project_clicked
         )
-        self.import_json_button.pack(fill="x", padx=20, pady=(5, 5))
+        self.import_button.pack(fill="x", padx=20, pady=(5, 5))
         
         self.export_word_button = ctk.CTkButton(
             controls_section,
@@ -683,19 +690,19 @@ class MainWindow(ctk.CTk):
         )
         self.highlights_grid.grid(row=2, column=0, sticky="nsew", padx=15, pady=(0, 5))
         
-        # BARRE DE PAGINATION - Positionnee apres la grille
+        # BARRE DE PAGINATION
         self.pagination_bar = PaginationBar(
             highlights_section,
             self.pagination_controller,
             fg_color="transparent"
         )
         self.pagination_bar.grid(row=3, column=0, sticky="ew", padx=15, pady=(5, 15))
-        self.pagination_bar.grid_remove()  # Cachee au debut
+        self.pagination_bar.grid_remove()
         
         # PANNEAU D'EDITION avec reference a MainWindow
         self.edit_panel = IntegratedEditPanel(
             right_panel,
-            main_window=self,  # CORRECTION: Passer la reference
+            main_window=self,
             on_save=self._on_edit_saved,
             on_cancel=self._on_edit_cancelled,
             on_delete=self._on_highlight_deleted
@@ -840,11 +847,9 @@ class MainWindow(ctk.CTk):
         if shift_pressed:
             # Mode multi-selection : ajouter/retirer de la selection
             if clicked_card in self.highlights_grid.selected_cards:
-                # Deselectionner cette carte
                 clicked_card.set_selected(False)
                 self.highlights_grid.selected_cards.remove(clicked_card)
             else:
-                # Ajouter a la selection
                 clicked_card.set_selected(True)
                 self.highlights_grid.selected_cards.append(clicked_card)
             
@@ -887,6 +892,19 @@ class MainWindow(ctk.CTk):
     def _on_edit_saved(self, updated_data):
         """Callback sauvegarde edition."""
         try:
+            # NOUVEAU: Sauvegarder via AllambikProject si disponible
+            if self.current_project:
+                highlight_id = updated_data.get('id')
+                if highlight_id:
+                    self.current_project.update_highlight(highlight_id, updated_data)
+                    # Recharger les données depuis le projet
+                    self.all_highlights_data = self.current_project.highlights.copy()
+                    self.pagination_controller.set_data(self.all_highlights_data)
+                    self._display_current_page()
+                    print(f"Highlight {highlight_id} mis à jour dans le projet .allambik")
+                    return
+            
+            # Fallback vers l'ancienne méthode
             self.highlights_grid.update_highlight(updated_data)
             self._save_to_extraction_file()
         except Exception as e:
@@ -922,7 +940,7 @@ class MainWindow(ctk.CTk):
             print(f"ERREUR: Erreur rafraichissement: {e}")
     
     def _save_to_extraction_file(self):
-        """Sauvegarde dans fichier."""
+        """Sauvegarde dans fichier TXT (legacy)."""
         if not self.extraction_file_path or not os.path.exists(self.extraction_file_path):
             self._find_or_create_extraction_file()
         
@@ -1004,6 +1022,15 @@ class MainWindow(ctk.CTk):
                 info_para.add_run(f"{datetime.now().strftime('%d/%m/%Y a %H:%M')}\n")
                 info_para.add_run("Nombre total d'extraits: ").bold = True
                 info_para.add_run(f"{len(highlights_data)} highlights\n")
+                
+                # NOUVEAU: Ajouter les infos du projet si disponible
+                if self.current_project:
+                    stats = self.current_project.get_statistics()
+                    info_para.add_run("Session d'extraction: ").bold = True
+                    info_para.add_run(f"{stats['session_id']}\n")
+                    if stats['deleted_count'] > 0:
+                        info_para.add_run("Highlights supprimés: ").bold = True
+                        info_para.add_run(f"{stats['deleted_count']}\n")
                 
                 doc.add_paragraph("=" * 60)
                 
@@ -1116,7 +1143,14 @@ class MainWindow(ctk.CTk):
         print(f"INFO: Zone: {w}x{h} a ({x},{y})")
     
     def _on_start_clicked(self):
-        """Gere clic demarrer."""
+        """MODIFIE: Gere clic demarrer avec création projet .allambik."""
+        # NOUVEAU: Créer un projet .allambik au début de l'extraction
+        if not self.current_project:
+            zone = getattr(self.viewmodel, 'custom_scan_zone', None)
+            self.current_project = AllambikProject()
+            project_path = self.current_project.create_new_project(extraction_zone=zone)
+            print(f"INFO: Projet .allambik créé: {project_path}")
+        
         if hasattr(self.viewmodel, 'detected_pages') and self.viewmodel.detected_pages:
             total_pages = self.viewmodel.detected_pages
             
@@ -1186,82 +1220,95 @@ class MainWindow(ctk.CTk):
                 )
                 future.add_done_callback(lambda f: self.after(0, lambda: on_complete(f)))
     
-    def _on_import_json_clicked(self):
-        """Charge un fichier JSON avec pagination automatique."""
-        from tkinter import filedialog, messagebox
-        import json
-        import os
+    def _on_import_project_clicked(self):
+        """NOUVEAU: Charge un fichier .allambik ou .json."""
+        file_path = filedialog.askopenfilename(
+            title="Selectionner un projet AllamBik ou fichier JSON",
+            initialdir=os.path.abspath("extractions") if os.path.exists("extractions") else os.getcwd(),
+            filetypes=[
+                ("Projets AllamBik", "*.allambik"),
+                ("Fichiers JSON", "*.json"), 
+                ("Tous les fichiers", "*.*")
+            ]
+        )
         
-        print("INFO: Import JSON demande")
-        
-        try:
-            file_path = filedialog.askopenfilename(
-                title="Selectionner un fichier JSON d'extraction",
-                initialdir=os.path.abspath("extractions") if os.path.exists("extractions") else os.getcwd(),
-                filetypes=[("Fichiers JSON", "*.json"), ("Tous les fichiers", "*.*")]
-            )
-            
-            if not file_path:
-                print("Selection annulee")
-                return
-        except Exception as e:
-            messagebox.showerror("Erreur", f"Impossible d'ouvrir le dialogue:\n{str(e)}")
+        if not file_path:
             return
         
         try:
-            print(f"Chargement de: {file_path}")
+            file_ext = os.path.splitext(file_path)[1].lower()
             
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            highlights = []
-            if isinstance(data, list):
-                highlights = data
-            elif isinstance(data, dict):
-                highlights = data.get('highlights', data.get('results', []))
-            
-            formatted_highlights = []
-            for i, h in enumerate(highlights):
-                if isinstance(h, dict):
-                    highlight_data = {
-                        'page': h.get('page', h.get('page_number', i // 3 + 1)),
-                        'text': h.get('text', h.get('extracted_text', '')),
-                        'confidence': h.get('confidence', h.get('confidence_score', 85)),
-                        'timestamp': h.get('timestamp', "2024-01-01T00:00:00"),
-                        'source_image': h.get('source_image', None),
-                        'coordinates': h.get('coordinates', None),
-                        'validated': h.get('validated', False),
-                        'modified': h.get('modified', False)
-                    }
-                    formatted_highlights.append(highlight_data)
-            
-            print(f"[OK] {len(formatted_highlights)} highlights charges")
-            
-            # Stocker toutes les donnees dans all_highlights_data
-            self.all_highlights_data = formatted_highlights
-            
-            # Configurer la pagination
-            self.pagination_controller.set_data(formatted_highlights)
-            self.pagination_controller.on_page_changed = self._on_page_changed
-            
-            # Afficher la premiere page
-            self._display_current_page()
-            
-            # Afficher la barre de pagination
-            self.pagination_bar.grid()
-            self.pagination_bar.refresh()
-            
-            messagebox.showinfo(
-                "Import reussi",
-                f"{len(formatted_highlights)} highlights charges\n"
-                f"Affichage par pages de {self.pagination_controller.items_per_page}"
-            )
-            
+            if file_ext == '.allambik':
+                # Charger projet .allambik
+                self.current_project = AllambikProject(file_path)
+                
+                if self.current_project.highlights:
+                    self.all_highlights_data = self.current_project.highlights.copy()
+                    
+                    # Configurer la pagination
+                    self.pagination_controller.set_data(self.all_highlights_data)
+                    self.pagination_controller.on_page_changed = self._on_page_changed
+                    
+                    # Afficher la première page
+                    self._display_current_page()
+                    
+                    # Afficher la barre de pagination
+                    self.pagination_bar.grid()
+                    self.pagination_bar.refresh()
+                    
+                    # Afficher les statistiques du projet
+                    stats = self.current_project.get_statistics()
+                    message = f"Projet AllamBik chargé avec succès!\n\n"
+                    message += f"• Highlights: {stats['total_highlights']}\n"
+                    message += f"• Session: {stats['session_id']}\n"
+                    if stats['deleted_count'] > 0:
+                        message += f"• Supprimés: {stats['deleted_count']}\n"
+                    if stats['modified_count'] > 0:
+                        message += f"• Modifiés: {stats['modified_count']}\n"
+                    message += f"• Dernière modification: {stats['last_modified'][:19].replace('T', ' ')}"
+                    
+                    messagebox.showinfo("Projet chargé", message)
+                    
+                    print(f"INFO: Projet .allambik chargé - {len(self.all_highlights_data)} highlights")
+                else:
+                    messagebox.showwarning("Projet vide", "Le projet AllamBik ne contient aucun highlight.")
+                    
+            elif file_ext == '.json':
+                # Importer JSON vers nouveau projet .allambik
+                self.current_project = AllambikProject.import_from_json(file_path)
+                
+                if self.current_project and self.current_project.highlights:
+                    self.all_highlights_data = self.current_project.highlights.copy()
+                    
+                    # Configurer la pagination
+                    self.pagination_controller.set_data(self.all_highlights_data)
+                    self.pagination_controller.on_page_changed = self._on_page_changed
+                    
+                    # Afficher la première page
+                    self._display_current_page()
+                    
+                    # Afficher la barre de pagination
+                    self.pagination_bar.grid()
+                    self.pagination_bar.refresh()
+                    
+                    messagebox.showinfo(
+                        "Import JSON réussi",
+                        f"JSON importé et converti en projet .allambik\n\n"
+                        f"• {len(self.all_highlights_data)} highlights importés\n"
+                        f"• Fichier projet: {os.path.basename(self.current_project.project_path)}"
+                    )
+                    
+                    print(f"INFO: JSON importé vers .allambik - {len(self.all_highlights_data)} highlights")
+                else:
+                    messagebox.showerror("Erreur", "Impossible d'importer le fichier JSON.")
+            else:
+                messagebox.showerror("Format non supporté", "Seuls les fichiers .allambik et .json sont supportés.")
+                    
         except Exception as e:
-            print(f"Erreur import JSON: {e}")
+            print(f"Erreur import: {e}")
             import traceback
             traceback.print_exc()
-            messagebox.showerror("Erreur", f"Impossible de charger:\n{str(e)}")
+            messagebox.showerror("Erreur", f"Impossible de charger le fichier:\n{str(e)}")
     
     def _on_page_changed(self, page_data, page_number):
         """Callback changement de page."""
@@ -1312,6 +1359,13 @@ class MainWindow(ctk.CTk):
             )
             self.progress_label.configure(text=self.viewmodel.progress_message)
             
+            # NOUVEAU: Mettre à jour les stats du projet si disponible
+            if self.current_project:
+                self.current_project.update_extraction_stats(
+                    self.viewmodel.pages_scanned,
+                    self.viewmodel.pages_with_content
+                )
+            
             self.stats_labels["pages_scanned"].configure(
                 text=str(self.viewmodel.pages_scanned)
             )
@@ -1325,7 +1379,7 @@ class MainWindow(ctk.CTk):
         self._schedule_update(update)
     
     def _on_highlight_added(self, highlight: HighlightViewModel):
-        """Ajoute un highlight."""
+        """MODIFIE: Ajoute un highlight au projet .allambik."""
         def update():
             highlight_data = {
                 'page': highlight.page,
@@ -1338,8 +1392,26 @@ class MainWindow(ctk.CTk):
                 'modified': False
             }
             
-            self.highlights_grid.add_highlight(highlight_data)
+            # NOUVEAU: Ajouter au projet .allambik
+            if self.current_project:
+                success = self.current_project.add_highlight(highlight_data)
+                if success:
+                    # Recharger les données depuis le projet
+                    self.all_highlights_data = self.current_project.highlights.copy()
+                    self.pagination_controller.set_data(self.all_highlights_data)
+                    
+                    # Si on est sur la dernière page, l'afficher
+                    if self.pagination_controller.current_page == self.pagination_controller.total_pages:
+                        self._display_current_page()
+                    
+                    print(f"INFO: Highlight ajouté au projet .allambik - Page {highlight.page}")
+                else:
+                    print(f"ERREUR: Impossible d'ajouter highlight au projet")
+            else:
+                # Fallback vers l'ancienne méthode
+                self.highlights_grid.add_highlight(highlight_data)
+                self._save_to_extraction_file()
+            
             self._update_highlights_count()
-            self._save_to_extraction_file()
         
         self._schedule_update(update)

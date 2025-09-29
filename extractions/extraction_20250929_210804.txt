@@ -1,0 +1,308 @@
+EXTRACTION KINDLE - 29/09/2025 21:08:04
+================================================================================
+
+Pages scannées: 10
+Pages avec contenu: 10
+Highlights extraits: 30
+================================================================================
+
+--- PAGE 1 ---
+
+=== SURLIGNEMENT #1 ===
+plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.
+(Confiance: 96%)
+(Mots: 21)
+(Position: x=1284, y=138, taille=525x122)
+(ID: 20250929_210723_page001_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.
+(Confiance: 94%)
+(Mots: 73)
+(Position: x=1284, y=265, taille=534x426)
+(ID: 20250929_210723_page001_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.
+(Confiance: 91%)
+(Mots: 12)
+(Position: x=1284, y=861, taille=531x84)
+(ID: 20250929_210723_page001_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 2 ---
+
+=== SURLIGNEMENT #1 ===
+Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).
+(Confiance: 94%)
+(Mots: 82)
+(Position: x=1284, y=138, taille=529x464)
+(ID: 20250929_210727_page002_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.
+(Confiance: 93%)
+(Mots: 59)
+(Position: x=1284, y=607, taille=538x312)
+(ID: 20250929_210727_page002_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 3 ---
+
+=== SURLIGNEMENT #1 ===
+Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles
+(Confiance: 92%)
+(Mots: 40)
+(Position: x=1284, y=138, taille=537x198)
+(ID: 20250929_210731_page003_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.
+(Confiance: 94%)
+(Mots: 42)
+(Position: x=1284, y=417, taille=534x198)
+(ID: 20250929_210731_page003_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Dans cette première perspective,
+(Confiance: 96%)
+(Mots: 4)
+(Position: x=1451, y=886, taille=356x46)
+(ID: 20250929_210731_page003_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 4 ---
+
+=== SURLIGNEMENT #1 ===
+l'entretien d’explicitation est le produit de la for- malisation d’une pratique empirique.
+(Confiance: 93%)
+(Mots: 12)
+(Position: x=1284, y=138, taille=521x84)
+(ID: 20250929_210735_page004_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+l'étude du déroulement de l’action comme source d’inférence pour l'analyse du fonctionnement intellectuel,
+(Confiance: 91%)
+(Mots: 13)
+(Position: x=1284, y=265, taille=531x122)
+(ID: 20250929_210735_page004_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+travers un groupe de recherche international: : le GREX (Groupe de Recherche sur TEXplicitation).
+(Confiance: 94%)
+(Mots: 14)
+(Position: x=1284, y=683, taille=535x122)
+(ID: 20250929_210735_page004_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 5 ---
+
+=== SURLIGNEMENT #1 ===
+il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.
+(Confiance: 94%)
+(Mots: 24)
+(Position: x=1284, y=138, taille=539x122)
+(ID: 20250929_210742_page005_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+ce qui est observable (si il y a un observateur) et les traces de la réalisation de l’action (brouillon, résul- tats intermédiaires encore visibles).
+(Confiance: 95%)
+(Mots: 24)
+(Position: x=1284, y=290, taille=540x160)
+(ID: 20250929_210742_page005_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Dans le domaine de la didactique, je proposerai une analyse de l’évolution des pratiques basées sur le questionnement,
+(Confiance: 94%)
+(Mots: 18)
+(Position: x=1284, y=455, taille=527x122)
+(ID: 20250929_210742_page005_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #5 ===
+techniques rogériennes).
+(Confiance: 92%)
+(Mots: 2)
+(Position: x=1284, y=683, taille=276x46)
+(ID: 20250929_210742_page005_highlight05)
+
+----------------------------------------
+
+=== SURLIGNEMENT #6 ===
+s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-informer.
+(Confiance: 87%)
+(Mots: 10)
+(Position: x=1284, y=810, taille=526x84)
+(ID: 20250929_210742_page005_highlight06)
+
+----------------------------------------
+
+
+--- PAGE 6 ---
+
+=== SURLIGNEMENT #1 ===
+Des traces, des observables et des verbalisations
+(Confiance: 94%)
+(Mots: 7)
+(Position: x=1284, y=266, taille=338x92)
+(ID: 20250929_210746_page006_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Une activité matérielle ou mentale se traduit par des observables comportementaux,
+(Confiance: 95%)
+(Mots: 11)
+(Position: x=1284, y=618, taille=505x84)
+(ID: 20250929_210746_page006_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Une des ca- ractéristiques de ces observables c’est qu’ils sont transitoires, pour les observer il faut être présent ils ne sont jamais donnés : c’est-a- dire que pour être remarqués, retenus, il faut les attendre, être en projet de les observer parce qu’ils
+(Confiance: 94%)
+(Mots: 43)
+(Position: x=1284, y=732, taille=537x236)
+(ID: 20250929_210746_page006_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.
+(Confiance: 94%)
+(Mots: 72)
+(Position: x=1284, y=138, taille=534x388)
+(ID: 20250929_210751_page007_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.
+(Confiance: 92%)
+(Mots: 32)
+(Position: x=1284, y=531, taille=528x198)
+(ID: 20250929_210751_page007_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.
+(Confiance: 93%)
+(Mots: 12)
+(Position: x=1284, y=797, taille=534x122)
+(ID: 20250929_210751_page007_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 8 ---
+
+=== SURLIGNEMENT #1 ===
+Les traces
+(Confiance: 96%)
+(Mots: 2)
+(Position: x=1302, y=185, taille=119x46)
+(ID: 20250929_210756_page008_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Les traces sont les indices matériels plus ou moins permanents produits par l’activité.
+(Confiance: 94%)
+(Mots: 13)
+(Position: x=1284, y=261, taille=491x84)
+(ID: 20250929_210756_page008_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’avoir des yeux pour voir). Comme le dit son nom, la trace n’est qu’une information partielle de l’activité qui l'a produite.
+(Confiance: 94%)
+(Mots: 35)
+(Position: x=1284, y=413, taille=539x198)
+(ID: 20250929_210756_page008_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #4 ===
+immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour faire « signe ».
+(Confiance: 95%)
+(Mots: 15)
+(Position: x=1284, y=641, taille=534x122)
+(ID: 20250929_210756_page008_highlight04)
+
+----------------------------------------
+
+
+--- PAGE 9 ---
+
+=== SURLIGNEMENT #1 ===
+Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’observables et de traces (rendre plus « publique » la démarche en rendant plus nombreuses les traductions comportementales du fonctionnement intellectuel mis en œuvre dans la réalisation de l'exercice), ou les amplifier (les rendre plus visibles, plus apparents, plus aisés à observer et plus permanents : par exemple, supprimer le crayon dans le travail au brouillon pour rendre les étapes intermédiaires présentes, sans possibilité de corrections masquées ou d’effa- cement). Dans le cadre de la recherche, traces et observables sont des données complémentaires dont il est essentiel de disposer. Dans le cadre de l'activité didactique quotidienne, les utiliser reste précieux, même si l’on sait utiliser une technique d'entretien.
+(Confiance: 94%)
+(Mots: 122)
+(Position: x=1284, y=176, taille=540x692)
+(ID: 20250929_210759_page009_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 10 ---
+
+=== SURLIGNEMENT #1 ===
+Les verbalisations
+(Confiance: 92%)
+(Mots: 2)
+(Position: x=1302, y=185, taille=205x46)
+(ID: 20250929_210804_page010_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent peu de traces (seulement le produit final, par exemple, on ne sait alors rien du cheminement) et produisent peu d’observables (la résolution de tête d’un problème). personne n'était présent pour noter les observables po- tentiellement disponibles (travail personnel à la maison, absence de l'enseignant au bon moment, au bon endroit du lieu de formation, impossibilité de tout observer simultanément dans un groupe classe, analyse d’accidents en psychologie du tra- vail). La seule source d’informations disponible est alors la verbalisation.
+(Confiance: 93%)
+(Mots: 94)
+(Position: x=1284, y=261, taille=538x540)
+(ID: 20250929_210804_page010_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Les traces et les observables ont le mérite de relever
+(Confiance: 95%)
+(Mots: 10)
+(Position: x=1284, y=882, taille=512x84)
+(ID: 20250929_210804_page010_highlight03)
+
+----------------------------------------
+
+
