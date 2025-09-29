@@ -1,5 +1,5 @@
 """
-Composant Highlight Card - Version avec support pagination
+Composant Highlight Card - Version avec support pagination et selection multiple
 """
 import customtkinter as ctk
 from typing import Optional, Callable, Dict, Any, List
@@ -9,7 +9,7 @@ from tkinter import messagebox
 
 class HighlightCard(ctk.CTkFrame):
     """
-    Carte pour afficher un highlight extrait - Version corrigée définitive.
+    Carte pour afficher un highlight extrait - Version avec support multi-selection.
     """
     
     def __init__(
@@ -157,8 +157,8 @@ class HighlightCard(ctk.CTkFrame):
         # Double-clic pour édition intégrée
         self.bind("<Double-Button-1>", self._on_double_click)
         
-        # Clic simple pour sélection
-        self.bind("<Button-1>", self._on_single_click)
+        # Clic simple pour sélection (avec support Shift)
+        self.bind("<Button-1>", self._on_card_clicked)
         
         # Hover effects
         self.bind("<Enter>", self._on_enter)
@@ -167,21 +167,24 @@ class HighlightCard(ctk.CTkFrame):
         # Bind events pour tous les enfants
         for child in self.winfo_children():
             child.bind("<Double-Button-1>", self._on_double_click)
-            child.bind("<Button-1>", self._on_single_click)
+            child.bind("<Button-1>", self._on_card_clicked)
             child.bind("<Enter>", self._on_enter)
             child.bind("<Leave>", self._on_leave)
             
             # Bind récursif pour les sous-enfants
             for subchild in child.winfo_children():
                 subchild.bind("<Double-Button-1>", self._on_double_click)
-                subchild.bind("<Button-1>", self._on_single_click)
+                subchild.bind("<Button-1>", self._on_card_clicked)
                 subchild.bind("<Enter>", self._on_enter)
                 subchild.bind("<Leave>", self._on_leave)
     
-    def _on_single_click(self, event):
-        """Gère le clic simple pour sélection."""
+    def _on_card_clicked(self, event):
+        """Gère le clic sur la carte avec support Shift pour multi-selection."""
+        # Vérifier si Shift est enfoncé
+        shift_pressed = event.state & 0x0001  # Shift key mask
+        
         if self.on_click:
-            self.on_click(self.highlight_data)
+            self.on_click(self.highlight_data, shift_pressed)
     
     def _on_double_click(self, event):
         """Gère le double-clic pour ouvrir l'édition intégrée."""
@@ -302,7 +305,7 @@ class HighlightCard(ctk.CTkFrame):
 
 class HighlightGrid(ctk.CTkScrollableFrame):
     """
-    Grille scrollable pour afficher les highlights - Version avec pagination.
+    Grille scrollable pour afficher les highlights - Version avec pagination et multi-selection.
     """
     
     def __init__(self, parent, columns: int = 2, on_edit_requested: Optional[Callable] = None, 
@@ -315,6 +318,9 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         self.on_edit_requested = on_edit_requested
         self.on_highlight_selected = on_highlight_selected
         self.configure(fg_color="transparent")
+        
+        # NOUVEAU : Liste des cartes selectionnees (multi-selection)
+        self.selected_cards = []
         
         # NOUVEAU : Limiter la hauteur pour eviter le scroll avec pagination
         self.configure(height=600)  # Hauteur fixe pour ~50 elements
@@ -363,6 +369,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         
         self.cards.clear()
         self.highlights_data.clear()
+        self.selected_cards.clear()  # Vider aussi les selections
         
         # Ajouter les nouvelles donnees
         for highlight_data in highlights_data:
@@ -372,6 +379,53 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         self.update_idletasks()
         
         print(f"INFO: Affichage de {len(highlights_data)} highlights (page paginee)")
+    
+    def clear_all_selections(self):
+        """Deselectionne toutes les cartes."""
+        for card in self.selected_cards:
+            try:
+                card.set_selected(False)
+            except:
+                pass
+        self.selected_cards.clear()
+    
+    def get_selected_cards(self) -> List:
+        """Retourne la liste des cartes selectionnees."""
+        return self.selected_cards.copy()
+    
+    def delete_selected_cards(self):
+        """Supprime toutes les cartes selectionnees."""
+        if not self.selected_cards:
+            return 0
+        
+        # Copier la liste pour eviter les modifications pendant l'iteration
+        cards_to_delete = self.selected_cards.copy()
+        data_to_delete = [card.highlight_data for card in cards_to_delete]
+        count = len(cards_to_delete)
+        
+        # Supprimer les cartes de l'affichage
+        for card in cards_to_delete:
+            try:
+                card.destroy()
+                self.cards.remove(card)
+            except:
+                pass
+        
+        # Supprimer les donnees correspondantes
+        for data in data_to_delete:
+            for stored_data in self.highlights_data[:]:  # Copie pour iteration
+                if (stored_data.get('page') == data.get('page') and
+                    stored_data.get('text', '')[:50] == data.get('text', '')[:50]):
+                    self.highlights_data.remove(stored_data)
+                    break
+        
+        # Vider la selection
+        self.selected_cards.clear()
+        
+        # Reorganiser la grille
+        self._reorganize_grid()
+        
+        return count
     
     def update_highlight(self, updated_data: Dict[str, Any]):
         """Met à jour un highlight existant - CORRECTION BUG ÉDITION."""
@@ -447,6 +501,10 @@ class HighlightGrid(ctk.CTkScrollableFrame):
                 break
         
         if card_to_remove:
+            # Retirer de la liste des selections si presente
+            if card_to_remove in self.selected_cards:
+                self.selected_cards.remove(card_to_remove)
+            
             # Supprimer la carte et les données
             card_to_remove.destroy()
             self.cards.remove(card_to_remove)
@@ -468,6 +526,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             card.destroy()
         self.cards.clear()
         self.highlights_data.clear()
+        self.selected_cards.clear()
     
     def get_count(self) -> int:
         """Retourne le nombre de highlights."""

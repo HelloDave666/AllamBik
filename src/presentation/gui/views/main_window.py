@@ -1,5 +1,5 @@
 ﻿"""
-Fenetre principale - Version corrigee avec pagination integree
+Fenetre principale - Version corrigee avec pagination et selection multiple fonctionnelle
 """
 import customtkinter as ctk
 import asyncio
@@ -30,15 +30,16 @@ from src.presentation.gui.components.pagination_controller import PaginationCont
 class IntegratedEditPanel(ctk.CTkFrame):
     """Panneau d'edition integre en bas de l'interface."""
     
-    def __init__(self, parent, on_save=None, on_cancel=None, on_delete=None):
+    def __init__(self, parent, main_window=None, on_save=None, on_cancel=None, on_delete=None):
         super().__init__(parent)
         self.configure(fg_color="#2a2a2a", corner_radius=10)
+        self.main_window = main_window  # Reference directe a MainWindow
         self.on_save = on_save
         self.on_cancel = on_cancel
         self.on_delete = on_delete
         self.current_highlight = None
         
-        # CORRECTION BUG MODIF: Variables pour l'etat initial
+        # Variables pour l'etat initial
         self.initial_text = ""
         self.initial_name = ""
         
@@ -190,7 +191,8 @@ class IntegratedEditPanel(ctk.CTkFrame):
         buttons_frame = ctk.CTkFrame(left_column, fg_color="transparent")
         buttons_frame.pack(fill="x", padx=15, pady=(0, 15))
         
-        clear_btn = ctk.CTkButton(
+        # Bouton supprimer (stocke en attribut pour mise a jour du texte)
+        self.clear_btn = ctk.CTkButton(
             buttons_frame,
             text="SUPPRIMER FICHE",
             command=self._delete_highlight,
@@ -198,7 +200,7 @@ class IntegratedEditPanel(ctk.CTkFrame):
             hover_color="#dd5555",
             height=35
         )
-        clear_btn.pack(fill="x")
+        self.clear_btn.pack(fill="x")
         
         right_column = ctk.CTkFrame(main_frame, fg_color="#3a3a3a")
         right_column.grid(row=0, column=1, sticky="nsew", padx=(10, 0))
@@ -299,7 +301,77 @@ class IntegratedEditPanel(ctk.CTkFrame):
             self.on_save(self.current_highlight)
     
     def _delete_highlight(self):
-        """Supprime la fiche highlight."""
+        """Supprime la fiche highlight ou les fiches selectionnees (multi-selection)."""
+        print("=== BOUTON SUPPRIMER CLIQUE ===")
+        
+        # Utiliser la reference directe a MainWindow
+        if self.main_window and hasattr(self.main_window, 'highlights_grid'):
+            selected_cards = self.main_window.highlights_grid.selected_cards
+            print(f"Nombre de cartes selectionnees: {len(selected_cards)}")
+            
+            if len(selected_cards) > 1:
+                print(f"MODE MULTI-SUPPRESSION pour {len(selected_cards)} fiches")
+                
+                if messagebox.askyesno(
+                    "Supprimer les highlights",
+                    f"Etes-vous sur de vouloir supprimer {len(selected_cards)} highlights ?\n\nCette action est irreversible."
+                ):
+                    # Recuperer toutes les donnees a supprimer AVANT la suppression
+                    data_to_delete = []
+                    for card in selected_cards:
+                        data_to_delete.append({
+                            'page': card.highlight_data.get('page'),
+                            'text': card.highlight_data.get('text', ''),
+                            'timestamp': card.highlight_data.get('timestamp')
+                        })
+                        print(f"  Preparant suppression: Page {card.highlight_data.get('page')}")
+                    
+                    # Supprimer de all_highlights_data (source complete)
+                    if hasattr(self.main_window, 'all_highlights_data'):
+                        initial_count = len(self.main_window.all_highlights_data)
+                        print(f"Taille initiale all_highlights_data: {initial_count}")
+                        
+                        # Creer une nouvelle liste sans les elements a supprimer
+                        new_data = []
+                        deleted_count = 0
+                        
+                        for stored_data in self.main_window.all_highlights_data:
+                            should_delete = False
+                            for delete_data in data_to_delete:
+                                if (stored_data.get('page') == delete_data['page'] and
+                                    stored_data.get('text', '') == delete_data['text'] and
+                                    stored_data.get('timestamp') == delete_data['timestamp']):
+                                    should_delete = True
+                                    deleted_count += 1
+                                    print(f"    -> Suppression confirmee Page {delete_data['page']}")
+                                    break
+                            
+                            if not should_delete:
+                                new_data.append(stored_data)
+                        
+                        print(f"Resultat: {deleted_count} supprime(s), {len(new_data)} restant(s)")
+                        
+                        # Remplacer les donnees
+                        self.main_window.all_highlights_data = new_data
+                        
+                        # Mettre a jour la pagination avec les nouvelles donnees
+                        self.main_window.pagination_controller.set_data(self.main_window.all_highlights_data)
+                        
+                        # Afficher la page courante mise a jour
+                        self.main_window._display_current_page()
+                    
+                    # Mettre a jour l'interface
+                    self.main_window._update_highlights_count()
+                    self.main_window._save_to_extraction_file()
+                    self.main_window._update_delete_button_text()
+                    self._show_default_message()
+                    
+                    messagebox.showinfo("Suppression reussie", f"{deleted_count} highlights supprimes.")
+                return
+        
+        print("MODE SUPPRESSION SIMPLE")
+        
+        # Suppression simple (code existant)
         if not self.current_highlight:
             messagebox.showwarning("Aucune selection", "Aucun highlight selectionne a supprimer.")
             return
@@ -334,7 +406,7 @@ class MainWindow(ctk.CTk):
         
         # Pagination pour grandes listes
         self.pagination_controller = PaginationController(items_per_page=50)
-        self.all_highlights_data = []
+        self.all_highlights_data = []  # Donnees completes du JSON
         
         self._update_queue = []
         
@@ -620,9 +692,10 @@ class MainWindow(ctk.CTk):
         self.pagination_bar.grid(row=3, column=0, sticky="ew", padx=15, pady=(5, 15))
         self.pagination_bar.grid_remove()  # Cachee au debut
         
-        # PANNEAU D'EDITION
+        # PANNEAU D'EDITION avec reference a MainWindow
         self.edit_panel = IntegratedEditPanel(
             right_panel,
+            main_window=self,  # CORRECTION: Passer la reference
             on_save=self._on_edit_saved,
             on_cancel=self._on_edit_cancelled,
             on_delete=self._on_highlight_deleted
@@ -748,29 +821,64 @@ class MainWindow(ctk.CTk):
                 self.selected_card = card
                 break
     
-    def _on_highlight_selected(self, highlight_data):
-        """Callback selection highlight."""
+    def _on_highlight_selected(self, highlight_data, shift_pressed=False):
+        """Callback selection highlight avec support multi-selection (Shift)."""
         if hasattr(self, 'edit_panel') and self.edit_panel.current_highlight:
             self.edit_panel._save_changes()
         
-        if self.selected_card:
-            try:
-                self.selected_card.set_selected(False)
-            except:
-                pass
-        
-        self.selected_card = None
+        # Trouver la carte cliquee
+        clicked_card = None
         for card in self.highlights_grid.cards:
             if (card.highlight_data.get('page') == highlight_data.get('page') and
                 card.highlight_data.get('text', '')[:50] == highlight_data.get('text', '')[:50]):
-                try:
-                    card.set_selected(True)
-                    self.selected_card = card
-                    break
-                except:
-                    pass
+                clicked_card = card
+                break
         
-        self.edit_panel.show_highlight(highlight_data)
+        if not clicked_card:
+            return
+        
+        if shift_pressed:
+            # Mode multi-selection : ajouter/retirer de la selection
+            if clicked_card in self.highlights_grid.selected_cards:
+                # Deselectionner cette carte
+                clicked_card.set_selected(False)
+                self.highlights_grid.selected_cards.remove(clicked_card)
+            else:
+                # Ajouter a la selection
+                clicked_card.set_selected(True)
+                self.highlights_grid.selected_cards.append(clicked_card)
+            
+            # Afficher la derniere carte selectionnee dans le panneau d'edition
+            if self.highlights_grid.selected_cards:
+                self.edit_panel.show_highlight(self.highlights_grid.selected_cards[-1].highlight_data)
+            else:
+                self.edit_panel._show_default_message()
+        else:
+            # Mode selection simple : deselectionner tout sauf la carte cliquee
+            for card in self.highlights_grid.selected_cards:
+                if card != clicked_card:
+                    try:
+                        card.set_selected(False)
+                    except:
+                        pass
+            
+            self.highlights_grid.selected_cards.clear()
+            clicked_card.set_selected(True)
+            self.highlights_grid.selected_cards.append(clicked_card)
+            
+            # Afficher dans le panneau d'edition
+            self.edit_panel.show_highlight(highlight_data)
+        
+        # Mettre a jour le texte du bouton supprimer
+        self._update_delete_button_text()
+    
+    def _update_delete_button_text(self):
+        """Met a jour le texte du bouton supprimer selon le nombre de selections."""
+        count = len(self.highlights_grid.selected_cards)
+        if count > 1:
+            self.edit_panel.clear_btn.configure(text=f"SUPPRIMER {count} FICHES")
+        else:
+            self.edit_panel.clear_btn.configure(text="SUPPRIMER FICHE")
     
     def _on_edit_requested(self, highlight_data):
         """Callback edition demandee."""
@@ -801,6 +909,7 @@ class MainWindow(ctk.CTk):
             self.highlights_grid._on_highlight_deleted(highlight_data)
             self._update_highlights_count()
             self._save_to_extraction_file()
+            self._update_delete_button_text()
         except Exception as e:
             print(f"ERREUR: Erreur suppression: {e}")
     
@@ -1128,7 +1237,7 @@ class MainWindow(ctk.CTk):
             
             print(f"[OK] {len(formatted_highlights)} highlights charges")
             
-            # Stocker toutes les donnees
+            # Stocker toutes les donnees dans all_highlights_data
             self.all_highlights_data = formatted_highlights
             
             # Configurer la pagination
@@ -1139,7 +1248,7 @@ class MainWindow(ctk.CTk):
             self._display_current_page()
             
             # Afficher la barre de pagination
-            self.pagination_bar.grid()  # Affiche la barre (deja positionnee)
+            self.pagination_bar.grid()
             self.pagination_bar.refresh()
             
             messagebox.showinfo(

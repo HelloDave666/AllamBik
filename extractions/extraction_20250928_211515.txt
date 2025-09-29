@@ -1,8 +1,44 @@
 === HIGHLIGHTS KINDLE EXTRAITS ===
-Genere le: 29/09/2025 a 15:38
-Nombre total: 41
+Genere le: 29/09/2025 a 19:07
+Nombre total: 50
 
---- 1. Page 41 ---
+--- 1. Page 39 ---
+Page: 39
+Confiance: 94.3%
+
+Texte:
+importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-
+
+--------------------------------------------------
+
+--- 2. Page 40 ---
+Page: 40
+Confiance: 94.9%
+
+Texte:
+mentation de ces descriptions, pour s’en tenir aux fondamentaux.
+
+--------------------------------------------------
+
+--- 3. Page 40 ---
+Page: 40
+Confiance: 92.8%
+
+Texte:
+l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.
+
+--------------------------------------------------
+
+--- 4. Page 40 ---
+Page: 40
+Confiance: 95.8%
+
+Texte:
+de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.
+
+--------------------------------------------------
+
+--- 5. Page 41 ---
 Page: 41
 Confiance: 92.9%
 
@@ -11,363 +47,408 @@ Texte:
 
 --------------------------------------------------
 
---- 2. Page 636 ---
-Page: 636
-Confiance: 93.6%
-
-Texte:
-Le fait que la verbalisation se rapporte à une situation passée, réelle (qui appartient bien à la biographie du sujet qui parle), et singulière, c’est- à-dire unique. à tout prix à éviter, c'est que le sujet s'exprime en général (sans spécifier), ou même à propos d’une classe de situa-
-
---------------------------------------------------
-
---- 3. Page 637 ---
-Page: 637
-Confiance: 88.7%
-
-Texte:
-tions plutôt qu’à propos de l'occurrence spécifiée d’une situation précise.
-
---------------------------------------------------
-
---- 4. Page 637 ---
-Page: 637
-Confiance: 94.6%
-
-Texte:
-aider à la mise en mots du vécu, guider celui qui verbalise vers la référence à une situation spécifiée est une condition essentielle, puisque le vécu est nécessairement singulier (qu'est-ce que serait vivre en général ?).
-
---------------------------------------------------
-
---- 5. Page 637 ---
-Page: 637
-Confiance: 94.0%
-
-Texte:
-Temporalités qualitatives
-
---------------------------------------------------
-
---- 6. Page 637 ---
-Page: 637
-Confiance: 92.7%
-
-Texte:
-S'oppose à la temporalité quantitative déter- minée par les horloges et les calendriers. Toute action peut être saisie en structure à travers trois filtres temporels qualitatifs :
-
---------------------------------------------------
-
---- 7. Page 637 ---
-Page: 637
-Confiance: 94.2%
-
-Texte:
-—Sa structure de simple succession, (et après, et ensuite, et juste avant).
-
---------------------------------------------------
-
---- 8. Page 637 ---
-Page: 637
-Confiance: 92.9%
-
-Texte:
-- En tant que forme globale (Gestalt) son cycle en cinq points : ante début, début, suite, fin, post-fin.
-
---------------------------------------------------
-
---- 9. Page 638 ---
-Page: 638
-Confiance: 89.7%
-
-Texte:
-— Pour chaque micro-opération l’enchainement de base : prise d’information déterminant l'entrée, exécution, prise d’information déterminant le cri- tère de fin modèle (cf. modèle TOTE).
-
---------------------------------------------------
-
---- 10. Page 638 ---
-Page: 638
-Confiance: 93.6%
-
-Texte:
-La structure du déroulement de toute action peut être saisie suivant d’autres traits descriptifs, que l’on peut nommer des sous-modalités tempo- relles. Par exemple, les traits oppositifs immédiat/ progressif, continu/discontinu, rythmé/régulier, plein/vide, etc.
-
---------------------------------------------------
-
---- 11. Page 638 ---
-Page: 638
-Confiance: 92.0%
-
-Texte:
-Thématisation
-
---------------------------------------------------
-
---- 12. Page 638 ---
-Page: 638
-Confiance: 91.3%
-
-Texte:
-Dans l'entretien d’explicitation, nous visons à produire une thématisation des-
-
---------------------------------------------------
-
---- 13. Page 639 ---
-Page: 639
-Confiance: 94.2%
-
-Texte:
-criptive à partir du réfléchissement des vécus pas modélisés.
-
---------------------------------------------------
-
---- 14. Page 639 ---
-Page: 639
-Confiance: 93.5%
-
-Texte:
-TOTE modèle
-
---------------------------------------------------
-
---- 15. Page 639 ---
-Page: 639
-Confiance: 93.8%
-
-Texte:
-TOTE acronyme de Triger (déclencheur), Operate (opérer, faire), Test (critère de sortie), Exit (sortir). Cette modélisation du cycle élémentaire de toute micro-action a été développée par Miller, Galanter et Pribram dans un livre de psychologie cognitive célèbre paru en 1966, Plans and the structure of behavior. Depuis, un des dévelop- peurs de la PNL, R. Dilts, l’a réutilisée pour ana- lyser le rapport moyen/but. l'entretien d’explicitation, ce modèle élémentaire est utilisé comme grille de description simplifiée pour la recherche d’information de l'exécution d’une micro-opération. En effet, ce qui est le plus facilement verbalisé est l'exécution proprement dite, ce qui reste implicite est la prise d’informa- tion initiale qui a conduit à choisir
-
---------------------------------------------------
-
---- 16. Page 640 ---
-Page: 640
-Confiance: 92.0%
-
-Texte:
-cette opération (Comment le saviez-vous ? À quoi l’avez-vous reconnu ?) et l'information sur laquelle est basé le critère de fin de l'opération (Comment saviez-vous que vous saviez ? À quoi avez-vous reconnu que ce modèle était terminé ?). Le modèle TOTE insiste bien sur la relation fonc- tionnelle indispensable entre prise d’information et opération d'exécution.
-
---------------------------------------------------
-
---- 17. Page 640 ---
-Page: 640
-Confiance: 92.5%
-
-Texte:
-RÉFÉRENCES BIBLIOGRAPHIQUES
-
---------------------------------------------------
-
---- 18. Page 640 ---
-Page: 640
-Confiance: 94.5%
-
-Texte:
-Miller G. A., Galanter E. et Pribram K., Plans and the structure of behavior, New York, Holt, Rinehart and Wilson, 1960.
-
---------------------------------------------------
-
---- 19. Page 640 ---
-Page: 640
-Confiance: 93.8%
-
-Texte:
-Dilts R., Grinder J., Bandler R., DeLozier J., Neuro- Linguistinc Programming : The study of the structure of subjective experience, Cupertino, Meta Publica- tions, 1980.
-
---------------------------------------------------
-
---- 20. Page 640 ---
-Page: 640
-Confiance: 95.7%
-
-Texte:
-Toutes les actions, sauf celles uniquement
-
---------------------------------------------------
-
---- 21. Page 641 ---
-Page: 641
-Confiance: 93.6%
-
-Texte:
-mentales, génèrent un produit final ainsi que des résultats intermédiaires qui ont dû être notés comme des brouillons, des transformations de la matière. Quand on n'utilise pas les verbalisa- tions, les traces permettent d’inférer ce qui n’est pas ou plus observable.
-
---------------------------------------------------
-
---- 22. Page 641 ---
-Page: 641
+--- 6. Page 42 ---
+Page: 42
 Confiance: 93.1%
 
 Texte:
-Dans un but de recherche, ou pour faciliter un diagnostic, ilest intéressant de modifier les taches utilisées pour qu’elles génèrent sans consignes supplémen- taires des traces abondantes.
+Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.
 
 --------------------------------------------------
 
---- 23. Page 641 ---
-Page: 641
-Confiance: 95.0%
+--- 7. Page 43 ---
+Page: 43
+Confiance: 90.8%
 
 Texte:
-Transcription
+On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.
 
 --------------------------------------------------
 
---- 24. Page 642 ---
-Page: 642
-Confiance: 92.0%
+--- 8. Page 43 ---
+Page: 43
+Confiance: 92.8%
 
 Texte:
-Triangulation
+Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.
 
 --------------------------------------------------
 
---- 25. Page 642 ---
-Page: 642
-Confiance: 93.7%
+--- 9. Page 45 ---
+Page: 45
+Confiance: 95.7%
 
 Texte:
-Mise en relation de données différentes se rap- portant à la même conduite. Cf. par exemple dans l'étude « À la recherche de la solution perdue », les verbalisations sont mises en relation avec l’enre- gistrement vidéo de la tâche effectuée et l’analyse des productions du sujet. La triangulation se conçoit dans un cadre de recherche afin de valider des données de verbalisation.
+plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.
 
 --------------------------------------------------
 
---- 26. Page 642 ---
-Page: 642
-Confiance: 92.5%
+--- 10. Page 45 ---
+Page: 45
+Confiance: 93.8%
 
 Texte:
-RÉFÉRENCES BIBLIOGRAPHIQUES
+ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.
 
 --------------------------------------------------
 
---- 27. Page 642 ---
-Page: 642
-Confiance: 93.7%
+--- 11. Page 45 ---
+Page: 45
+Confiance: 91.3%
 
 Texte:
-Ancillotti J.-P. et Maurel M. À la recherche de la solu- tion perdue, collection Protocole n° 4, Paris, GREX, 1995.
+Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.
 
 --------------------------------------------------
 
---- 28. Page 642 ---
-Page: 642
-Confiance: 93.4%
+--- 12. Page 46 ---
+Page: 46
+Confiance: 93.8%
 
 Texte:
-Færch C. et Kasper G. (eds), Introspection in second language research, Philadelphia, Multilingual Mat- ters Ltd, 1987.
+Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).
 
 --------------------------------------------------
 
---- 29. Page 643 ---
-Page: 643
+--- 13. Page 46 ---
+Page: 46
+Confiance: 93.2%
+
+Texte:
+Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.
+
+--------------------------------------------------
+
+--- 14. Page 47 ---
+Page: 47
+Confiance: 92.3%
+
+Texte:
+Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles
+
+--------------------------------------------------
+
+--- 15. Page 47 ---
+Page: 47
+Confiance: 94.0%
+
+Texte:
+On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.
+
+--------------------------------------------------
+
+--- 16. Page 47 ---
+Page: 47
 Confiance: 96.0%
 
 Texte:
-Validation
+Dans cette première perspective,
 
 --------------------------------------------------
 
---- 30. Page 643 ---
-Page: 643
-Confiance: 94.9%
+--- 17. Page 48 ---
+Page: 48
+Confiance: 92.8%
 
 Texte:
-dans quelle mesure le sujet verbalise-t-il bien le contenu de sa propre expérience ? Cela concerne la validation interne ; dans quelle mesure ce que dé- crit le sujet est bien ce qui s’est passé ? Cela touche à la validation externe.
+l'entretien d’explicitation est le produit de la for- malisation d’une pratique empirique.
 
 --------------------------------------------------
 
---- 31. Page 643 ---
-Page: 643
-Confiance: 94.5%
+--- 18. Page 48 ---
+Page: 48
+Confiance: 91.0%
 
 Texte:
-+ La validité interne ne peut être évaluée en terme de vérité, pas même en terme de sincérité ou, ce qui revient au même, en terme de vérité subjective. En effet, ce que dit le sujet de sa propre expérience est « incorrigible » (Ryle 1974, Searles 1994), ce dont il témoigne est ce qui lui apparaît, et l'on ne peut que recueillir ce qu’il dit comme étant sa vérité.
+l'étude du déroulement de l’action comme source d’inférence pour l'analyse du fonctionnement intellectuel,
 
 --------------------------------------------------
 
---- 32. Page 644 ---
-Page: 644
-Confiance: 92.9%
+--- 19. Page 48 ---
+Page: 48
+Confiance: 93.8%
 
 Texte:
-De plus, il est possible, une fois la verbalisation d’explicitation exprimée, de demander au sujet d'évaluer son expérience de verbalisation à travers les trois index de singularité, de présentification et de remplissement.
+travers un groupe de recherche international: : le GREX (Groupe de Recherche sur TEXplicitation).
 
 --------------------------------------------------
 
---- 33. Page 644 ---
-Page: 644
-Confiance: 93.9%
+--- 20. Page 49 ---
+Page: 49
+Confiance: 93.8%
 
 Texte:
-- La validité externe peut concerner différents critères : la vérité de ce qui est dit ; le caractère complet de ce qui est dit relativement au dérou- lement de l’action, relativement au degré de frag- mentation de la description.
+il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.
 
 --------------------------------------------------
 
---- 34. Page 644 ---
-Page: 644
-Confiance: 93.6%
+--- 21. Page 49 ---
+Page: 49
+Confiance: 94.6%
 
 Texte:
-L'idéal est de disposer de séries de données indépendantes que l’on peut trianguler pour
+ce qui est observable (si il y a un observateur) et les traces de la réalisation de l’action (brouillon, résul- tats intermédiaires encore visibles).
 
 --------------------------------------------------
 
---- 35. Page 645 ---
-Page: 645
-Confiance: 89.5%
-
-Texte:
-mettre en relation l'analyse de la tâche, les traces de l’activité, les observables et les verbalisations.
-
---------------------------------------------------
-
---- 36. Page 645 ---
-Page: 645
+--- 22. Page 49 ---
+Page: 49
 Confiance: 94.2%
 
 Texte:
-Ce terme est le plus général et le plus neutre pour désigner un moment de la vie d’une personne, sans préjuger de la conscience qu’elle a de ce qu’elle vit, sans présupposer aucune conscience ou niveau de conscience particulier : le sommeil profond est aussi bien un vécu qu’un
+Dans le domaine de la didactique, je proposerai une analyse de l’évolution des pratiques basées sur le questionnement,
 
 --------------------------------------------------
 
---- 37. Page 646 ---
-Page: 646
-Confiance: 95.8%
+--- 23. Page 49 ---
+Page: 49
+Confiance: 91.5%
 
 Texte:
-moment de conscience réfléchie.
+techniques rogériennes).
 
 --------------------------------------------------
 
---- 38. Page 646 ---
-Page: 646
+--- 24. Page 49 ---
+Page: 49
+Confiance: 87.4%
+
+Texte:
+s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-informer.
+
+--------------------------------------------------
+
+--- 25. Page 50 ---
+Page: 50
+Confiance: 93.7%
+
+Texte:
+Des traces, des observables et des verbalisations
+
+--------------------------------------------------
+
+--- 26. Page 50 ---
+Page: 50
+Confiance: 95.1%
+
+Texte:
+Une activité matérielle ou mentale se traduit par des observables comportementaux,
+
+--------------------------------------------------
+
+--- 27. Page 50 ---
+Page: 50
+Confiance: 94.0%
+
+Texte:
+Une des ca- ractéristiques de ces observables c’est qu’ils sont transitoires, pour les observer il faut être présent ils ne sont jamais donnés : c’est-a- dire que pour être remarqués, retenus, il faut les attendre, être en projet de les observer parce qu’ils
+
+--------------------------------------------------
+
+--- 28. Page 51 ---
+Page: 51
+Confiance: 93.6%
+
+Texte:
+ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.
+
+--------------------------------------------------
+
+--- 29. Page 51 ---
+Page: 51
+Confiance: 92.1%
+
+Texte:
+L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.
+
+--------------------------------------------------
+
+--- 30. Page 51 ---
+Page: 51
+Confiance: 92.8%
+
+Texte:
+les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.
+
+--------------------------------------------------
+
+--- 31. Page 52 ---
+Page: 52
+Confiance: 96.0%
+
+Texte:
+Les traces
+
+--------------------------------------------------
+
+--- 32. Page 52 ---
+Page: 52
+Confiance: 93.9%
+
+Texte:
+Les traces sont les indices matériels plus ou moins permanents produits par l’activité.
+
+--------------------------------------------------
+
+--- 33. Page 52 ---
+Page: 52
+Confiance: 94.0%
+
+Texte:
+Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’avoir des yeux pour voir). Comme le dit son nom, la trace n’est qu’une information partielle de l’activité qui l'a produite.
+
+--------------------------------------------------
+
+--- 34. Page 52 ---
+Page: 52
+Confiance: 94.8%
+
+Texte:
+immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour faire « signe ».
+
+--------------------------------------------------
+
+--- 35. Page 53 ---
+Page: 53
+Confiance: 93.7%
+
+Texte:
+Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’observables et de traces (rendre plus « publique » la démarche en rendant plus nombreuses les traductions comportementales du fonctionnement intellectuel mis en œuvre dans la réalisation de l'exercice), ou les amplifier (les rendre plus visibles, plus apparents, plus aisés à observer et plus permanents : par exemple, supprimer le crayon dans le travail au brouillon pour rendre les étapes intermédiaires présentes, sans possibilité de corrections masquées ou d’effa- cement). Dans le cadre de la recherche, traces et observables sont des données complémentaires dont il est essentiel de disposer. Dans le cadre de l'activité didactique quotidienne, les utiliser reste précieux, même si l’on sait utiliser une technique d'entretien.
+
+--------------------------------------------------
+
+--- 36. Page 54 ---
+Page: 54
+Confiance: 92.5%
+
+Texte:
+Les verbalisations
+
+--------------------------------------------------
+
+--- 37. Page 54 ---
+Page: 54
 Confiance: 93.4%
 
 Texte:
-on peut dire qu’il ne suffit pas d’avoir vécu une situa- tion pour en avoir fait l'expérience.
+Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent peu de traces (seulement le produit final, par exemple, on ne sait alors rien du cheminement) et produisent peu d’observables (la résolution de tête d’un problème). personne n'était présent pour noter les observables po- tentiellement disponibles (travail personnel à la maison, absence de l'enseignant au bon moment, au bon endroit du lieu de formation, impossibilité de tout observer simultanément dans un groupe classe, analyse d’accidents en psychologie du tra- vail). La seule source d’informations disponible est alors la verbalisation.
 
 --------------------------------------------------
 
---- 39. Page 646 ---
-Page: 646
+--- 38. Page 54 ---
+Page: 54
+Confiance: 95.0%
+
+Texte:
+Les traces et les observables ont le mérite de relever
+
+--------------------------------------------------
+
+--- 39. Page 55 ---
+Page: 55
+Confiance: 91.5%
+
+Texte:
+de l'observation publique (plusieurs observateurs peuvent faire le même constat), leur valeur d’infor- mation dépend de l'interprétation qu'on leur donne, de leur sens. Et ce qui reste toujours délicat c’est de valider le cadre interprétatif, c’est-à-dire d'établir la validité du cadre théorique sur lequel repose le sens.
+
+--------------------------------------------------
+
+--- 40. Page 55 ---
+Page: 55
+Confiance: 94.3%
+
+Texte:
+Le fait que l’interviewé verbalise des informations sur sa démarche ne leur donne pas automatiquement valeur de vérité, pas plus que la critique a priori de la parole subjective (au sens de propre au sujet) n’est juste. Les données de verbalisation, pour être validées, doivent être mises en relation avec d’autres qui pourront les corroborer ou non, mais de plus, et c’est l'objet principal de ce livre, elles peuvent être sollicitées et recueillies d’une manière qui accroisse leur va- lidité a priori (qui augmente la probabilité qu’elles relatent bien la réalité de ce qui s’est passé).
+
+--------------------------------------------------
+
+--- 41. Page 56 ---
+Page: 56
+Confiance: 91.2%
+
+Texte:
+Il ne faut cependant pas croire que l’utilisation des verbalisations est évidente, l’état actuel est le produit d’une évolution, en particulier en didac- tique, qu'il est intéressant d'évoquer.
+
+--------------------------------------------------
+
+--- 42. Page 57 ---
+Page: 57
+Confiance: 91.9%
+
+Texte:
+d'établir un dialogue plutôt que d’être dogmatique, de susciter l’activité in- tellectuelle par des questions créant le doute, la contradiction, l'embarras, faisant obstacle, de guider cette activité en attirant l'attention sur des incohérences, des faits complémentaires. souhait de rendre l'élève plus autonome en développant son goût pour les questions à poser à la réalité, de pré- parer le début de la classe par une interrogation initiale. Mais l'interrogation avait aussi pour but l'évaluation, en vérifiant que l’on obtenait bien la «réponse souhaitée ».
+
+--------------------------------------------------
+
+--- 43. Page 57 ---
+Page: 57
+Confiance: 90.8%
+
+Texte:
+Le concept d'interrogation était le seul utilisé, celui de questionnement n'apparaîtra que plus tard avec de nouveaux buts.
+
+--------------------------------------------------
+
+--- 44. Page 58 ---
+Page: 58
+Confiance: 93.8%
+
+Texte:
+Dans aucun des textes il n’est fait allusion à des aspects de techniques de questionnement ou d'écoute. Les seuls points valorisés concernent les buts visés, les effets espérés, les typologies de situations de pédagogie interrogative différen- ciées. Ce qui est de l’ordre du moyen est occulté, essentiellement me semble-t-il, parce qu’allant de soi et ne nécessitant pas un apprentissage en tant que tel, tout au plus l’acquisition d’une expérience professionnelle suffisante.
+
+--------------------------------------------------
+
+--- 45. Page 58 ---
+Page: 58
+Confiance: 87.3%
+
+Texte:
+Tous ces buts présupposent que l'enseignant n’apprend rien de la réponse de l'élève.
+
+--------------------------------------------------
+
+--- 46. Page 58 ---
+Page: 58
+Confiance: 86.8%
+
+Texte:
+Ils ne visent jamais l'acquisition d'informations que l'enseignant ne posséderait pas et qui ne serait accessible qu'en questionnant l'élève.
+
+--------------------------------------------------
+
+--- 47. Page 58 ---
+Page: 58
 Confiance: 94.7%
 
 Texte:
-Vécu de référence
+comprendre le fonctionnement
 
 --------------------------------------------------
 
---- 40. Page 646 ---
-Page: 646
-Confiance: 89.6%
+--- 48. Page 59 ---
+Page: 59
+Confiance: 92.3%
 
 Texte:
-Dans la pratique de l'acte réfléchissant qui est l'acte que mobilise l'entretien d’explicitation, ce dont le sujet parle est le vécu de référence V1.
+intellectuel de l'élève singulier, pouvoir décrire et analyser la cohérence intrinsèque de la pro- duction de ses erreurs (plutôt que la description par écart à une norme seulement). pour répondre à ces besoins, il faut que l'enseignant acquière des informations que seul l'élève peut fournir.
 
 --------------------------------------------------
 
---- 41. Page 647 ---
-Page: 647
-Confiance: 93.3%
+--- 49. Page 59 ---
+Page: 59
+Confiance: 92.7%
 
 Texte:
-Mais au moment où je décris mon vécu de référence V1, je suis en train de vivre un autre vécu V2 qui consiste à évoquer V1, à le décrire. Ce vécu V2 qui se déroule à un autre moment que V1, peut lui-même faire l’objet d’une explicitation pour étudier, par exemple, la manière dont je m'y prends pour évoquer une situation passée, cela crée un troisième vécu V3, qualitativement diffé- rent des deux premiers. Vécu que l’on peut nom- mer vécu surréflexif, et dont l'exploitation permet d'élaborer la méthodologie de l'acte réfléchissant.
+d’une position relationnelle «haute », familière : il est le seul détenteur du savoir, le seul régulateur de l’activité scolaire, il l'échange pour une position centrée sur l'élève.
+
+--------------------------------------------------
+
+--- 50. Page 59 ---
+Page: 59
+Confiance: 93.9%
+
+Texte:
+il devient en plus animateur, interviewer, voire accoucheur des savoirs implicites de l'élève. Il s’agit d’une transformation du métier dans le sens d’un élargissement des fonctions assurées.
 
 --------------------------------------------------
 
