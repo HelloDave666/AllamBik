@@ -44,15 +44,39 @@ class HighlightCard(ctk.CTkFrame):
         self.is_selected = False
         self.search_highlighted = False
         
-        # CORRECTION BUG MODIF: Variable pour gérer l'indicateur
+        # Variable pour gérer l'indicateur
         self.modified_indicator = None
+        
+        # CORRECTION: Stocker les IDs des callbacks after() pour pouvoir les annuler
+        self._pending_after_ids = []
         
         # Créer le contenu
         self._create_content()
         self._bind_events()
     
+    def destroy(self):
+        """Détruit la carte en annulant d'abord tous les callbacks after()."""
+        # CORRECTION: Annuler tous les callbacks after() en attente
+        for after_id in self._pending_after_ids:
+            try:
+                self.after_cancel(after_id)
+            except:
+                pass
+        self._pending_after_ids.clear()
+        
+        # Appeler la méthode destroy parente
+        super().destroy()
+    
+    def safe_configure(self, **kwargs):
+        """Configure le widget de manière sûre en vérifiant qu'il existe toujours."""
+        try:
+            if self.winfo_exists():
+                self.configure(**kwargs)
+        except:
+            pass
+    
     def _update_modification_indicator(self):
-        """CORRECTION BUG MODIF: Gère l'indicateur de modification de manière sûre."""
+        """Gère l'indicateur de modification de manière sûre."""
         # Vérifier si ce highlight spécifique a été modifié
         is_modified = self.highlight_data.get('modified', False)
         
@@ -65,13 +89,13 @@ class HighlightCard(ctk.CTkFrame):
                 text_color="#00aaff"
             )
             self.modified_indicator.pack(side="right", padx=(0, 5))
-            print(f"DEBUG: Indicateur MODIF créé pour Page {self.highlight_data.get('page')}")
+            print(f"DEBUG: Indicateur MODIF cree pour Page {self.highlight_data.get('page')}")
             
         elif not is_modified and self.modified_indicator is not None:
             # Supprimer l'indicateur s'il existe mais qu'on n'en a plus besoin
             self.modified_indicator.destroy()
             self.modified_indicator = None
-            print(f"DEBUG: Indicateur MODIF supprimé pour Page {self.highlight_data.get('page')}")
+            print(f"DEBUG: Indicateur MODIF supprime pour Page {self.highlight_data.get('page')}")
     
     def _create_content(self):
         """Crée le contenu de la carte."""
@@ -79,7 +103,7 @@ class HighlightCard(ctk.CTkFrame):
         self.header_frame = ctk.CTkFrame(self, fg_color="transparent")
         self.header_frame.pack(fill="x", padx=15, pady=(10, 5))
         
-        # CORRECTION: Affichage du nom personnalisé en titre
+        # Affichage du nom personnalisé en titre
         display_name = self.highlight_data.get('custom_name')
         if display_name:
             # Si nom personnalisé, l'afficher en titre
@@ -95,7 +119,7 @@ class HighlightCard(ctk.CTkFrame):
             self.header_frame,
             text=title_text,
             font=ctk.CTkFont(size=11, weight="bold"),
-            text_color="#ffffff"  # Plus visible si c'est un nom personnalisé
+            text_color="#ffffff"
         )
         self.page_label.pack(side="left", anchor="w")
         
@@ -123,7 +147,7 @@ class HighlightCard(ctk.CTkFrame):
         self.confidence_frame.pack(side="right", padx=(5, 0))
         self.confidence_frame.pack_propagate(False)
         
-        # CORRECTION BUG MODIF: Créer l'indicateur de manière contrôlée
+        # Créer l'indicateur de manière contrôlée
         self._update_modification_indicator()
         
         # Texte du highlight
@@ -248,7 +272,7 @@ class HighlightCard(ctk.CTkFrame):
     
     def _refresh_display(self):
         """Actualise l'affichage de la carte."""
-        # CORRECTION: Mettre à jour le titre selon le nom personnalisé
+        # Mettre à jour le titre selon le nom personnalisé
         display_name = self.highlight_data.get('custom_name')
         if display_name:
             # Nom personnalisé en titre
@@ -278,7 +302,7 @@ class HighlightCard(ctk.CTkFrame):
         text_content = self._truncate_text(self.highlight_data.get('text', ''), 150)
         self.text_label.configure(text=text_content)
         
-        # CORRECTION BUG MODIF: Utiliser la méthode contrôlée
+        # Utiliser la méthode contrôlée
         self._update_modification_indicator()
     
     def _get_confidence_color(self) -> str:
@@ -319,11 +343,11 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         self.on_highlight_selected = on_highlight_selected
         self.configure(fg_color="transparent")
         
-        # NOUVEAU : Liste des cartes selectionnees (multi-selection)
+        # Liste des cartes selectionnees (multi-selection)
         self.selected_cards = []
         
-        # NOUVEAU : Limiter la hauteur pour eviter le scroll avec pagination
-        self.configure(height=600)  # Hauteur fixe pour ~50 elements
+        # Limiter la hauteur pour eviter le scroll avec pagination
+        self.configure(height=600)
         
         # Configuration de la grille
         for i in range(columns):
@@ -351,9 +375,15 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         card.grid(row=row, column=col, padx=5, pady=5, sticky="ew")
         self.cards.append(card)
         
-        # Effet d'apparition
-        card.configure(fg_color="#2a2a2a")
-        self.after(50, lambda: card.configure(fg_color="#3a3a3a"))
+        # CORRECTION: Effet d'apparition avec gestion sûre
+        card.safe_configure(fg_color="#2a2a2a")
+        
+        # Stocker l'ID du callback after() pour pouvoir l'annuler si nécessaire
+        def safe_restore_color():
+            card.safe_configure(fg_color="#3a3a3a")
+        
+        after_id = self.after(50, safe_restore_color)
+        card._pending_after_ids.append(after_id)
     
     def set_paginated_data(self, highlights_data: List[Dict[str, Any]]):
         """
@@ -363,13 +393,16 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         Args:
             highlights_data: Liste des highlights a afficher pour cette page
         """
-        # Supprimer toutes les cartes existantes
-        for card in self.cards:
-            card.destroy()
+        # CORRECTION: Détruire proprement toutes les cartes existantes
+        for card in self.cards[:]:  # Copie de la liste pour éviter modification pendant itération
+            try:
+                card.destroy()
+            except:
+                pass
         
         self.cards.clear()
         self.highlights_data.clear()
-        self.selected_cards.clear()  # Vider aussi les selections
+        self.selected_cards.clear()
         
         # Ajouter les nouvelles donnees
         for highlight_data in highlights_data:
@@ -428,11 +461,11 @@ class HighlightGrid(ctk.CTkScrollableFrame):
         return count
     
     def update_highlight(self, updated_data: Dict[str, Any]):
-        """Met à jour un highlight existant - CORRECTION BUG ÉDITION."""
-        # CORRECTION: Utiliser un identifiant plus robuste pour trouver le highlight
+        """Met à jour un highlight existant."""
+        # Utiliser un identifiant plus robuste pour trouver le highlight
         target_index = None
         
-        print(f"DEBUG: Recherche highlight à mettre à jour: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
+        print(f"DEBUG: Recherche highlight a mettre a jour: Page {updated_data.get('page')}, Nom: {updated_data.get('custom_name', 'Sans nom')}")
         
         # Essayer de correspondre par plusieurs critères
         for i, data in enumerate(self.highlights_data):
@@ -440,13 +473,13 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             if (data.get('page') == updated_data.get('page') and 
                 data.get('text', '')[:30] == updated_data.get('text', '')[:30]):
                 target_index = i
-                print(f"SUCCESS: Trouvé par critère 1 (page + texte) à l'index {i}")
+                print(f"SUCCESS: Trouve par critere 1 (page + texte) a l'index {i}")
                 break
             
             # Critère 2: Si pas de match exact, chercher par texte complet identique
             if target_index is None and data.get('text', '') == updated_data.get('text', ''):
                 target_index = i
-                print(f"SUCCESS: Trouvé par critère 2 (texte complet) à l'index {i}")
+                print(f"SUCCESS: Trouve par critere 2 (texte complet) a l'index {i}")
                 break
         
         # Critère 3: Correspondance par timestamp si disponible
@@ -455,7 +488,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
                 if (data.get('timestamp') and updated_data.get('timestamp') and
                     data.get('timestamp') == updated_data.get('timestamp')):
                     target_index = i
-                    print(f"SUCCESS: Trouvé par critère 3 (timestamp) à l'index {i}")
+                    print(f"SUCCESS: Trouve par critere 3 (timestamp) a l'index {i}")
                     break
         
         # Si toujours pas trouvé, utiliser un fallback avec la page uniquement
@@ -463,7 +496,7 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             for i, data in enumerate(self.highlights_data):
                 if data.get('page') == updated_data.get('page'):
                     target_index = i
-                    print(f"WARNING: Fallback par page uniquement à l'index {i}")
+                    print(f"WARNING: Fallback par page uniquement a l'index {i}")
                     break
         
         if target_index is not None:
@@ -474,11 +507,11 @@ class HighlightGrid(ctk.CTkScrollableFrame):
             # Mettre à jour la carte correspondante
             if target_index < len(self.cards):
                 self.cards[target_index].update_data(updated_data)
-                print(f"SUCCESS: Highlight {target_index} mis à jour: '{old_data.get('custom_name', 'Sans nom')}' → '{updated_data.get('custom_name', 'Sans nom')}'")
+                print(f"SUCCESS: Highlight {target_index} mis a jour: '{old_data.get('custom_name', 'Sans nom')}' -> '{updated_data.get('custom_name', 'Sans nom')}'")
             else:
                 print(f"ERREUR: Index {target_index} hors limite pour les cartes ({len(self.cards)} cartes)")
         else:
-            print(f"ERREUR: Highlight non trouvé pour mise à jour: Page {updated_data.get('page')}")
+            print(f"ERREUR: Highlight non trouve pour mise a jour: Page {updated_data.get('page')}")
             print(f"INFO: Highlights disponibles:")
             for i, data in enumerate(self.highlights_data):
                 print(f"  {i}: Page {data.get('page')}, Texte: '{data.get('text', '')[:30]}...'")
@@ -522,8 +555,13 @@ class HighlightGrid(ctk.CTkScrollableFrame):
     
     def clear(self):
         """Supprime tous les highlights."""
-        for card in self.cards:
-            card.destroy()
+        # CORRECTION: Détruire proprement toutes les cartes
+        for card in self.cards[:]:
+            try:
+                card.destroy()
+            except:
+                pass
+        
         self.cards.clear()
         self.highlights_data.clear()
         self.selected_cards.clear()

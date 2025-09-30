@@ -1,0 +1,358 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2025-09-30T17:34:30.665483",
+    "modified_at": "2025-09-30T17:36:57.151631",
+    "extraction_session": "session_20250930_173430",
+    "total_pages_scanned": 10,
+    "pages_with_content": 8,
+    "app_version": "AllamBik v3.0",
+    "extraction_zone": [
+      1202,
+      108,
+      709,
+      876
+    ],
+    "original_total_highlights": 16,
+    "current_total_highlights": 9,
+    "deleted_count": 7,
+    "modified_count": 0
+  },
+  "highlights": [
+    {
+      "page": 7,
+      "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
+      "confidence": 92.75,
+      "timestamp": "2025-09-30T17:35:12.629496",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_7_1759246512"
+    },
+    {
+      "page": 8,
+      "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
+      "confidence": 93.42372881355932,
+      "timestamp": "2025-09-30T17:35:16.634356",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_8_1759246516"
+    },
+    {
+      "page": 8,
+      "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
+      "confidence": 93.04054054054055,
+      "timestamp": "2025-09-30T17:35:17.632361",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_9_1759246517"
+    },
+    {
+      "page": 8,
+      "text": "l'entretien d’ex-",
+      "confidence": 90.0,
+      "timestamp": "2025-09-30T17:35:18.797801",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_10_1759246518"
+    },
+    {
+      "page": 9,
+      "text": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.",
+      "confidence": 95.66666666666667,
+      "timestamp": "2025-09-30T17:35:21.216890",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_11_1759246521"
+    },
+    {
+      "page": 9,
+      "text": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.",
+      "confidence": 93.83561643835617,
+      "timestamp": "2025-09-30T17:35:22.624306",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_12_1759246522"
+    },
+    {
+      "page": 9,
+      "text": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.",
+      "confidence": 91.33333333333333,
+      "timestamp": "2025-09-30T17:35:24.127200",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_13_1759246524"
+    },
+    {
+      "page": 10,
+      "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
+      "confidence": 93.8048780487805,
+      "timestamp": "2025-09-30T17:35:25.828607",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_14_1759246525"
+    },
+    {
+      "page": 10,
+      "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
+      "confidence": 93.15254237288136,
+      "timestamp": "2025-09-30T17:35:27.451772",
+      "source_image": null,
+      "coordinates": null,
+      "validated": false,
+      "modified": false,
+      "id": "hl_15_1759246527"
+    }
+  ],
+  "modifications_log": [
+    {
+      "timestamp": "2025-09-30T17:34:58.751601",
+      "action": "add",
+      "details": {
+        "page": 3,
+        "highlight_id": "hl_0_1759246498"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:02.817449",
+      "action": "add",
+      "details": {
+        "page": 4,
+        "highlight_id": "hl_1_1759246502"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:03.075036",
+      "action": "add",
+      "details": {
+        "page": 4,
+        "highlight_id": "hl_2_1759246503"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:03.436436",
+      "action": "add",
+      "details": {
+        "page": 4,
+        "highlight_id": "hl_3_1759246503"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:05.533840",
+      "action": "add",
+      "details": {
+        "page": 5,
+        "highlight_id": "hl_4_1759246505"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:08.384785",
+      "action": "add",
+      "details": {
+        "page": 6,
+        "highlight_id": "hl_5_1759246508"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:11.850596",
+      "action": "add",
+      "details": {
+        "page": 7,
+        "highlight_id": "hl_6_1759246511"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:12.629510",
+      "action": "add",
+      "details": {
+        "page": 7,
+        "highlight_id": "hl_7_1759246512"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:16.634398",
+      "action": "add",
+      "details": {
+        "page": 8,
+        "highlight_id": "hl_8_1759246516"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:17.632373",
+      "action": "add",
+      "details": {
+        "page": 8,
+        "highlight_id": "hl_9_1759246517"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:18.797813",
+      "action": "add",
+      "details": {
+        "page": 8,
+        "highlight_id": "hl_10_1759246518"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:21.216903",
+      "action": "add",
+      "details": {
+        "page": 9,
+        "highlight_id": "hl_11_1759246521"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:22.624325",
+      "action": "add",
+      "details": {
+        "page": 9,
+        "highlight_id": "hl_12_1759246522"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:24.127214",
+      "action": "add",
+      "details": {
+        "page": 9,
+        "highlight_id": "hl_13_1759246524"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:25.828621",
+      "action": "add",
+      "details": {
+        "page": 10,
+        "highlight_id": "hl_14_1759246525"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:35:27.451786",
+      "action": "add",
+      "details": {
+        "page": 10,
+        "highlight_id": "hl_15_1759246527"
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:36:47.245254",
+      "action": "delete",
+      "details": {
+        "count": 1,
+        "deleted_highlights": [
+          {
+            "page": 3,
+            "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
+            "confidence": 94.3,
+            "timestamp": "2025-09-30T17:34:58.751575",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_0_1759246498"
+          }
+        ],
+        "highlight_ids": [
+          "hl_0_1759246498"
+        ]
+      }
+    },
+    {
+      "timestamp": "2025-09-30T17:36:57.151642",
+      "action": "delete",
+      "details": {
+        "count": 6,
+        "deleted_highlights": [
+          {
+            "page": 4,
+            "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
+            "confidence": 94.88888888888889,
+            "timestamp": "2025-09-30T17:35:02.817405",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_1_1759246502"
+          },
+          {
+            "page": 4,
+            "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
+            "confidence": 92.76923076923077,
+            "timestamp": "2025-09-30T17:35:03.075023",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_2_1759246503"
+          },
+          {
+            "page": 4,
+            "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
+            "confidence": 95.76923076923077,
+            "timestamp": "2025-09-30T17:35:03.436421",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_3_1759246503"
+          },
+          {
+            "page": 5,
+            "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
+            "confidence": 92.93333333333334,
+            "timestamp": "2025-09-30T17:35:05.533820",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_4_1759246505"
+          },
+          {
+            "page": 6,
+            "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
+            "confidence": 93.05263157894737,
+            "timestamp": "2025-09-30T17:35:08.384739",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_5_1759246508"
+          },
+          {
+            "page": 7,
+            "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
+            "confidence": 90.84210526315789,
+            "timestamp": "2025-09-30T17:35:11.850576",
+            "source_image": null,
+            "coordinates": null,
+            "validated": false,
+            "modified": false,
+            "id": "hl_6_1759246511"
+          }
+        ],
+        "highlight_ids": [
+          "hl_1_1759246502",
+          "hl_2_1759246503",
+          "hl_3_1759246503",
+          "hl_4_1759246505",
+          "hl_5_1759246508",
+          "hl_6_1759246511"
+        ]
+      }
+    }
+  ]
+}

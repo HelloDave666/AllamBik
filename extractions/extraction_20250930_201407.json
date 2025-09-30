@@ -1,48 +1,411 @@
 {
   "metadata": {
-    "task_id": "489f389c-4b91-4bc3-9378-357afe2eedd6",
-    "extraction_date": "2025-09-29T21:08:04.343149",
-    "session_id": "20250929_210723",
-    "pages_scanned": 10,
-    "pages_with_content": 10,
-    "total_highlights": 30,
+    "task_id": "a22f87c5-6d1b-48fb-9ae9-b6ad1b3483e3",
+    "extraction_date": "2025-09-30T20:14:07.214329",
+    "session_id": "20250930_201311",
+    "pages_scanned": 20,
+    "pages_with_content": 16,
+    "total_highlights": 36,
     "extraction_method": "individual_highlights",
     "version": "3.0"
   },
   "statistics": {
     "confidence": {
-      "average": 93.5,
+      "average": 93.1,
       "min": 87.4,
       "max": 96.0,
       "distribution": {
-        "high": 29,
+        "high": 35,
         "medium": 1,
         "low": 0
       }
     },
     "text": {
-      "total_words": 920,
-      "average_words_per_highlight": 30.7,
+      "total_words": 1088,
+      "average_words_per_highlight": 30.2,
       "min_words": 2,
-      "max_words": 122
+      "max_words": 82
     },
     "pages": {
-      "total_pages": 10,
-      "highlights_per_page": 3.0
+      "total_pages": 14,
+      "highlights_per_page": 2.6
     }
   },
   "highlights": [
     {
-      "id": "90db1ba7-0299-4d3c-8ba8-90be0c8f1ad3",
-      "unique_id": "20250929_210723_page001_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 1,
+      "id": "c7a9c377-d287-4bee-827e-08ff38522371",
+      "unique_id": "20250930_201311_page005_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 5,
+      "highlight_number": 1,
+      "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
+      "confidence": 94.3,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:11.939770",
+      "session_id": "20250930_201311",
+      "position": {
+        "x": 1284,
+        "y": 704,
+        "width": 531,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 40,
+        "character_count": 235,
+        "preview": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la thé..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 704,
+        "width": 531,
+        "height": 236,
+        "area": 125316,
+        "aspect_ratio": 2.25,
+        "center_x": 1549,
+        "center_y": 822
+      }
+    },
+    {
+      "id": "44c286b9-2c6a-4012-8f18-27909616986e",
+      "unique_id": "20250930_201316_page006_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 6,
+      "highlight_number": 1,
+      "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
+      "confidence": 94.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:16.029317",
+      "session_id": "20250930_201316",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 537,
+        "height": 84
+      },
+      "metrics": {
+        "word_count": 9,
+        "character_count": 64,
+        "preview": "mentation de ces descriptions, pour s’en tenir aux fondamentaux."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 537,
+        "height": 84,
+        "area": 45108,
+        "aspect_ratio": 6.392857142857143,
+        "center_x": 1552,
+        "center_y": 180
+      }
+    },
+    {
+      "id": "9c8e205f-0b45-4578-bc7f-66992374925c",
+      "unique_id": "20250930_201316_page006_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 6,
+      "highlight_number": 2,
+      "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
+      "confidence": 92.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:16.029622",
+      "session_id": "20250930_201316",
+      "position": {
+        "x": 1284,
+        "y": 341,
+        "width": 536,
+        "height": 160
+      },
+      "metrics": {
+        "word_count": 26,
+        "character_count": 179,
+        "preview": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherin..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 341,
+        "width": 536,
+        "height": 160,
+        "area": 85760,
+        "aspect_ratio": 3.35,
+        "center_x": 1552,
+        "center_y": 421
+      }
+    },
+    {
+      "id": "e10f4a52-53e7-4b4d-ae31-65514fa1c693",
+      "unique_id": "20250930_201316_page006_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 6,
+      "highlight_number": 3,
+      "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
+      "confidence": 95.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:16.029936",
+      "session_id": "20250930_201316",
+      "position": {
+        "x": 1284,
+        "y": 886,
+        "width": 532,
+        "height": 84
+      },
+      "metrics": {
+        "word_count": 13,
+        "character_count": 79,
+        "preview": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 886,
+        "width": 532,
+        "height": 84,
+        "area": 44688,
+        "aspect_ratio": 6.333333333333333,
+        "center_x": 1550,
+        "center_y": 928
+      }
+    },
+    {
+      "id": "c3e99835-9a4a-4702-8ec1-ceaefaf1e1b4",
+      "unique_id": "20250930_201318_page007_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 7,
+      "highlight_number": 1,
+      "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
+      "confidence": 92.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:18.728956",
+      "session_id": "20250930_201318",
+      "position": {
+        "x": 1284,
+        "y": 442,
+        "width": 540,
+        "height": 198
+      },
+      "metrics": {
+        "word_count": 30,
+        "character_count": 210,
+        "preview": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, me..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 442,
+        "width": 540,
+        "height": 198,
+        "area": 106920,
+        "aspect_ratio": 2.727272727272727,
+        "center_x": 1554,
+        "center_y": 541
+      }
+    },
+    {
+      "id": "5c1fc6db-1303-44f4-ba36-6cda40541e6f",
+      "unique_id": "20250930_201321_page008_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 8,
+      "highlight_number": 1,
+      "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
+      "confidence": 93.1,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:21.556133",
+      "session_id": "20250930_201321",
+      "position": {
+        "x": 1284,
+        "y": 582,
+        "width": 526,
+        "height": 312
+      },
+      "metrics": {
+        "word_count": 57,
+        "character_count": 363,
+        "preview": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de re..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 582,
+        "width": 526,
+        "height": 312,
+        "area": 164112,
+        "aspect_ratio": 1.685897435897436,
+        "center_x": 1547,
+        "center_y": 738
+      }
+    },
+    {
+      "id": "7583f480-14b0-4d62-9307-dbcf8d291ed2",
+      "unique_id": "20250930_201324_page009_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 9,
+      "highlight_number": 1,
+      "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
+      "confidence": 90.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:24.925152",
+      "session_id": "20250930_201324",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 515,
+        "height": 122
+      },
+      "metrics": {
+        "word_count": 19,
+        "character_count": 122,
+        "preview": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un e..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 515,
+        "height": 122,
+        "area": 62830,
+        "aspect_ratio": 4.221311475409836,
+        "center_x": 1541,
+        "center_y": 199
+      }
+    },
+    {
+      "id": "2e2721fe-b53f-443e-8577-18af97360865",
+      "unique_id": "20250930_201324_page009_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 9,
+      "highlight_number": 2,
+      "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
+      "confidence": 92.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:24.925430",
+      "session_id": "20250930_201324",
+      "position": {
+        "x": 1284,
+        "y": 531,
+        "width": 515,
+        "height": 122
+      },
+      "metrics": {
+        "word_count": 16,
+        "character_count": 105,
+        "preview": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange ind..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 531,
+        "width": 515,
+        "height": 122,
+        "area": 62830,
+        "aspect_ratio": 4.221311475409836,
+        "center_x": 1541,
+        "center_y": 592
+      }
+    },
+    {
+      "id": "62a86e49-33de-41ac-9c8b-5fa810a33c33",
+      "unique_id": "20250930_201329_page010_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 10,
+      "highlight_number": 1,
+      "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
+      "confidence": 93.4,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:29.712593",
+      "session_id": "20250930_201329",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 350
+      },
+      "metrics": {
+        "word_count": 59,
+        "character_count": 406,
+        "preview": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce qu..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 350,
+        "area": 189000,
+        "aspect_ratio": 1.542857142857143,
+        "center_x": 1554,
+        "center_y": 313
+      }
+    },
+    {
+      "id": "03987fb3-ee76-458d-8469-74a279471b59",
+      "unique_id": "20250930_201329_page010_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 10,
+      "highlight_number": 2,
+      "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
+      "confidence": 93.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:29.712891",
+      "session_id": "20250930_201329",
+      "position": {
+        "x": 1284,
+        "y": 493,
+        "width": 519,
+        "height": 426
+      },
+      "metrics": {
+        "word_count": 74,
+        "character_count": 518,
+        "preview": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités p..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 493,
+        "width": 519,
+        "height": 426,
+        "area": 221094,
+        "aspect_ratio": 1.2183098591549295,
+        "center_x": 1543,
+        "center_y": 706
+      }
+    },
+    {
+      "id": "89ce3054-1094-407e-bbce-eb82ab1f6fed",
+      "unique_id": "20250930_201329_page010_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 10,
+      "highlight_number": 3,
+      "text": "l'entretien d’ex-",
+      "confidence": 90.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T20:13:29.713162",
+      "session_id": "20250930_201329",
+      "position": {
+        "x": 1642,
+        "y": 911,
+        "width": 179,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 2,
+        "character_count": 17,
+        "preview": "l'entretien d’ex-"
+      },
+      "position_info": {
+        "x": 1642,
+        "y": 911,
+        "width": 179,
+        "height": 46,
+        "area": 8234,
+        "aspect_ratio": 3.891304347826087,
+        "center_x": 1731,
+        "center_y": 934
+      }
+    },
+    {
+      "id": "49a1a2e0-d65a-4f76-902d-a729db730594",
+      "unique_id": "20250930_201334_page011_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 11,
       "highlight_number": 1,
       "text": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.",
       "confidence": 95.7,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:23.440501",
-      "session_id": "20250929_210723",
+      "extracted_at": "2025-09-30T20:13:34.279450",
+      "session_id": "20250930_201334",
       "position": {
         "x": 1284,
         "y": 138,
@@ -66,16 +429,16 @@
       }
     },
     {
-      "id": "43a9148f-e0da-49b8-9c84-3ed332ac2751",
-      "unique_id": "20250929_210723_page001_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 1,
+      "id": "471be91d-de5d-4ac4-8804-8185145822f4",
+      "unique_id": "20250930_201334_page011_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 11,
       "highlight_number": 2,
       "text": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:23.440838",
-      "session_id": "20250929_210723",
+      "extracted_at": "2025-09-30T20:13:34.279773",
+      "session_id": "20250930_201334",
       "position": {
         "x": 1284,
         "y": 265,
@@ -99,16 +462,16 @@
       }
     },
     {
-      "id": "33a83801-8bb0-4307-ab15-5438cb30cd0a",
-      "unique_id": "20250929_210723_page001_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 1,
+      "id": "643534a7-6b7c-45c5-9014-d615d790efae",
+      "unique_id": "20250930_201334_page011_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 11,
       "highlight_number": 3,
       "text": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.",
       "confidence": 91.3,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:23.441137",
-      "session_id": "20250929_210723",
+      "extracted_at": "2025-09-30T20:13:34.280045",
+      "session_id": "20250930_201334",
       "position": {
         "x": 1284,
         "y": 861,
@@ -132,16 +495,16 @@
       }
     },
     {
-      "id": "2fd1430d-984e-4154-ab56-0ced2562fb63",
-      "unique_id": "20250929_210727_page002_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 2,
+      "id": "73dce1eb-d02b-4ece-843f-b7afb054bd3b",
+      "unique_id": "20250930_201338_page012_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 12,
       "highlight_number": 1,
       "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:27.503227",
-      "session_id": "20250929_210727",
+      "extracted_at": "2025-09-30T20:13:38.420688",
+      "session_id": "20250930_201338",
       "position": {
         "x": 1284,
         "y": 138,
@@ -165,16 +528,16 @@
       }
     },
     {
-      "id": "f46bda00-46b7-4d26-bb5a-b916762bdf1c",
-      "unique_id": "20250929_210727_page002_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 2,
+      "id": "6567333e-9df4-473a-b640-084dd622179c",
+      "unique_id": "20250930_201338_page012_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 12,
       "highlight_number": 2,
       "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
       "confidence": 93.2,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:27.503529",
-      "session_id": "20250929_210727",
+      "extracted_at": "2025-09-30T20:13:38.421157",
+      "session_id": "20250930_201338",
       "position": {
         "x": 1284,
         "y": 607,
@@ -198,16 +561,16 @@
       }
     },
     {
-      "id": "e0d527cf-615d-439e-ba62-ead1ce9b87e7",
-      "unique_id": "20250929_210731_page003_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 3,
+      "id": "5a9e3d9a-f40c-4149-aaa0-a413924ccd52",
+      "unique_id": "20250930_201342_page013_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 13,
       "highlight_number": 1,
       "text": "Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles",
       "confidence": 92.3,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:31.752479",
-      "session_id": "20250929_210731",
+      "extracted_at": "2025-09-30T20:13:42.805113",
+      "session_id": "20250930_201342",
       "position": {
         "x": 1284,
         "y": 138,
@@ -231,16 +594,16 @@
       }
     },
     {
-      "id": "6ee94079-73a9-4ca2-a3d7-b6716db145d9",
-      "unique_id": "20250929_210731_page003_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 3,
+      "id": "c223c87b-0143-457e-ae41-fdb6c72f4ae4",
+      "unique_id": "20250930_201342_page013_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 13,
       "highlight_number": 2,
       "text": "On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.",
       "confidence": 94.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:31.752774",
-      "session_id": "20250929_210731",
+      "extracted_at": "2025-09-30T20:13:42.805498",
+      "session_id": "20250930_201342",
       "position": {
         "x": 1284,
         "y": 417,
@@ -264,16 +627,16 @@
       }
     },
     {
-      "id": "a38ab296-8a77-4bb1-b7b9-6ca880f9e5ea",
-      "unique_id": "20250929_210731_page003_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 3,
+      "id": "12f6006e-4a71-4b42-8e49-2b653f8b8c95",
+      "unique_id": "20250930_201342_page013_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 13,
       "highlight_number": 3,
       "text": "Dans cette première perspective,",
       "confidence": 96.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:31.753035",
-      "session_id": "20250929_210731",
+      "extracted_at": "2025-09-30T20:13:42.806022",
+      "session_id": "20250930_201342",
       "position": {
         "x": 1451,
         "y": 886,
@@ -297,16 +660,16 @@
       }
     },
     {
-      "id": "af7cca27-8abf-46b7-bc3c-b59cdd8546d4",
-      "unique_id": "20250929_210735_page004_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 4,
+      "id": "94f650ec-a71b-4cf0-87ba-4276f80fa0ba",
+      "unique_id": "20250930_201346_page014_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 14,
       "highlight_number": 1,
       "text": "l'entretien d’explicitation est le produit de la for- malisation d’une pratique empirique.",
       "confidence": 92.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:35.806206",
-      "session_id": "20250929_210735",
+      "extracted_at": "2025-09-30T20:13:46.999406",
+      "session_id": "20250930_201346",
       "position": {
         "x": 1284,
         "y": 138,
@@ -330,16 +693,16 @@
       }
     },
     {
-      "id": "d6b8aaf6-0f2a-4e2a-95aa-38854940a777",
-      "unique_id": "20250929_210735_page004_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 4,
+      "id": "025e5bac-376f-45f7-aa14-4b4a25778961",
+      "unique_id": "20250930_201346_page014_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 14,
       "highlight_number": 2,
       "text": "l'étude du déroulement de l’action comme source d’inférence pour l'analyse du fonctionnement intellectuel,",
       "confidence": 91.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:35.806505",
-      "session_id": "20250929_210735",
+      "extracted_at": "2025-09-30T20:13:46.999720",
+      "session_id": "20250930_201346",
       "position": {
         "x": 1284,
         "y": 265,
@@ -363,16 +726,16 @@
       }
     },
     {
-      "id": "49fabd70-ffdb-4035-9338-0198ec6420fd",
-      "unique_id": "20250929_210735_page004_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 4,
+      "id": "f96b8eb8-1726-4ff6-83bc-c15d0347018f",
+      "unique_id": "20250930_201346_page014_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 14,
       "highlight_number": 3,
       "text": "travers un groupe de recherche international: : le GREX (Groupe de Recherche sur TEXplicitation).",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:35.806762",
-      "session_id": "20250929_210735",
+      "extracted_at": "2025-09-30T20:13:46.999998",
+      "session_id": "20250930_201346",
       "position": {
         "x": 1284,
         "y": 683,
@@ -396,16 +759,16 @@
       }
     },
     {
-      "id": "7dcb3e2b-5ded-41ce-95ff-235928db4eda",
-      "unique_id": "20250929_210742_page005_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 5,
+      "id": "834b219d-d799-44a5-8462-58b125f12be2",
+      "unique_id": "20250930_201353_page015_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 15,
       "highlight_number": 1,
       "text": "il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:42.066742",
-      "session_id": "20250929_210742",
+      "extracted_at": "2025-09-30T20:13:53.552473",
+      "session_id": "20250930_201353",
       "position": {
         "x": 1284,
         "y": 138,
@@ -429,16 +792,16 @@
       }
     },
     {
-      "id": "a6ce8e97-a5ca-4e5d-9f34-c1506182a3ce",
-      "unique_id": "20250929_210742_page005_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 5,
+      "id": "f4edef20-e456-4cff-b74b-f5573c8a608c",
+      "unique_id": "20250930_201353_page015_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 15,
       "highlight_number": 2,
       "text": "ce qui est observable (si il y a un observateur) et les traces de la réalisation de l’action (brouillon, résul- tats intermédiaires encore visibles).",
       "confidence": 94.6,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:42.067027",
-      "session_id": "20250929_210742",
+      "extracted_at": "2025-09-30T20:13:53.552747",
+      "session_id": "20250930_201353",
       "position": {
         "x": 1284,
         "y": 290,
@@ -462,16 +825,16 @@
       }
     },
     {
-      "id": "46ba70f3-aca0-4e56-9afd-0fe56184d057",
-      "unique_id": "20250929_210742_page005_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 5,
+      "id": "f67bd8de-28ed-4293-ad02-1c038689d2ce",
+      "unique_id": "20250930_201353_page015_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 15,
       "highlight_number": 3,
       "text": "Dans le domaine de la didactique, je proposerai une analyse de l’évolution des pratiques basées sur le questionnement,",
       "confidence": 94.2,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:42.067299",
-      "session_id": "20250929_210742",
+      "extracted_at": "2025-09-30T20:13:53.552966",
+      "session_id": "20250930_201353",
       "position": {
         "x": 1284,
         "y": 455,
@@ -495,16 +858,16 @@
       }
     },
     {
-      "id": "49671b86-d9ae-448b-b30e-e81bce9b19b9",
-      "unique_id": "20250929_210742_page005_highlight05",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 5,
+      "id": "39ebc66a-33bc-4a4a-aa2c-f8d0b85ccd6e",
+      "unique_id": "20250930_201353_page015_highlight05",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 15,
       "highlight_number": 5,
       "text": "techniques rogériennes).",
       "confidence": 91.5,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:42.067584",
-      "session_id": "20250929_210742",
+      "extracted_at": "2025-09-30T20:13:53.553158",
+      "session_id": "20250930_201353",
       "position": {
         "x": 1284,
         "y": 683,
@@ -528,16 +891,16 @@
       }
     },
     {
-      "id": "c9951dc8-111d-4b3b-b3fe-047670d715c5",
-      "unique_id": "20250929_210742_page005_highlight06",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 5,
+      "id": "bac3d18b-f7b1-425f-a97b-ab7a28449e48",
+      "unique_id": "20250930_201353_page015_highlight06",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 15,
       "highlight_number": 6,
       "text": "s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-informer.",
       "confidence": 87.4,
       "confidence_level": "MEDIUM",
-      "extracted_at": "2025-09-29T21:07:42.067860",
-      "session_id": "20250929_210742",
+      "extracted_at": "2025-09-30T20:13:53.553360",
+      "session_id": "20250930_201353",
       "position": {
         "x": 1284,
         "y": 810,
@@ -561,16 +924,16 @@
       }
     },
     {
-      "id": "44d2e143-f434-47ea-82c6-755af70371a4",
-      "unique_id": "20250929_210746_page006_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 6,
+      "id": "d239969e-6f05-41d7-8da7-4775dce561c2",
+      "unique_id": "20250930_201357_page016_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 16,
       "highlight_number": 1,
       "text": "Des traces, des observables et des verbalisations",
       "confidence": 93.7,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:46.337368",
-      "session_id": "20250929_210746",
+      "extracted_at": "2025-09-30T20:13:57.791867",
+      "session_id": "20250930_201357",
       "position": {
         "x": 1284,
         "y": 266,
@@ -594,16 +957,16 @@
       }
     },
     {
-      "id": "aecb6491-4b8e-45f0-a8d7-59c28637723e",
-      "unique_id": "20250929_210746_page006_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 6,
+      "id": "7b5ff84b-ed20-4bec-850a-7ca7e47610c5",
+      "unique_id": "20250930_201357_page016_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 16,
       "highlight_number": 2,
       "text": "Une activité matérielle ou mentale se traduit par des observables comportementaux,",
       "confidence": 95.1,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:46.337665",
-      "session_id": "20250929_210746",
+      "extracted_at": "2025-09-30T20:13:57.792204",
+      "session_id": "20250930_201357",
       "position": {
         "x": 1284,
         "y": 618,
@@ -627,16 +990,16 @@
       }
     },
     {
-      "id": "7bd9fee9-e7a7-42d9-9a4c-5e7bf05afe8a",
-      "unique_id": "20250929_210746_page006_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 6,
+      "id": "fbc62951-391b-45f6-a62e-4916f5469a18",
+      "unique_id": "20250930_201357_page016_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 16,
       "highlight_number": 3,
       "text": "Une des ca- ractéristiques de ces observables c’est qu’ils sont transitoires, pour les observer il faut être présent ils ne sont jamais donnés : c’est-a- dire que pour être remarqués, retenus, il faut les attendre, être en projet de les observer parce qu’ils",
       "confidence": 94.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:46.337930",
-      "session_id": "20250929_210746",
+      "extracted_at": "2025-09-30T20:13:57.792530",
+      "session_id": "20250930_201357",
       "position": {
         "x": 1284,
         "y": 732,
@@ -660,16 +1023,16 @@
       }
     },
     {
-      "id": "f3cd4cde-6945-48ce-a30b-5b378ccee1e3",
-      "unique_id": "20250929_210751_page007_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 7,
+      "id": "4bfcaa8d-e93c-4395-a76c-aee728c14e70",
+      "unique_id": "20250930_201402_page017_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 17,
       "highlight_number": 1,
       "text": "ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.",
       "confidence": 93.6,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:51.008112",
-      "session_id": "20250929_210751",
+      "extracted_at": "2025-09-30T20:14:02.547086",
+      "session_id": "20250930_201402",
       "position": {
         "x": 1284,
         "y": 138,
@@ -693,16 +1056,16 @@
       }
     },
     {
-      "id": "f8d8ce34-3032-4ea0-83f5-4970916b50c2",
-      "unique_id": "20250929_210751_page007_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 7,
+      "id": "ec924d9f-04e4-4a88-a6d3-cc11e59ec032",
+      "unique_id": "20250930_201402_page017_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 17,
       "highlight_number": 2,
       "text": "L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.",
       "confidence": 92.1,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:51.008386",
-      "session_id": "20250929_210751",
+      "extracted_at": "2025-09-30T20:14:02.547393",
+      "session_id": "20250930_201402",
       "position": {
         "x": 1284,
         "y": 531,
@@ -726,16 +1089,16 @@
       }
     },
     {
-      "id": "e8861ca6-1e87-4437-aa60-80b376ce66c4",
-      "unique_id": "20250929_210751_page007_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 7,
+      "id": "bbe5485c-81a9-4a57-b0a7-c7c3b7b66dd7",
+      "unique_id": "20250930_201402_page017_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 17,
       "highlight_number": 3,
       "text": "les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.",
       "confidence": 92.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:51.008645",
-      "session_id": "20250929_210751",
+      "extracted_at": "2025-09-30T20:14:02.547762",
+      "session_id": "20250930_201402",
       "position": {
         "x": 1284,
         "y": 797,
@@ -759,273 +1122,232 @@
       }
     },
     {
-      "id": "01b6793e-13f5-42d8-86f3-4b83bf58e16f",
-      "unique_id": "20250929_210756_page008_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 8,
+      "id": "59c0666e-210d-4a3d-8d85-b8e7ed06ab4d",
+      "unique_id": "20250930_201407_page018_highlight01",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 18,
       "highlight_number": 1,
-      "text": "Les traces",
-      "confidence": 96.0,
+      "text": "ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.",
+      "confidence": 93.6,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:56.052975",
-      "session_id": "20250929_210756",
+      "extracted_at": "2025-09-30T20:14:07.212604",
+      "session_id": "20250930_201407",
       "position": {
-        "x": 1302,
-        "y": 185,
-        "width": 119,
-        "height": 46
+        "x": 1284,
+        "y": 138,
+        "width": 534,
+        "height": 388
       },
       "metrics": {
-        "word_count": 2,
-        "character_count": 10,
-        "preview": "Les traces"
+        "word_count": 72,
+        "character_count": 449,
+        "preview": "ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce..."
       },
       "position_info": {
-        "x": 1302,
-        "y": 185,
-        "width": 119,
-        "height": 46,
-        "area": 5474,
-        "aspect_ratio": 2.5869565217391304,
-        "center_x": 1361,
-        "center_y": 208
+        "x": 1284,
+        "y": 138,
+        "width": 534,
+        "height": 388,
+        "area": 207192,
+        "aspect_ratio": 1.3762886597938144,
+        "center_x": 1551,
+        "center_y": 332
       }
     },
     {
-      "id": "d6e66aa2-c782-4658-bd49-9f6e4553ff4c",
-      "unique_id": "20250929_210756_page008_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 8,
+      "id": "a2ae2c98-cdcc-4bd8-9aab-5ff2da8592d2",
+      "unique_id": "20250930_201407_page018_highlight02",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 18,
       "highlight_number": 2,
-      "text": "Les traces sont les indices matériels plus ou moins permanents produits par l’activité.",
-      "confidence": 93.9,
+      "text": "L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.",
+      "confidence": 92.1,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:56.053298",
-      "session_id": "20250929_210756",
+      "extracted_at": "2025-09-30T20:14:07.212926",
+      "session_id": "20250930_201407",
       "position": {
         "x": 1284,
-        "y": 261,
-        "width": 491,
-        "height": 84
-      },
-      "metrics": {
-        "word_count": 13,
-        "character_count": 87,
-        "preview": "Les traces sont les indices matériels plus ou moins permanents produits par l’activité."
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 261,
-        "width": 491,
-        "height": 84,
-        "area": 41244,
-        "aspect_ratio": 5.845238095238095,
-        "center_x": 1529,
-        "center_y": 303
-      }
-    },
-    {
-      "id": "5cf315f2-9a4d-41e3-881c-13ff28c8f2fb",
-      "unique_id": "20250929_210756_page008_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 8,
-      "highlight_number": 3,
-      "text": "Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’avoir des yeux pour voir). Comme le dit son nom, la trace n’est qu’une information partielle de l’activité qui l'a produite.",
-      "confidence": 94.0,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:56.053537",
-      "session_id": "20250929_210756",
-      "position": {
-        "x": 1284,
-        "y": 413,
-        "width": 539,
+        "y": 531,
+        "width": 528,
         "height": 198
       },
       "metrics": {
-        "word_count": 35,
-        "character_count": 219,
-        "preview": "Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’av..."
+        "word_count": 32,
+        "character_count": 223,
+        "preview": "L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre ..."
       },
       "position_info": {
         "x": 1284,
-        "y": 413,
-        "width": 539,
+        "y": 531,
+        "width": 528,
         "height": 198,
-        "area": 106722,
-        "aspect_ratio": 2.7222222222222223,
-        "center_x": 1553,
-        "center_y": 512
+        "area": 104544,
+        "aspect_ratio": 2.6666666666666665,
+        "center_x": 1548,
+        "center_y": 630
       }
     },
     {
-      "id": "0a4c6c4e-1424-415a-a541-f382f1549332",
-      "unique_id": "20250929_210756_page008_highlight04",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 8,
-      "highlight_number": 4,
-      "text": "immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour faire « signe ».",
-      "confidence": 94.8,
+      "id": "4585e3de-c437-4736-ac71-1c958271802d",
+      "unique_id": "20250930_201407_page018_highlight03",
+      "book_id": "9c82f235-8a90-4ec9-a989-dc677d913753",
+      "page_number": 18,
+      "highlight_number": 3,
+      "text": "les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.",
+      "confidence": 92.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:56.053776",
-      "session_id": "20250929_210756",
+      "extracted_at": "2025-09-30T20:14:07.213223",
+      "session_id": "20250930_201407",
       "position": {
         "x": 1284,
-        "y": 641,
+        "y": 797,
         "width": 534,
         "height": 122
       },
       "metrics": {
-        "word_count": 15,
-        "character_count": 111,
-        "preview": "immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour fa..."
+        "word_count": 12,
+        "character_count": 96,
+        "preview": "les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?."
       },
       "position_info": {
         "x": 1284,
-        "y": 641,
+        "y": 797,
         "width": 534,
         "height": 122,
         "area": 65148,
         "aspect_ratio": 4.377049180327869,
         "center_x": 1551,
-        "center_y": 702
-      }
-    },
-    {
-      "id": "935156da-0cd2-4f72-81b0-429da0c844bb",
-      "unique_id": "20250929_210759_page009_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 9,
-      "highlight_number": 1,
-      "text": "Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’observables et de traces (rendre plus « publique » la démarche en rendant plus nombreuses les traductions comportementales du fonctionnement intellectuel mis en œuvre dans la réalisation de l'exercice), ou les amplifier (les rendre plus visibles, plus apparents, plus aisés à observer et plus permanents : par exemple, supprimer le crayon dans le travail au brouillon pour rendre les étapes intermédiaires présentes, sans possibilité de corrections masquées ou d’effa- cement). Dans le cadre de la recherche, traces et observables sont des données complémentaires dont il est essentiel de disposer. Dans le cadre de l'activité didactique quotidienne, les utiliser reste précieux, même si l’on sait utiliser une technique d'entretien.",
-      "confidence": 93.7,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:07:59.535620",
-      "session_id": "20250929_210759",
-      "position": {
-        "x": 1284,
-        "y": 176,
-        "width": 540,
-        "height": 692
-      },
-      "metrics": {
-        "word_count": 122,
-        "character_count": 828,
-        "preview": "Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’ob..."
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 176,
-        "width": 540,
-        "height": 692,
-        "area": 373680,
-        "aspect_ratio": 0.7803468208092486,
-        "center_x": 1554,
-        "center_y": 522
-      }
-    },
-    {
-      "id": "2c4fae87-1b40-4acb-bff3-bbd099b93693",
-      "unique_id": "20250929_210804_page010_highlight01",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 10,
-      "highlight_number": 1,
-      "text": "Les verbalisations",
-      "confidence": 92.5,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:08:04.340862",
-      "session_id": "20250929_210804",
-      "position": {
-        "x": 1302,
-        "y": 185,
-        "width": 205,
-        "height": 46
-      },
-      "metrics": {
-        "word_count": 2,
-        "character_count": 18,
-        "preview": "Les verbalisations"
-      },
-      "position_info": {
-        "x": 1302,
-        "y": 185,
-        "width": 205,
-        "height": 46,
-        "area": 9430,
-        "aspect_ratio": 4.456521739130435,
-        "center_x": 1404,
-        "center_y": 208
-      }
-    },
-    {
-      "id": "c9a2749b-9d16-4c56-909a-11a3d9fd1bdf",
-      "unique_id": "20250929_210804_page010_highlight02",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 10,
-      "highlight_number": 2,
-      "text": "Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent peu de traces (seulement le produit final, par exemple, on ne sait alors rien du cheminement) et produisent peu d’observables (la résolution de tête d’un problème). personne n'était présent pour noter les observables po- tentiellement disponibles (travail personnel à la maison, absence de l'enseignant au bon moment, au bon endroit du lieu de formation, impossibilité de tout observer simultanément dans un groupe classe, analyse d’accidents en psychologie du tra- vail). La seule source d’informations disponible est alors la verbalisation.",
-      "confidence": 93.4,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:08:04.341161",
-      "session_id": "20250929_210804",
-      "position": {
-        "x": 1284,
-        "y": 261,
-        "width": 538,
-        "height": 540
-      },
-      "metrics": {
-        "word_count": 94,
-        "character_count": 640,
-        "preview": "Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent..."
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 261,
-        "width": 538,
-        "height": 540,
-        "area": 290520,
-        "aspect_ratio": 0.9962962962962963,
-        "center_x": 1553,
-        "center_y": 531
-      }
-    },
-    {
-      "id": "af592861-0e07-4239-ab13-e78d21ad891c",
-      "unique_id": "20250929_210804_page010_highlight03",
-      "book_id": "de96fdfc-3729-4105-9814-cb0c7690ff46",
-      "page_number": 10,
-      "highlight_number": 3,
-      "text": "Les traces et les observables ont le mérite de relever",
-      "confidence": 95.0,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:08:04.341454",
-      "session_id": "20250929_210804",
-      "position": {
-        "x": 1284,
-        "y": 882,
-        "width": 512,
-        "height": 84
-      },
-      "metrics": {
-        "word_count": 10,
-        "character_count": 54,
-        "preview": "Les traces et les observables ont le mérite de relever"
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 882,
-        "width": 512,
-        "height": 84,
-        "area": 43008,
-        "aspect_ratio": 6.095238095238095,
-        "center_x": 1540,
-        "center_y": 924
+        "center_y": 858
       }
     }
   ],
   "pages": {
-    "1": {
-      "page_number": 1,
+    "5": {
+      "page_number": 5,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
+          "confidence": 94.3,
+          "word_count": 40,
+          "character_count": 235,
+          "preview": "importance de la référence à un moment singulier p..."
+        }
+      ]
+    },
+    "6": {
+      "page_number": 6,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
+          "confidence": 94.88888888888889,
+          "word_count": 9,
+          "character_count": 64,
+          "preview": "mentation de ces descriptions, pour s’en tenir aux..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
+          "confidence": 92.76923076923077,
+          "word_count": 26,
+          "character_count": 179,
+          "preview": "l'association GREX (Groupe de Recherche sur l’EX- ..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
+          "confidence": 95.76923076923077,
+          "word_count": 13,
+          "character_count": 79,
+          "preview": "de la reprise actuelle des réflexions sur la plura..."
+        }
+      ]
+    },
+    "7": {
+      "page_number": 7,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
+          "confidence": 92.93333333333334,
+          "word_count": 30,
+          "character_count": 210,
+          "preview": "2013 sur YouTube qui décrivent différents points :..."
+        }
+      ]
+    },
+    "8": {
+      "page_number": 8,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
+          "confidence": 93.05263157894737,
+          "word_count": 57,
+          "character_count": 363,
+          "preview": "Qu'est-ce qu’une technique ? C’est un ensemble de ..."
+        }
+      ]
+    },
+    "9": {
+      "page_number": 9,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
+          "confidence": 90.84210526315789,
+          "word_count": 19,
+          "character_count": 122,
+          "preview": "On peut avoir besoin d'apprendre une technique d'e..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
+          "confidence": 92.75,
+          "word_count": 16,
+          "character_count": 105,
+          "preview": "Mettre en œuvre une technique de questionnement n’..."
+        }
+      ]
+    },
+    "10": {
+      "page_number": 10,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
+          "confidence": 93.42372881355932,
+          "word_count": 59,
+          "character_count": 406,
+          "preview": "La spécificité de l'entretien d’explicitation est ..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
+          "confidence": 93.04054054054055,
+          "word_count": 74,
+          "character_count": 518,
+          "preview": "Dans toutes les activités qui impliquent des tâche..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "l'entretien d’ex-",
+          "confidence": 90.0,
+          "word_count": 2,
+          "character_count": 17,
+          "preview": "l'entretien d’ex-"
+        }
+      ]
+    },
+    "11": {
+      "page_number": 11,
       "highlight_count": 3,
       "highlights": [
         {
@@ -1054,8 +1376,8 @@
         }
       ]
     },
-    "2": {
-      "page_number": 2,
+    "12": {
+      "page_number": 12,
       "highlight_count": 2,
       "highlights": [
         {
@@ -1076,8 +1398,8 @@
         }
       ]
     },
-    "3": {
-      "page_number": 3,
+    "13": {
+      "page_number": 13,
       "highlight_count": 3,
       "highlights": [
         {
@@ -1106,8 +1428,8 @@
         }
       ]
     },
-    "4": {
-      "page_number": 4,
+    "14": {
+      "page_number": 14,
       "highlight_count": 3,
       "highlights": [
         {
@@ -1136,8 +1458,8 @@
         }
       ]
     },
-    "5": {
-      "page_number": 5,
+    "15": {
+      "page_number": 15,
       "highlight_count": 5,
       "highlights": [
         {
@@ -1182,8 +1504,8 @@
         }
       ]
     },
-    "6": {
-      "page_number": 6,
+    "16": {
+      "page_number": 16,
       "highlight_count": 3,
       "highlights": [
         {
@@ -1212,8 +1534,8 @@
         }
       ]
     },
-    "7": {
-      "page_number": 7,
+    "17": {
+      "page_number": 17,
       "highlight_count": 3,
       "highlights": [
         {
@@ -1242,85 +1564,33 @@
         }
       ]
     },
-    "8": {
-      "page_number": 8,
-      "highlight_count": 4,
-      "highlights": [
-        {
-          "highlight_number": 1,
-          "text": "Les traces",
-          "confidence": 96.0,
-          "word_count": 2,
-          "character_count": 10,
-          "preview": "Les traces"
-        },
-        {
-          "highlight_number": 2,
-          "text": "Les traces sont les indices matériels plus ou moins permanents produits par l’activité.",
-          "confidence": 93.92307692307692,
-          "word_count": 13,
-          "character_count": 87,
-          "preview": "Les traces sont les indices matériels plus ou moin..."
-        },
-        {
-          "highlight_number": 3,
-          "text": "Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’avoir des yeux pour voir). Comme le dit son nom, la trace n’est qu’une information partielle de l’activité qui l'a produite.",
-          "confidence": 94.0,
-          "word_count": 35,
-          "character_count": 219,
-          "preview": "Alors que la notion d’observable pouvait laisser p..."
-        },
-        {
-          "highlight_number": 4,
-          "text": "immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour faire « signe ».",
-          "confidence": 94.8,
-          "word_count": 15,
-          "character_count": 111,
-          "preview": "immédiatement problématique, en ce sens qu’elle su..."
-        }
-      ]
-    },
-    "9": {
-      "page_number": 9,
-      "highlight_count": 1,
-      "highlights": [
-        {
-          "highlight_number": 1,
-          "text": "Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’observables et de traces (rendre plus « publique » la démarche en rendant plus nombreuses les traductions comportementales du fonctionnement intellectuel mis en œuvre dans la réalisation de l'exercice), ou les amplifier (les rendre plus visibles, plus apparents, plus aisés à observer et plus permanents : par exemple, supprimer le crayon dans le travail au brouillon pour rendre les étapes intermédiaires présentes, sans possibilité de corrections masquées ou d’effa- cement). Dans le cadre de la recherche, traces et observables sont des données complémentaires dont il est essentiel de disposer. Dans le cadre de l'activité didactique quotidienne, les utiliser reste précieux, même si l’on sait utiliser une technique d'entretien.",
-          "confidence": 93.72950819672131,
-          "word_count": 122,
-          "character_count": 828,
-          "preview": "Souvent, cela conduit à modifier la tâche ou l'exe..."
-        }
-      ]
-    },
-    "10": {
-      "page_number": 10,
+    "18": {
+      "page_number": 18,
       "highlight_count": 3,
       "highlights": [
         {
           "highlight_number": 1,
-          "text": "Les verbalisations",
-          "confidence": 92.5,
-          "word_count": 2,
-          "character_count": 18,
-          "preview": "Les verbalisations"
+          "text": "ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.",
+          "confidence": 93.63888888888889,
+          "word_count": 72,
+          "character_count": 449,
+          "preview": "ont du sens. n’est perçu que ce pour quoi nous avo..."
         },
         {
           "highlight_number": 2,
-          "text": "Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent peu de traces (seulement le produit final, par exemple, on ne sait alors rien du cheminement) et produisent peu d’observables (la résolution de tête d’un problème). personne n'était présent pour noter les observables po- tentiellement disponibles (travail personnel à la maison, absence de l'enseignant au bon moment, au bon endroit du lieu de formation, impossibilité de tout observer simultanément dans un groupe classe, analyse d’accidents en psychologie du tra- vail). La seule source d’informations disponible est alors la verbalisation.",
-          "confidence": 93.3936170212766,
-          "word_count": 94,
-          "character_count": 640,
-          "preview": "Mais, il n’en reste pas moins que de nombreuses ac..."
+          "text": "L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.",
+          "confidence": 92.125,
+          "word_count": 32,
+          "character_count": 223,
+          "preview": "L'inconvénient majeur c’est que l'exploitation des..."
         },
         {
           "highlight_number": 3,
-          "text": "Les traces et les observables ont le mérite de relever",
-          "confidence": 95.0,
-          "word_count": 10,
-          "character_count": 54,
-          "preview": "Les traces et les observables ont le mérite de rel..."
+          "text": "les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.",
+          "confidence": 92.83333333333333,
+          "word_count": 12,
+          "character_count": 96,
+          "preview": "les techniques de micro-enseignement et de laborat..."
         }
       ]
     }

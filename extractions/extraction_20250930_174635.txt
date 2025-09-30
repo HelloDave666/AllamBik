@@ -1,9 +1,9 @@
-EXTRACTION KINDLE - 29/09/2025 21:18:53
+EXTRACTION KINDLE - 30/09/2025 17:46:36
 ================================================================================
 
 Pages scannées: 10
-Pages avec contenu: 10
-Highlights extraits: 19
+Pages avec contenu: 9
+Highlights extraits: 18
 ================================================================================
 
 --- PAGE 2 ---
@@ -13,7 +13,7 @@ importance de la référence à un moment singulier pour être sûr de viser le 
 (Confiance: 94%)
 (Mots: 40)
 (Position: x=1284, y=704, taille=531x236)
-(ID: 20250929_211822_page002_highlight01)
+(ID: 20250930_174605_page002_highlight01)
 
 ----------------------------------------
 
@@ -25,7 +25,7 @@ mentation de ces descriptions, pour s’en tenir aux fondamentaux.
 (Confiance: 95%)
 (Mots: 9)
 (Position: x=1284, y=138, taille=537x84)
-(ID: 20250929_211826_page003_highlight01)
+(ID: 20250930_174609_page003_highlight01)
 
 ----------------------------------------
 
@@ -34,7 +34,7 @@ l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en jui
 (Confiance: 93%)
 (Mots: 26)
 (Position: x=1284, y=341, taille=536x160)
-(ID: 20250929_211826_page003_highlight02)
+(ID: 20250930_174609_page003_highlight02)
 
 ----------------------------------------
 
@@ -43,7 +43,7 @@ de la reprise actuelle des réflexions sur la pluralité des lieux de conscience
 (Confiance: 96%)
 (Mots: 13)
 (Position: x=1284, y=886, taille=532x84)
-(ID: 20250929_211826_page003_highlight03)
+(ID: 20250930_174609_page003_highlight03)
 
 ----------------------------------------
 
@@ -55,7 +55,7 @@ de la reprise actuelle des réflexions sur la pluralité des lieux de conscience
 (Confiance: 93%)
 (Mots: 30)
 (Position: x=1284, y=442, taille=540x198)
-(ID: 20250929_211829_page004_highlight01)
+(ID: 20250930_174611_page004_highlight01)
 
 ----------------------------------------
 
@@ -67,7 +67,7 @@ Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basée
 (Confiance: 93%)
 (Mots: 57)
 (Position: x=1284, y=582, taille=526x312)
-(ID: 20250929_211832_page005_highlight01)
+(ID: 20250930_174614_page005_highlight01)
 
 ----------------------------------------
 
@@ -79,7 +79,7 @@ On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessair
 (Confiance: 91%)
 (Mots: 19)
 (Position: x=1284, y=138, taille=515x122)
-(ID: 20250929_211835_page006_highlight01)
+(ID: 20250930_174618_page006_highlight01)
 
 ----------------------------------------
 
@@ -88,7 +88,7 @@ Mettre en œuvre une technique de questionnement n’est pas ré- servé à une 
 (Confiance: 93%)
 (Mots: 16)
 (Position: x=1284, y=531, taille=515x122)
-(ID: 20250929_211835_page006_highlight02)
+(ID: 20250930_174618_page006_highlight02)
 
 ----------------------------------------
 
@@ -100,7 +100,7 @@ La spécificité de l'entretien d’explicitation est de viser la verbalisation 
 (Confiance: 93%)
 (Mots: 59)
 (Position: x=1284, y=138, taille=540x350)
-(ID: 20250929_211840_page007_highlight01)
+(ID: 20250930_174622_page007_highlight01)
 
 ----------------------------------------
 
@@ -109,7 +109,7 @@ Dans toutes les activités qui impliquent des tâches à effectuer (exercices sc
 (Confiance: 93%)
 (Mots: 74)
 (Position: x=1284, y=493, taille=519x426)
-(ID: 20250929_211840_page007_highlight02)
+(ID: 20250930_174622_page007_highlight02)
 
 ----------------------------------------
 
@@ -118,7 +118,7 @@ l'entretien d’ex-
 (Confiance: 90%)
 (Mots: 2)
 (Position: x=1642, y=911, taille=179x46)
-(ID: 20250929_211840_page007_highlight03)
+(ID: 20250930_174622_page007_highlight03)
 
 ----------------------------------------
 
@@ -130,7 +130,7 @@ plicitation vise la description du déroulement de cette action, telle qu’elle
 (Confiance: 96%)
 (Mots: 21)
 (Position: x=1284, y=138, taille=525x122)
-(ID: 20250929_211845_page008_highlight01)
+(ID: 20250930_174627_page008_highlight01)
 
 ----------------------------------------
 
@@ -139,7 +139,7 @@ ce déroulement d’action est la seule source d’inférences fiables pour mett
 (Confiance: 94%)
 (Mots: 73)
 (Position: x=1284, y=265, taille=534x426)
-(ID: 20250929_211845_page008_highlight02)
+(ID: 20250930_174627_page008_highlight02)
 
 ----------------------------------------
 
@@ -148,7 +148,7 @@ Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficil
 (Confiance: 91%)
 (Mots: 12)
 (Position: x=1284, y=861, taille=531x84)
-(ID: 20250929_211845_page008_highlight03)
+(ID: 20250930_174627_page008_highlight03)
 
 ----------------------------------------
 
@@ -160,7 +160,7 @@ Le premier est que l’action est, pour une bonne part, une connaissance autonom
 (Confiance: 94%)
 (Mots: 82)
 (Position: x=1284, y=138, taille=529x464)
-(ID: 20250929_211849_page009_highlight01)
+(ID: 20250930_174631_page009_highlight01)
 
 ----------------------------------------
 
@@ -169,7 +169,7 @@ Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons 
 (Confiance: 93%)
 (Mots: 59)
 (Position: x=1284, y=607, taille=538x312)
-(ID: 20250929_211849_page009_highlight02)
+(ID: 20250930_174631_page009_highlight02)
 
 ----------------------------------------
 
@@ -177,29 +177,20 @@ Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons 
 --- PAGE 10 ---
 
 === SURLIGNEMENT #1 ===
-Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles
-(Confiance: 92%)
-(Mots: 40)
-(Position: x=1284, y=138, taille=537x198)
-(ID: 20250929_211853_page010_highlight01)
+Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).
+(Confiance: 94%)
+(Mots: 82)
+(Position: x=1284, y=138, taille=529x464)
+(ID: 20250930_174635_page010_highlight01)
 
 ----------------------------------------
 
 === SURLIGNEMENT #2 ===
-On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.
-(Confiance: 94%)
-(Mots: 42)
-(Position: x=1284, y=417, taille=534x198)
-(ID: 20250929_211853_page010_highlight02)
-
-----------------------------------------
-
-=== SURLIGNEMENT #3 ===
-Dans cette première perspective,
-(Confiance: 96%)
-(Mots: 4)
-(Position: x=1451, y=886, taille=356x46)
-(ID: 20250929_211853_page010_highlight03)
+Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.
+(Confiance: 93%)
+(Mots: 59)
+(Position: x=1284, y=607, taille=538x312)
+(ID: 20250930_174635_page010_highlight02)
 
 ----------------------------------------
 

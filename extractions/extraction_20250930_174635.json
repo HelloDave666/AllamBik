@@ -1,0 +1,830 @@
+{
+  "metadata": {
+    "task_id": "56864c40-bacc-42df-b91d-e3370a67324c",
+    "extraction_date": "2025-09-30T17:46:35.920457",
+    "session_id": "20250930_174605",
+    "pages_scanned": 10,
+    "pages_with_content": 9,
+    "total_highlights": 18,
+    "extraction_method": "individual_highlights",
+    "version": "3.0"
+  },
+  "statistics": {
+    "confidence": {
+      "average": 93.3,
+      "min": 90.0,
+      "max": 95.76923076923077,
+      "distribution": {
+        "high": 18,
+        "medium": 0,
+        "low": 0
+      }
+    },
+    "text": {
+      "total_words": 733,
+      "average_words_per_highlight": 40.7,
+      "min_words": 2,
+      "max_words": 82
+    },
+    "pages": {
+      "total_pages": 9,
+      "highlights_per_page": 2.0
+    }
+  },
+  "highlights": [
+    {
+      "id": "d4c0b3a9-a403-40bb-ba5a-dcbcd2b4787c",
+      "unique_id": "20250930_174605_page002_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 2,
+      "highlight_number": 1,
+      "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
+      "confidence": 94.3,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:05.188304",
+      "session_id": "20250930_174605",
+      "position": {
+        "x": 1284,
+        "y": 704,
+        "width": 531,
+        "height": 236
+      },
+      "metrics": {
+        "word_count": 40,
+        "character_count": 235,
+        "preview": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la thé..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 704,
+        "width": 531,
+        "height": 236,
+        "area": 125316,
+        "aspect_ratio": 2.25,
+        "center_x": 1549,
+        "center_y": 822
+      }
+    },
+    {
+      "id": "68307e52-f3a8-49b0-aa19-d733abd653fc",
+      "unique_id": "20250930_174609_page003_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 3,
+      "highlight_number": 1,
+      "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
+      "confidence": 94.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:09.240983",
+      "session_id": "20250930_174609",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 537,
+        "height": 84
+      },
+      "metrics": {
+        "word_count": 9,
+        "character_count": 64,
+        "preview": "mentation de ces descriptions, pour s’en tenir aux fondamentaux."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 537,
+        "height": 84,
+        "area": 45108,
+        "aspect_ratio": 6.392857142857143,
+        "center_x": 1552,
+        "center_y": 180
+      }
+    },
+    {
+      "id": "deb1b91d-92a8-46ed-938d-9196c965c46e",
+      "unique_id": "20250930_174609_page003_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 3,
+      "highlight_number": 2,
+      "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
+      "confidence": 92.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:09.241235",
+      "session_id": "20250930_174609",
+      "position": {
+        "x": 1284,
+        "y": 341,
+        "width": 536,
+        "height": 160
+      },
+      "metrics": {
+        "word_count": 26,
+        "character_count": 179,
+        "preview": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherin..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 341,
+        "width": 536,
+        "height": 160,
+        "area": 85760,
+        "aspect_ratio": 3.35,
+        "center_x": 1552,
+        "center_y": 421
+      }
+    },
+    {
+      "id": "2f6688e1-cf6a-40bc-9dca-9b9f98819269",
+      "unique_id": "20250930_174609_page003_highlight03",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 3,
+      "highlight_number": 3,
+      "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
+      "confidence": 95.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:09.241491",
+      "session_id": "20250930_174609",
+      "position": {
+        "x": 1284,
+        "y": 886,
+        "width": 532,
+        "height": 84
+      },
+      "metrics": {
+        "word_count": 13,
+        "character_count": 79,
+        "preview": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 886,
+        "width": 532,
+        "height": 84,
+        "area": 44688,
+        "aspect_ratio": 6.333333333333333,
+        "center_x": 1550,
+        "center_y": 928
+      }
+    },
+    {
+      "id": "97de9103-a905-44b4-b5f9-340c2e2969c3",
+      "unique_id": "20250930_174611_page004_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 4,
+      "highlight_number": 1,
+      "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
+      "confidence": 92.9,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:11.934338",
+      "session_id": "20250930_174611",
+      "position": {
+        "x": 1284,
+        "y": 442,
+        "width": 540,
+        "height": 198
+      },
+      "metrics": {
+        "word_count": 30,
+        "character_count": 210,
+        "preview": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, me..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 442,
+        "width": 540,
+        "height": 198,
+        "area": 106920,
+        "aspect_ratio": 2.727272727272727,
+        "center_x": 1554,
+        "center_y": 541
+      }
+    },
+    {
+      "id": "d976a1d6-a3ac-45e2-8970-4bd583e860a0",
+      "unique_id": "20250930_174614_page005_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 5,
+      "highlight_number": 1,
+      "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
+      "confidence": 93.1,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:14.768008",
+      "session_id": "20250930_174614",
+      "position": {
+        "x": 1284,
+        "y": 582,
+        "width": 526,
+        "height": 312
+      },
+      "metrics": {
+        "word_count": 57,
+        "character_count": 363,
+        "preview": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de re..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 582,
+        "width": 526,
+        "height": 312,
+        "area": 164112,
+        "aspect_ratio": 1.685897435897436,
+        "center_x": 1547,
+        "center_y": 738
+      }
+    },
+    {
+      "id": "4bd763df-51b4-4c3c-9ec3-56ccdd24a4af",
+      "unique_id": "20250930_174618_page006_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 6,
+      "highlight_number": 1,
+      "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
+      "confidence": 90.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:18.187286",
+      "session_id": "20250930_174618",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 515,
+        "height": 122
+      },
+      "metrics": {
+        "word_count": 19,
+        "character_count": 122,
+        "preview": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un e..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 515,
+        "height": 122,
+        "area": 62830,
+        "aspect_ratio": 4.221311475409836,
+        "center_x": 1541,
+        "center_y": 199
+      }
+    },
+    {
+      "id": "ed277292-1ade-470b-b20c-4e416ec4cd85",
+      "unique_id": "20250930_174618_page006_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 6,
+      "highlight_number": 2,
+      "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
+      "confidence": 92.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:18.187563",
+      "session_id": "20250930_174618",
+      "position": {
+        "x": 1284,
+        "y": 531,
+        "width": 515,
+        "height": 122
+      },
+      "metrics": {
+        "word_count": 16,
+        "character_count": 105,
+        "preview": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange ind..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 531,
+        "width": 515,
+        "height": 122,
+        "area": 62830,
+        "aspect_ratio": 4.221311475409836,
+        "center_x": 1541,
+        "center_y": 592
+      }
+    },
+    {
+      "id": "931d9b08-7635-4c7c-81cb-e7b69608f610",
+      "unique_id": "20250930_174622_page007_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 7,
+      "highlight_number": 1,
+      "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
+      "confidence": 93.4,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:22.990243",
+      "session_id": "20250930_174622",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 350
+      },
+      "metrics": {
+        "word_count": 59,
+        "character_count": 406,
+        "preview": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce qu..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 540,
+        "height": 350,
+        "area": 189000,
+        "aspect_ratio": 1.542857142857143,
+        "center_x": 1554,
+        "center_y": 313
+      }
+    },
+    {
+      "id": "1a21f909-961a-4511-a7a2-9797e3e7862c",
+      "unique_id": "20250930_174622_page007_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 7,
+      "highlight_number": 2,
+      "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
+      "confidence": 93.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:22.990522",
+      "session_id": "20250930_174622",
+      "position": {
+        "x": 1284,
+        "y": 493,
+        "width": 519,
+        "height": 426
+      },
+      "metrics": {
+        "word_count": 74,
+        "character_count": 518,
+        "preview": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités p..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 493,
+        "width": 519,
+        "height": 426,
+        "area": 221094,
+        "aspect_ratio": 1.2183098591549295,
+        "center_x": 1543,
+        "center_y": 706
+      }
+    },
+    {
+      "id": "19e92d6b-43d5-418d-99db-36d859a2691f",
+      "unique_id": "20250930_174622_page007_highlight03",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 7,
+      "highlight_number": 3,
+      "text": "l'entretien d’ex-",
+      "confidence": 90.0,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:22.990778",
+      "session_id": "20250930_174622",
+      "position": {
+        "x": 1642,
+        "y": 911,
+        "width": 179,
+        "height": 46
+      },
+      "metrics": {
+        "word_count": 2,
+        "character_count": 17,
+        "preview": "l'entretien d’ex-"
+      },
+      "position_info": {
+        "x": 1642,
+        "y": 911,
+        "width": 179,
+        "height": 46,
+        "area": 8234,
+        "aspect_ratio": 3.891304347826087,
+        "center_x": 1731,
+        "center_y": 934
+      }
+    },
+    {
+      "id": "f7bfd63c-2d4a-4ef2-b393-de777ba9da28",
+      "unique_id": "20250930_174627_page008_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 8,
+      "highlight_number": 1,
+      "text": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.",
+      "confidence": 95.7,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:27.572836",
+      "session_id": "20250930_174627",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 525,
+        "height": 122
+      },
+      "metrics": {
+        "word_count": 21,
+        "character_count": 134,
+        "preview": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 525,
+        "height": 122,
+        "area": 64050,
+        "aspect_ratio": 4.30327868852459,
+        "center_x": 1546,
+        "center_y": 199
+      }
+    },
+    {
+      "id": "7d49e427-b801-4c36-a1bf-943fcd3b045d",
+      "unique_id": "20250930_174627_page008_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 8,
+      "highlight_number": 2,
+      "text": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.",
+      "confidence": 93.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:27.573179",
+      "session_id": "20250930_174627",
+      "position": {
+        "x": 1284,
+        "y": 265,
+        "width": 534,
+        "height": 426
+      },
+      "metrics": {
+        "word_count": 73,
+        "character_count": 517,
+        "preview": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les ra..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 265,
+        "width": 534,
+        "height": 426,
+        "area": 227484,
+        "aspect_ratio": 1.2535211267605635,
+        "center_x": 1551,
+        "center_y": 478
+      }
+    },
+    {
+      "id": "61597444-7949-4560-9db2-8bbd02b0fae9",
+      "unique_id": "20250930_174627_page008_highlight03",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 8,
+      "highlight_number": 3,
+      "text": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.",
+      "confidence": 91.3,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:27.573450",
+      "session_id": "20250930_174627",
+      "position": {
+        "x": 1284,
+        "y": 861,
+        "width": 531,
+        "height": 84
+      },
+      "metrics": {
+        "word_count": 12,
+        "character_count": 79,
+        "preview": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 861,
+        "width": 531,
+        "height": 84,
+        "area": 44604,
+        "aspect_ratio": 6.321428571428571,
+        "center_x": 1549,
+        "center_y": 903
+      }
+    },
+    {
+      "id": "d85ce746-0f9c-44c1-9a34-77d2a783a1cf",
+      "unique_id": "20250930_174631_page009_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 9,
+      "highlight_number": 1,
+      "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
+      "confidence": 93.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:31.716482",
+      "session_id": "20250930_174631",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 529,
+        "height": 464
+      },
+      "metrics": {
+        "word_count": 82,
+        "character_count": 526,
+        "preview": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contie..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 529,
+        "height": 464,
+        "area": 245456,
+        "aspect_ratio": 1.1400862068965518,
+        "center_x": 1548,
+        "center_y": 370
+      }
+    },
+    {
+      "id": "7ee68f5b-1831-43a6-afc2-16c43d7955e4",
+      "unique_id": "20250930_174631_page009_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 9,
+      "highlight_number": 2,
+      "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
+      "confidence": 93.2,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:31.716784",
+      "session_id": "20250930_174631",
+      "position": {
+        "x": 1284,
+        "y": 607,
+        "width": 538,
+        "height": 312
+      },
+      "metrics": {
+        "word_count": 59,
+        "character_count": 364,
+        "preview": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 607,
+        "width": 538,
+        "height": 312,
+        "area": 167856,
+        "aspect_ratio": 1.7243589743589745,
+        "center_x": 1553,
+        "center_y": 763
+      }
+    },
+    {
+      "id": "61f7cc46-6965-498d-bfee-f62f9f5bc78c",
+      "unique_id": "20250930_174635_page010_highlight01",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 10,
+      "highlight_number": 1,
+      "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
+      "confidence": 93.8,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:35.919180",
+      "session_id": "20250930_174635",
+      "position": {
+        "x": 1284,
+        "y": 138,
+        "width": 529,
+        "height": 464
+      },
+      "metrics": {
+        "word_count": 82,
+        "character_count": 526,
+        "preview": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contie..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 138,
+        "width": 529,
+        "height": 464,
+        "area": 245456,
+        "aspect_ratio": 1.1400862068965518,
+        "center_x": 1548,
+        "center_y": 370
+      }
+    },
+    {
+      "id": "85247999-f190-4710-826a-69785a28474e",
+      "unique_id": "20250930_174635_page010_highlight02",
+      "book_id": "bd52ff26-0f0e-4475-863b-60d93cdd22ad",
+      "page_number": 10,
+      "highlight_number": 2,
+      "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
+      "confidence": 93.2,
+      "confidence_level": "HIGH",
+      "extracted_at": "2025-09-30T17:46:35.919494",
+      "session_id": "20250930_174635",
+      "position": {
+        "x": 1284,
+        "y": 607,
+        "width": 538,
+        "height": 312
+      },
+      "metrics": {
+        "word_count": 59,
+        "character_count": 364,
+        "preview": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à..."
+      },
+      "position_info": {
+        "x": 1284,
+        "y": 607,
+        "width": 538,
+        "height": 312,
+        "area": 167856,
+        "aspect_ratio": 1.7243589743589745,
+        "center_x": 1553,
+        "center_y": 763
+      }
+    }
+  ],
+  "pages": {
+    "2": {
+      "page_number": 2,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
+          "confidence": 94.3,
+          "word_count": 40,
+          "character_count": 235,
+          "preview": "importance de la référence à un moment singulier p..."
+        }
+      ]
+    },
+    "3": {
+      "page_number": 3,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
+          "confidence": 94.88888888888889,
+          "word_count": 9,
+          "character_count": 64,
+          "preview": "mentation de ces descriptions, pour s’en tenir aux..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
+          "confidence": 92.76923076923077,
+          "word_count": 26,
+          "character_count": 179,
+          "preview": "l'association GREX (Groupe de Recherche sur l’EX- ..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
+          "confidence": 95.76923076923077,
+          "word_count": 13,
+          "character_count": 79,
+          "preview": "de la reprise actuelle des réflexions sur la plura..."
+        }
+      ]
+    },
+    "4": {
+      "page_number": 4,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
+          "confidence": 92.93333333333334,
+          "word_count": 30,
+          "character_count": 210,
+          "preview": "2013 sur YouTube qui décrivent différents points :..."
+        }
+      ]
+    },
+    "5": {
+      "page_number": 5,
+      "highlight_count": 1,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
+          "confidence": 93.05263157894737,
+          "word_count": 57,
+          "character_count": 363,
+          "preview": "Qu'est-ce qu’une technique ? C’est un ensemble de ..."
+        }
+      ]
+    },
+    "6": {
+      "page_number": 6,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
+          "confidence": 90.84210526315789,
+          "word_count": 19,
+          "character_count": 122,
+          "preview": "On peut avoir besoin d'apprendre une technique d'e..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
+          "confidence": 92.75,
+          "word_count": 16,
+          "character_count": 105,
+          "preview": "Mettre en œuvre une technique de questionnement n’..."
+        }
+      ]
+    },
+    "7": {
+      "page_number": 7,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
+          "confidence": 93.42372881355932,
+          "word_count": 59,
+          "character_count": 406,
+          "preview": "La spécificité de l'entretien d’explicitation est ..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
+          "confidence": 93.04054054054055,
+          "word_count": 74,
+          "character_count": 518,
+          "preview": "Dans toutes les activités qui impliquent des tâche..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "l'entretien d’ex-",
+          "confidence": 90.0,
+          "word_count": 2,
+          "character_count": 17,
+          "preview": "l'entretien d’ex-"
+        }
+      ]
+    },
+    "8": {
+      "page_number": 8,
+      "highlight_count": 3,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.",
+          "confidence": 95.66666666666667,
+          "word_count": 21,
+          "character_count": 134,
+          "preview": "plicitation vise la description du déroulement de ..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.",
+          "confidence": 93.83561643835617,
+          "word_count": 73,
+          "character_count": 517,
+          "preview": "ce déroulement d’action est la seule source d’infé..."
+        },
+        {
+          "highlight_number": 3,
+          "text": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.",
+          "confidence": 91.33333333333333,
+          "word_count": 12,
+          "character_count": 79,
+          "preview": "Mais la verbalisation de l’action se heurte à plu-..."
+        }
+      ]
+    },
+    "9": {
+      "page_number": 9,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
+          "confidence": 93.8048780487805,
+          "word_count": 82,
+          "character_count": 526,
+          "preview": "Le premier est que l’action est, pour une bonne pa..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
+          "confidence": 93.15254237288136,
+          "word_count": 59,
+          "character_count": 364,
+          "preview": "Le second, c’est que verbaliser cette action n'est..."
+        }
+      ]
+    },
+    "10": {
+      "page_number": 10,
+      "highlight_count": 2,
+      "highlights": [
+        {
+          "highlight_number": 1,
+          "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
+          "confidence": 93.8048780487805,
+          "word_count": 82,
+          "character_count": 526,
+          "preview": "Le premier est que l’action est, pour une bonne pa..."
+        },
+        {
+          "highlight_number": 2,
+          "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
+          "confidence": 93.15254237288136,
+          "word_count": 59,
+          "character_count": 364,
+          "preview": "Le second, c’est que verbaliser cette action n'est..."
+        }
+      ]
+    }
+  }
+}

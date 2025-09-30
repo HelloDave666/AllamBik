@@ -1,0 +1,266 @@
+EXTRACTION KINDLE - 30/09/2025 17:49:28
+================================================================================
+
+Pages scannées: 20
+Pages avec contenu: 20
+Highlights extraits: 26
+================================================================================
+
+--- PAGE 1 ---
+
+=== SURLIGNEMENT #1 ===
+On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.
+(Confiance: 91%)
+(Mots: 19)
+(Position: x=1284, y=138, taille=515x122)
+(ID: 20250930_174853_page001_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.
+(Confiance: 93%)
+(Mots: 16)
+(Position: x=1284, y=531, taille=515x122)
+(ID: 20250930_174853_page001_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 2 ---
+
+=== SURLIGNEMENT #1 ===
+La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.
+(Confiance: 93%)
+(Mots: 59)
+(Position: x=1284, y=138, taille=540x350)
+(ID: 20250930_174858_page002_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.
+(Confiance: 93%)
+(Mots: 74)
+(Position: x=1284, y=493, taille=519x426)
+(ID: 20250930_174858_page002_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+l'entretien d’ex-
+(Confiance: 90%)
+(Mots: 2)
+(Position: x=1642, y=911, taille=179x46)
+(ID: 20250930_174858_page002_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 3 ---
+
+=== SURLIGNEMENT #1 ===
+plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.
+(Confiance: 96%)
+(Mots: 21)
+(Position: x=1284, y=138, taille=525x122)
+(ID: 20250930_174902_page003_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.
+(Confiance: 94%)
+(Mots: 73)
+(Position: x=1284, y=265, taille=534x426)
+(ID: 20250930_174902_page003_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.
+(Confiance: 91%)
+(Mots: 12)
+(Position: x=1284, y=861, taille=531x84)
+(ID: 20250930_174902_page003_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 4 ---
+
+=== SURLIGNEMENT #1 ===
+Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).
+(Confiance: 94%)
+(Mots: 82)
+(Position: x=1284, y=138, taille=529x464)
+(ID: 20250930_174907_page004_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.
+(Confiance: 93%)
+(Mots: 59)
+(Position: x=1284, y=607, taille=538x312)
+(ID: 20250930_174907_page004_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 5 ---
+
+=== SURLIGNEMENT #1 ===
+Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles
+(Confiance: 92%)
+(Mots: 40)
+(Position: x=1284, y=138, taille=537x198)
+(ID: 20250930_174911_page005_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.
+(Confiance: 94%)
+(Mots: 42)
+(Position: x=1284, y=417, taille=534x198)
+(ID: 20250930_174911_page005_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Dans cette première perspective,
+(Confiance: 96%)
+(Mots: 4)
+(Position: x=1451, y=886, taille=356x46)
+(ID: 20250930_174911_page005_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 6 ---
+
+=== SURLIGNEMENT #1 ===
+l'entretien d’explicitation est le produit de la for- malisation d’une pratique empirique.
+(Confiance: 93%)
+(Mots: 12)
+(Position: x=1284, y=138, taille=521x84)
+(ID: 20250930_174915_page006_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+l'étude du déroulement de l’action comme source d’inférence pour l'analyse du fonctionnement intellectuel,
+(Confiance: 91%)
+(Mots: 13)
+(Position: x=1284, y=265, taille=531x122)
+(ID: 20250930_174915_page006_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+travers un groupe de recherche international: : le GREX (Groupe de Recherche sur TEXplicitation).
+(Confiance: 94%)
+(Mots: 14)
+(Position: x=1284, y=683, taille=535x122)
+(ID: 20250930_174915_page006_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.
+(Confiance: 94%)
+(Mots: 24)
+(Position: x=1284, y=138, taille=539x122)
+(ID: 20250930_174922_page007_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+ce qui est observable (si il y a un observateur) et les traces de la réalisation de l’action (brouillon, résul- tats intermédiaires encore visibles).
+(Confiance: 95%)
+(Mots: 24)
+(Position: x=1284, y=290, taille=540x160)
+(ID: 20250930_174922_page007_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Dans le domaine de la didactique, je proposerai une analyse de l’évolution des pratiques basées sur le questionnement,
+(Confiance: 94%)
+(Mots: 18)
+(Position: x=1284, y=455, taille=527x122)
+(ID: 20250930_174922_page007_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #5 ===
+techniques rogériennes).
+(Confiance: 92%)
+(Mots: 2)
+(Position: x=1284, y=683, taille=276x46)
+(ID: 20250930_174922_page007_highlight05)
+
+----------------------------------------
+
+=== SURLIGNEMENT #6 ===
+s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-informer.
+(Confiance: 87%)
+(Mots: 10)
+(Position: x=1284, y=810, taille=526x84)
+(ID: 20250930_174922_page007_highlight06)
+
+----------------------------------------
+
+
+--- PAGE 8 ---
+
+=== SURLIGNEMENT #1 ===
+il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.
+(Confiance: 94%)
+(Mots: 24)
+(Position: x=1284, y=138, taille=539x122)
+(ID: 20250930_174928_page008_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+ce qui est observable (si il y a un observateur) et les traces de la réalisation de l’action (brouillon, résul- tats intermédiaires encore visibles).
+(Confiance: 95%)
+(Mots: 24)
+(Position: x=1284, y=290, taille=540x160)
+(ID: 20250930_174928_page008_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+Dans le domaine de la didactique, je proposerai une analyse de l’évolution des pratiques basées sur le questionnement,
+(Confiance: 94%)
+(Mots: 18)
+(Position: x=1284, y=455, taille=527x122)
+(ID: 20250930_174928_page008_highlight03)
+
+----------------------------------------
+
+=== SURLIGNEMENT #5 ===
+techniques rogériennes).
+(Confiance: 92%)
+(Mots: 2)
+(Position: x=1284, y=683, taille=276x46)
+(ID: 20250930_174928_page008_highlight05)
+
+----------------------------------------
+
+=== SURLIGNEMENT #6 ===
+s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-informer.
+(Confiance: 87%)
+(Mots: 10)
+(Position: x=1284, y=810, taille=526x84)
+(ID: 20250930_174928_page008_highlight06)
+
+----------------------------------------
+
+

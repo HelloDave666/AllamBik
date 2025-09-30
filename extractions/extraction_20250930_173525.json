@@ -1,48 +1,48 @@
 {
   "metadata": {
-    "task_id": "7f180987-bac2-4d3b-837e-38c1a33535fb",
-    "extraction_date": "2025-09-29T21:18:53.759969",
-    "session_id": "20250929_211822",
+    "task_id": "ba8fd5ed-ee0b-4afd-af3a-15b2dcd49cec",
+    "extraction_date": "2025-09-30T17:35:25.360504",
+    "session_id": "20250930_173458",
     "pages_scanned": 10,
-    "pages_with_content": 10,
-    "total_highlights": 19,
+    "pages_with_content": 8,
+    "total_highlights": 16,
     "extraction_method": "individual_highlights",
     "version": "3.0"
   },
   "statistics": {
     "confidence": {
-      "average": 93.4,
+      "average": 93.2,
       "min": 90.0,
-      "max": 96.0,
+      "max": 95.76923076923077,
       "distribution": {
-        "high": 19,
+        "high": 16,
         "medium": 0,
         "low": 0
       }
     },
     "text": {
-      "total_words": 678,
-      "average_words_per_highlight": 35.7,
+      "total_words": 592,
+      "average_words_per_highlight": 37.0,
       "min_words": 2,
       "max_words": 82
     },
     "pages": {
-      "total_pages": 9,
-      "highlights_per_page": 2.1
+      "total_pages": 8,
+      "highlights_per_page": 2.0
     }
   },
   "highlights": [
     {
-      "id": "e72ee495-1ad0-4c71-a9f4-ff4dc7c1c075",
-      "unique_id": "20250929_211822_page002_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 2,
+      "id": "a2fb3acf-9d4e-485e-9e87-d1d4b068a0d5",
+      "unique_id": "20250930_173458_page003_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 3,
       "highlight_number": 1,
       "text": "importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-",
       "confidence": 94.3,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:22.468144",
-      "session_id": "20250929_211822",
+      "extracted_at": "2025-09-30T17:34:58.691579",
+      "session_id": "20250930_173458",
       "position": {
         "x": 1284,
         "y": 704,
@@ -66,16 +66,16 @@
       }
     },
     {
-      "id": "5c2a0b75-c5e5-4c64-bc32-c756fc2072c3",
-      "unique_id": "20250929_211826_page003_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 3,
+      "id": "8d7278e8-0b16-4bc0-9ec5-68bad4561681",
+      "unique_id": "20250930_173502_page004_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 4,
       "highlight_number": 1,
       "text": "mentation de ces descriptions, pour s’en tenir aux fondamentaux.",
       "confidence": 94.9,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:26.602718",
-      "session_id": "20250929_211826",
+      "extracted_at": "2025-09-30T17:35:02.805332",
+      "session_id": "20250930_173502",
       "position": {
         "x": 1284,
         "y": 138,
@@ -99,16 +99,16 @@
       }
     },
     {
-      "id": "19a88ca0-6ef5-4443-a832-99f4beddb7ed",
-      "unique_id": "20250929_211826_page003_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 3,
+      "id": "4546a7ae-f558-49a8-9d5d-fd084d086661",
+      "unique_id": "20250930_173502_page004_highlight02",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 4,
       "highlight_number": 2,
       "text": "l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.",
       "confidence": 92.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:26.602981",
-      "session_id": "20250929_211826",
+      "extracted_at": "2025-09-30T17:35:02.805653",
+      "session_id": "20250930_173502",
       "position": {
         "x": 1284,
         "y": 341,
@@ -132,16 +132,16 @@
       }
     },
     {
-      "id": "38ddeb46-1537-4550-a801-a3b7cc6b9e0a",
-      "unique_id": "20250929_211826_page003_highlight03",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 3,
+      "id": "4f4cf44a-f38c-4391-8d23-7966df0bd005",
+      "unique_id": "20250930_173502_page004_highlight03",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 4,
       "highlight_number": 3,
       "text": "de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.",
       "confidence": 95.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:26.603192",
-      "session_id": "20250929_211826",
+      "extracted_at": "2025-09-30T17:35:02.805913",
+      "session_id": "20250930_173502",
       "position": {
         "x": 1284,
         "y": 886,
@@ -165,16 +165,16 @@
       }
     },
     {
-      "id": "43568e82-15a5-45d5-b084-15b5afe1cfb6",
-      "unique_id": "20250929_211829_page004_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 4,
+      "id": "501b5550-3637-4f2d-b105-0bbcbdd4c20e",
+      "unique_id": "20250930_173505_page005_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 5,
       "highlight_number": 1,
       "text": "2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.",
       "confidence": 92.9,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:29.365578",
-      "session_id": "20250929_211829",
+      "extracted_at": "2025-09-30T17:35:05.514371",
+      "session_id": "20250930_173505",
       "position": {
         "x": 1284,
         "y": 442,
@@ -198,16 +198,16 @@
       }
     },
     {
-      "id": "66d7fd37-76ad-4922-b22b-55f20231a7ca",
-      "unique_id": "20250929_211832_page005_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 5,
+      "id": "79c55746-b486-4110-986d-b061e2729106",
+      "unique_id": "20250930_173508_page006_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 6,
       "highlight_number": 1,
       "text": "Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.",
       "confidence": 93.1,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:32.279128",
-      "session_id": "20250929_211832",
+      "extracted_at": "2025-09-30T17:35:08.351543",
+      "session_id": "20250930_173508",
       "position": {
         "x": 1284,
         "y": 582,
@@ -231,16 +231,16 @@
       }
     },
     {
-      "id": "80cebed9-974e-4005-b12e-6aa921b12871",
-      "unique_id": "20250929_211835_page006_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 6,
+      "id": "7dcd0778-272f-47ce-a8cf-4c4d4a0986e7",
+      "unique_id": "20250930_173511_page007_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 7,
       "highlight_number": 1,
       "text": "On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.",
       "confidence": 90.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:35.754319",
-      "session_id": "20250929_211835",
+      "extracted_at": "2025-09-30T17:35:11.764293",
+      "session_id": "20250930_173511",
       "position": {
         "x": 1284,
         "y": 138,
@@ -264,16 +264,16 @@
       }
     },
     {
-      "id": "50c9ce5e-fddb-4e90-8b01-ff007d956e63",
-      "unique_id": "20250929_211835_page006_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 6,
+      "id": "a1aa0bc0-0a8f-46e2-a5b5-b47d7473fd8a",
+      "unique_id": "20250930_173511_page007_highlight02",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 7,
       "highlight_number": 2,
       "text": "Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.",
       "confidence": 92.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:35.754669",
-      "session_id": "20250929_211835",
+      "extracted_at": "2025-09-30T17:35:11.764574",
+      "session_id": "20250930_173511",
       "position": {
         "x": 1284,
         "y": 531,
@@ -297,16 +297,16 @@
       }
     },
     {
-      "id": "a4e2bfd1-2e9c-45c0-b366-ed95f0c889b8",
-      "unique_id": "20250929_211840_page007_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 7,
+      "id": "2d1c0953-6fcf-4b48-830f-30ac42545627",
+      "unique_id": "20250930_173516_page008_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 8,
       "highlight_number": 1,
       "text": "La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.",
       "confidence": 93.4,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:40.692481",
-      "session_id": "20250929_211840",
+      "extracted_at": "2025-09-30T17:35:16.585280",
+      "session_id": "20250930_173516",
       "position": {
         "x": 1284,
         "y": 138,
@@ -330,16 +330,16 @@
       }
     },
     {
-      "id": "3902662c-dc89-4bb2-86d6-26f5bea6ef30",
-      "unique_id": "20250929_211840_page007_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 7,
+      "id": "dc9db806-0832-4b9e-b0fd-a4c77905170e",
+      "unique_id": "20250930_173516_page008_highlight02",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 8,
       "highlight_number": 2,
       "text": "Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.",
       "confidence": 93.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:40.692954",
-      "session_id": "20250929_211840",
+      "extracted_at": "2025-09-30T17:35:16.585568",
+      "session_id": "20250930_173516",
       "position": {
         "x": 1284,
         "y": 493,
@@ -363,16 +363,16 @@
       }
     },
     {
-      "id": "73e158d8-4897-4ed3-af12-fda79ee88772",
-      "unique_id": "20250929_211840_page007_highlight03",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 7,
+      "id": "f4c99019-76ec-4254-b62b-ec8eea919f8e",
+      "unique_id": "20250930_173516_page008_highlight03",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 8,
       "highlight_number": 3,
       "text": "l'entretien d’ex-",
       "confidence": 90.0,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:40.693273",
-      "session_id": "20250929_211840",
+      "extracted_at": "2025-09-30T17:35:16.585850",
+      "session_id": "20250930_173516",
       "position": {
         "x": 1642,
         "y": 911,
@@ -396,16 +396,16 @@
       }
     },
     {
-      "id": "0dd9ec46-0096-4668-b87a-4f1a1345efaf",
-      "unique_id": "20250929_211845_page008_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 8,
+      "id": "95e9f4de-de07-44dd-ba53-22aa3d2d0a3b",
+      "unique_id": "20250930_173521_page009_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 9,
       "highlight_number": 1,
       "text": "plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.",
       "confidence": 95.7,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:45.283081",
-      "session_id": "20250929_211845",
+      "extracted_at": "2025-09-30T17:35:21.216675",
+      "session_id": "20250930_173521",
       "position": {
         "x": 1284,
         "y": 138,
@@ -429,16 +429,16 @@
       }
     },
     {
-      "id": "0c230175-858a-4a4d-9e2c-b76837d59f47",
-      "unique_id": "20250929_211845_page008_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 8,
+      "id": "20159f3b-ea95-48cd-9cad-a17412d0c070",
+      "unique_id": "20250930_173521_page009_highlight02",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 9,
       "highlight_number": 2,
       "text": "ce déroulement d’action est la seule source d’inférences fiables pour mettre en évi- dence les raisonnements effectivement mis en œuvre (différents de ceux adoptés hors de l’en- gagement dans l’action), pour identifier les buts réellement poursuivis (souvent distincts de ce que l’on croit poursuivre), pour repérer les savoirs théoriques effectivement utilisés dans la pratique (souvent différents de ceux maîtrisés en question de cours), pour cerner les représentations ou les préconceptions sources de difficultés.",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:45.283348",
-      "session_id": "20250929_211845",
+      "extracted_at": "2025-09-30T17:35:21.217018",
+      "session_id": "20250930_173521",
       "position": {
         "x": 1284,
         "y": 265,
@@ -462,16 +462,16 @@
       }
     },
     {
-      "id": "fb2d7169-55cb-4244-892a-2730a7c4244e",
-      "unique_id": "20250929_211845_page008_highlight03",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 8,
+      "id": "d113ab7f-68c4-499c-a1ad-6e410a2451f2",
+      "unique_id": "20250930_173521_page009_highlight03",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 9,
       "highlight_number": 3,
       "text": "Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficiles.",
       "confidence": 91.3,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:45.283543",
-      "session_id": "20250929_211845",
+      "extracted_at": "2025-09-30T17:35:21.217766",
+      "session_id": "20250930_173521",
       "position": {
         "x": 1284,
         "y": 861,
@@ -495,16 +495,16 @@
       }
     },
     {
-      "id": "73560a7a-8cff-48c4-98ab-843ed727dd9a",
-      "unique_id": "20250929_211849_page009_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 9,
+      "id": "535c7386-2d18-4d71-9701-96c5d7c1a012",
+      "unique_id": "20250930_173525_page010_highlight01",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 10,
       "highlight_number": 1,
       "text": "Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).",
       "confidence": 93.8,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:49.367676",
-      "session_id": "20250929_211849",
+      "extracted_at": "2025-09-30T17:35:25.359258",
+      "session_id": "20250930_173525",
       "position": {
         "x": 1284,
         "y": 138,
@@ -528,16 +528,16 @@
       }
     },
     {
-      "id": "2e759995-0d82-4efd-a6a4-4b139068b816",
-      "unique_id": "20250929_211849_page009_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 9,
+      "id": "3aedbe1a-8396-4e2e-ab3f-064e6da58071",
+      "unique_id": "20250930_173525_page010_highlight02",
+      "book_id": "cc89394d-221e-443e-8f09-4b4a10b2cca5",
+      "page_number": 10,
       "highlight_number": 2,
       "text": "Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons jamais été formés à le faire. Ce qui vient en premier, spontanément, ce sont plutôt des jugements, des commentaires, des généralités ou la description des circonstances. La verbalisation de l’action ne se fera pas sans aide, pour l'obtenir il y faut une médiation, un guidage, une aide.",
       "confidence": 93.2,
       "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:49.368032",
-      "session_id": "20250929_211849",
+      "extracted_at": "2025-09-30T17:35:25.359574",
+      "session_id": "20250930_173525",
       "position": {
         "x": 1284,
         "y": 607,
@@ -559,110 +559,11 @@
         "center_x": 1553,
         "center_y": 763
       }
-    },
-    {
-      "id": "7b80a0a6-60ce-4f38-859a-831469efc39f",
-      "unique_id": "20250929_211853_page010_highlight01",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 10,
-      "highlight_number": 1,
-      "text": "Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles",
-      "confidence": 92.3,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:53.757889",
-      "session_id": "20250929_211853",
-      "position": {
-        "x": 1284,
-        "y": 138,
-        "width": 537,
-        "height": 198
-      },
-      "metrics": {
-        "word_count": 40,
-        "character_count": 253,
-        "preview": "Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- ..."
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 138,
-        "width": 537,
-        "height": 198,
-        "area": 106326,
-        "aspect_ratio": 2.712121212121212,
-        "center_x": 1552,
-        "center_y": 237
-      }
-    },
-    {
-      "id": "cc04099b-808c-42c7-b074-820553987478",
-      "unique_id": "20250929_211853_page010_highlight02",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 10,
-      "highlight_number": 2,
-      "text": "On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.",
-      "confidence": 94.0,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:53.758312",
-      "session_id": "20250929_211853",
-      "position": {
-        "x": 1284,
-        "y": 417,
-        "width": 534,
-        "height": 198
-      },
-      "metrics": {
-        "word_count": 42,
-        "character_count": 237,
-        "preview": "On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais..."
-      },
-      "position_info": {
-        "x": 1284,
-        "y": 417,
-        "width": 534,
-        "height": 198,
-        "area": 105732,
-        "aspect_ratio": 2.696969696969697,
-        "center_x": 1551,
-        "center_y": 516
-      }
-    },
-    {
-      "id": "f0715ac0-1177-43ce-abf8-793bac3c0973",
-      "unique_id": "20250929_211853_page010_highlight03",
-      "book_id": "12ac2666-2eed-44fb-b065-ce5e5572601c",
-      "page_number": 10,
-      "highlight_number": 3,
-      "text": "Dans cette première perspective,",
-      "confidence": 96.0,
-      "confidence_level": "HIGH",
-      "extracted_at": "2025-09-29T21:18:53.758647",
-      "session_id": "20250929_211853",
-      "position": {
-        "x": 1451,
-        "y": 886,
-        "width": 356,
-        "height": 46
-      },
-      "metrics": {
-        "word_count": 4,
-        "character_count": 32,
-        "preview": "Dans cette première perspective,"
-      },
-      "position_info": {
-        "x": 1451,
-        "y": 886,
-        "width": 356,
-        "height": 46,
-        "area": 16376,
-        "aspect_ratio": 7.739130434782608,
-        "center_x": 1629,
-        "center_y": 909
-      }
     }
   ],
   "pages": {
-    "2": {
-      "page_number": 2,
+    "3": {
+      "page_number": 3,
       "highlight_count": 1,
       "highlights": [
         {
@@ -675,8 +576,8 @@
         }
       ]
     },
-    "3": {
-      "page_number": 3,
+    "4": {
+      "page_number": 4,
       "highlight_count": 3,
       "highlights": [
         {
@@ -705,8 +606,8 @@
         }
       ]
     },
-    "4": {
-      "page_number": 4,
+    "5": {
+      "page_number": 5,
       "highlight_count": 1,
       "highlights": [
         {
@@ -719,8 +620,8 @@
         }
       ]
     },
-    "5": {
-      "page_number": 5,
+    "6": {
+      "page_number": 6,
       "highlight_count": 1,
       "highlights": [
         {
@@ -733,8 +634,8 @@
         }
       ]
     },
-    "6": {
-      "page_number": 6,
+    "7": {
+      "page_number": 7,
       "highlight_count": 2,
       "highlights": [
         {
@@ -755,8 +656,8 @@
         }
       ]
     },
-    "7": {
-      "page_number": 7,
+    "8": {
+      "page_number": 8,
       "highlight_count": 3,
       "highlights": [
         {
@@ -785,8 +686,8 @@
         }
       ]
     },
-    "8": {
-      "page_number": 8,
+    "9": {
+      "page_number": 9,
       "highlight_count": 3,
       "highlights": [
         {
@@ -815,8 +716,8 @@
         }
       ]
     },
-    "9": {
-      "page_number": 9,
+    "10": {
+      "page_number": 10,
       "highlight_count": 2,
       "highlights": [
         {
@@ -834,36 +735,6 @@
           "word_count": 59,
           "character_count": 364,
           "preview": "Le second, c’est que verbaliser cette action n'est..."
-        }
-      ]
-    },
-    "10": {
-      "page_number": 10,
-      "highlight_count": 3,
-      "highlights": [
-        {
-          "highlight_number": 1,
-          "text": "Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles",
-          "confidence": 92.3,
-          "word_count": 40,
-          "character_count": 253,
-          "preview": "Le troisième, c’est que les techniques efficaces p..."
-        },
-        {
-          "highlight_number": 2,
-          "text": "On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisation de l’action, mais qui est propre à tous les questionnements qui se pra- tiquent a posteriori, c'est celui de la mémoire et de la qualité du rappel des faits.",
-          "confidence": 94.0,
-          "word_count": 42,
-          "character_count": 237,
-          "preview": "On pourrait en citer un quatrième, qui n’est pas p..."
-        },
-        {
-          "highlight_number": 3,
-          "text": "Dans cette première perspective,",
-          "confidence": 96.0,
-          "word_count": 4,
-          "character_count": 32,
-          "preview": "Dans cette première perspective,"
         }
       ]
     }

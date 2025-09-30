@@ -1,19 +1,136 @@
-EXTRACTION KINDLE - 29/09/2025 21:08:04
+EXTRACTION KINDLE - 30/09/2025 20:14:07
 ================================================================================
 
-Pages scannées: 10
-Pages avec contenu: 10
-Highlights extraits: 30
+Pages scannées: 20
+Pages avec contenu: 16
+Highlights extraits: 36
 ================================================================================
 
---- PAGE 1 ---
+--- PAGE 5 ---
+
+=== SURLIGNEMENT #1 ===
+importance de la référence à un moment singulier pour être sûr de viser le vécu et non pas la théorie ou les représen- tations de ce vécu mobilisation guidée de la mémoire d’évocation ; repérage des verbalisations descriptives et frag-
+(Confiance: 94%)
+(Mots: 40)
+(Position: x=1284, y=704, taille=531x236)
+(ID: 20250930_201311_page005_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 6 ---
+
+=== SURLIGNEMENT #1 ===
+mentation de ces descriptions, pour s’en tenir aux fondamentaux.
+(Confiance: 95%)
+(Mots: 9)
+(Position: x=1284, y=138, taille=537x84)
+(ID: 20250930_201316_page006_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+l'association GREX (Groupe de Recherche sur l’EX- plicitation), fondée en juin 1991 avec Catherine Le Hir, a permis de découvrir des formulations plus pertinentes, plus efficaces.
+(Confiance: 93%)
+(Mots: 26)
+(Position: x=1284, y=341, taille=536x160)
+(ID: 20250930_201316_page006_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+de la reprise actuelle des réflexions sur la pluralité des lieux de conscience.
+(Confiance: 96%)
+(Mots: 13)
+(Position: x=1284, y=886, taille=532x84)
+(ID: 20250930_201316_page006_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 7 ---
+
+=== SURLIGNEMENT #1 ===
+2013 sur YouTube qui décrivent différents points : comment est né l'entretien d’explicitation, mes rapports avec les praticiens, le rôle crucial de la mémoire d’évocation... d’autres vidéos sont en préparation.
+(Confiance: 93%)
+(Mots: 30)
+(Position: x=1284, y=442, taille=540x198)
+(ID: 20250930_201318_page007_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 8 ---
+
+=== SURLIGNEMENT #1 ===
+Qu'est-ce qu’une technique ? C’est un ensemble de pratiques d'écoute basées sur des grilles de repérage de ce qui est dit et de tech- niques de formulations de relances (questions, reformulations, silences) qui visent à aider, à accompagner la mise en mots d’un domaine par- ticulier de l'expérience en relation avec des buts personnels et institutionnels divers.
+(Confiance: 93%)
+(Mots: 57)
+(Position: x=1284, y=582, taille=526x312)
+(ID: 20250930_201321_page008_highlight01)
+
+----------------------------------------
+
+
+--- PAGE 9 ---
+
+=== SURLIGNEMENT #1 ===
+On peut avoir besoin d'apprendre une technique d'entretien sans avoir nécessairement à mener un entretien en tant que tel.
+(Confiance: 91%)
+(Mots: 19)
+(Position: x=1284, y=138, taille=515x122)
+(ID: 20250930_201324_page009_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Mettre en œuvre une technique de questionnement n’est pas ré- servé à une situation d'échange individuel.
+(Confiance: 93%)
+(Mots: 16)
+(Position: x=1284, y=531, taille=515x122)
+(ID: 20250930_201324_page009_highlight02)
+
+----------------------------------------
+
+
+--- PAGE 10 ---
+
+=== SURLIGNEMENT #1 ===
+La spécificité de l'entretien d’explicitation est de viser la verbalisation de l’action. parce que connaître en détail le déroulement d’une ac- tion apporte une information précieuse d’autre part, parce que la verbalisation de l’action pose des problèmes qui ont été sous-estimés et qui né- cessitent, pour être surmontés, l’utilisation d’une technique de questionnement très précise qui doit être apprise.
+(Confiance: 93%)
+(Mots: 59)
+(Position: x=1284, y=138, taille=540x350)
+(ID: 20250930_201329_page010_highlight01)
+
+----------------------------------------
+
+=== SURLIGNEMENT #2 ===
+Dans toutes les activités qui impliquent des tâches à effectuer (exercices scolaires, activités professionnelles, remédiation, analyse de pratique), il est important pour en analyser les difficultés d’apprentissage, les causes d’erreurs et de dysfonctionnement, ou ce qui en constitue la réussite et expertise, de connaître le déroule- ment de l'exécution de la tâche. La connaissance du résultat final seul est insuffisante pour diag- nostiquer la nature et la cause d’une difficulté ou d’une réussite exceptionnelle.
+(Confiance: 93%)
+(Mots: 74)
+(Position: x=1284, y=493, taille=519x426)
+(ID: 20250930_201329_page010_highlight02)
+
+----------------------------------------
+
+=== SURLIGNEMENT #3 ===
+l'entretien d’ex-
+(Confiance: 90%)
+(Mots: 2)
+(Position: x=1642, y=911, taille=179x46)
+(ID: 20250930_201329_page010_highlight03)
+
+----------------------------------------
+
+
+--- PAGE 11 ---
 
 === SURLIGNEMENT #1 ===
 plicitation vise la description du déroulement de cette action, telle qu’elle a été effectivement mise en œuvre dans une tâche réelle.
 (Confiance: 96%)
 (Mots: 21)
 (Position: x=1284, y=138, taille=525x122)
-(ID: 20250929_210723_page001_highlight01)
+(ID: 20250930_201334_page011_highlight01)
 
 ----------------------------------------
 
@@ -22,7 +139,7 @@ ce déroulement d’action est la seule source d’inférences fiables pour mett
 (Confiance: 94%)
 (Mots: 73)
 (Position: x=1284, y=265, taille=534x426)
-(ID: 20250929_210723_page001_highlight02)
+(ID: 20250930_201334_page011_highlight02)
 
 ----------------------------------------
 
@@ -31,19 +148,19 @@ Mais la verbalisation de l’action se heurte à plu- sieurs problèmes difficil
 (Confiance: 91%)
 (Mots: 12)
 (Position: x=1284, y=861, taille=531x84)
-(ID: 20250929_210723_page001_highlight03)
+(ID: 20250930_201334_page011_highlight03)
 
 ----------------------------------------
 
 
---- PAGE 2 ---
+--- PAGE 12 ---
 
 === SURLIGNEMENT #1 ===
 Le premier est que l’action est, pour une bonne part, une connaissance autonome et qu’elle contient par construction une part cruciale de savoir-faire en acte, c’est-à-dire non conscient. toute action comporte une part implicite dans sa réalisation, précisément pour celui qui l’effectue. Mettre à jour cet implicite de façon à obtenir une description détaillée du déroulement de l’action, c’est ce qui a donné son nom à la technique que j'ai développée : ’entre- tien d’explicitation (de ce qui reste implicite dans Yaction).
 (Confiance: 94%)
 (Mots: 82)
 (Position: x=1284, y=138, taille=529x464)
-(ID: 20250929_210727_page002_highlight01)
+(ID: 20250930_201338_page012_highlight01)
 
 ----------------------------------------
 
@@ -52,19 +169,19 @@ Le second, c’est que verbaliser cette action n'est pas habituel, nous n'avons 
 (Confiance: 93%)
 (Mots: 59)
 (Position: x=1284, y=607, taille=538x312)
-(ID: 20250929_210727_page002_highlight02)
+(ID: 20250930_201338_page012_highlight02)
 
 ----------------------------------------
 
 
---- PAGE 3 ---
+--- PAGE 13 ---
 
 === SURLIGNEMENT #1 ===
 Le troisième, c’est que les techniques efficaces pour apporter cette aide sont largement contre- intuitives. C'est-à-dire que ce qui nous vient spon- tanément à l’idée pour apporter cette aide est pré- cisément ce qui risque de créer les pires obstacles
 (Confiance: 92%)
 (Mots: 40)
 (Position: x=1284, y=138, taille=537x198)
-(ID: 20250929_210731_page003_highlight01)
+(ID: 20250930_201342_page013_highlight01)
 
 ----------------------------------------
 
@@ -73,7 +190,7 @@ On pourrait en citer un quatrième, qui n’est pas particulier à la verbalisat
 (Confiance: 94%)
 (Mots: 42)
 (Position: x=1284, y=417, taille=534x198)
-(ID: 20250929_210731_page003_highlight02)
+(ID: 20250930_201342_page013_highlight02)
 
 ----------------------------------------
 
@@ -82,19 +199,19 @@ Dans cette première perspective,
 (Confiance: 96%)
 (Mots: 4)
 (Position: x=1451, y=886, taille=356x46)
-(ID: 20250929_210731_page003_highlight03)
+(ID: 20250930_201342_page013_highlight03)
 
 ----------------------------------------
 
 
---- PAGE 4 ---
+--- PAGE 14 ---
 
 === SURLIGNEMENT #1 ===
 l'entretien d’explicitation est le produit de la for- malisation d’une pratique empirique.
 (Confiance: 93%)
 (Mots: 12)
 (Position: x=1284, y=138, taille=521x84)
-(ID: 20250929_210735_page004_highlight01)
+(ID: 20250930_201346_page014_highlight01)
 
 ----------------------------------------
 
@@ -103,7 +220,7 @@ l'étude du déroulement de l’action comme source d’inférence pour l'analys
 (Confiance: 91%)
 (Mots: 13)
 (Position: x=1284, y=265, taille=531x122)
-(ID: 20250929_210735_page004_highlight02)
+(ID: 20250930_201346_page014_highlight02)
 
 ----------------------------------------
 
@@ -112,19 +229,19 @@ travers un groupe de recherche international: : le GREX (Groupe de Recherche sur
 (Confiance: 94%)
 (Mots: 14)
 (Position: x=1284, y=683, taille=535x122)
-(ID: 20250929_210735_page004_highlight03)
+(ID: 20250930_201346_page014_highlight03)
 
 ----------------------------------------
 
 
---- PAGE 5 ---
+--- PAGE 15 ---
 
 === SURLIGNEMENT #1 ===
 il me paraît indispensable de rap- peler que pour comprendre et analyser le déroule- ment de l’action, il n’y a pas que les verbalisations.
 (Confiance: 94%)
 (Mots: 24)
 (Position: x=1284, y=138, taille=539x122)
-(ID: 20250929_210742_page005_highlight01)
+(ID: 20250930_201353_page015_highlight01)
 
 ----------------------------------------
 
@@ -133,7 +250,7 @@ ce qui est observable (si il y a un observateur) et les traces de la réalisatio
 (Confiance: 95%)
 (Mots: 24)
 (Position: x=1284, y=290, taille=540x160)
-(ID: 20250929_210742_page005_highlight02)
+(ID: 20250930_201353_page015_highlight02)
 
 ----------------------------------------
 
@@ -142,7 +259,7 @@ Dans le domaine de la didactique, je proposerai une analyse de l’évolution de
 (Confiance: 94%)
 (Mots: 18)
 (Position: x=1284, y=455, taille=527x122)
-(ID: 20250929_210742_page005_highlight03)
+(ID: 20250930_201353_page015_highlight03)
 
 ----------------------------------------
 
@@ -151,7 +268,7 @@ techniques rogériennes).
 (Confiance: 92%)
 (Mots: 2)
 (Position: x=1284, y=683, taille=276x46)
-(ID: 20250929_210742_page005_highlight05)
+(ID: 20250930_201353_page015_highlight05)
 
 ----------------------------------------
 
@@ -160,19 +277,19 @@ s'informer, aider l’autre à s’auto-informer, lui ap- prendre à s’auto-in
 (Confiance: 87%)
 (Mots: 10)
 (Position: x=1284, y=810, taille=526x84)
-(ID: 20250929_210742_page005_highlight06)
+(ID: 20250930_201353_page015_highlight06)
 
 ----------------------------------------
 
 
---- PAGE 6 ---
+--- PAGE 16 ---
 
 === SURLIGNEMENT #1 ===
 Des traces, des observables et des verbalisations
 (Confiance: 94%)
 (Mots: 7)
 (Position: x=1284, y=266, taille=338x92)
-(ID: 20250929_210746_page006_highlight01)
+(ID: 20250930_201357_page016_highlight01)
 
 ----------------------------------------
 
@@ -181,7 +298,7 @@ Une activité matérielle ou mentale se traduit par des observables comportement
 (Confiance: 95%)
 (Mots: 11)
 (Position: x=1284, y=618, taille=505x84)
-(ID: 20250929_210746_page006_highlight02)
+(ID: 20250930_201357_page016_highlight02)
 
 ----------------------------------------
 
@@ -190,19 +307,19 @@ Une des ca- ractéristiques de ces observables c’est qu’ils sont transitoire
 (Confiance: 94%)
 (Mots: 43)
 (Position: x=1284, y=732, taille=537x236)
-(ID: 20250929_210746_page006_highlight03)
+(ID: 20250930_201357_page016_highlight03)
 
 ----------------------------------------
 
 
---- PAGE 7 ---
+--- PAGE 17 ---
 
 === SURLIGNEMENT #1 ===
 ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.
 (Confiance: 94%)
 (Mots: 72)
 (Position: x=1284, y=138, taille=534x388)
-(ID: 20250929_210751_page007_highlight01)
+(ID: 20250930_201402_page017_highlight01)
 
 ----------------------------------------
 
@@ -211,7 +328,7 @@ L'inconvénient majeur c’est que l'exploitation des enregistrements est très 
 (Confiance: 92%)
 (Mots: 32)
 (Position: x=1284, y=531, taille=528x198)
-(ID: 20250929_210751_page007_highlight02)
+(ID: 20250930_201402_page017_highlight02)
 
 ----------------------------------------
 
@@ -220,88 +337,37 @@ les techniques de micro-enseignement et de laboratoire pédagogiques intégrant 
 (Confiance: 93%)
 (Mots: 12)
 (Position: x=1284, y=797, taille=534x122)
-(ID: 20250929_210751_page007_highlight03)
+(ID: 20250930_201402_page017_highlight03)
 
 ----------------------------------------
 
 
---- PAGE 8 ---
+--- PAGE 18 ---
 
 === SURLIGNEMENT #1 ===
-Les traces
-(Confiance: 96%)
-(Mots: 2)
-(Position: x=1302, y=185, taille=119x46)
-(ID: 20250929_210756_page008_highlight01)
+ont du sens. n’est perçu que ce pour quoi nous avons déjà une «théorie » ou, plus modestement, ce qui fait sens pour nous. Les observables peuvent être recueillis grâce à des enregistrements que ce soit le son ou l’image, ils deviennent alors des traces créées artificiellement. L'avantage c’est qu’il est alors possible, grâce à des visionnements successifs et une transcription écrite, d'observer des aspects que l’on n’avait pas prévus au départ.
+(Confiance: 94%)
+(Mots: 72)
+(Position: x=1284, y=138, taille=534x388)
+(ID: 20250930_201407_page018_highlight01)
 
 ----------------------------------------
 
 === SURLIGNEMENT #2 ===
-Les traces sont les indices matériels plus ou moins permanents produits par l’activité.
-(Confiance: 94%)
-(Mots: 13)
-(Position: x=1284, y=261, taille=491x84)
-(ID: 20250929_210756_page008_highlight02)
-
-----------------------------------------
-
-=== SURLIGNEMENT #3 ===
-Alors que la notion d’observable pouvait laisser penser à quelque chose d’évident (il suffit d’avoir des yeux pour voir). Comme le dit son nom, la trace n’est qu’une information partielle de l’activité qui l'a produite.
-(Confiance: 94%)
-(Mots: 35)
-(Position: x=1284, y=413, taille=539x198)
-(ID: 20250929_210756_page008_highlight03)
-
-----------------------------------------
-
-=== SURLIGNEMENT #4 ===
-immédiatement problématique, en ce sens qu’elle suppose nécessairement une interprétation pour faire « signe ».
-(Confiance: 95%)
-(Mots: 15)
-(Position: x=1284, y=641, taille=534x122)
-(ID: 20250929_210756_page008_highlight04)
-
-----------------------------------------
-
-
---- PAGE 9 ---
-
-=== SURLIGNEMENT #1 ===
-Souvent, cela conduit à modifier la tâche ou l'exercice proposé pour augmenter la production d’observables et de traces (rendre plus « publique » la démarche en rendant plus nombreuses les traductions comportementales du fonctionnement intellectuel mis en œuvre dans la réalisation de l'exercice), ou les amplifier (les rendre plus visibles, plus apparents, plus aisés à observer et plus permanents : par exemple, supprimer le crayon dans le travail au brouillon pour rendre les étapes intermédiaires présentes, sans possibilité de corrections masquées ou d’effa- cement). Dans le cadre de la recherche, traces et observables sont des données complémentaires dont il est essentiel de disposer. Dans le cadre de l'activité didactique quotidienne, les utiliser reste précieux, même si l’on sait utiliser une technique d'entretien.
-(Confiance: 94%)
-(Mots: 122)
-(Position: x=1284, y=176, taille=540x692)
-(ID: 20250929_210759_page009_highlight01)
-
-----------------------------------------
-
-
---- PAGE 10 ---
-
-=== SURLIGNEMENT #1 ===
-Les verbalisations
+L'inconvénient majeur c’est que l'exploitation des enregistrements est très lourde, et s'intègre plus facilement dans un travail de recherche que dans la conduite d’une classe, où le feed-back doit être suffisamment rapide.
 (Confiance: 92%)
-(Mots: 2)
-(Position: x=1302, y=185, taille=205x46)
-(ID: 20250929_210804_page010_highlight01)
-
-----------------------------------------
-
-=== SURLIGNEMENT #2 ===
-Mais, il n’en reste pas moins que de nombreuses activités de formation et d'enseignement laissent peu de traces (seulement le produit final, par exemple, on ne sait alors rien du cheminement) et produisent peu d’observables (la résolution de tête d’un problème). personne n'était présent pour noter les observables po- tentiellement disponibles (travail personnel à la maison, absence de l'enseignant au bon moment, au bon endroit du lieu de formation, impossibilité de tout observer simultanément dans un groupe classe, analyse d’accidents en psychologie du tra- vail). La seule source d’informations disponible est alors la verbalisation.
-(Confiance: 93%)
-(Mots: 94)
-(Position: x=1284, y=261, taille=538x540)
-(ID: 20250929_210804_page010_highlight02)
+(Mots: 32)
+(Position: x=1284, y=531, taille=528x198)
+(ID: 20250930_201407_page018_highlight02)
 
 ----------------------------------------
 
 === SURLIGNEMENT #3 ===
-Les traces et les observables ont le mérite de relever
-(Confiance: 95%)
-(Mots: 10)
-(Position: x=1284, y=882, taille=512x84)
-(ID: 20250929_210804_page010_highlight03)
+les techniques de micro-enseignement et de laboratoire pédagogiques intégrant un circuit vidéo?.
+(Confiance: 93%)
+(Mots: 12)
+(Position: x=1284, y=797, taille=534x122)
+(ID: 20250930_201407_page018_highlight03)
 
 ----------------------------------------
 
