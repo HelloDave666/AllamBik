@@ -13,7 +13,9 @@ class ProgressCircle(ctk.CTkFrame):
     Inspiré de votre design original Alambik.
     """
     
-    def __init__(self, parent, **kwargs):
+    def __init__(self, parent, size=250, **kwargs):
+        # Extraire size avant de passer kwargs au parent
+        self.size = size
         super().__init__(parent, **kwargs)
         
         # Configuration
@@ -26,23 +28,27 @@ class ProgressCircle(ctk.CTkFrame):
             'phase2': 0      # Cercle extérieur (rouge)
         }
         
+        # Calculer les dimensions proportionnellement à size
+        self.canvas_size = self.size
+        padding = int(self.size * 0.08)  # 8% de padding
+        
         # Canvas pour dessiner
         self.canvas = Canvas(
             self,
-            width=250,
-            height=250,
+            width=self.canvas_size,
+            height=self.canvas_size,
             bg="#2a2a2a",
             highlightthickness=0
         )
-        self.canvas.pack(padx=20, pady=20)
+        self.canvas.pack(padx=padding, pady=padding)
         
-        # Centre et rayons
-        self.center_x = 125
-        self.center_y = 125
-        self.radius_outer = 100    # Rouge - Phase 2
-        self.radius_middle = 75    # Jaune - Phase 1
-        self.radius_inner = 50     # Bleu - Progression courante
-        self.line_width = 8
+        # Centre et rayons proportionnels
+        self.center_x = self.canvas_size // 2
+        self.center_y = self.canvas_size // 2
+        self.radius_outer = int(self.canvas_size * 0.40)    # Rouge - Phase 2
+        self.radius_middle = int(self.canvas_size * 0.30)   # Jaune - Phase 1
+        self.radius_inner = int(self.canvas_size * 0.20)    # Bleu - Progression courante
+        self.line_width = max(4, int(self.canvas_size * 0.032))  # Min 4px, sinon 3.2% de size
         
         # Couleurs
         self.colors = {
@@ -52,11 +58,14 @@ class ProgressCircle(ctk.CTkFrame):
             'phase2': '#ff4444'      # Rouge
         }
         
+        # Taille du texte proportionnelle
+        label_size = max(12, int(self.canvas_size * 0.096))  # Min 12px, sinon 9.6% de size
+        
         # Label central
         self.percentage_label = ctk.CTkLabel(
             self,
             text="0%",
-            font=ctk.CTkFont(size=24, weight="bold"),
+            font=ctk.CTkFont(size=label_size, weight="bold"),
             text_color="#ffffff"
         )
         self.percentage_label.place(relx=0.5, rely=0.5, anchor="center")

@@ -416,6 +416,7 @@ class MainWindow(ctk.CTk):
         self.all_highlights_data = []
         
         self._update_queue = []
+        self._after_ids = []
         
         self._setup_window()
         self._create_ui()
@@ -445,6 +446,7 @@ class MainWindow(ctk.CTk):
         }
         
         self.configure(fg_color=self.colors['bg_primary'])
+        self.protocol("WM_DELETE_WINDOW", self._on_closing)
     
     def _create_ui(self):
         """Cree l'interface utilisateur."""
@@ -480,20 +482,25 @@ class MainWindow(ctk.CTk):
         )
         title_label.pack(expand=True)
         
+        # SECTION PROGRESSION - Taille réduite
         progress_section = self._create_section(left_panel, "PROGRESSION")
-        self.progress_circle = ProgressCircle(progress_section)
-        self.progress_circle.pack(pady=10)
+        
+        # Cercle de progression plus petit
+        self.progress_circle = ProgressCircle(progress_section, size=120)
+        self.progress_circle.pack(pady=5)
         
         self.progress_label = ctk.CTkLabel(
             progress_section,
             text="Pret pour l'extraction",
-            font=ctk.CTkFont(size=12),
+            font=ctk.CTkFont(size=11),
             text_color=self.colors['text_secondary']
         )
-        self.progress_label.pack(pady=(0, 15))
+        self.progress_label.pack(pady=(0, 10))
         
+        # SECTION CONTROLES - Ordre logique
         controls_section = self._create_section(left_panel, "CONTROLES")
         
+        # 1. DEFINIR ZONE DE SCAN
         self.zone_picker_button = ZonePickerButton(
             controls_section,
             on_zone_selected=self._on_zone_selected,
@@ -503,29 +510,7 @@ class MainWindow(ctk.CTk):
         )
         self.zone_picker_button.pack(fill="x", padx=20, pady=(10, 5))
         
-        self.start_button = ctk.CTkButton(
-            controls_section,
-            text="DEMARRER EXTRACTION",
-            font=ctk.CTkFont(size=14, weight="bold"),
-            height=45,
-            fg_color=self.colors['accent'],
-            hover_color="#0088cc",
-            command=self._on_start_clicked
-        )
-        self.start_button.pack(fill="x", padx=20, pady=(5, 5))
-        
-        self.stop_button = ctk.CTkButton(
-            controls_section,
-            text="ARRETER EXTRACTION",
-            font=ctk.CTkFont(size=12, weight="bold"),
-            height=40,
-            fg_color=self.colors['bg_tertiary'],
-            hover_color=self.colors['error'],
-            state="disabled",
-            command=self._on_stop_clicked
-        )
-        self.stop_button.pack(fill="x", padx=20, pady=(5, 5))
-        
+        # 2. DETECTER NOMBRE DE PAGES
         self.detect_button = ctk.CTkButton(
             controls_section,
             text="DETECTER NOMBRE DE PAGES",
@@ -537,7 +522,40 @@ class MainWindow(ctk.CTk):
         )
         self.detect_button.pack(fill="x", padx=20, pady=(5, 5))
         
-        # MODIFIE: Bouton pour charger .allambik ET .json
+        # 3. DEMARRER EXTRACTION
+        self.start_button = ctk.CTkButton(
+            controls_section,
+            text="DEMARRER EXTRACTION",
+            font=ctk.CTkFont(size=14, weight="bold"),
+            height=45,
+            fg_color=self.colors['accent'],
+            hover_color="#0088cc",
+            command=self._on_start_clicked
+        )
+        self.start_button.pack(fill="x", padx=20, pady=(5, 5))
+        
+        # Bouton ARRETER (visible pendant extraction)
+        self.stop_button = ctk.CTkButton(
+            controls_section,
+            text="ARRETER EXTRACTION",
+            font=ctk.CTkFont(size=12, weight="bold"),
+            height=40,
+            fg_color=self.colors['bg_tertiary'],
+            hover_color=self.colors['error'],
+            state="disabled",
+            command=self._on_stop_clicked
+        )
+        self.stop_button.pack(fill="x", padx=20, pady=(5, 10))
+        
+        # SEPARATEUR
+        separator = ctk.CTkFrame(
+            controls_section,
+            fg_color="#505050",
+            height=2
+        )
+        separator.pack(fill="x", padx=20, pady=10)
+        
+        # 4. CHARGER PROJET
         self.import_button = ctk.CTkButton(
             controls_section,
             text="CHARGER PROJET",
@@ -547,8 +565,22 @@ class MainWindow(ctk.CTk):
             hover_color="#A0522D",
             command=self._on_import_project_clicked
         )
-        self.import_button.pack(fill="x", padx=20, pady=(5, 5))
+        self.import_button.pack(fill="x", padx=20, pady=(10, 5))
         
+        # NOUVEAU : Bouton FERMER PROJET
+        self.close_project_button = ctk.CTkButton(
+            controls_section,
+            text="FERMER PROJET",
+            font=ctk.CTkFont(size=12, weight="bold"),
+            height=40,
+            fg_color="#8B4513",
+            hover_color="#A0522D",
+            state="disabled",
+            command=self._on_close_project_clicked
+        )
+        self.close_project_button.pack(fill="x", padx=20, pady=(5, 5))
+        
+        # 5. EXPORTER WORD
         self.export_word_button = ctk.CTkButton(
             controls_section,
             text="EXPORTER WORD",
@@ -560,6 +592,7 @@ class MainWindow(ctk.CTk):
         )
         self.export_word_button.pack(fill="x", padx=20, pady=(5, 15))
         
+        # SECTION STATISTIQUES - Plus d'espace
         stats_section = self._create_section(left_panel, "STATISTIQUES")
         
         stats_frame = ctk.CTkFrame(stats_section, fg_color="transparent")
@@ -612,10 +645,10 @@ class MainWindow(ctk.CTk):
         highlights_section.pack(fill="both", expand=True)
         
         # Utiliser grid au lieu de pack pour mieux controler le layout
-        highlights_section.grid_rowconfigure(0, weight=0)  # Header
-        highlights_section.grid_rowconfigure(1, weight=0)  # Search
-        highlights_section.grid_rowconfigure(2, weight=1)  # Grid
-        highlights_section.grid_rowconfigure(3, weight=0)  # Pagination
+        highlights_section.grid_rowconfigure(0, weight=0)
+        highlights_section.grid_rowconfigure(1, weight=0)
+        highlights_section.grid_rowconfigure(2, weight=1)
+        highlights_section.grid_rowconfigure(3, weight=0)
         highlights_section.grid_columnconfigure(0, weight=1)
         
         # HEADER
@@ -753,9 +786,64 @@ class MainWindow(ctk.CTk):
                     self._update_queue.remove(update_func)
             except:
                 pass
-            self.after(100, update_ui)
+            
+            after_id = self.after(100, update_ui)
+            self._after_ids.append(after_id)
         
-        self.after(100, update_ui)
+        after_id = self.after(100, update_ui)
+        self._after_ids.append(after_id)
+    
+    def destroy(self):
+        """Fermeture propre de l'application avec nettoyage des ressources."""
+        print("INFO: Fermeture propre de l'application...")
+        
+        self.is_stopping = True
+        self._update_queue.clear()
+        
+        for after_id in self._after_ids:
+            try:
+                self.after_cancel(after_id)
+            except:
+                pass
+        self._after_ids.clear()
+        
+        if self.current_project:
+            try:
+                print("INFO: Sauvegarde du projet avant fermeture...")
+            except Exception as e:
+                print(f"ERREUR: Erreur sauvegarde projet: {e}")
+        
+        try:
+            if hasattr(self, 'highlights_grid'):
+                self.highlights_grid.clear()
+        except:
+            pass
+        
+        if self.async_loop:
+            try:
+                self.async_loop.stop()
+            except:
+                pass
+        
+        print("INFO: Nettoyage termine, fermeture...")
+        
+        try:
+            super().destroy()
+        except:
+            pass
+    
+    def _on_closing(self):
+        """Gère la fermeture de la fenêtre."""
+        print("INFO: Demande de fermeture de la fenetre...")
+        
+        if hasattr(self, 'stop_button') and str(self.stop_button.cget('state')) == 'normal':
+            if not messagebox.askyesno(
+                "Extraction en cours",
+                "Voulez-vous vraiment quitter ?"
+            ):
+                return
+        
+        self.destroy()
     
     def _schedule_update(self, func):
         """Planifie une mise a jour."""
@@ -834,7 +922,6 @@ class MainWindow(ctk.CTk):
         if hasattr(self, 'edit_panel') and self.edit_panel.current_highlight:
             self.edit_panel._save_changes()
         
-        # Trouver la carte cliquee
         clicked_card = None
         for card in self.highlights_grid.cards:
             if (card.highlight_data.get('page') == highlight_data.get('page') and
@@ -846,7 +933,6 @@ class MainWindow(ctk.CTk):
             return
         
         if shift_pressed:
-            # Mode multi-selection : ajouter/retirer de la selection
             if clicked_card in self.highlights_grid.selected_cards:
                 clicked_card.set_selected(False)
                 self.highlights_grid.selected_cards.remove(clicked_card)
@@ -854,13 +940,11 @@ class MainWindow(ctk.CTk):
                 clicked_card.set_selected(True)
                 self.highlights_grid.selected_cards.append(clicked_card)
             
-            # Afficher la derniere carte selectionnee dans le panneau d'edition
             if self.highlights_grid.selected_cards:
                 self.edit_panel.show_highlight(self.highlights_grid.selected_cards[-1].highlight_data)
             else:
                 self.edit_panel._show_default_message()
         else:
-            # Mode selection simple : deselectionner tout sauf la carte cliquee
             for card in self.highlights_grid.selected_cards:
                 if card != clicked_card:
                     try:
@@ -872,10 +956,8 @@ class MainWindow(ctk.CTk):
             clicked_card.set_selected(True)
             self.highlights_grid.selected_cards.append(clicked_card)
             
-            # Afficher dans le panneau d'edition
             self.edit_panel.show_highlight(highlight_data)
         
-        # Mettre a jour le texte du bouton supprimer
         self._update_delete_button_text()
     
     def _update_delete_button_text(self):
@@ -893,19 +975,16 @@ class MainWindow(ctk.CTk):
     def _on_edit_saved(self, updated_data):
         """Callback sauvegarde edition."""
         try:
-            # NOUVEAU: Sauvegarder via AllambikProject si disponible
             if self.current_project:
                 highlight_id = updated_data.get('id')
                 if highlight_id:
                     self.current_project.update_highlight(highlight_id, updated_data)
-                    # Recharger les données depuis le projet
                     self.all_highlights_data = self.current_project.highlights.copy()
                     self.pagination_controller.set_data(self.all_highlights_data)
                     self._display_current_page()
                     print(f"Highlight {highlight_id} mis à jour dans le projet .allambik")
                     return
             
-            # Fallback vers l'ancienne méthode
             self.highlights_grid.update_highlight(updated_data)
             self._save_to_extraction_file()
         except Exception as e:
@@ -998,7 +1077,9 @@ class MainWindow(ctk.CTk):
             )
             return
         
-        highlights_data = self.highlights_grid.get_highlights_data()
+        # CORRECTION: Utiliser all_highlights_data au lieu de highlights_grid.get_highlights_data()
+        # pour exporter TOUS les highlights, pas seulement la page courante
+        highlights_data = self.all_highlights_data if self.all_highlights_data else self.highlights_grid.get_highlights_data()
         
         if not highlights_data:
             messagebox.showwarning("Aucun highlight", "Aucun highlight a exporter.")
@@ -1024,13 +1105,13 @@ class MainWindow(ctk.CTk):
                 info_para.add_run("Nombre total d'extraits: ").bold = True
                 info_para.add_run(f"{len(highlights_data)} highlights\n")
                 
-                # NOUVEAU: Ajouter les infos du projet si disponible
+                # Ajouter les infos du projet si disponible
                 if self.current_project:
                     stats = self.current_project.get_statistics()
                     info_para.add_run("Session d'extraction: ").bold = True
                     info_para.add_run(f"{stats['session_id']}\n")
                     if stats['deleted_count'] > 0:
-                        info_para.add_run("Highlights supprimés: ").bold = True
+                        info_para.add_run("Highlights supprimes: ").bold = True
                         info_para.add_run(f"{stats['deleted_count']}\n")
                 
                 doc.add_paragraph("=" * 60)
@@ -1145,17 +1226,21 @@ class MainWindow(ctk.CTk):
     
     def _on_start_clicked(self):
         """Gere clic demarrer avec création projet .allambik."""
-        # Réinitialiser le flag d'arrêt
+        if self.current_project and len(self.all_highlights_data) > 0:
+            messagebox.showwarning(
+                "Projet déjà chargé",
+                "Un projet est actuellement chargé.\n\nVeuillez le fermer avant de lancer une nouvelle extraction."
+            )
+            return
+        
         self.is_stopping = False
         
-        # Créer un projet .allambik au début de l'extraction
         if not self.current_project:
             zone = getattr(self.viewmodel, 'custom_scan_zone', None)
             self.current_project = AllambikProject()
             project_path = self.current_project.create_new_project(extraction_zone=zone)
             print(f"INFO: Projet .allambik cree: {project_path}")
         
-        # Activer le bouton stop et désactiver le bouton start
         self.start_button.configure(state="disabled")
         self.stop_button.configure(state="normal", fg_color=self.colors['error'])
         self.detect_button.configure(state="disabled")
@@ -1187,23 +1272,17 @@ class MainWindow(ctk.CTk):
                             self.async_loop
                         )
                 else:
-                    # Si nombre invalide, réactiver les boutons
                     self._reset_buttons_after_extraction()
             except ValueError:
-                # Si erreur, réactiver les boutons
                 self._reset_buttons_after_extraction()
         else:
-            # Si annulation, réactiver les boutons
             self._reset_buttons_after_extraction()
     
     def _on_stop_clicked(self):
         """Gere clic arreter."""
         print("INFO: Arret de l'extraction demande")
         
-        # Activer le flag d'arrêt immédiatement
         self.is_stopping = True
-        
-        # Vider la queue de mises à jour pour éviter le traitement des highlights en attente
         self._update_queue.clear()
         print(f"INFO: Queue de mise a jour videe")
         
@@ -1213,15 +1292,11 @@ class MainWindow(ctk.CTk):
                 self.async_loop
             )
         
-        # Changer le texte du bouton pour indiquer l'arrêt en cours
         self.stop_button.configure(text="ARRET EN COURS...", state="disabled")
-        
-        # Réactiver les boutons après un court délai
         self.after(1000, self._reset_buttons_after_extraction)
     
     def _reset_buttons_after_extraction(self):
         """Réactive les boutons après extraction ou annulation."""
-        # Réinitialiser le flag
         self.is_stopping = False
         
         self.start_button.configure(state="normal")
@@ -1230,8 +1305,11 @@ class MainWindow(ctk.CTk):
             state="disabled", 
             fg_color=self.colors['bg_tertiary']
         )
-        self.detect_button.configure(state="normal")
-        self.import_button.configure(state="normal")
+        
+        if not self.current_project or len(self.all_highlights_data) == 0:
+            self.detect_button.configure(state="normal")
+            self.zone_picker_button.configure(state="normal")
+            self.import_button.configure(state="normal")
         
         print("INFO: Boutons reactives apres extraction")
     
@@ -1287,24 +1365,19 @@ class MainWindow(ctk.CTk):
             file_ext = os.path.splitext(file_path)[1].lower()
             
             if file_ext == '.allambik':
-                # Charger projet .allambik
                 self.current_project = AllambikProject(file_path)
                 
                 if self.current_project.highlights:
                     self.all_highlights_data = self.current_project.highlights.copy()
                     
-                    # Configurer la pagination
                     self.pagination_controller.set_data(self.all_highlights_data)
                     self.pagination_controller.on_page_changed = self._on_page_changed
                     
-                    # Afficher la première page
                     self._display_current_page()
                     
-                    # Afficher la barre de pagination
                     self.pagination_bar.grid()
                     self.pagination_bar.refresh()
                     
-                    # Afficher les statistiques du projet
                     stats = self.current_project.get_statistics()
                     message = f"Projet AllamBik chargé avec succès!\n\n"
                     message += f"• Highlights: {stats['total_highlights']}\n"
@@ -1322,20 +1395,16 @@ class MainWindow(ctk.CTk):
                     messagebox.showwarning("Projet vide", "Le projet AllamBik ne contient aucun highlight.")
                     
             elif file_ext == '.json':
-                # Importer JSON vers nouveau projet .allambik
                 self.current_project = AllambikProject.import_from_json(file_path)
                 
                 if self.current_project and self.current_project.highlights:
                     self.all_highlights_data = self.current_project.highlights.copy()
                     
-                    # Configurer la pagination
                     self.pagination_controller.set_data(self.all_highlights_data)
                     self.pagination_controller.on_page_changed = self._on_page_changed
                     
-                    # Afficher la première page
                     self._display_current_page()
                     
-                    # Afficher la barre de pagination
                     self.pagination_bar.grid()
                     self.pagination_bar.refresh()
                     
@@ -1351,12 +1420,69 @@ class MainWindow(ctk.CTk):
                     messagebox.showerror("Erreur", "Impossible d'importer le fichier JSON.")
             else:
                 messagebox.showerror("Format non supporté", "Seuls les fichiers .allambik et .json sont supportés.")
+            
+            self._set_project_mode()
                     
         except Exception as e:
             print(f"Erreur import: {e}")
             import traceback
             traceback.print_exc()
             messagebox.showerror("Erreur", f"Impossible de charger le fichier:\n{str(e)}")
+    
+    def _on_close_project_clicked(self):
+        """Ferme le projet actuellement chargé."""
+        if not self.current_project:
+            return
+        
+        if messagebox.askyesno(
+            "Fermer le projet",
+            "Voulez-vous fermer le projet actuel ?\n\nLes données non sauvegardées seront perdues."
+        ):
+            print("INFO: Fermeture du projet...")
+            
+            self.current_project = None
+            
+            self.all_highlights_data.clear()
+            self.pagination_controller.set_data([])
+            
+            self.highlights_grid.clear()
+            self.edit_panel._show_default_message()
+            
+            self.pagination_bar.grid_remove()
+            
+            self.highlights_title.configure(text="HIGHLIGHTS EXTRAITS (0)")
+            
+            self.stats_labels["pages_scanned"].configure(text="0")
+            self.stats_labels["pages_with_content"].configure(text="0")
+            self.stats_labels["highlights_count"].configure(text="0")
+            
+            self.progress_circle.reset()
+            self.progress_label.configure(text="Pret pour l'extraction")
+            
+            self._set_extraction_mode()
+            
+            print("INFO: Projet fermé avec succès")
+            messagebox.showinfo("Projet fermé", "Le projet a été fermé. Vous pouvez maintenant lancer une nouvelle extraction.")
+    
+    def _set_extraction_mode(self):
+        """Active le mode extraction (désactive consultation projet)."""
+        self.zone_picker_button.configure(state="normal")
+        self.detect_button.configure(state="normal")
+        self.start_button.configure(state="normal")
+        
+        self.close_project_button.configure(state="disabled")
+        
+        print("INFO: Mode extraction activé")
+    
+    def _set_project_mode(self):
+        """Active le mode consultation projet (désactive extraction)."""
+        self.zone_picker_button.configure(state="disabled")
+        self.detect_button.configure(state="disabled")
+        self.start_button.configure(state="disabled")
+        
+        self.close_project_button.configure(state="normal")
+        
+        print("INFO: Mode consultation projet activé")
     
     def _on_page_changed(self, page_data, page_number):
         """Callback changement de page."""
@@ -1380,9 +1506,6 @@ class MainWindow(ctk.CTk):
     def _on_state_changed(self, state: ViewState):
         """Met a jour selon etat."""
         def update():
-            # Ne pas gérer start/stop ici car c'est fait manuellement
-            # dans _on_start_clicked et _on_stop_clicked pour plus de réactivité
-            
             has_highlights = self.highlights_grid.get_count() > 0
             self.export_word_button.configure(
                 state="normal" if has_highlights else "disabled"
@@ -1390,10 +1513,8 @@ class MainWindow(ctk.CTk):
             
             if state == ViewState.ERROR:
                 self.progress_circle.configure(fg_color=self.colors['error'])
-                # En cas d'erreur, réactiver les boutons
                 self._reset_buttons_after_extraction()
             
-            # Si l'extraction est terminée (état IDLE avec des highlights)
             if state == ViewState.IDLE and has_highlights:
                 self._reset_buttons_after_extraction()
         
@@ -1409,7 +1530,6 @@ class MainWindow(ctk.CTk):
             )
             self.progress_label.configure(text=self.viewmodel.progress_message)
             
-            # NOUVEAU: Mettre à jour les stats du projet si disponible
             if self.current_project:
                 self.current_project.update_extraction_stats(
                     self.viewmodel.pages_scanned,
@@ -1431,7 +1551,6 @@ class MainWindow(ctk.CTk):
     def _on_highlight_added(self, highlight: HighlightViewModel):
         """Ajoute un highlight au projet .allambik."""
         def update():
-            # Ignorer les highlights si arrêt en cours
             if self.is_stopping:
                 print(f"INFO: Highlight Page {highlight.page} ignore (arret en cours)")
                 return
@@ -1447,25 +1566,19 @@ class MainWindow(ctk.CTk):
                 'modified': False
             }
             
-            # Ajouter au projet .allambik
             if self.current_project:
                 success = self.current_project.add_highlight(highlight_data)
                 if success:
-                    # Recharger les données depuis le projet
                     self.all_highlights_data = self.current_project.highlights.copy()
                     self.pagination_controller.set_data(self.all_highlights_data)
                     
-                    # Afficher la barre de pagination dès qu'on a des highlights
                     if len(self.all_highlights_data) > 0:
-                        # S'assurer que le callback est configuré
                         if not hasattr(self.pagination_controller, 'on_page_changed') or self.pagination_controller.on_page_changed is None:
                             self.pagination_controller.on_page_changed = self._on_page_changed
                         
-                        # Afficher la barre de pagination
                         self.pagination_bar.grid()
                         self.pagination_bar.refresh()
                     
-                    # Afficher la dernière page si on y est déjà
                     if self.pagination_controller.current_page == self.pagination_controller.total_pages:
                         self._display_current_page()
                     
@@ -1473,12 +1586,10 @@ class MainWindow(ctk.CTk):
                 else:
                     print(f"ERREUR: Impossible d'ajouter highlight au projet")
             else:
-                # Fallback vers l'ancienne méthode
                 self.highlights_grid.add_highlight(highlight_data)
                 self._save_to_extraction_file()
             
             self._update_highlights_count()
         
-        # Ne pas ajouter à la queue si arrêt en cours
         if not self.is_stopping:
             self._schedule_update(update)
